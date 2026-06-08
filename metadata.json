@@ -1,0 +1,6 @@
+{
+  "name": "Yellow Pages Pakistan",
+  "description": "The comprehensive business, educational, healthcare, telecommunication, and industrial directory of Pakistan with over 15,000+ verified listings across major provinces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
