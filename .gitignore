@@ -1,0 +1,15 @@
+node_modules
+dist
+.vercel
+.DS_Store
+*.local
+npm-debug.log*
+# Generated dataset copies — rebuilt by `npm run generate` / build:vercel.
+# public/data is dev-only (stripped from prod builds); server-data is bundled
+# only into the guarded serverless endpoint.
+public/data/
+server-data/
+
+# Android signing keystore — NEVER commit (keep only on your own machine)
+android/*.jks
+android/keystore.properties

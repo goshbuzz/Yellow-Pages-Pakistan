@@ -1,0 +1,29 @@
+{
+  "name": "yellowpages-pk",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate": "node scripts/generate-data.mjs",
+    "predev": "node scripts/generate-data.mjs",
+    "prepreview": "node scripts/generate-data.mjs",
+    "build:vercel": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs && VITE_DATA_URL=/api/directory vite build && rm -rf dist/data"
+  },
+  "dependencies": {
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.0"
+  },
+  "devDependencies": {
+    "@bubblewrap/cli": "^1.25.0",
+    "@tailwindcss/vite": "^4.1.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "playwright": "^1.49.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^5.4.11"
+  }
+}
