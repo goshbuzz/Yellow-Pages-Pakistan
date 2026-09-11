@@ -6,16 +6,32 @@ import { CATEGORIES, CATEGORY_BY_ID } from '../data/categories.js';
 import { CITIES } from '../data/geo.js';
 import { mulberry32 } from '../lib/rng.js';
 
-const DATA_URL = import.meta.env.VITE_DATA_URL || '/data/directory.txt';
+// Guarded endpoint first (production); the dev file is the automatic fallback
+// (local dev/preview). A VITE_DATA_URL override wins over both.
 
 let names, lnames, cats, cityIdxs, areas, streets, bldgs, seeds, ratings, reviews, total = 0;
 let cityLower, catLower;
 
 async function load() {
-  // App-internal marker header; the production endpoint rejects requests without it
-  const res = await fetch(DATA_URL, { headers: { 'x-ypk-app': '1' } });
-  if (!res.ok) throw new Error(`dataset load failed: ${res.status}`);
-  const text = await res.text();
+  const candidates = import.meta.env.VITE_DATA_URL
+    ? [import.meta.env.VITE_DATA_URL, '/data/directory.txt']
+    : ['/api/directory', '/data/directory.txt'];
+  let text = null, lastErr = null;
+  for (const url of candidates) {
+    try {
+      // App-internal marker header; the guarded endpoint rejects requests without it
+      const res = await fetch(url, { headers: { 'x-ypk-app': '1' } });
+      if (!res.ok) throw new Error(`status ${res.status}`);
+      const t = await res.text();
+      // Guard against SPA-fallback HTML (e.g. local preview) being mistaken for data
+      if (!t.startsWith('{"v"')) throw new Error('unexpected payload');
+      text = t;
+      break;
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  if (text == null) throw new Error(`dataset load failed: ${lastErr}`);
   const nl = text.indexOf('\n');
   const header = JSON.parse(text.slice(0, nl));
   total = header.total;

@@ -165,6 +165,9 @@ const header = JSON.stringify({ v: 1, total: TOTAL, generated: '2026-09-11', for
 const payload = header + '\n' + rows.join('\n');
 mkdirSync(new URL('../server-data/', import.meta.url), { recursive: true });
 writeFileSync(new URL('../server-data/directory.txt', import.meta.url), payload, 'utf8');
+// JS module copy — the serverless function imports this directly, so no
+// includeFiles config (or paid-plan memory settings) are ever needed.
+writeFileSync(new URL('../server-data/corpus.js', import.meta.url), 'export default ' + JSON.stringify(payload) + ';\n', 'utf8');
 mkdirSync(new URL('../public/data/', import.meta.url), { recursive: true });
 writeFileSync(new URL('../public/data/directory.txt', import.meta.url), payload, 'utf8');
 

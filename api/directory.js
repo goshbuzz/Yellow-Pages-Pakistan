@@ -1,16 +1,17 @@
 // Guarded dataset endpoint — serves the 200k listing corpus ONLY to the app itself.
-// Static /data/* files are stripped from production builds, so this is the only door.
+//
+// The corpus is imported directly (server-data/corpus.js, generated at build time),
+// so no includeFiles config or non-default memory settings are required —
+// the function deploys fine on the free Hobby plan.
 //
 // Defences:
 //   1. User-agent blocklist — curl, wget, python-requests, scrapy, SEO bots, crawlers…
 //   2. Browser-integrity check — requests must come from our own page (sec-fetch-site:
-//      same-origin, set by browsers, same-origin only) or carry the app header.
+//      same-origin, browsers only) or carry the app header.
 //   3. X-Robots-Tag: noindex — never appears in any search engine or AI index.
-//   4. Per-instance rate limit — burst protection.
-//   5. robots.txt disallows /api/ and /data/ for every crawler, including AI bots.
+//   4. Per-instance rate limiting — burst protection.
 
-import fs from 'node:fs';
-import path from 'node:path';
+import corpus from '../server-data/corpus.js';
 
 const BLOCKED_UA = /(curl|wget|python-requests|python-urllib|aiohttp|httpx|libwww|httpclient|okhttp|java\/|go-http-client|scrapy|httrack|harvest|sitecheck|semrush|ahrefs|mj12bot|dotbot|petalbot|dataforseo|serpstat|moz\.com|sistrix|lundunbot|bot|crawl|spider|slurp)/i;
 
@@ -60,12 +61,6 @@ export default function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests.' });
   }
 
-  try {
-    const file = path.join(process.cwd(), 'server-data', 'directory.txt');
-    const data = fs.readFileSync(file, 'utf8');
-    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    return res.status(200).send(data);
-  } catch {
-    return res.status(503).json({ error: 'Dataset unavailable.' });
-  }
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  return res.status(200).send(corpus);
 }
