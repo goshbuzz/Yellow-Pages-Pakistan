@@ -1,0 +1,40 @@
+{
+  "id": "/",
+  "name": "Yellow Pages Pakistan — Business Directory & Outreach",
+  "short_name": "YellowPages PK",
+  "description": "Pakistan's business book: 200,000+ listings across 130 categories and 420 cities. Save leads, export CSV, draft pitches — and list your own business free. Works offline.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFBEF",
+  "theme_color": "#F5B301",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "directory", "productivity", "shopping"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search businesses",
+      "short_name": "Search",
+      "url": "/browse?source=pwa",
+      "description": "Search 200,000+ Pakistani businesses"
+    },
+    {
+      "name": "My leads",
+      "short_name": "Leads",
+      "url": "/leads?source=pwa",
+      "description": "Your outreach workspace"
+    },
+    {
+      "name": "Categories",
+      "short_name": "Categories",
+      "url": "/categories?source=pwa"
+    }
+  ]
+}
