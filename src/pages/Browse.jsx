@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { Search, SlidersHorizontal, MapPin, LayoutGrid } from 'lucide-react';
+import { Search, SlidersHorizontal, MapPin, LayoutGrid, BadgeCheck } from 'lucide-react';
 import { searchBusinesses } from '../lib/dataset';
 import { CATEGORIES, CATEGORY_BY_ID } from '../data/categories';
 import { CompanyCard } from '../components/CompanyCard';
@@ -23,6 +23,7 @@ export default function Browse() {
   const cat = params.get('cat') || null;
   const city = params.get('city') || null;
   const sort = params.get('sort') || 'relevance';
+  const verified = params.get('verified') === '1';
   const page = +(params.get('page') || 1);
 
   const [input, setInput] = useState(q);
@@ -45,11 +46,11 @@ export default function Browse() {
   useEffect(() => {
     let alive = true;
     setResults(null);
-    searchBusinesses({ q, cat, city, sort, page, perPage: 12 }).then((r) => {
+    searchBusinesses({ q, cat, city, sort, verified, page, perPage: 12 }).then((r) => {
       if (alive) setResults(r);
     });
     return () => { alive = false; };
-  }, [q, cat, city, sort, page]);
+  }, [q, cat, city, sort, verified, page]);
 
   const totalPages = results?.pages || 1;
 
@@ -82,6 +83,12 @@ export default function Browse() {
             <button onClick={(e) => { e.stopPropagation(); setParam('cat', null); }} className="ml-1 font-black">×</button>
           )}
         </Chip>
+        {verified && (
+          <Chip active onClick={() => setParam('verified', null)}>
+            <BadgeCheck size={12} /> Verified flagships
+            <button onClick={(e) => { e.stopPropagation(); setParam('verified', null); }} className="ml-1 font-black">×</button>
+          </Chip>
+        )}
         <Chip active={showSorts} onClick={() => setShowSorts((s) => !s)}>
           <SlidersHorizontal size={12} /> {SORTS.find((s) => s.id === sort)?.label}
         </Chip>

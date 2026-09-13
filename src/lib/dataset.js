@@ -60,21 +60,30 @@ function ask(payload) {
 }
 
 // Search/filter generated listings + merge curated matches on top.
-export async function searchBusinesses({ q = '', cat = null, city = null, sort = 'relevance', page = 1, perPage = 12 }) {
-  const res = await ask({ type: 'query', q, cat, city, sort, page, perPage: perPage + 4 });
-  const generated = res.rows.map((r) => ({ __i: r[7], ...derive(r) }));
-
+export async function searchBusinesses({ q = '', cat = null, city = null, sort = 'relevance', page = 1, perPage = 12, verified = false }) {
   // Curated matches (flagship, verified) — shown first
   const ql = q.toLowerCase().trim();
   const curatedMatches = CURATED
     .filter((c) => (!cat || CATEGORY_BY_ID[cat]?.name === catNameOf(c)) && (!city || c.city === city) &&
       (!ql || c.name.toLowerCase().includes(ql) || catNameOf(c).toLowerCase().includes(ql) || c.city.toLowerCase().includes(ql)))
-    .map((c) => ({ ...c, cat: CATEGORY_BY_ID[c.cat], verified: true, __i: -1 }));
+    .map((c) => ({ ...c, id: 'c' + CURATED.indexOf(c), bizId: 'c' + CURATED.indexOf(c), cat: CATEGORY_BY_ID[c.cat], verified: true, __i: -1 }));
+
+  // "Flagship verified" mode — curated profiles only, no generated listings.
+  if (verified) {
+    let rows = curatedMatches;
+    if (sort === 'rating') rows = [...rows].sort((a, b) => (b.rating - a.rating) || (b.reviews - a.reviews));
+    else if (sort === 'reviews') rows = [...rows].sort((a, b) => b.reviews - a.reviews);
+    else if (sort === 'name') rows = [...rows].sort((a, b) => a.name.localeCompare(b.name));
+    return { total: rows.length, page, rows: rows.slice((page - 1) * perPage, page * perPage), pages: Math.max(1, Math.ceil(rows.length / perPage)) };
+  }
+
+  const res = await ask({ type: 'query', q, cat, city, sort, page, perPage: perPage + 4 });
+  const generated = res.rows.map((r) => ({ __i: r[7], ...derive(r) }));
 
   let merged;
   if (page === 1) merged = [...curatedMatches, ...generated];
   else merged = generated;
-  return { total: res.total + (page === 1 ? curatedMatches.length : 0), page: res.page, rows: merged.slice(0, perPage), pages: Math.max(1, Math.ceil((res.total + curatedMatches.length) / perPage)) };
+  return { total: res.total + curatedMatches.length, page: res.page, rows: merged.slice(0, perPage), pages: Math.max(1, Math.ceil((res.total + curatedMatches.length) / perPage)) };
 }
 
 function catNameOf(c) { return CATEGORY_BY_ID[c.cat]?.name || ''; }
