@@ -62,6 +62,8 @@ CNAME  yellowpagespk        cname.vercel-dns.com       3600
 
 Then in Vercel: **Project → Settings → Domains → Add** `yellowpagespk.goshbuzz.com`. HTTPS is automatic.
 
+Once Vercel serves the domain, set `SITE_URL=https://yellowpagespk.goshbuzz.com` in the Vercel project env (Settings → Environment Variables) and redeploy — robots.txt, sitemap.xml and llms.txt regenerate for the custom domain automatically. Then submit `https://yellowpagespk.goshbuzz.com/sitemap.xml` in Google Search Console.
+
 ### Option B — a standalone domain (e.g. `yellowpagespk.com`)
 
 **Yes — this works, and it will look like a completely separate site.** A standalone domain isn't a "subdomain of goshbuzz" — it's its own entity that simply points at the same Vercel project. Users see only your domain in the URL bar; goshbuzz is never visible.

@@ -1,0 +1,109 @@
+# robots.txt — Yellow Pages Pakistan
+# Public content is open to search engines AND AI/answer engines.
+# Raw listing data (/data/ and /api/) is app-internal and closed to everyone.
+
+Sitemap: __SITE_URL__/sitemap.xml
+
+# ── Default rule: crawl the site, never the raw data endpoints ──
+User-agent: *
+Disallow: /data/
+Disallow: /api/
+
+# ── Search engines — explicitly welcome ──
+User-agent: Googlebot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+# ── AI / answer engines — explicitly welcome on all public content ──
+# (GEO & AEO: let LLMs read pages, FAQs and metadata so they can cite us —
+#  but never the dataset itself.)
+User-agent: GPTBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Applebot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: CCBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /data/
+Disallow: /api/
