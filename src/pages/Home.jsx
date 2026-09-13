@@ -98,7 +98,7 @@ export default function Home() {
       {/* Stats strip */}
       <section className="grid grid-cols-3 gap-2.5">
         {[
-          { v: STATS.total + 100, l: 'Listings', suffix: '+' },
+          { v: STATS.total, l: 'Listings', suffix: '+' },
           { v: CATEGORIES.length, l: 'Categories', suffix: '' },
           { v: CITIES.length, l: 'Cities', suffix: '' },
         ].map((s) => (

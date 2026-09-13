@@ -41,7 +41,9 @@ export function derive(row) {
   const city = CITIES[cityIdx] || CITIES[0];
 
   // Contact
-  const isMobile = rand() < (city.mobileBias ?? 0.55);
+  // Cities without a landline area code (smaller towns) are mobile-only.
+  const mobileBias = city.code ? (city.mobileBias ?? 0.55) : 1;
+  const isMobile = rand() < mobileBias;
   let phone;
   if (isMobile) {
     const prefixes = ['0300', '0301', '0302', '0303', '0304', '0305', '0306', '0307', '0308', '0309', '0311', '0312', '0313', '0314', '0315', '0320', '0321', '0322', '0324', '0331', '0332', '0333', '0334', '0335', '0336', '0340', '0341', '0342', '0343', '0345', '0346', '0347', '0348', '0349', '0355'];
