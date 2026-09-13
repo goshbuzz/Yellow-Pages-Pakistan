@@ -1,21 +1,16 @@
-// Generates public/sitemap.xml for the top category/city browse routes.
+// Generates public/sitemap.xml.
+// The app is a hash-routed SPA (#/browse, #/categories…), so the only real,
+// crawlable URL is the root — Google strips URL fragments, and any '#/' URL
+// listed here would just re-fetch the homepage and be reported as a duplicate.
+// When real server-rendered routes are added later, append them here.
 import { writeFileSync } from 'node:fs';
-import { CATEGORIES } from '../src/data/categories.js';
-import { CITIES } from '../src/data/geo.js';
 
 const BASE = process.env.SITE_URL || 'https://yellow-pages-pakistan-pi.vercel.app';
 const today = new Date().toISOString().slice(0, 10);
 
 const urls = [
   { loc: `${BASE}/`, priority: '1.0', changefreq: 'daily' },
-  { loc: `${BASE}/#/categories`, priority: '0.9', changefreq: 'weekly' },
-  { loc: `${BASE}/#/browse`, priority: '0.9', changefreq: 'daily' },
-  { loc: `${BASE}/#/leads`, priority: '0.6', changefreq: 'monthly' },
-  { loc: `${BASE}/#/nearby`, priority: '0.7', changefreq: 'weekly' },
-  { loc: `${BASE}/#/add`, priority: '0.9', changefreq: 'monthly' },
 ];
-for (const c of CATEGORIES) urls.push({ loc: `${BASE}/#/browse?cat=${c.id}`, priority: '0.7', changefreq: 'weekly' });
-for (const c of CITIES.slice(0, 60)) urls.push({ loc: `${BASE}/#/browse?city=${encodeURIComponent(c.name)}`, priority: '0.6', changefreq: 'weekly' });
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
