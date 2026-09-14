@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/robots.txt",
+      "destination": "/api/robots"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
+    },
+    {
       "source": "/((?!assets/|icons/|\\.well-known/|data/|api/|sw.js|manifest.webmanifest|favicon.svg|og-image.jpg|robots.txt|sitemap.xml|llms.txt).*)",
       "destination": "/index.html"
     }

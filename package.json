@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "generate": "node scripts/generate-data.mjs",
+    "check:domain": "node scripts/check-domain.mjs",
     "predev": "node scripts/generate-data.mjs",
     "prepreview": "node scripts/generate-data.mjs",
     "build:vercel": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs && VITE_DATA_URL=/api/directory vite build && rm -rf dist/data",
