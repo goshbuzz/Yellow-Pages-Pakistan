@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Categories from './pages/Categories';
@@ -11,20 +12,23 @@ import Faq from './pages/Faq';
 
 export default function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/browse" element={<Browse />} />
-          <Route path="/b/:id" element={<BusinessDetail />} />
-          <Route path="/leads" element={<Leads />} />
-          <Route path="/nearby" element={<Nearby />} />
-          <Route path="/add" element={<AddListing />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="*" element={<Home />} />
-        </Route>
-      </Routes>
-    </HashRouter>
+    <>
+      <HashRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/browse" element={<Browse />} />
+            <Route path="/b/:id" element={<BusinessDetail />} />
+            <Route path="/leads" element={<Leads />} />
+            <Route path="/nearby" element={<Nearby />} />
+            <Route path="/add" element={<AddListing />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="*" element={<Home />} />
+          </Route>
+        </Routes>
+      </HashRouter>
+      <Analytics />
+    </>
   );
 }
