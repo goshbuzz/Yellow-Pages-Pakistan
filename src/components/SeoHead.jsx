@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const SITE_NAME = 'Yellow Pages Pakistan';
-const DEFAULT_DOMAIN = 'https://yellowpagespk.goshbuzz.com';
+const DEFAULT_DOMAIN = 'https://yellowpagespakistan.goshbuzz.com';
 
 export default function SeoHead({
   title,
@@ -16,8 +16,8 @@ export default function SeoHead({
     const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
     document.title = fullTitle;
 
-    // 2. Canonical URL
-    const baseUrl = window.location.origin || DEFAULT_DOMAIN;
+    // 2. Canonical URL (uses current origin if available, matching whatever domain user is on)
+    const baseUrl = (typeof window !== 'undefined' && window.location.origin) ? window.location.origin : DEFAULT_DOMAIN;
     const cleanPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
     const canonicalUrl = `${baseUrl}${cleanPath === '/' ? '' : cleanPath}`;
 
@@ -52,7 +52,6 @@ export default function SeoHead({
       'twitter:card': 'summary_large_image',
     };
 
-    const createdMetaElements = [];
     Object.entries(ogTags).forEach(([property, content]) => {
       const isTwitter = property.startsWith('twitter:');
       const attr = isTwitter ? 'name' : 'property';
@@ -61,7 +60,6 @@ export default function SeoHead({
         tag = document.createElement('meta');
         tag.setAttribute(attr, property);
         document.head.appendChild(tag);
-        createdMetaElements.push(tag);
       }
       tag.setAttribute('content', content);
     });
@@ -80,10 +78,6 @@ export default function SeoHead({
     } else if (scriptTag) {
       scriptTag.remove();
     }
-
-    return () => {
-      // Optional cleanup if component unmounts
-    };
   }, [title, description, canonicalPath, schema, ogType, ogImage]);
 
   return null;

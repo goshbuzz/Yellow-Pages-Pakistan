@@ -44,19 +44,19 @@ console.log('\n=== 3. SITEMAP.XML VALIDATION (CLEAN URLS) ===');
 const sitemapContent = readFileSync('public/sitemap.xml', 'utf8');
 assert('sitemap.xml exists and is non-empty', sitemapContent.length > 500);
 assert('sitemap.xml has NO hash (#) URLs', !sitemapContent.includes('/#/'));
-assert('sitemap.xml includes root URL /', sitemapContent.includes('<loc>https://yellowpagespk.goshbuzz.com/</loc>'));
-assert('sitemap.xml includes /app', sitemapContent.includes('<loc>https://yellowpagespk.goshbuzz.com/app</loc>'));
-assert('sitemap.xml includes /categories', sitemapContent.includes('<loc>https://yellowpagespk.goshbuzz.com/categories</loc>'));
-assert('sitemap.xml includes /browse', sitemapContent.includes('<loc>https://yellowpagespk.goshbuzz.com/browse</loc>'));
-assert('sitemap.xml includes /leads', sitemapContent.includes('<loc>https://yellowpagespk.goshbuzz.com/leads</loc>'));
-assert('sitemap.xml includes /nearby', sitemapContent.includes('<loc>https://yellowpagespk.goshbuzz.com/nearby</loc>'));
-assert('sitemap.xml includes /add', sitemapContent.includes('<loc>https://yellowpagespk.goshbuzz.com/add</loc>'));
-assert('sitemap.xml includes /faq', sitemapContent.includes('<loc>https://yellowpagespk.goshbuzz.com/faq</loc>'));
+assert('sitemap.xml includes root URL /', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/</loc>'));
+assert('sitemap.xml includes /app', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/app</loc>'));
+assert('sitemap.xml includes /categories', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/categories</loc>'));
+assert('sitemap.xml includes /browse', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/browse</loc>'));
+assert('sitemap.xml includes /leads', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/leads</loc>'));
+assert('sitemap.xml includes /nearby', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/nearby</loc>'));
+assert('sitemap.xml includes /add', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/add</loc>'));
+assert('sitemap.xml includes /faq', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/faq</loc>'));
 assert('sitemap.xml includes category query URLs', sitemapContent.includes('/browse?cat=1'));
 
 console.log('\n=== 4. ROBOTS.TXT & LLMS.TXT VALIDATION ===');
 const robotsContent = readFileSync('public/robots.txt', 'utf8');
-assert('robots.txt points to clean sitemap.xml', robotsContent.includes('Sitemap: https://yellowpagespk.goshbuzz.com/sitemap.xml'));
+assert('robots.txt points to clean sitemap.xml', robotsContent.includes('Sitemap: https://yellowpagespakistan.goshbuzz.com/sitemap.xml'));
 assert('robots.txt disallows raw data scraping', robotsContent.includes('Disallow: /data/') && robotsContent.includes('Disallow: /api/'));
 assert('robots.txt permits AI answer engines (GPTBot, ClaudeBot, PerplexityBot)',
   robotsContent.includes('User-agent: GPTBot') &&

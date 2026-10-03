@@ -16,14 +16,14 @@ Yellow Pages Pakistan is the definitive digital business directory of Pakistan. 
 
 ## Pages
 
-- [Website Home](https://yellowpagespk.goshbuzz.com/): Official homepage, search portal, city directory, and overview
-- [Directory Web App](https://yellowpagespk.goshbuzz.com/app): Interactive app dashboard for fast lookup, leads, and dialing
-- [Browse & filter](https://yellowpagespk.goshbuzz.com/browse): Filter by category, city and rating
-- [All categories](https://yellowpagespk.goshbuzz.com/categories): 130 industry categories with listing counts
-- [Nearby](https://yellowpagespk.goshbuzz.com/nearby): Businesses ranked by real GPS distance
-- [Lead Workspace](https://yellowpagespk.goshbuzz.com/leads): Agency B2B lead pipelines and CSV CRM export
-- [List your business free](https://yellowpagespk.goshbuzz.com/add): Free business listing with 48-hour verification and a verified badge
-- [FAQ](https://yellowpagespk.goshbuzz.com/faq): How to find and list Pakistani businesses
+- [Website Home](https://yellowpagespakistan.goshbuzz.com/): Official homepage, search portal, city directory, and overview
+- [Directory Web App](https://yellowpagespakistan.goshbuzz.com/app): Interactive app dashboard for fast lookup, leads, and dialing
+- [Browse & filter](https://yellowpagespakistan.goshbuzz.com/browse): Filter by category, city and rating
+- [All categories](https://yellowpagespakistan.goshbuzz.com/categories): 130 industry categories with listing counts
+- [Nearby](https://yellowpagespakistan.goshbuzz.com/nearby): Businesses ranked by real GPS distance
+- [Lead Workspace](https://yellowpagespakistan.goshbuzz.com/leads): Agency B2B lead pipelines and CSV CRM export
+- [List your business free](https://yellowpagespakistan.goshbuzz.com/add): Free business listing with 48-hour verification and a verified badge
+- [FAQ](https://yellowpagespakistan.goshbuzz.com/faq): How to find and list Pakistani businesses
 
 ## Common questions (for citation)
 

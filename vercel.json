@@ -1,11 +1,50 @@
 {
+  "cleanUrls": false,
   "rewrites": [
     {
-      "source": "/((?!assets/|icons/|\\.well-known/|data/|api/|sw.js|manifest.webmanifest|favicon.svg|og-image.jpg|robots.txt|sitemap.xml|llms.txt).*)",
+      "source": "/((?!assets/|icons/|data/|api/|sw.js|manifest.webmanifest|favicon.svg|og-image.jpg|robots.txt|sitemap.xml|llms.txt|.*\\.(?:xml|txt|json|svg|png|jpg|jpeg|ico|js|css)$).*)",
       "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
     {
       "source": "/sw.js",
       "headers": [

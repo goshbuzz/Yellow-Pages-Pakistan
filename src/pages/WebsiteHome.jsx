@@ -98,10 +98,10 @@ export default function WebsiteHome() {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Yellow Pages Pakistan',
-      url: 'https://yellowpagespk.goshbuzz.com/',
+      url: 'https://yellowpagespakistan.goshbuzz.com/',
       potentialAction: {
         '@type': 'SearchAction',
-        target: 'https://yellowpagespk.goshbuzz.com/browse?q={search_term_string}',
+        target: 'https://yellowpagespakistan.goshbuzz.com/browse?q={search_term_string}',
         'query-input': 'required name=search_term_string',
       },
     },

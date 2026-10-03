@@ -3,7 +3,7 @@ import { writeFileSync } from 'node:fs';
 import { CATEGORIES } from '../src/data/categories.js';
 import { CITIES } from '../src/data/geo.js';
 
-const BASE = process.env.SITE_URL || 'https://yellowpagespk.goshbuzz.com';
+const BASE = process.env.SITE_URL || 'https://yellowpagespakistan.goshbuzz.com';
 const today = new Date().toISOString().slice(0, 10);
 
 const urls = [
@@ -32,4 +32,4 @@ ${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><changef
 `;
 
 writeFileSync(new URL('../public/sitemap.xml', import.meta.url), xml);
-console.log(`sitemap.xml: ${urls.length} clean urls generated`);
+console.log(`sitemap.xml: ${urls.length} clean urls generated for ${BASE}`);
