@@ -1,11 +1,12 @@
-// App shell: top app bar + Android-style bottom navigation + install sheet + dataset gate.
+// App shell: top app bar + bottom navigation + install sheet + dataset gate.
+// Adapts dynamically between Website Home (pure marketing page) and Web App views.
 
 import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Home, LayoutGrid, Search, Bookmark, MapPinned, Download, WifiOff } from 'lucide-react';
+import { NavLink, Outlet, useLocation, Link } from 'react-router-dom';
+import { Home, LayoutGrid, Search, Bookmark, MapPinned, Download, WifiOff, Globe } from 'lucide-react';
 import { Logo } from './icons';
 import { ToastProvider } from './ui';
-import { InstallSheet, useInstallPrompt, useAutoInstallSheet, isStandalone } from './InstallSheet';
+import { InstallSheet, useInstallPrompt, useAutoInstallSheet } from './InstallSheet';
 import { useDataset } from '../lib/dataset';
 import { getLeads } from '../lib/leads';
 
@@ -17,10 +18,19 @@ function TopBar() {
     window.addEventListener('online', on); window.addEventListener('offline', off);
     return () => { window.removeEventListener('online', on); window.removeEventListener('offline', off); };
   }, []);
+
   return (
     <header className="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-stone-200/70">
       <div className="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
-        <NavLink to="/" className="tap"><Logo /></NavLink>
+        <div className="flex items-center gap-3">
+          <NavLink to="/app" className="tap" aria-label="Directory App Home"><Logo /></NavLink>
+          <Link
+            to="/"
+            className="hidden sm:inline-flex items-center gap-1 text-[11.5px] font-black text-stone-600 hover:text-amber-700 bg-stone-200/60 px-2.5 py-1 rounded-full transition-colors"
+          >
+            <Globe size={11} /> Website Home
+          </Link>
+        </div>
         <div className="flex items-center gap-2">
           {!online && (
             <span className="inline-flex items-center gap-1 bg-stone-200 text-stone-600 text-[10.5px] font-extrabold px-2 py-1 rounded-full">
@@ -42,12 +52,13 @@ function TopBar() {
 function BottomNav() {
   const leadCount = getLeads().length;
   const items = [
-    { to: '/', icon: Home, label: 'Home', end: true },
+    { to: '/app', icon: Home, label: 'App', end: true },
     { to: '/categories', icon: LayoutGrid, label: 'Categories' },
     { to: '/browse', icon: Search, label: 'Search', center: true },
     { to: '/leads', icon: Bookmark, label: 'Leads', badge: leadCount },
     { to: '/nearby', icon: MapPinned, label: 'Nearby' },
   ];
+
   return (
     <nav className="fixed bottom-0 inset-x-0 z-50 pb-safe" aria-label="Main navigation">
       <div className="max-w-2xl mx-auto px-3 pb-2">
@@ -108,9 +119,31 @@ export default function Layout() {
   useAutoInstallSheet(openSheet);
   useEffect(() => { window.scrollTo({ top: 0 }); }, [location.pathname]);
 
+  const isWebsiteHome = location.pathname === '/';
+
+  // If pure Website Home page, render without app frame/bottom nav
+  if (isWebsiteHome) {
+    return (
+      <ToastProvider>
+        <div className="min-h-dvh flex flex-col">
+          <Outlet />
+          <InstallSheet
+            open={sheetOpen}
+            onClose={closeSheet}
+            onDismiss={dismiss}
+            onInstall={install}
+            canInstall={canInstall}
+            isIOSDevice={isIOSDevice}
+          />
+        </div>
+      </ToastProvider>
+    );
+  }
+
+  // Otherwise, render full web app layout
   return (
     <ToastProvider>
-      <div className="min-h-dvh flex flex-col">
+      <div className="min-h-dvh flex flex-col bg-[#FFFBEF]">
         <TopBar />
         <main className="flex-1 max-w-2xl w-full mx-auto px-4 pt-4 pb-safe-nav">
           <DatasetGate>
@@ -122,11 +155,18 @@ export default function Layout() {
             + List your business — free
           </NavLink>
           <p className="text-[11px] font-semibold text-stone-400 mb-1">
-            <NavLink to="/faq" className="hover:text-brand-deeper">FAQ</NavLink> · Yellow Pages Pakistan · 200,000+ listings · Works offline
+            <Link to="/" className="hover:text-brand-deeper font-bold">Website</Link> · <NavLink to="/faq" className="hover:text-brand-deeper">FAQ</NavLink> · Yellow Pages Pakistan · 200,000+ listings
           </p>
         </footer>
         <BottomNav />
-        <InstallSheet open={sheetOpen} onClose={closeSheet} onDismiss={dismiss} onInstall={install} canInstall={canInstall} isIOSDevice={isIOSDevice} />
+        <InstallSheet
+          open={sheetOpen}
+          onClose={closeSheet}
+          onDismiss={dismiss}
+          onInstall={install}
+          canInstall={canInstall}
+          isIOSDevice={isIOSDevice}
+        />
       </div>
     </ToastProvider>
   );

@@ -8,12 +8,33 @@ import { CATEGORIES, CATEGORY_BY_ID } from '../data/categories';
 import { CompanyCard } from '../components/CompanyCard';
 import { SkeletonList, EmptyState, Chip } from '../components/ui';
 import { CityPicker } from '../components/CityPicker';
+import SeoHead from '../components/SeoHead';
+import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 
 const SORTS = [
   { id: 'relevance', label: 'Best match' },
   { id: 'rating', label: 'Top rated' },
   { id: 'reviews', label: 'Most reviewed' },
   { id: 'name', label: 'A–Z' },
+];
+
+const BROWSE_FAQS = [
+  {
+    q: 'How do I search for businesses in a specific Pakistani city?',
+    a: 'Tap the city filter chip at the top of the search page or use the search bar with your city name (e.g. "textile mills Faisalabad"). You can also select from the 420-city picker.',
+  },
+  {
+    q: 'How can I contact a listed company directly?',
+    a: 'Tap the Call button to dial their landline or mobile (03xx) number immediately, or tap WhatsApp to initiate a direct chat with their sales or customer support line.',
+  },
+  {
+    q: 'How do I save businesses from search results into my Lead Workspace?',
+    a: 'Open any business listing card and click "Save to Leads". The business will be bookmarked in your Lead Workspace (/leads) where you can track pipeline stages and export to CSV.',
+  },
+  {
+    q: 'What should I do if a phone number or address is outdated?',
+    a: 'Click into the profile and tap "Suggest edit" or visit /add to submit updated contact information. Our directory team reviews corrections within 48 hours.',
+  },
 ];
 
 export default function Browse() {
@@ -53,8 +74,41 @@ export default function Browse() {
 
   const totalPages = results?.pages || 1;
 
+  // Dynamic SEO title & description
+  const pageTitle = useMemo(() => {
+    if (q && city) return `"${q}" in ${city}, Pakistan — Business Directory`;
+    if (q) return `"${q}" Businesses in Pakistan — Directory Search`;
+    if (activeCat && city) return `${activeCat.name} in ${city}, Pakistan`;
+    if (activeCat) return `${activeCat.name} in Pakistan — Verified Directory`;
+    if (city) return `Business Directory ${city}, Pakistan — 200,000+ Listings`;
+    return 'Browse & Search 200,000+ Pakistani Businesses';
+  }, [q, city, activeCat]);
+
+  const pageDesc = useMemo(() => {
+    return `Search and contact verified businesses in ${city || 'Pakistan'}. View direct phone numbers, WhatsApp, addresses, and Google Maps directions. Free online directory.`;
+  }, [city]);
+
+  const schema = makeFaqSchema(BROWSE_FAQS);
+
   return (
-    <div className="animate-slide-up">
+    <div className="animate-slide-up pb-8 space-y-4">
+      <SeoHead
+        title={pageTitle}
+        description={pageDesc}
+        canonicalPath="/browse"
+        schema={schema}
+      />
+
+      {/* Main Page Heading (Semantic H1) */}
+      <div>
+        <h1 className="text-xl sm:text-2xl font-black text-ink">
+          {activeCat ? `${activeCat.emoji} ${activeCat.name}` : city ? `Businesses in ${city}` : 'Search Pakistan Directory'}
+        </h1>
+        <p className="text-xs sm:text-sm font-semibold text-stone-500 mt-0.5">
+          Find verified phone numbers, WhatsApp, and locations across 420 cities.
+        </p>
+      </div>
+
       {/* Search bar */}
       <div className="flex items-center gap-2 bg-white rounded-2xl px-3.5 h-12 border border-stone-300 shadow-card">
         <Search size={17} className="text-stone-400" />
@@ -71,11 +125,11 @@ export default function Browse() {
       </div>
 
       {/* Filters */}
-      <div className="flex gap-2 mt-3 overflow-x-auto no-scrollbar pb-0.5">
+      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-0.5">
         <Chip active={!!city} onClick={() => setCityPickerOpen(true)}>
           <MapPin size={12} /> {city || 'All Pakistan'}
         </Chip>
-        <Chip active={!!cat} onClick={() => !cat && (window.location.hash = '#/categories')} className={cat ? '' : ''}>
+        <Chip active={!!cat} onClick={() => !cat && navigate('/categories')}>
           <LayoutGrid size={12} />
           {activeCat ? `${activeCat.emoji} ${activeCat.name}` : 'All categories'}
           {activeCat && (
@@ -88,7 +142,7 @@ export default function Browse() {
       </div>
 
       {showSorts && (
-        <div className="flex gap-2 mt-2 overflow-x-auto no-scrollbar animate-pop-in">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar animate-pop-in">
           {SORTS.map((s) => (
             <Chip key={s.id} active={sort === s.id} onClick={() => { setParam('sort', s.id === 'relevance' ? null : s.id); setShowSorts(false); }}>
               {s.label}
@@ -97,8 +151,8 @@ export default function Browse() {
         </div>
       )}
 
-      {/* Results */}
-      <div className="flex items-baseline justify-between mt-4 mb-2.5">
+      {/* Results Meta */}
+      <div className="flex items-baseline justify-between pt-1">
         <p className="text-[12.5px] font-extrabold text-stone-500">
           {results ? <>{results.total.toLocaleString()} results{city ? ` in ${city}` : ''}</> : 'Searching…'}
         </p>
@@ -138,6 +192,15 @@ export default function Browse() {
       <CityPicker open={cityPickerOpen} value={city}
         onSelect={(c) => { setParam('city', c); setCityPickerOpen(false); }}
         onClose={() => setCityPickerOpen(false)} />
+
+      {/* Page-Specific FAQ Block */}
+      <div className="mt-8 pt-4">
+        <PageFaq
+          title="Search & Directory FAQ"
+          subtitle="How to find businesses and navigate search results in Pakistan."
+          faqs={BROWSE_FAQS}
+        />
+      </div>
     </div>
   );
 }

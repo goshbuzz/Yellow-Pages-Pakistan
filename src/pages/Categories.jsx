@@ -6,6 +6,27 @@ import { Search } from 'lucide-react';
 import { CATEGORIES, CATEGORY_GROUPS } from '../data/categories';
 import { STATS } from '../data/stats.generated';
 import { CatIcon } from '../components/icons';
+import SeoHead from '../components/SeoHead';
+import PageFaq, { makeFaqSchema } from '../components/PageFaq';
+
+const CATEGORY_FAQS = [
+  {
+    q: 'How many business categories are included in the Pakistan directory?',
+    a: 'There are 130 comprehensive industry categories organized into major groups including Manufacturing, Retail, IT & Software, Health & Medical, Food & Dining, and Professional Services.',
+  },
+  {
+    q: 'Can a Pakistani business be listed under multiple categories?',
+    a: 'Yes. If your company provides diverse products or services (e.g. both Textile Manufacturing and Wholesale Export), our review team can associate secondary categories with your listing upon request.',
+  },
+  {
+    q: 'Which business categories have the highest number of listings in Pakistan?',
+    a: 'Textile mills and garment manufacturers, restaurants, software houses, general order suppliers, real estate agencies, and private clinics represent the largest sectors by total listing volume.',
+  },
+  {
+    q: 'How do I add my company if its exact category is not listed?',
+    a: 'Submit your listing under the closest related sector at /add and specify your niche in the description field. Our taxonomy team regularly expands category classifications.',
+  },
+];
 
 export default function Categories() {
   const [q, setQ] = useState('');
@@ -17,8 +38,17 @@ export default function Categories() {
     })).filter((g) => g.cats.length);
   }, [q]);
 
+  const schema = makeFaqSchema(CATEGORY_FAQS);
+
   return (
-    <div className="animate-slide-up">
+    <div className="animate-slide-up pb-8 space-y-4">
+      <SeoHead
+        title="130 Business Categories in Pakistan — Yellow Pages PK"
+        description="Explore 130 industry sectors across Pakistan: textiles, IT, healthcare, manufacturing, wholesale, food, and logistics with active listing counts."
+        canonicalPath="/categories"
+        schema={schema}
+      />
+
       <h1 className="font-black text-2xl text-ink">Browse categories 🗂️</h1>
       <p className="text-[13px] font-semibold text-stone-500 mt-0.5 mb-3">{CATEGORIES.length} categories · 200,000+ listings</p>
 
@@ -48,6 +78,14 @@ export default function Categories() {
           </section>
         ))}
         {!groups.length && <p className="text-center font-bold text-stone-400 py-10">No category matches “{q}” 😅</p>}
+      </div>
+
+      <div className="mt-8 pt-4">
+        <PageFaq
+          title="Categories FAQ"
+          subtitle="How industry classification works in Yellow Pages Pakistan."
+          faqs={CATEGORY_FAQS}
+        />
       </div>
     </div>
   );

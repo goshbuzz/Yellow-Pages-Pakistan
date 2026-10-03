@@ -1,5 +1,5 @@
 // Business detail — full profile: map embed (real pin), call/WhatsApp,
-// pitch drafter, save-to-leads, similar businesses.
+// pitch drafter, save-to-leads, similar businesses, and dynamic JSON-LD schema.
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
@@ -10,6 +10,8 @@ import { Monogram, Stars, VerifiedBadge, SkeletonList, EmptyState, useToast } fr
 import { PitchModal } from '../components/PitchModal';
 import { findLead, addLead, removeLead } from '../lib/leads';
 import { CompanyCard } from '../components/CompanyCard';
+import SeoHead from '../components/SeoHead';
+import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 
 export default function BusinessDetail() {
   const { id } = useParams();
@@ -43,17 +45,60 @@ export default function BusinessDetail() {
   const isSaved = saved;
 
   const shareBusiness = async () => {
-    const url = `${location.origin}${location.pathname}#/b/${id}`;
-    const text = `${b.name} — ${b.cat?.name} in ${b.city}\nPhone: ${b.phone}\n(via Yellow Pages Pakistan)`;
+    const url = `${window.location.origin}/b/${id}`;
+    const text = `${b.name} — ${b.cat?.name || 'Business'} in ${b.city}\nPhone: ${b.phone}\n(via Yellow Pages Pakistan)`;
     if (navigator.share) {
       try { await navigator.share({ title: b.name, text, url }); return; } catch { /* cancelled */ }
     }
     window.open(`https://wa.me/?text=${encodeURIComponent(`${text}\n${url}`)}`, '_blank');
   };
 
+  const detailFaqs = [
+    {
+      q: `How do I contact ${b.name}?`,
+      a: `You can reach ${b.name} directly by phone at ${b.phone}${b.whatsapp ? ' or via WhatsApp' : ''}. Direct dialing and map navigation are accessible on this page.`,
+    },
+    {
+      q: `Where is ${b.name} located?`,
+      a: `${b.name} is situated in ${b.city}, Pakistan at: ${b.address}. Tap "Open in Google Maps" for turn-by-turn directions.`,
+    },
+    {
+      q: `How can I pitch or save ${b.name} as a prospective B2B client?`,
+      a: `Tap "Save" to bookmark ${b.name} in your Lead Workspace (/leads). You can also tap "Draft pitch" to auto-generate a custom outreach message.`,
+    },
+    {
+      q: `Are these business hours and phone numbers up to date?`,
+      a: `Listed hours are ${b.hours || 'standard commercial hours'}. If you are the owner of ${b.name} and wish to modify any listing details, visit /add to submit updates free.`,
+    },
+  ];
+
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: b.name,
+      telephone: b.phone,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: b.address,
+        addressLocality: b.city,
+        addressCountry: 'PK',
+      },
+      description: b.description,
+    },
+    makeFaqSchema(detailFaqs),
+  ];
+
   return (
-    <div className="animate-slide-up pb-4">
-      <button onClick={() => navigate(-1)} className="tap flex items-center gap-1.5 text-[13px] font-extrabold text-stone-500 mb-3 -mt-1">
+    <div className="animate-slide-up pb-8 space-y-4">
+      <SeoHead
+        title={`${b.name} in ${b.city} — Phone, WhatsApp & Address | Yellow Pages PK`}
+        description={`Contact ${b.name} in ${b.city}, Pakistan. Phone: ${b.phone}, Category: ${b.cat?.name || 'Business'}, address: ${b.address}, verified listing.`}
+        canonicalPath={`/b/${id}`}
+        schema={schema}
+      />
+
+      <button onClick={() => navigate(-1)} className="tap flex items-center gap-1.5 text-[13px] font-extrabold text-stone-500 mb-1 -mt-1">
         <ArrowLeft size={15} /> Back
       </button>
 
@@ -142,6 +187,15 @@ export default function BusinessDetail() {
           </div>
         </section>
       )}
+
+      {/* Profile-Specific FAQ */}
+      <div className="mt-8 pt-4">
+        <PageFaq
+          title={`About ${b.name}`}
+          subtitle="Frequently asked questions about contacting this business."
+          faqs={detailFaqs}
+        />
+      </div>
 
       {pitchOpen && <PitchModal business={b} onClose={() => setPitchOpen(false)} />}
     </div>
