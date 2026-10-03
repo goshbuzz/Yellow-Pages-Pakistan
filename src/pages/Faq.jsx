@@ -1,7 +1,9 @@
-// FAQ — in-app answers (mirrors the crawlable FAQPage schema in index.html).
+// FAQ — Help centre with complete answers and structured FAQPage schema.
 
 import { Link } from 'react-router-dom';
 import { ChevronRight, MessageCircle } from 'lucide-react';
+import SeoHead from '../components/SeoHead';
+import { makeFaqSchema } from '../components/PageFaq';
 
 const FAQS = [
   ['What is Yellow Pages Pakistan?', 'A free business directory of Pakistan with 200,000+ listings across 420 cities and 130 categories. Search any business to get its phone number, WhatsApp, website and Google Maps location — instantly.'],
@@ -19,8 +21,17 @@ const FAQS = [
 ];
 
 export default function Faq() {
+  const schema = makeFaqSchema(FAQS.map(([q, a]) => ({ q, a })));
+
   return (
-    <div className="animate-slide-up pb-4">
+    <div className="animate-slide-up pb-8 space-y-4">
+      <SeoHead
+        title="Help Centre & Directory FAQ — Yellow Pages Pakistan"
+        description="Frequently asked questions about finding companies, free business listings, B2B lead generation, and offline app installation on Yellow Pages Pakistan."
+        canonicalPath="/faq"
+        schema={schema}
+      />
+
       <h1 className="font-black text-2xl text-ink">FAQ — help centre 💬</h1>
       <p className="text-[13px] font-semibold text-stone-500 mt-0.5 mb-4">Everything about finding & listing Pakistani businesses.</p>
 

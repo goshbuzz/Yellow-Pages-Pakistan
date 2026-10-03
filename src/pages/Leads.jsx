@@ -9,8 +9,27 @@ import { leadsToCsv, downloadFile } from '../lib/export';
 import { telHref, waHref } from '../lib/derive';
 import { EmptyState, useToast } from '../components/ui';
 import { PitchModal } from '../components/PitchModal';
+import SeoHead from '../components/SeoHead';
+import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 
-const CATS = { cat: 'category', city: 'city', area: 'area' };
+const LEADS_FAQS = [
+  {
+    q: 'How does the Lead Workspace help freelancers and marketing agencies?',
+    a: 'It acts as a built-in B2B outreach CRM. You can bookmark Pakistani businesses into custom prospect lists, track their deal status (New → Contacted → Replied → Won), compose automated pitches, and export contacts to CSV.',
+  },
+  {
+    q: 'Is my saved lead data private and secure?',
+    a: 'Yes. All lead lists and notes are stored strictly locally on your device via secure browser storage. No other users or third parties have access to your private prospect pipelines.',
+  },
+  {
+    q: 'Can I export my lead lists to HubSpot, Excel, or Google Sheets?',
+    a: 'Yes. Click the "CSV" button at the top of your active list to instantly download a formatted spreadsheet containing company names, phone numbers, WhatsApp availability, categories, and cities.',
+  },
+  {
+    q: 'How does the automated pitch drafter work?',
+    a: 'Clicking the wand icon opens the Pitch Drafter, which formulates tailored outreach copy highlighting how your agency or freelance service solves typical problems for that specific industry.',
+  },
+];
 
 export default function Leads() {
   const toast = useToast();
@@ -55,8 +74,17 @@ export default function Leads() {
     toast(`List “${name}” created`, '📁');
   };
 
+  const schema = makeFaqSchema(LEADS_FAQS);
+
   return (
-    <div className="animate-slide-up">
+    <div className="animate-slide-up pb-8 space-y-4">
+      <SeoHead
+        title="B2B Lead Workspace & CRM Export | Yellow Pages PK"
+        description="Save Pakistani company leads, organize outreach pipelines, auto-draft WhatsApp and email pitches, and export contacts to CSV for CRM."
+        canonicalPath="/leads"
+        schema={schema}
+      />
+
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-black text-2xl text-ink">Lead workspace 💼</h1>
@@ -68,7 +96,7 @@ export default function Leads() {
       </div>
 
       {/* Lists */}
-      <div className="flex gap-2 mt-4 overflow-x-auto no-scrollbar pb-0.5">
+      <div className="flex gap-2 overflow-x-auto no-scrollbar pb-0.5">
         {lists.map((l) => (
           <button key={l.id} onClick={() => setActiveList(l.id)}
             className={`tap shrink-0 rounded-full px-3.5 py-2 text-[12.5px] font-extrabold border flex items-center gap-1.5 ${activeList === l.id ? 'bg-ink text-brand border-ink' : 'bg-white/80 border-stone-300 text-ink-soft'}`}>
@@ -79,7 +107,7 @@ export default function Leads() {
       </div>
 
       {creating && (
-        <div className="flex gap-2 mt-2 animate-pop-in">
+        <div className="flex gap-2 animate-pop-in">
           <input autoFocus value={newName} onChange={(e) => setNewName(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && doCreate()}
             placeholder="List name e.g. “Karachi restaurants — website pitch”"
             className="flex-1 bg-white rounded-xl border border-stone-300 px-3 py-2 text-[13px] font-bold text-ink outline-none focus:border-brand" />
@@ -89,7 +117,7 @@ export default function Leads() {
 
       {/* Pipeline stats */}
       {leads.length > 0 && (
-        <div className="grid grid-cols-4 gap-2 mt-4">
+        <div className="grid grid-cols-4 gap-2">
           {STATUSES.slice(0, 4).map((s) => (
             <div key={s.id} className="bg-white/90 rounded-2xl border border-stone-200/80 py-2.5 text-center shadow-card">
               <p className="text-lg font-black" style={{ color: s.color }}>{stats[s.id]}</p>
@@ -100,7 +128,7 @@ export default function Leads() {
       )}
 
       {/* Leads */}
-      <div className="mt-4 space-y-3">
+      <div className="space-y-3">
         {leads.length === 0 ? (
           <EmptyState emoji="🔖" title="No leads in this list yet"
             hint="Tap the bookmark icon on any business to save it here — then export to CSV or draft a pitch."
@@ -158,6 +186,14 @@ export default function Leads() {
           <Trash2 size={12} /> Delete this list
         </button>
       )}
+
+      <div className="mt-8 pt-4">
+        <PageFaq
+          title="Lead Workspace FAQ"
+          subtitle="Tips for managing B2B prospect lists and CRM export."
+          faqs={LEADS_FAQS}
+        />
+      </div>
 
       {pitchFor && <PitchModal business={pitchFor} onClose={() => setPitchFor(null)} />}
     </div>

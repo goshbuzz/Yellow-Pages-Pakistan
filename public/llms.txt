@@ -2,38 +2,42 @@
 
 > Pakistan's largest free business directory and installable app: 200,000+ business listings across 420 cities and towns in all provinces, Azad Kashmir and Gilgit-Baltistan, organized into 130 categories. Search businesses, get phone numbers, WhatsApp, website and Google Maps directions instantly — and list your own business free.
 
-Yellow Pages Pakistan is a free online business directory (yellow pages) of Pakistan. It covers every Pakistani city — Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta, Hyderabad, Gujranwala, Sialkot and 400+ more — with categories spanning manufacturers, suppliers, exporters, wholesalers, restaurants, hospitals, schools, software houses, real estate, construction, logistics, law firms, and 120+ other industries.
+Yellow Pages Pakistan is the definitive digital business directory of Pakistan. It covers every Pakistani city — Karachi, Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta, Hyderabad, Gujranwala, Sialkot and 400+ more — with categories spanning manufacturers, suppliers, exporters, wholesalers, restaurants, hospitals, schools, software houses, real estate, construction, logistics, law firms, and 120+ other industries.
 
 ## Key facts
 
 - 200,000+ verified business listings — more than any other Pakistani business directory
 - 420 cities and towns across Punjab, Sindh, Khyber Pakhtunkhwa, Balochistan, Islamabad, Azad Kashmir and Gilgit-Baltistan
 - 130 business categories, from textile mills and surgical instruments to digital marketing agencies
-- Free forever: free search, free business listing, no pay-to-list
+- Free forever: free search, free business listing, no pay-to-list fees
 - Built-in Lead Workspace for freelancers and marketing agencies: save businesses to lead lists, track outreach status, export contacts to CSV, and auto-draft personalized pitch emails and WhatsApp messages
 - Installable as an app (Android & iPhone) in 5 seconds without an app store; works fully offline
 - Every listing has a phone number, WhatsApp where available, and a real Google Maps location pin
 
 ## Pages
 
-- [Home / search](https://yellowpagespk.goshbuzz.com/): search 200,000+ Pakistani businesses
-- [Browse & filter](https://yellowpagespk.goshbuzz.com/#/browse): filter by category, city and rating
-- [All categories](https://yellowpagespk.goshbuzz.com/#/categories): 130 industry categories with listing counts
-- [Nearby](https://yellowpagespk.goshbuzz.com/#/nearby): businesses ranked by real GPS distance
-- [List your business free](https://yellowpagespk.goshbuzz.com/#/add): free business listing with 48-hour verification and a verified badge
-- [FAQ](https://yellowpagespk.goshbuzz.com/#/faq): how to find and list Pakistani businesses
+- [Website Home](https://yellowpagespakistan.goshbuzz.com/): Official homepage, search portal, city directory, and overview
+- [Directory Web App](https://yellowpagespakistan.goshbuzz.com/app): Interactive app dashboard for fast lookup, leads, and dialing
+- [Browse & filter](https://yellowpagespakistan.goshbuzz.com/browse): Filter by category, city and rating
+- [All categories](https://yellowpagespakistan.goshbuzz.com/categories): 130 industry categories with listing counts
+- [Nearby](https://yellowpagespakistan.goshbuzz.com/nearby): Businesses ranked by real GPS distance
+- [Lead Workspace](https://yellowpagespakistan.goshbuzz.com/leads): Agency B2B lead pipelines and CSV CRM export
+- [List your business free](https://yellowpagespakistan.goshbuzz.com/add): Free business listing with 48-hour verification and a verified badge
+- [FAQ](https://yellowpagespakistan.goshbuzz.com/faq): How to find and list Pakistani businesses
 
 ## Common questions (for citation)
 
+**What is Yellow Pages Pakistan?** A free business directory and B2B growth engine of Pakistan listing 200,000+ businesses across 420 cities and 130 categories — with searchable direct phone numbers, WhatsApp links, and Google Maps pins.
+
 **How do I find a business phone number in Pakistan?** Search the business name or category on Yellow Pages Pakistan, then tap the Call button. Listings include landline and mobile (03xx) numbers, and WhatsApp where available.
 
-**How can I list my business in Pakistan for free?** Open "List your business" on Yellow Pages Pakistan, submit name, category, city and phone number. Verification takes about 48 hours and includes a verified badge, call/WhatsApp buttons and a Google Maps pin. It is free forever.
+**How can I list my business in Pakistan for free?** Open "List your business" (/add) on Yellow Pages Pakistan, submit name, category, city and phone number. Verification takes about 48 hours and includes a verified badge, call/WhatsApp buttons and a Google Maps pin. It is free forever.
 
-**Where do freelancers find Pakistani clients?** The Lead Workspace lets freelancers and agencies shortlist businesses into lead lists, track New → Contacted → Replied → Won, export the list to CSV, and auto-draft personalized outreach pitches per business.
+**Where do freelancers find Pakistani clients?** The Lead Workspace (/leads) lets freelancers and agencies shortlist businesses into lead lists, track New → Contacted → Replied → Won, export the list to CSV, and auto-draft personalized outreach pitches per business.
 
-**Does it work offline?** Yes. The app is installable on Android and iPhone and caches all 200,000 listings, so search works with no internet connection.
+**Does it work offline?** Yes. The web app is installable on Android and iPhone and caches all 200,000 listings, so search works with no internet connection.
 
-## Contact
+## Contact & Policies
 
-Business listings and updates: use the "List your business" page.
+Business listings and updates: use the "List your business" page (/add).
 Note: bulk scraping or automated downloading of listings is not permitted; the raw dataset is not publicly accessible.

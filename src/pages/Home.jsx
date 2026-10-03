@@ -1,10 +1,10 @@
-// Home — playful landing: search, live stats, popular categories, featured
-// verified businesses, outreach USP, city shortcuts, install card.
+// App Home — Directory Web App dashboard: search, live stats, popular categories,
+// featured verified businesses, outreach USP, city shortcuts, install card, and app FAQ.
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, TrendingUp, ChevronRight, Download, Wand2, MapPin } from 'lucide-react';
-import { CATEGORIES, CATEGORY_GROUPS, CATEGORY_BY_ID } from '../data/categories';
+import { Search, TrendingUp, ChevronRight, Download, Wand2, MapPin, Globe, ArrowLeft } from 'lucide-react';
+import { CATEGORIES, CATEGORY_BY_ID } from '../data/categories';
 import { CITIES } from '../data/geo';
 import { CURATED } from '../data/curated';
 import { STATS } from '../data/stats.generated';
@@ -12,8 +12,37 @@ import { CountUp, useToast } from '../components/ui';
 import { CompanyCard } from '../components/CompanyCard';
 import { suggest } from '../lib/dataset';
 import { useInstallPrompt } from '../components/InstallSheet';
+import SeoHead from '../components/SeoHead';
+import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 
-const TRENDING = ['Web developers Karachi', 'Restaurants Lahore', 'Textile mills Faisalabad', 'Digital marketing Islamabad', 'Banks', 'Schools Lahore', 'Hospitals Karachi'];
+const TRENDING = [
+  'Web developers Karachi',
+  'Restaurants Lahore',
+  'Textile mills Faisalabad',
+  'Digital marketing Islamabad',
+  'Banks',
+  'Schools Lahore',
+  'Hospitals Karachi',
+];
+
+const APP_FAQS = [
+  {
+    q: 'How does the Directory Web App differ from the website home page?',
+    a: 'The Directory Web App is an interactive single-page tool designed for high-speed search, offline data caching, one-tap calling, and B2B lead generation. The website home page provides an overview and entrance portal.',
+  },
+  {
+    q: 'Can I search businesses in the web app while offline?',
+    a: 'Yes. Once cached, all 200,000+ business listings remain accessible on your smartphone or desktop even without an active internet connection.',
+  },
+  {
+    q: 'How do I add a business from the web app to my lead list?',
+    a: 'Open any business profile and tap "Save to Leads". You can organize contacts into custom lists, take notes, draft pitches, and export to CSV.',
+  },
+  {
+    q: 'Are phone numbers in the web app direct lines or call centres?',
+    a: 'Listings include direct mobile numbers (03xx) and official landlines with WhatsApp links whenever provided by the business.',
+  },
+];
 
 export default function Home() {
   const navigate = useNavigate();
@@ -42,7 +71,28 @@ export default function Home() {
   const go = (term) => navigate(`/browse?q=${encodeURIComponent(term)}`);
 
   return (
-    <div className="space-y-7 animate-slide-up">
+    <div className="space-y-7 animate-slide-up pb-6">
+      <SeoHead
+        title="Directory Web App — Search 200,000+ Pakistani Businesses | Yellow Pages PK"
+        description="Search 200,000+ verified Pakistani businesses in the interactive web app. Fast directory search, B2B lead lists, offline mode, and 1-tap WhatsApp."
+        canonicalPath="/app"
+        schema={makeFaqSchema(APP_FAQS)}
+      />
+
+      {/* Return to Website Home Link */}
+      <div className="flex items-center justify-between px-1">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-1.5 text-xs font-black text-stone-600 hover:text-amber-700 bg-white/80 border border-stone-200/80 px-3 py-1.5 rounded-full shadow-sm transition-colors"
+        >
+          <ArrowLeft size={13} />
+          <span>Website Home</span>
+        </Link>
+        <span className="text-[11px] font-extrabold text-stone-400 uppercase tracking-wider">
+          Interactive Web App Mode
+        </span>
+      </div>
+
       {/* Hero */}
       <section className="relative overflow-hidden rounded-[28px] bg-ink text-cream p-6 pt-7 shadow-pop">
         <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-brand/20 blur-2xl" />
@@ -201,6 +251,13 @@ export default function Home() {
           </button>
         </section>
       )}
+
+      {/* App-Specific FAQ */}
+      <PageFaq
+        title="Web App FAQ"
+        subtitle="Quick answers about using the Yellow Pages PK web application."
+        faqs={APP_FAQS}
+      />
     </div>
   );
 }

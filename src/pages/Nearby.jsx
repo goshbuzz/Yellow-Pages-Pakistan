@@ -9,6 +9,8 @@ import { CompanyCard } from '../components/CompanyCard';
 import { SkeletonList, Chip, useToast } from '../components/ui';
 import { CityPicker } from '../components/CityPicker';
 import { CATEGORY_BY_ID } from '../data/categories';
+import SeoHead from '../components/SeoHead';
+import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 
 function haversine(lat1, lng1, lat2, lng2) {
   const R = 6371, toRad = (d) => (d * Math.PI) / 180;
@@ -16,6 +18,25 @@ function haversine(lat1, lng1, lat2, lng2) {
   const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(a));
 }
+
+const NEARBY_FAQS = [
+  {
+    q: 'How does the GPS Nearby locator find Pakistani businesses?',
+    a: 'It uses your browser or smartphone geolocation coordinates to calculate real-time haversine distances to verified businesses, sorting the closest establishments first.',
+  },
+  {
+    q: 'What happens if I decline GPS location permissions?',
+    a: 'You can simply tap "Pick a city" to select any of the 420 Pakistani cities and browse businesses sorted by rating or category without sharing location coordinates.',
+  },
+  {
+    q: 'Are the distance estimates accurate in Pakistani cities?',
+    a: 'Distance is measured in direct kilometres/metres from your GPS fix to the verified latitude/longitude pin of each business.',
+  },
+  {
+    q: 'Can I filter nearby listings by category like Food or Hospitals?',
+    a: 'Yes. Once location is active, category filter chips appear above the results so you can filter for clinics, pharmacies, restaurants, or repair shops.',
+  },
+];
 
 export default function Nearby() {
   const toast = useToast();
@@ -57,11 +78,21 @@ export default function Nearby() {
   }, [items, pos]);
 
   const popularCats = useMemo(() => [89, 97, 53, 57, 30, 68, 101, 79].map((id) => CATEGORY_BY_ID[id]).filter(Boolean), []);
+  const schema = makeFaqSchema(NEARBY_FAQS);
 
   return (
-    <div className="animate-slide-up">
-      <h1 className="font-black text-2xl text-ink">Nearby businesses 📍</h1>
-      <p className="text-[13px] font-semibold text-stone-500 mt-0.5 mb-3">Real GPS ranking — or browse any city's map.</p>
+    <div className="animate-slide-up pb-8 space-y-4">
+      <SeoHead
+        title="Find Businesses Near Me (GPS Locator) | Yellow Pages PK"
+        description="Locate verified Pakistani businesses closest to you via GPS. Find nearby restaurants, clinics, repair shops, and stores across Pakistan."
+        canonicalPath="/nearby"
+        schema={schema}
+      />
+
+      <div>
+        <h1 className="font-black text-2xl text-ink">Nearby businesses 📍</h1>
+        <p className="text-[13px] font-semibold text-stone-500 mt-0.5 mb-3">Real GPS ranking — or browse any city&apos;s map.</p>
+      </div>
 
       <div className="flex gap-2 flex-wrap">
         <button onClick={locate} className={`tap h-10 rounded-full px-4 text-[13px] font-extrabold flex items-center gap-1.5 border ${mode === 'gps' ? 'bg-ink text-brand border-ink' : 'bg-white border-stone-300 text-ink'}`}>
@@ -85,7 +116,7 @@ export default function Nearby() {
 
       {(mode === 'gps' || mode === 'city') && (
         <>
-          <div className="flex gap-2 mt-3 overflow-x-auto no-scrollbar">
+          <div className="flex gap-2 overflow-x-auto no-scrollbar">
             <Chip active={!cat} onClick={() => setCat(null)}>All</Chip>
             {popularCats.map((c) => (
               <Chip key={c.id} active={cat === c.id} onClick={() => setCat(c.id)}>{c.emoji} {c.name.split(' ')[0]}</Chip>
@@ -112,7 +143,7 @@ export default function Nearby() {
       )}
 
       {mode === 'idle' && (
-        <div className="mt-6 grid grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-2 gap-2.5">
           {CITIES.slice(0, 10).map((c) => (
             <button key={c.name} onClick={() => { setCity(c.name); setMode('city'); }}
               className="tap bg-white/90 rounded-2xl border border-stone-200/80 p-3 text-left shadow-card">
@@ -130,6 +161,14 @@ export default function Nearby() {
       <CityPicker open={cityPickerOpen} value={mode === 'city' ? city : null}
         onSelect={(c) => { if (c) { setCity(c); setMode('city'); } setCityPickerOpen(false); }}
         onClose={() => setCityPickerOpen(false)} />
+
+      <div className="mt-8 pt-4">
+        <PageFaq
+          title="Nearby Search FAQ"
+          subtitle="How device geolocation and city sorting work."
+          faqs={NEARBY_FAQS}
+        />
+      </div>
     </div>
   );
 }
