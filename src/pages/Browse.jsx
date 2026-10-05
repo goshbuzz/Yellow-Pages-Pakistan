@@ -4,7 +4,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Search, SlidersHorizontal, MapPin, LayoutGrid } from 'lucide-react';
 import { searchBusinesses } from '../lib/dataset';
-import { CATEGORIES, CATEGORY_BY_ID } from '../data/categories';
+import { CATEGORIES, CATEGORY_BY_ID, slug as catSlug } from '../data/categories';
+import { slugify as citySlug } from '../data/geo';
+import LandingInfo from '../components/LandingInfo';
 import { CompanyCard } from '../components/CompanyCard';
 import { SkeletonList, EmptyState, Chip } from '../components/ui';
 import { CityPicker } from '../components/CityPicker';
@@ -37,12 +39,13 @@ const BROWSE_FAQS = [
   },
 ];
 
-export default function Browse() {
+export default function Browse({ preset = null }) {
   const navigate = useNavigate();
   const [params, setParams] = useSearchParams();
   const q = params.get('q') || '';
-  const cat = params.get('cat') || null;
-  const city = params.get('city') || null;
+  // `preset` is set on the clean landing routes (/category/:slug, /city/:slug)
+  const cat = preset?.cat != null ? String(preset.cat) : (params.get('cat') || null);
+  const city = preset?.city ?? (params.get('city') || null);
   const sort = params.get('sort') || 'relevance';
   const page = +(params.get('page') || 1);
 
@@ -58,6 +61,13 @@ export default function Browse() {
     if (v == null || v === '') next.delete(k);
     else next.set(k, v);
     if (resetPage) next.delete('page');
+    // Changing category/city on a landing page leaves it for the general search page.
+    if (preset && (k === 'cat' || k === 'city')) {
+      if (preset.cat != null && k !== 'cat') next.set('cat', String(preset.cat));
+      if (preset.city != null && k !== 'city') next.set('city', preset.city);
+      navigate(`/browse?${next.toString()}`);
+      return;
+    }
     setParams(next);
   };
 
@@ -76,33 +86,43 @@ export default function Browse() {
 
   // Dynamic SEO title & description
   const pageTitle = useMemo(() => {
+    if (preset && !q) return preset.page.title;
     if (q && city) return `"${q}" in ${city}, Pakistan — Business Directory`;
     if (q) return `"${q}" Businesses in Pakistan — Directory Search`;
     if (activeCat && city) return `${activeCat.name} in ${city}, Pakistan`;
     if (activeCat) return `${activeCat.name} in Pakistan — Verified Directory`;
     if (city) return `Business Directory ${city}, Pakistan — 200,000+ Listings`;
     return 'Browse & Search 200,000+ Pakistani Businesses';
-  }, [q, city, activeCat]);
+  }, [q, city, activeCat, preset]);
 
   const pageDesc = useMemo(() => {
+    if (preset && !q) return preset.page.description;
     return `Search and contact verified businesses in ${city || 'Pakistan'}. View direct phone numbers, WhatsApp, addresses, and Google Maps directions. Free online directory.`;
-  }, [city]);
+  }, [city, preset, q]);
 
-  const schema = makeFaqSchema(BROWSE_FAQS);
+  // Canonical: landing pages point at themselves; filtered /browse URLs point at the
+  // matching clean landing page (single filter) or the plain /browse page.
+  const canonicalPath = preset
+    ? preset.page.path
+    : activeCat && !city && !q ? `/category/${catSlug(activeCat.name)}`
+    : city && !activeCat && !q ? `/city/${citySlug(city)}`
+    : '/browse';
+
+  const schema = preset ? preset.page.schema : makeFaqSchema(BROWSE_FAQS);
 
   return (
     <div className="animate-slide-up pb-8 space-y-4">
       <SeoHead
         title={pageTitle}
         description={pageDesc}
-        canonicalPath="/browse"
+        canonicalPath={canonicalPath}
         schema={schema}
       />
 
       {/* Main Page Heading (Semantic H1) */}
       <div>
         <h1 className="text-xl sm:text-2xl font-black text-ink">
-          {activeCat ? `${activeCat.emoji} ${activeCat.name}` : city ? `Businesses in ${city}` : 'Search Pakistan Directory'}
+          {preset ? preset.page.h1 : activeCat ? `${activeCat.emoji} ${activeCat.name}` : city ? `Businesses in ${city}` : 'Search Pakistan Directory'}
         </h1>
         <p className="text-xs sm:text-sm font-semibold text-stone-500 mt-0.5">
           Find verified phone numbers, WhatsApp, and locations across 420 cities.
@@ -193,14 +213,16 @@ export default function Browse() {
         onSelect={(c) => { setParam('city', c); setCityPickerOpen(false); }}
         onClose={() => setCityPickerOpen(false)} />
 
+      {preset && <LandingInfo data={preset.page} />}
+
       {/* Page-Specific FAQ Block */}
-      <div className="mt-8 pt-4">
+      {!preset && <div className="mt-8 pt-4">
         <PageFaq
           title="Search & Directory FAQ"
           subtitle="How to find businesses and navigate search results in Pakistan."
           faqs={BROWSE_FAQS}
         />
-      </div>
+      </div>}
     </div>
   );
 }

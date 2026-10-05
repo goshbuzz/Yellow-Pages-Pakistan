@@ -11,8 +11,9 @@
     "generate": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs",
     "predev": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs",
     "prepreview": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs",
-    "build:vercel": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs && VITE_DATA_URL=/api/directory vite build && rm -rf dist/data",
-    "prebuild": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs"
+    "build:vercel": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs && VITE_DATA_URL=/api/directory vite build && rm -rf dist/data && node scripts/prerender.mjs",
+    "prebuild": "node scripts/generate-data.mjs && node scripts/generate-sitemap.mjs",
+    "postbuild": "node scripts/prerender.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",

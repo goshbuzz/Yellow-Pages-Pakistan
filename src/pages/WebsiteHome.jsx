@@ -26,8 +26,8 @@ import {
   Briefcase,
   Zap,
 } from 'lucide-react';
-import { CATEGORIES } from '../data/categories';
-import { CITIES } from '../data/geo';
+import { CATEGORIES, slug as catSlug } from '../data/categories';
+import { CITIES, slugify as citySlug } from '../data/geo';
 import { STATS } from '../data/stats.generated';
 import { CURATED } from '../data/curated';
 import { CountUp } from '../components/ui';
@@ -111,8 +111,8 @@ export default function WebsiteHome() {
   return (
     <div className="min-h-screen bg-[#FFFBEF] text-ink antialiased">
       <SeoHead
-        title="Yellow Pages Pakistan — 200,000+ Verified Businesses Directory & B2B Leads"
-        description="Search 200,000+ verified Pakistani businesses across 420 cities & 130 categories. Direct phone, WhatsApp & Google Map pins. Built-in lead workspace for agencies."
+        title="Yellow Pages Pakistan — Business Directory & B2B Leads"
+        description="Search Pakistani businesses across 420 cities and 130 categories. Phone numbers, WhatsApp and map pins, plus a lead workspace for agencies."
         canonicalPath="/"
         schema={schema}
       />
@@ -467,7 +467,7 @@ export default function WebsiteHome() {
               return (
                 <Link
                   key={cat.id}
-                  to={`/browse?cat=${cat.id}`}
+                  to={`/category/${catSlug(cat.name)}`}
                   className="bg-white p-4 sm:p-5 rounded-2xl border border-stone-200/80 shadow-card hover:border-amber-400 hover:translate-y-[-2px] transition-all flex items-center gap-3.5 group"
                 >
                   <div
@@ -520,7 +520,7 @@ export default function WebsiteHome() {
             {TOP_CITIES_PREVIEW.map((city) => (
               <Link
                 key={city.name}
-                to={`/browse?city=${encodeURIComponent(city.name)}`}
+                to={`/city/${citySlug(city.name)}`}
                 className="bg-white p-5 rounded-2xl border border-stone-200 shadow-card hover:border-amber-400 hover:shadow-pop transition-all group"
               >
                 <div className="flex items-center justify-between mb-2">
@@ -864,11 +864,11 @@ export default function WebsiteHome() {
                 Top Cities
               </h3>
               <ul className="space-y-2.5 text-xs font-bold">
-                <li><Link to="/browse?city=Karachi" className="hover:text-brand transition-colors">Karachi Directory</Link></li>
-                <li><Link to="/browse?city=Lahore" className="hover:text-brand transition-colors">Lahore Directory</Link></li>
-                <li><Link to="/browse?city=Islamabad" className="hover:text-brand transition-colors">Islamabad Directory</Link></li>
-                <li><Link to="/browse?city=Faisalabad" className="hover:text-brand transition-colors">Faisalabad Directory</Link></li>
-                <li><Link to="/browse?city=Rawalpindi" className="hover:text-brand transition-colors">Rawalpindi Directory</Link></li>
+                <li><Link to="/city/karachi" className="hover:text-brand transition-colors">Karachi Directory</Link></li>
+                <li><Link to="/city/lahore" className="hover:text-brand transition-colors">Lahore Directory</Link></li>
+                <li><Link to="/city/islamabad" className="hover:text-brand transition-colors">Islamabad Directory</Link></li>
+                <li><Link to="/city/faisalabad" className="hover:text-brand transition-colors">Faisalabad Directory</Link></li>
+                <li><Link to="/city/rawalpindi" className="hover:text-brand transition-colors">Rawalpindi Directory</Link></li>
               </ul>
             </div>
           </div>

@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
-import { CATEGORIES, CATEGORY_GROUPS } from '../data/categories';
+import { CATEGORIES, CATEGORY_GROUPS, slug as catSlug } from '../data/categories';
 import { STATS } from '../data/stats.generated';
 import { CatIcon } from '../components/icons';
 import SeoHead from '../components/SeoHead';
@@ -64,7 +64,7 @@ export default function Categories() {
             <h2 className="font-black text-ink text-[16px] mb-2">{g.emoji} {g.label}</h2>
             <div className="grid grid-cols-2 gap-2">
               {g.cats.map((c) => (
-                <Link key={c.id} to={`/browse?cat=${c.id}`}
+                <Link key={c.id} to={`/category/${catSlug(c.name)}`}
                   className="tap flex flex-col gap-1 bg-white/90 rounded-2xl border border-stone-200/80 p-3 shadow-card relative overflow-hidden">
                   <span className="absolute right-2 top-2 text-lg">{c.emoji}</span>
                   <span className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: c.color + '1A', color: c.color }}>

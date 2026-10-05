@@ -10,6 +10,8 @@ import Leads from './pages/Leads';
 import Nearby from './pages/Nearby';
 import AddListing from './pages/AddListing';
 import Faq from './pages/Faq';
+import Cities from './pages/Cities';
+import { CategoryLanding, CityLanding } from './pages/Landing';
 
 function LegacyHashRedirect() {
   const navigate = useNavigate();
@@ -40,6 +42,9 @@ export default function App() {
           {/* Core Directory Routes */}
           <Route path="/categories" element={<Categories />} />
           <Route path="/browse" element={<Browse />} />
+          <Route path="/category/:slug" element={<CategoryLanding />} />
+          <Route path="/city/:slug" element={<CityLanding />} />
+          <Route path="/cities" element={<Cities />} />
           <Route path="/b/:id" element={<BusinessDetail />} />
           <Route path="/leads" element={<Leads />} />
           <Route path="/nearby" element={<Nearby />} />
