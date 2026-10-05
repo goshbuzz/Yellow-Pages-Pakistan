@@ -155,7 +155,7 @@ export default function Layout() {
             + List your business — free
           </NavLink>
           <p className="text-[11px] font-semibold text-stone-400 mb-1">
-            <Link to="/" className="hover:text-brand-deeper font-bold">Website</Link> · <NavLink to="/faq" className="hover:text-brand-deeper">FAQ</NavLink> · Yellow Pages Pakistan · 200,000+ listings
+            <Link to="/" className="hover:text-brand-deeper font-bold">Website</Link> · <NavLink to="/categories" className="hover:text-brand-deeper">Categories</NavLink> · <NavLink to="/cities" className="hover:text-brand-deeper">Cities</NavLink> · <NavLink to="/faq" className="hover:text-brand-deeper">FAQ</NavLink> · Yellow Pages Pakistan · 200,000+ listings
           </p>
         </footer>
         <BottomNav />

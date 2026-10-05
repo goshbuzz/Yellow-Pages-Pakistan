@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const SITE_NAME = 'Yellow Pages Pakistan';
-const DEFAULT_DOMAIN = 'https://yellowpagespakistan.goshbuzz.com';
+const DEFAULT_DOMAIN = (import.meta.env && import.meta.env.VITE_SITE_URL) || 'https://yellowpagespakistan.goshbuzz.com';
 
 export default function SeoHead({
   title,
@@ -13,11 +13,11 @@ export default function SeoHead({
 }) {
   useEffect(() => {
     // 1. Document Title
-    const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+    const fullTitle = /Yellow Pages|YP PK/.test(title) ? title : `${title} | ${SITE_NAME}`;
     document.title = fullTitle;
 
-    // 2. Canonical URL (uses current origin if available, matching whatever domain user is on)
-    const baseUrl = (typeof window !== 'undefined' && window.location.origin) ? window.location.origin : DEFAULT_DOMAIN;
+    // 2. Canonical URL — always the primary domain, never the host the visitor happens to be on
+    const baseUrl = DEFAULT_DOMAIN;
     const cleanPath = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
     const canonicalUrl = `${baseUrl}${cleanPath === '/' ? '' : cleanPath}`;
 

@@ -1,5 +1,5 @@
 {
-  "cleanUrls": false,
+  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/((?!assets/|icons/|data/|api/|sw.js|manifest.webmanifest|favicon.svg|og-image.jpg|robots.txt|sitemap.xml|llms.txt|.*\\.(?:xml|txt|json|svg|png|jpg|jpeg|ico|js|css)$).*)",
@@ -118,6 +118,20 @@
           "value": "strict-origin-when-cross-origin"
         }
       ]
+    }
+  ],
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "yellowpagespk.goshbuzz.com"
+        }
+      ],
+      "destination": "https://yellowpagespakistan.goshbuzz.com/$1",
+      "permanent": true
     }
   ]
 }

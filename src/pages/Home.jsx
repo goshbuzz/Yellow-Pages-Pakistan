@@ -4,8 +4,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, TrendingUp, ChevronRight, Download, Wand2, MapPin, Globe, ArrowLeft } from 'lucide-react';
-import { CATEGORIES, CATEGORY_BY_ID } from '../data/categories';
-import { CITIES } from '../data/geo';
+import { CATEGORIES, CATEGORY_BY_ID, slug as catSlug } from '../data/categories';
+import { CITIES, slugify as citySlug } from '../data/geo';
 import { CURATED } from '../data/curated';
 import { STATS } from '../data/stats.generated';
 import { CountUp, useToast } from '../components/ui';
@@ -167,7 +167,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 gap-2.5">
           {popularCats.map((c) => (
-            <Link key={c.id} to={`/browse?cat=${c.id}`}
+            <Link key={c.id} to={`/category/${catSlug(c.name)}`}
               className="tap flex items-center gap-2.5 bg-white/90 rounded-2xl border border-stone-200/80 p-2.5 shadow-card">
               <span className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style={{ background: c.color + '1A' }}>{c.emoji}</span>
               <span className="min-w-0">
@@ -229,7 +229,7 @@ export default function Home() {
         <h2 className="font-black text-ink text-lg mb-2.5">Explore by city 🗺️</h2>
         <div className="flex flex-wrap gap-2">
           {topCities.map((c) => (
-            <Link key={c.name} to={`/browse?city=${encodeURIComponent(c.name)}`}
+            <Link key={c.name} to={`/city/${citySlug(c.name)}`}
               className="tap bg-white/90 border border-stone-200/80 rounded-full px-3.5 py-2 text-[12.5px] font-extrabold text-ink-soft shadow-card flex items-center gap-1.5">
               <MapPin size={12} className="text-brand-deeper" /> {c.name}
               <span className="text-stone-400 font-bold">· {(STATS.byCity[c.name] || 0).toLocaleString()}</span>

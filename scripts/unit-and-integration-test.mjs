@@ -52,7 +52,9 @@ assert('sitemap.xml includes /leads', sitemapContent.includes('<loc>https://yell
 assert('sitemap.xml includes /nearby', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/nearby</loc>'));
 assert('sitemap.xml includes /add', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/add</loc>'));
 assert('sitemap.xml includes /faq', sitemapContent.includes('<loc>https://yellowpagespakistan.goshbuzz.com/faq</loc>'));
-assert('sitemap.xml includes category query URLs', sitemapContent.includes('/browse?cat=1'));
+assert('sitemap.xml lists clean category pages', sitemapContent.includes('/category/textile-mills-and-fabrics</loc>'));
+assert('sitemap.xml lists clean city pages', sitemapContent.includes('/city/karachi</loc>') && sitemapContent.includes('/cities</loc>'));
+assert('sitemap.xml has no query-string URLs (they canonicalise elsewhere)', !/<loc>[^<]*\?[^<]*<\/loc>/.test(sitemapContent));
 
 console.log('\n=== 4. ROBOTS.TXT & LLMS.TXT VALIDATION ===');
 const robotsContent = readFileSync('public/robots.txt', 'utf8');
