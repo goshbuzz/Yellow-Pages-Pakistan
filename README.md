@@ -140,3 +140,58 @@ End-to-end test screenshots are in `art/` (`shot-home.png`, `shot-browse.png`, `
 ## Marketing
 
 Ready-to-post launch content, hashtag banks, a 4-week calendar and a traffic playbook live in **[marketing/marketing-kit.md](marketing/marketing-kit.md)**.
+
+## Adsterra advertising (website + installed PWA)
+
+Both experiences use the same React ad components in `src/components/ads/Ads.jsx`;
+placement IDs and URLs live in `src/lib/ads.js`. No separate Android/native SDK
+is needed for the existing installable PWA.
+
+- **Website:** responsive banner after the hero (320×50 / 468×60 / 728×90),
+  300×250 rectangle between content sections, native recommendations before the
+  footer, and an explicitly labelled sponsored offers link.
+- **Directory app:** responsive banner and native recommendations after page
+  content, plus the sponsored offers link. On screens at least 1120px wide,
+  160×600 and 160×300 ads occupy non-sticky side rails outside the app column.
+- **Lead Workspace and listing form:** no placements or new standalone script
+  loads. Ads never cover the bottom navigation, search or contact buttons.
+- Slots load near the viewport only when they fit, and do not load offline.
+  Banners reserve their dimensions to reduce layout shift. A blocked/no-fill ad
+  can leave an empty labelled slot; directory features continue to work.
+- Banners run in individual sandboxed iframe documents to isolate `atOptions`
+  and provider `document.write` calls. Parent-page navigation is not permitted;
+  user-opened advertiser tabs are supported. Native ads run in the main document
+  with the supplied container ID. The service worker does not cache cross-origin
+  ad requests. Provider-created handlers/requests remain third-party controlled.
+
+### Configuration
+
+Copy the advertising settings from `.env.example` and rebuild/redeploy after
+changing them. `VITE_ADSTERRA_ENABLED=false` disables all modules. The six banners,
+native module and sponsored link are on by default.
+
+The two unidentified standalone scripts are wired but **off by default**, since
+these formats may trigger popunders, overlays or page-wide click handlers. Confirm
+their formats in your Adsterra dashboard before setting either flag to `true`:
+
+| Build flag | Script |
+|---|---|
+| `VITE_ADSTERRA_SCRIPT_8DB0` | `/8d/b0/d3/8db0d373a6c17dcce0ea349ff7589e78.js` |
+| `VITE_ADSTERRA_SCRIPT_EE16` | `/ee/16/c4/ee16c49a346871f1b818b4f01c6659d8.js` |
+
+Enabled standalone scripts load at most once per browser document, including
+React StrictMode and SPA navigation. They are not reinserted on route changes.
+Once executed, their global handlers cannot reliably be undone when navigating
+to `/leads` or `/add`; leave these flags off to keep those flows protected.
+
+Before going live, verify ad delivery on your approved production domain in both
+browser and installed mode, review provider content/category settings, update your
+privacy disclosures and add any consent flow required for your audience. No ad
+requests are made on behalf of a user by the sponsored link until it is clicked.
+Sandbox compatibility, inventory/no-fill, provider behaviour and app-store policy
+compliance must be checked against the live provider; a successful build alone
+does not establish these. If required by your publisher account, obtain the exact
+`ads.txt` lines from its dashboard (do not guess seller IDs).
+
+Run `npm run test:ads` for placement URL and isolated banner document tests, in
+addition to `npm test` and `npm run build`.

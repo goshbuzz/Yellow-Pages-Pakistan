@@ -9,6 +9,7 @@ import { ToastProvider } from './ui';
 import { InstallSheet, useInstallPrompt, useAutoInstallSheet } from './InstallSheet';
 import { useDataset } from '../lib/dataset';
 import { getLeads } from '../lib/leads';
+import { AdSideRails, NativeAd, OptionalAdScripts, ResponsiveBanner, SponsoredLink } from './ads/Ads';
 
 function TopBar() {
   const { canInstall, isInstalled, openSheet } = useInstallPrompt();
@@ -120,12 +121,14 @@ export default function Layout() {
   useEffect(() => { window.scrollTo({ top: 0 }); }, [location.pathname]);
 
   const isWebsiteHome = location.pathname === '/';
+  const showAds = location.pathname !== '/add' && location.pathname !== '/leads';
 
   // If pure Website Home page, render without app frame/bottom nav
   if (isWebsiteHome) {
     return (
       <ToastProvider>
         <div className="min-h-dvh flex flex-col">
+          <OptionalAdScripts />
           <Outlet />
           <InstallSheet
             open={sheetOpen}
@@ -143,11 +146,18 @@ export default function Layout() {
   // Otherwise, render full web app layout
   return (
     <ToastProvider>
-      <div className="min-h-dvh flex flex-col bg-[#FFFBEF]">
+      <div className="min-h-dvh flex flex-col bg-[#FFFBEF] relative">
+        <OptionalAdScripts />
+        {showAds && <AdSideRails />}
         <TopBar />
         <main className="flex-1 max-w-2xl w-full mx-auto px-4 pt-4 pb-safe-nav">
           <DatasetGate>
             <Outlet />
+            {showAds && <>
+              <ResponsiveBanner />
+              <NativeAd />
+              <SponsoredLink />
+            </>}
           </DatasetGate>
         </main>
         <footer className="pb-safe-nav text-center -mt-6 pb-2">

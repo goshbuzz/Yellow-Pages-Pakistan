@@ -1,3 +1,4 @@
+import { BannerAd, NativeAd, ResponsiveBanner, SponsoredLink } from '../components/ads/Ads';
 // Pure Website Home Page — Modern, high-converting portal with direct CTAs to the attached Web App.
 // Fully crawlable for Google Search Console, fast first paint, zero worker blocking.
 
@@ -309,6 +310,7 @@ export default function WebsiteHome() {
           </div>
         </div>
       </section>
+      <div className="max-w-6xl w-full mx-auto px-4"><ResponsiveBanner /></div>
 
       {/* Dual Value Proposition Section (Marketplace Pillars) */}
       <section className="py-20 bg-stone-100/70 border-y border-stone-200/80">
@@ -502,6 +504,7 @@ export default function WebsiteHome() {
       </section>
 
       {/* Major Cities Directory Showcase */}
+      <BannerAd format="rectangle" />
       <section className="py-20 bg-stone-100/70 border-y border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -808,6 +811,7 @@ export default function WebsiteHome() {
       </section>
 
       {/* Comprehensive Website Footer */}
+      <div className="max-w-6xl w-full mx-auto px-4"><NativeAd /><SponsoredLink /></div>
       <footer className="bg-stone-900 text-stone-400 pt-16 pb-12 border-t border-stone-800 text-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
