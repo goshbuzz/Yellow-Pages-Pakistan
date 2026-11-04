@@ -11,7 +11,8 @@ Pakistan's business directory, rebuilt for scale and for **freelancers & marketi
 | **Maps** | Real pin per listing (city-centre jitter), embedded map + "Open in Google Maps" + "Directions" |
 | **App install** | Android install prompt (`beforeinstallprompt`), iOS Add-to-Home-Screen sheet, auto-prompt weekly |
 | **Offline** | Service worker caches shell + data — full search with no internet |
-| **USP #1 (no competitor has this)** | **Lead Workspace**: save businesses → lead lists → status pipeline (New/Contacted/Replied/Won/Lost) → notes → **CSV export** → **auto-drafted personalized pitch emails/WhatsApp messages** (6 service types × 3 tones, editable) |
+| **WhatsApp, everywhere** | **A WhatsApp button on every listing** (cards, profile, leads, homepage): mobiles open a direct pre-filled `wa.me` chat with that business, landlines degrade to *Copy number* instead of a dead chat link. One validation source (`src/lib/whatsapp.js`) — so exported CSVs never contain broken WhatsApp links |
+| **USP #1 (no competitor has this)** | **Lead Workspace**: save businesses → lead lists → status pipeline (New/Contacted/Replied/Won/Lost) → notes → **CSV export** → **auto-drafted personalized pitch emails/WhatsApp messages** (6 service types × 3 tones, editable) → **one-tap WhatsApp outreach queue** (walks a list, opens each business's own chat, marks Contacted) |
 | **Get Listed (USP #2 — free forever)** | Full free-listing flow for business owners: 2-min submission, benefits pitch, "My listings" manager, verified badge in 48h, boosted-listings waitlist teaser. Wire `VITE_FORMSPREE_ID` in `.env` to receive submissions by email. |
 
 ### Competitor snapshot (why this wins)

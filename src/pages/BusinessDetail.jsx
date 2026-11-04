@@ -3,15 +3,17 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Phone, MessageCircle, MapPin, Mail, Globe, ExternalLink, Navigation, Bookmark, BookmarkCheck, Wand2, Clock, Users, Share2 } from 'lucide-react';
+import { ArrowLeft, Phone, MapPin, Mail, Globe, ExternalLink, Navigation, Bookmark, BookmarkCheck, Wand2, Clock, Users, Share2, Check } from 'lucide-react';
 import { getBusiness, searchBusinesses, businessId } from '../lib/dataset';
-import { telHref, waHref, googleMapsUrl, googleMapsEmbedUrl } from '../lib/derive';
+import { telHref, googleMapsUrl, googleMapsEmbedUrl } from '../lib/derive';
+import { waInfo, waShareHref } from '../lib/whatsapp';
 import { Monogram, Stars, VerifiedBadge, SkeletonList, EmptyState, useToast } from '../components/ui';
 import { PitchModal } from '../components/PitchModal';
 import { findLead, addLead, removeLead } from '../lib/leads';
 import { CompanyCard } from '../components/CompanyCard';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
+import { WhatsAppButton, WhatsAppStatus } from '../components/WhatsAppButton';
 
 export default function BusinessDetail() {
   const { id } = useParams();
@@ -38,6 +40,7 @@ export default function BusinessDetail() {
   }, [id]);
 
   const saved = useMemo(() => (b ? !!findLead(bizKey(b, id)) : false), [b, id, savedTick]);
+  const wa = useMemo(() => waInfo(b || {}), [b]);
 
   if (b === undefined) return <SkeletonList n={4} />;
   if (b === null) return <EmptyState emoji="🤷" title="Business not found" hint="It may have been removed." action={<Link to="/browse" className="mt-3 inline-block bg-ink text-brand font-black text-[13px] rounded-xl px-4 py-2.5">Browse businesses</Link>} />;
@@ -50,13 +53,13 @@ export default function BusinessDetail() {
     if (navigator.share) {
       try { await navigator.share({ title: b.name, text, url }); return; } catch { /* cancelled */ }
     }
-    window.open(`https://wa.me/?text=${encodeURIComponent(`${text}\n${url}`)}`, '_blank');
+    window.open(waShareHref(`${text}\n${url}`), '_blank');
   };
 
   const detailFaqs = [
     {
       q: `How do I contact ${b.name}?`,
-      a: `You can reach ${b.name} directly by phone at ${b.phone}${b.whatsapp ? ' or via WhatsApp' : ''}. Direct dialing and map navigation are accessible on this page.`,
+      a: `You can reach ${b.name} directly by phone at ${b.phone}. ${wa.state === 'landline' ? 'This is a landline number, so WhatsApp is not available for it — tap Call to dial directly.' : `Tap the WhatsApp button to open a direct chat on ${wa.display} from your phone.`}`,
     },
     {
       q: `Where is ${b.name} located?`,
@@ -127,6 +130,10 @@ export default function BusinessDetail() {
         <div className="mt-4 space-y-1.5 text-[13px] font-bold text-ink-soft">
           <p className="flex items-start gap-2"><MapPin size={15} className="mt-0.5 shrink-0 text-brand-deeper" /> {b.address}</p>
           <p className="flex items-center gap-2"><Clock size={15} className="shrink-0 text-brand-deeper" /> {b.hours}</p>
+          <p className="flex items-center gap-2 flex-wrap">
+            <Phone size={15} className="shrink-0 text-brand-deeper" /> <a href={telHref(b.phone)} className="hover:underline">{b.phone}</a>
+            {wa.state !== 'landline' && <span className="inline-flex items-center gap-1 text-[11.5px] font-extrabold text-emerald-700"><Check size={11} strokeWidth={3.5} /> WhatsApp {wa.display}</span>}
+          </p>
           {b.email && <p className="flex items-center gap-2"><Mail size={15} className="shrink-0 text-brand-deeper" /> <a href={`mailto:${b.email}`} className="text-sky-700 hover:underline truncate">{b.email}</a></p>}
           {b.website && <p className="flex items-center gap-2"><Globe size={15} className="shrink-0 text-brand-deeper" /> <a href={`https://${b.website}`} target="_blank" rel="noreferrer" className="text-sky-700 hover:underline">{b.website} <ExternalLink size={11} className="inline" /></a></p>}
         </div>
@@ -134,17 +141,15 @@ export default function BusinessDetail() {
         {/* Actions */}
         <div className="grid grid-cols-2 gap-2 mt-4">
           <a href={telHref(b.phone)} className="tap h-11 rounded-2xl bg-ink text-brand font-black text-[14px] flex items-center justify-center gap-2">
-            <Phone size={16} /> {b.phone}
+            <Phone size={16} /> {b.phone.length > 15 ? 'Call' : b.phone}
           </a>
-          {b.whatsapp ? (
-            <a href={waHref(b.phone)} target="_blank" rel="noreferrer" className="tap h-11 rounded-2xl bg-emerald-500 text-white font-black text-[14px] flex items-center justify-center gap-2">
-              <MessageCircle size={16} /> WhatsApp
-            </a>
-          ) : (
-            <button onClick={() => { setPitchOpen(true); }} className="tap h-11 rounded-2xl bg-brand text-ink font-black text-[14px] flex items-center justify-center gap-2">
-              <Wand2 size={16} /> Draft pitch
-            </button>
-          )}
+          <WhatsAppButton b={b} variant="pill" />
+        </div>
+        <div className="flex items-center justify-between gap-2 mt-2">
+          <WhatsAppStatus b={b} />
+          <button onClick={() => setPitchOpen(true)} className="tap h-8 px-3 rounded-xl bg-brand-soft border border-brand/40 text-brand-deeper font-extrabold text-[12px] flex items-center gap-1.5">
+            <Wand2 size={13} /> Draft pitch
+          </button>
         </div>
         <div className="grid grid-cols-3 gap-2 mt-2">
           <button onClick={(e) => {

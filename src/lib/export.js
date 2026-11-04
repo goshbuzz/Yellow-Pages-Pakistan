@@ -1,5 +1,7 @@
 // CSV / TSV export for lead lists.
 
+import { waHref, waNumber } from './whatsapp.js';
+
 function escapeCsv(v) {
   if (v == null) return '';
   const s = String(v);
@@ -7,15 +9,24 @@ function escapeCsv(v) {
 }
 
 export function leadsToCsv(leads) {
-  const head = ['Name', 'Category', 'City', 'Province', 'Address', 'Phone', 'WhatsApp', 'Email', 'Website', 'Google Maps', 'Rating', 'Reviews', 'Status', 'Note', 'Added'];
-  const rows = leads.map((l) => [
-    l.name, l.cat, l.city, l.province, l.address, l.phone,
-    l.whatsapp ? `https://wa.me/92${(l.phone || '').replace(/^0/, '').replace(/-/g, '')}` : '',
-    l.email, l.website ? `https://${l.website}` : '',
-    `https://www.google.com/maps/search/?api=1&query=${l.lat},${l.lng}`,
-    l.rating, l.reviews, l.status, l.note,
-    new Date(l.addedAt).toISOString().slice(0, 10),
-  ]);
+  // "WhatsApp" is a yes/no flag a human can filter on; "WhatsApp Link" is only ever
+  // filled with a working direct-chat URL (mobile numbers), so imported lists stay
+  // clean instead of carrying dead links for landlines.
+  const head = ['Name', 'Category', 'City', 'Province', 'Address', 'Phone', 'WhatsApp', 'WhatsApp Number', 'WhatsApp Link', 'Email', 'Website', 'Google Maps', 'Rating', 'Reviews', 'Status', 'Note', 'Added'];
+  const rows = leads.map((l) => {
+    const number = waNumber(l.phone);
+    const link = number ? waHref(l.phone) : '';
+    return [
+      l.name, l.cat, l.city, l.province, l.address, l.phone,
+      number ? (l.whatsapp ? 'Yes' : 'Unverified') : 'No',
+      number ? `+${number}` : '',
+      link,
+      l.email, l.website ? `https://${l.website}` : '',
+      `https://www.google.com/maps/search/?api=1&query=${l.lat},${l.lng}`,
+      l.rating, l.reviews, l.status, l.note,
+      new Date(l.addedAt).toISOString().slice(0, 10),
+    ];
+  });
   return [head, ...rows].map((r) => r.map(escapeCsv).join(',')).join('\n');
 }
 

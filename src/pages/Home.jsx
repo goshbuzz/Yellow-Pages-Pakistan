@@ -187,7 +187,8 @@ export default function Home() {
           <li className="flex gap-2"><span>🔖</span> Save businesses into lead lists</li>
           <li className="flex gap-2"><span>📤</span> Export any list to CSV for your CRM</li>
           <li className="flex gap-2"><span>✍️</span> Auto-draft personalized pitches per business</li>
-          <li className="flex gap-2"><span>📞</span> Call / WhatsApp leads straight from the list</li>
+          <li className="flex gap-2"><span>📞</span> Call / WhatsApp any lead straight from the list</li>
+          <li className="flex gap-2"><span>💬</span> WhatsApp outreach queue — one tap per lead, no copy-paste</li>
         </ul>
         <Link to="/leads" className="tap mt-4 inline-flex items-center gap-2 bg-ink text-brand font-black text-[13.5px] rounded-2xl px-5 py-3">
           <Wand2 size={15} /> Open Lead Workspace

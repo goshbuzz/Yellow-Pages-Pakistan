@@ -32,6 +32,8 @@ import { CITIES, slugify as citySlug } from '../data/geo';
 import { STATS } from '../data/stats.generated';
 import { CURATED } from '../data/curated';
 import { CountUp } from '../components/ui';
+import { WhatsAppButton } from '../components/WhatsAppButton';
+import { isWaCapable } from '../lib/whatsapp';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 
@@ -753,15 +755,29 @@ export default function WebsiteHome() {
                     {item.desc || 'Premier verified Pakistani establishment with dedicated direct contact lines.'}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
-                  <span className="text-xs font-black text-amber-700">{item.phone}</span>
-                  <Link
-                    to={`/b/c${idx}`}
-                    className="inline-flex items-center gap-1 text-xs font-black text-ink hover:text-amber-700"
-                  >
-                    <span>View Profile</span>
-                    <ArrowRight size={13} />
-                  </Link>
+                <div className="mt-6 pt-4 border-t border-stone-100">
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <span className="text-xs font-black text-amber-700">{item.phone}</span>
+                    <Link
+                      to={`/b/c${idx}`}
+                      className="inline-flex items-center gap-1 text-xs font-black text-ink hover:text-amber-700"
+                    >
+                      <span>View Profile</span>
+                      <ArrowRight size={13} />
+                    </Link>
+                  </div>
+                  {/* Contact straight from the homepage: call anywhere, WhatsApp where the line is mobile */}
+                  <div className="flex gap-2">
+                    <a href={`tel:${item.phone.replace(/[^0-9+]/g, '')}`}
+                      className="tap flex-1 h-9 rounded-xl bg-ink text-brand text-[12.5px] font-extrabold flex items-center justify-center gap-1.5">
+                      <PhoneCall size={13} /> Call
+                    </a>
+                    {isWaCapable(item.phone) && <WhatsAppButton b={{ ...item, cat: item.cat }} variant="card" />}
+                    <Link to={`/b/c${idx}`}
+                      className="tap h-9 px-3 rounded-xl bg-brand-soft text-brand-deeper border border-brand/40 text-[12.5px] font-extrabold flex items-center justify-center gap-1.5">
+                      <MapPin size={13} /> {item.city}
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

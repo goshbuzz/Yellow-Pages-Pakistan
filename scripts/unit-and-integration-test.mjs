@@ -6,6 +6,8 @@ import { CITIES } from '../src/data/geo.js';
 import { STATS } from '../src/data/stats.generated.js';
 import { CURATED } from '../src/data/curated.js';
 import { makeFaqSchema } from '../src/lib/seo.js';
+import { waNumber, isWaCapable, waHref, waInfo, waDisplayNumber } from '../src/lib/whatsapp.js';
+import { leadsToCsv } from '../src/lib/export.js';
 
 let passed = 0;
 let failed = 0;
@@ -27,6 +29,48 @@ assert('All categories mapped by ID', Object.keys(CATEGORY_BY_ID).length === 130
 assert('Cities defined (420 cities)', CITIES.length === 420, `Found: ${CITIES.length}`);
 assert('Listing statistics generated', STATS.total >= 200000, `Found: ${STATS.total}`);
 assert('Curated flagship listings exist', CURATED.length > 0);
+
+console.log('\n=== 1b. WHATSAPP DIRECT-CHAT TESTS ===');
+assert('Mobile 0300-1234567 is WhatsApp-capable', waNumber('0300-1234567') === '923001234567');
+assert('Spaced mobile normalises', waNumber('0300 1234567') === '923001234567');
+assert('+92 format normalises', waNumber('+92 321 9876543') === '923219876543');
+assert('0092 format normalises', waNumber('0092 333 1234567') === '923331234567');
+assert('Bare 92 format normalises', waNumber('923451234567') === '923451234567');
+assert('Landline has no WhatsApp', waNumber('021-99220100') === null && !isWaCapable('021-99220100'));
+assert('UAN 111 number has no WhatsApp', waNumber('021-111-111-425') === null);
+assert('Vanity/UAN with letters has no WhatsApp', waNumber('051-111-OGDCL-1') === null);
+assert('Short/invalid numbers rejected', waNumber('12345') === null && waNumber('') === null && waNumber(null) === null);
+assert('waHref builds a direct chat link', waHref('0300-1234567') === 'https://wa.me/923001234567');
+assert('waHref prefills the message', waHref('0300-1234567', { text: 'Salam' }) === 'https://wa.me/923001234567?text=Salam');
+assert('waHref returns null for landlines (no dead links)', waHref('042-3523-2009') === null);
+assert('Display form is readable', waDisplayNumber('0300-1234567') === '+92 300 1234567');
+const waMobile = waInfo({ name: 'Al-Madina Store', cat: { name: 'Kirana Store' }, city: 'Sahiwal', phone: '0300-1234567', whatsapp: true });
+assert('waInfo: confirmed mobile', waMobile.state === 'confirmed' && waMobile.href.startsWith('https://wa.me/923001234567?text='));
+assert('waInfo: greeting names the business', decodeURIComponent(waMobile.href).includes('Al-Madina Store'));
+assert('waInfo: unverified mobile is flagged', waInfo({ phone: '0300-1234567' }).state === 'mobile');
+assert('waInfo: landline state', waInfo({ phone: '021-111-111-425' }).state === 'landline');
+
+const csvMobile = leadsToCsv([
+  { name: 'Mobile Shop', cat: 'Retail', city: 'Sahiwal', province: 'Punjab', address: 'A', phone: '0300-1234567', whatsapp: true, lat: 1, lng: 2, rating: 4, reviews: 9, status: 'new', note: '', addedAt: 0 },
+  { name: 'Landline Co', cat: 'Bank', city: 'Karachi', province: 'Sindh', address: 'B', phone: '021-111-111-425', whatsapp: true, lat: 3, lng: 4, rating: 4, reviews: 9, status: 'new', note: '', addedAt: 0 },
+]);
+const csvRows = csvMobile.split('\n');
+assert('CSV has WhatsApp Link column', csvRows[0].includes('WhatsApp Link'));
+assert('CSV exports a working direct link for mobiles', csvRows[1].includes('https://wa.me/923001234567'));
+assert('CSV flags landline as not WhatsApp', csvRows[2].includes(',No,') && !csvRows[2].includes('wa.me'));
+assert('CSV never carries a dead wa.me link', (csvMobile.match(/wa\.me/g) || []).length === 1);
+
+const cardJsx = readFileSync('src/components/CompanyCard.jsx', 'utf8');
+assert('Every business card renders a WhatsApp action', cardJsx.includes('<WhatsAppButton'));
+assert('Cards no longer hide WhatsApp behind the flag', !cardJsx.includes('{b.whatsapp &&'));
+const leadsJsx = readFileSync('src/pages/Leads.jsx', 'utf8');
+assert('Lead workspace renders WhatsApp on every lead', leadsJsx.includes('<WhatsAppButton'));
+assert('Lead workspace has bulk WhatsApp outreach', leadsJsx.includes('WhatsAppQueue') && leadsJsx.includes('Outreach'));
+const detailJsx = readFileSync('src/pages/BusinessDetail.jsx', 'utf8');
+assert('Business detail always shows a WhatsApp action', detailJsx.includes('<WhatsAppButton'));
+const waQueueJsx = readFileSync('src/components/WhatsAppQueue.jsx', 'utf8');
+assert('Outreach queue skips landlines explicitly', waQueueJsx.includes("state !== 'landline'"));
+assert('Outreach queue opens the business number', waQueueJsx.includes("info.href.split('?')[0]"));
 
 console.log('\n=== 2. SEO & AEO SCHEMA GENERATION TESTS ===');
 const sampleFaqs = [

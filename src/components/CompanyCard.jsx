@@ -2,10 +2,11 @@
 
 import { Link } from 'react-router-dom';
 import { useReducer } from 'react';
-import { Phone, MessageCircle, MapPin, Bookmark, BookmarkCheck } from 'lucide-react';
+import { Phone, MapPin, Bookmark, BookmarkCheck } from 'lucide-react';
 import { Monogram, Stars, VerifiedBadge, useToast } from './ui';
 import { businessId } from '../lib/dataset';
-import { telHref, waHref } from '../lib/derive';
+import { telHref } from '../lib/derive';
+import { WhatsAppButton } from './WhatsAppButton';
 import { findLead, addLead, removeLead } from '../lib/leads';
 
 export function CompanyCard({ b, dense = false }) {
@@ -64,12 +65,8 @@ export function CompanyCard({ b, dense = false }) {
           className="tap flex-1 h-9 rounded-xl bg-ink text-brand text-[13px] font-extrabold flex items-center justify-center gap-1.5">
           <Phone size={14} /> Call
         </a>
-        {b.whatsapp && (
-          <a href={waHref(b.phone)} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}
-            className="tap h-9 px-3.5 rounded-xl bg-emerald-500 text-white text-[13px] font-extrabold flex items-center justify-center gap-1.5">
-            <MessageCircle size={14} /> WhatsApp
-          </a>
-        )}
+        {/* Every listing gets a WhatsApp action: chat for mobiles, copy for landlines. */}
+        <WhatsAppButton b={b} variant="card" />
         <a href={`https://www.google.com/maps/search/?api=1&query=${b.lat},${b.lng}`} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}
           className="tap h-9 px-3.5 rounded-xl bg-brand-soft text-brand-deeper border border-brand/40 text-[13px] font-extrabold flex items-center justify-center gap-1.5">
           <MapPin size={14} /> Map

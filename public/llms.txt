@@ -35,6 +35,8 @@ Yellow Pages Pakistan is the definitive digital business directory of Pakistan. 
 
 **Where do freelancers find Pakistani clients?** The Lead Workspace (/leads) lets freelancers and agencies shortlist businesses into lead lists, track New → Contacted → Replied → Won, export the list to CSV, and auto-draft personalized outreach pitches per business.
 
+**Can I WhatsApp a business directly from the directory?** Yes. Every listing has a WhatsApp button. Mobile numbers (03xx) open a direct wa.me chat with that business, pre-filled with a short opener; landline and UAN numbers show a copy-number action instead, because they cannot receive WhatsApp. The Lead Workspace adds a one-tap outreach queue that walks a saved list and opens each business's chat, marking leads Contacted as you go.
+
 **Does it work offline?** Yes. The web app is installable on Android and iPhone and caches all 200,000 listings, so search works with no internet connection.
 
 ## Contact & Policies

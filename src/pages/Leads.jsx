@@ -3,12 +3,14 @@
 
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, FileSpreadsheet, Phone, MessageCircle, MapPin, Trash2, Pencil, Wand2, Check, ChevronRight, Send } from 'lucide-react';
+import { Plus, FileSpreadsheet, Phone, MapPin, Trash2, Pencil, Wand2, Check } from 'lucide-react';
 import { getLists, createList, deleteList, getLeadsIn, getLeads, updateLead, removeLead, STATUSES } from '../lib/leads';
 import { leadsToCsv, downloadFile } from '../lib/export';
-import { telHref, waHref } from '../lib/derive';
+import { telHref } from '../lib/derive';
 import { EmptyState, useToast } from '../components/ui';
 import { PitchModal } from '../components/PitchModal';
+import { WhatsAppButton, WhatsAppGlyph } from '../components/WhatsAppButton';
+import { WhatsAppQueue } from '../components/WhatsAppQueue';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 
@@ -23,7 +25,7 @@ const LEADS_FAQS = [
   },
   {
     q: 'Can I export my lead lists to HubSpot, Excel, or Google Sheets?',
-    a: 'Yes. Click the "CSV" button at the top of your active list to instantly download a formatted spreadsheet containing company names, phone numbers, WhatsApp availability, categories, and cities.',
+    a: 'Yes. Click the "CSV" button at the top of your active list to instantly download a spreadsheet with company names, phone numbers, a WhatsApp flag (Yes / Unverified / No), the international WhatsApp number, and a verified WhatsApp Link — the link column is only filled for mobile numbers, so no dead chat links reach your CRM.',
   },
   {
     q: 'How does the automated pitch drafter work?',
@@ -38,6 +40,7 @@ export default function Leads() {
   const [creating, setCreating] = useState(false);
   const [newName, setNewName] = useState('');
   const [pitchFor, setPitchFor] = useState(null);
+  const [queueOpen, setQueueOpen] = useState(false);
   const [editingNote, setEditingNote] = useState(null);
   const [noteDraft, setNoteDraft] = useState('');
 
@@ -90,9 +93,15 @@ export default function Leads() {
           <h1 className="font-black text-2xl text-ink">Lead workspace 💼</h1>
           <p className="text-[13px] font-semibold text-stone-500 mt-0.5">Shortlist businesses, track outreach, export & pitch.</p>
         </div>
-        <button onClick={doExport} className="tap bg-ink text-brand font-black text-[13px] rounded-2xl px-3.5 py-2.5 flex items-center gap-1.5 shrink-0">
-          <FileSpreadsheet size={15} /> CSV
-        </button>
+        <div className="flex gap-2 shrink-0">
+          <button onClick={() => { if (!leads.length) return toast('No leads to message yet', '🤷'); setQueueOpen(true); }}
+            className="tap bg-emerald-500 hover:bg-emerald-600 text-white font-black text-[13px] rounded-2xl px-3.5 py-2.5 flex items-center gap-1.5">
+            <WhatsAppGlyph size={15} /> Outreach
+          </button>
+          <button onClick={doExport} className="tap bg-ink text-brand font-black text-[13px] rounded-2xl px-3.5 py-2.5 flex items-center gap-1.5">
+            <FileSpreadsheet size={15} /> CSV
+          </button>
+        </div>
       </div>
 
       {/* Lists */}
@@ -142,9 +151,7 @@ export default function Leads() {
               </div>
               <div className="flex gap-1 shrink-0">
                 <a href={telHref(l.phone)} className="tap w-8 h-8 rounded-full bg-ink text-brand flex items-center justify-center" title={l.phone}><Phone size={13} /></a>
-                {l.whatsapp && (
-                  <a href={waHref(l.phone)} target="_blank" rel="noreferrer" className="tap w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center"><MessageCircle size={13} /></a>
-                )}
+                <WhatsAppButton b={{ ...l, cat: l.cat, city: l.city }} variant="icon" />
                 <button onClick={() => setPitchFor(l)} className="tap w-8 h-8 rounded-full bg-brand text-ink flex items-center justify-center" title="Draft pitch"><Wand2 size={13} /></button>
                 <button onClick={() => { removeLead(l.bizId); setTick((t) => t + 1); toast('Lead removed', '🗑️'); }} className="tap w-8 h-8 rounded-full bg-stone-100 text-stone-500 flex items-center justify-center" title="Remove"><Trash2 size={13} /></button>
               </div>
@@ -196,6 +203,13 @@ export default function Leads() {
       </div>
 
       {pitchFor && <PitchModal business={pitchFor} onClose={() => setPitchFor(null)} />}
+      {queueOpen && (
+        <WhatsAppQueue
+          leads={leads}
+          onClose={() => setQueueOpen(false)}
+          onChanged={() => setTick((t) => t + 1)}
+        />
+      )}
     </div>
   );
 }

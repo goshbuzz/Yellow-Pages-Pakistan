@@ -97,6 +97,6 @@ export function googleMapsEmbedUrl(d) {
 export function telHref(phone) {
   return `tel:+92${phone.replace(/^0/, '').replace(/-/g, '')}`;
 }
-export function waHref(phone) {
-  return `https://wa.me/92${phone.replace(/^0/, '').replace(/-/g, '')}`;
-}
+// Re-exported from lib/whatsapp.js so every wa.me link goes through the same
+// mobile-number validation (landlines/UANs have no WhatsApp).
+export { waHref } from './whatsapp.js';
