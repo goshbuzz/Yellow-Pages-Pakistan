@@ -45,6 +45,9 @@ export function WhatsAppButton({
   title,
 }) {
   const toast = useToast();
+  // Registry rows can be listed before a number is known — there is nothing to call
+  // or copy, and a button that does nothing is worse than no button.
+  if (!b?.phone) return null;
   const info = waInfo(b);
   const ver = VARIANT[variant] || VARIANT.card;
   const glyphSize = size ?? (variant === 'icon' ? 13 : variant === 'pill' ? 17 : 14);

@@ -1,0 +1,207 @@
+TREC328|128 Securities (Pvt.) Ltd.|Lahore
+TREC337|A B M Securities (Private) Limited|Lahore
+TREC147|A. I. Securities (Private) Limited|Karachi
+TREC349|A. S. Securities (Pvt.) Ltd.|Lahore
+TREC038|A.H.M. Securities (Private) Limited|Karachi
+TREC457|AAA Securities (Private) Limited|Islamabad
+TREC311|Aba Ali Habib Securities (Private) Limited|Karachi
+TREC162|Abbasi & Company (Private) Limited|Lahore
+TREC145|Adam Securities Limited|Karachi
+TREC525|Adam Usman Securities (Pvt.) Ltd.|Karachi
+TREC323|Adeel & Nadeem Securities (Private) Limited|Lahore
+TREC501|Ahsam Securities (Private) Limited|Islamabad
+TREC002|AHSAM SECURITIES LIMITED|Lahore
+TREC019|AKD Securities Limited|Karachi
+TREC524|Akhal Securities (Private) Limited|Karachi
+TREC193|Akik Capital (Private) Limited|Karachi
+TREC029|AKY Securities (Private) Limited|Karachi
+TREC063|Al Habib Capital Markets (Private) Limited|Karachi
+TREC120|Alfalah Securities (Private) Limited|Karachi
+TREC228|Al-Haq Securities (Private) Limited|Lahore
+TREC021|Alpha Capital (Private) Limited|Karachi
+TREC001|Altaf Adam Securities (Private) Limited|Karachi
+TREC300|AM Chaudhary Securities (Private) Limited|Lahore
+TREC007|Amanah Investments Limited|Karachi
+TREC347|Amer Securities (Private) Limited|Lahore
+TREC214|Amman Capital (Pvt.) Limited|Karachi
+TREC171|Ample Securities (Private) Limited|Karachi
+TREC188|Apex Capital Securities (Private) Limited|Karachi
+TREC050|Arif Habib Limited|Karachi
+TREC232|Arif Latif Securities (Private) Limited|Lahore
+TREC284|ASA Stocks (Private) Limited|Lahore
+TREC318|Asad Mustafa Securities (Private) Limited|Lahore
+TREC024|ASDA Securities (Private) Limited|Karachi
+TREC119|Axis Global Limited|Karachi
+TREC239|Ayub Chaudhry Investments (Private) Limited|Lahore
+TREC108|Azee Securities (Private) Limited|Karachi
+TREC155|B & B Securities (Private) Limited|Karachi
+TREC490|BABA Equities (Pvt.) Ltd.|Lahore
+TREC204|Backers & Partners (Private) Limited|Lahore
+TREC054|Bawa Securities (Private) Limited|Karachi
+TREC077|Bawany Securities (Private) Limited|Karachi
+TREC045|Bhayani Securities (Private) Limited|Karachi
+TREC022|BMA Capital Management Limited|Karachi
+TREC203|Brains Securities (Private) Limited|Lahore
+TREC326|Chara Securities (Private) Limited|Karachi
+TREC526|Chase Securities Pakistan (Pvt.) Limited|Karachi
+TREC513|CMA Securities (Pvt.) Ltd.|Lahore
+TREC179|Continental Capital Management (Pvt) Ltd|Karachi
+TREC153|Creative Capital Securities (Private) Limited|Karachi
+TREC109|Dalal Securities (Private) Limited|Karachi
+TREC090|Darson Securities (Pvt) Limited|Karachi
+TREC058|Dawood Equities Limited|Karachi
+TREC180|Dawood Mohammed Securities (Private) Limited|Karachi
+TREC016|DJM Securities Limited|Karachi
+TREC286|Dosslanics Securities (Private) Limited|Lahore
+TREC325|Dr. Arslan Razaque Securities (Private) Limited|Lahore
+TREC124|Intermarket Securities Limited|Karachi
+TREC132|Eleven Stars Securities (Private) Limited|Karachi
+TREC433|Enrichers Securities (Pvt.) Limited|Lahore
+TREC438|Fair Edge Securities (Private) Limited|Islamabad
+TREC098|Fairtrade Capital Securities (Private) Limited|Lahore
+TREC229|Fairway Securities (Private) Limited|Lahore
+TREC088|Fawad Yusuf Securities (Private) Limited|Karachi
+TREC094|FDM Capital Securities (Private) Limited|Karachi
+TREC117|Fikree's (Private) Limited|Karachi
+TREC181|First Equity Modaraba|Karachi
+TREC175|First National Equities Limited|Lahore
+TREC491|First Street Capital (Private) Limited|Lahore
+TREC141|Float Securities (Private) Limited|Karachi
+TREC046|Fortune Securities Limited|Karachi
+TREC142|Foundation Securities (Private) Limited|Karachi
+TREC163|Friendly Securities (Private) Limited|Karachi
+TREC519|Galaxy Capital Securities (Private) Limited|Islamabad
+TREC125|Gazipura Securities & Services (Private) Limited|Karachi
+TREC442|General Investment & Securities (Private) Limited|Islamabad
+TREC028|Ghani Osman Securities (Private) Limited|Karachi
+TREC131|GMI Capital Securities (Private) Limited|Karachi
+TREC262|GPH Securities (Private) Limited|Lahore
+TREC102|Growth Securities (Private) Limited|Karachi
+TREC327|Gul Dhami Securities (Private) Limited|Lahore
+TREC350|Gulrez Securities (Private) Limited|Lahore
+TREC528|H. G. Markets (Pvt.) Ltd.|Lahore
+TREC027|Habib Metropolitan Financial Services Limited|Karachi
+TREC264|Habib Ullah Sheikh (Private) Limited|Lahore
+TREC485|Hamza Farhad Securities (Private) Limited|Islamabad
+TREC037|HH Misbah Securities (Private) Limited|Karachi
+TREC287|High Land Securities (Private) Limited|Lahore
+TREC309|HMC Stocks (Private) Limited|Lahore
+TREC212|Horizon Securities Limited|Lahore
+TREC503|HP Securities (Private) Limited|Islamabad
+TREC044|IGI Finex Securities Limited|Karachi
+TREC292|INA Securities (Private) Limited|Lahore
+TREC199|Insight Securities (Private) Limited|Karachi
+TREC293|Integrated Equities Limited|Lahore
+TREC164|Interactive Securities (Private) Limited|Karachi
+TREC185|InvestLink Capital (Private) Limited|Lahore
+TREC089|Investment Managers Securities (Private) Limited|Karachi
+TREC066|Iqbal Usman Kodavi Securities (Private) Limited|Karachi
+TREC079|Irfan Mazhar Securities (Private) Limited|Karachi
+TREC018|Ismail Iqbal Securities (Private) Limited|Karachi
+TREC288|Javed Iqbal Securities (Private) Limited|Lahore
+TREC149|JS Global Capital Limited|Karachi
+TREC497|ISK Securities Limited|Islamabad
+TREC224|K & I Global Capital (Private) Limited|Lahore
+TREC290|K.H.S Securities (Private) Limited|Lahore
+TREC023|Khanani Securities (Private) Limited|Karachi
+TREC339|Khawaja Securities (Private) Limited|Lahore
+TREC192|Kosmopolitan Securities (Private) Limited|Karachi
+TREC508|KP Securities (Pvt.) Ltd.|Islamabad
+TREC248|Ktrade Securities Limited|Karachi
+TREC140|M. M. Securities (Pvt.) Limited|Karachi
+TREC223|Maan Securities (Private) Limited|Lahore
+TREC130|Mannoo Capital (Private) Limited|Islamabad
+TREC413|Margalla Financial (Private) Limited|Islamabad
+TREC082|Mayari Securities (Private) Limited|Karachi
+TREC092|Memon Securities (Private) Limited|Karachi
+TREC296|MGM Securities (Private) Limited|Lahore
+TREC221|Millennium Brokerage (Private) Limited|Lahore
+TREC251|MND Investment (Private) Limited|Lahore
+TREC331|Money Line Securities (Private) Limited|Lahore
+TREC160|Moonaco Securities (Private) Limited|Karachi
+TREC194|MRA Securities Limited|Karachi
+TREC297|MSD Capital Equities (Private) Limited|Lahore
+TREC096|MSMANIAR Financials (Private) Limited|Karachi
+TREC330|Muhammad Amer Riaz Securities (Private) Limited|Lahore
+TREC122|Muhammad Ashfaq Hussain Securities (Private) Limited|Karachi
+TREC003|Muhammad Hussain Ismail Securities (Private) Limited|Karachi
+TREC084|Muhammad Munir Muhammad Ahmed|Karachi
+TREC176|Muhammad Salim Kasmani Securities|Karachi
+TREC186|Muhammad Tariq Moti Securities (Private) Limited|Karachi
+TREC049|Multiline Securities Limited|Karachi
+TREC052|N.U.A. Securities (Private) Limited|Karachi
+TREC056|Nael Capital (Private) Limited|Karachi
+TREC335|Networth Securities Limited|Lahore
+TREC482|New Peak Securities (Private) Limited|Lahore
+TREC048|Next Capital Limited|Karachi
+TREC126|NINI Securities (Private) Limited|Karachi
+TREC527|Ocean Securities (Pvt.) Ltd.|Lahore
+TREC008|Optimus Capital Management (Private) Limited|Karachi
+TREC529|Orbit Securities (Pvt.) Ltd.|Karachi
+TREC148|Oriental Securities (Private) Limited|Karachi
+TREC478|Pasha Securities (Private) Limited|Islamabad
+TREC169|Pearl Securities Limited|Karachi
+TREC184|Prime Securities (Private) Limited|Karachi
+TREC420|Progressive Investment Management (Private) Limited|Lahore
+TREC256|Progressive Securities (Private) Limited|Lahore
+TREC260|BOP Capital Securities (Private) Limited|Lahore
+TREC183|R.T. Securities (Private) Limited|Karachi
+TREC159|Rafi Securities (Private) Limited|Karachi
+TREC275|Rahat Securities Limited|Lahore
+TREC481|Riaz Ahmed Securities (Private) Limited|Islamabad
+TREC329|S. D. Mirza Securities (Private) Limited|Lahore
+TREC231|Saima Qaiser Securities (Private) Limited|Lahore
+TREC010|Sakarwala Capital Securities (Private) Limited|Karachi
+TREC121|Salim Sozer Securities (Private) Limited|Karachi
+TREC282|Salman Majeed Securities (Private) Limited|Lahore
+TREC015|Saya Securities (Private) Limited|Karachi
+TREC187|SAZ Capital Securities (Private) Limited|Karachi
+TREC268|Sethi Securities (Private) Limited|Lahore
+TREC107|Seven Star Securities (Private) Limited|Karachi
+TREC266|Shafi Securities (Private) Limited|Lahore
+TREC055|Shajar Capital Pakistan (Private) Limited|Karachi
+TREC254|Shajarak Securities (Private) Limited|Lahore
+TREC006|Sherman Securities (Private) Limited|Karachi
+TREC533|SOS Capital Limited|Karachi
+TREC173|Spectrum Securities Limited|Karachi
+TREC432|Spinzer Equities (Private) Limited|Islamabad
+TREC112|Standard Capital Securities (Private) Limited|Karachi
+TREC530|Stockinvest Securities (Pvt.) Ltd.|Karachi
+TREC346|Strongman Securities (Private) Limited|Lahore
+TREC017|Summit Capital (Private) Limited|Karachi
+TREC532|Syed Faraz Equities (Pvt.) Ltd.|Islamabad
+TREC531|T & G Securities (Pvt.) Ltd.|Karachi
+TREC113|Tannu Securities (Private) Limited|Karachi
+TREC065|Tariq Vohra Securities (Private) Limited|Karachi
+TREC129|Taurus Securities Limited|Karachi
+TREC036|Time Securities (Private) Limited|Karachi
+TREC166|Topline Securities Limited|Karachi
+TREC127|Trade Smart Securities (Pvt.) Ltd.|Karachi
+TREC332|Trust Securities & Brokerage Limited|Karachi
+TREC072|TS Securities (Private) Limited|Karachi
+TREC466|Unex Securities (Pvt.) Ltd.|Islamabad
+TREC234|Value Stock and Commodities (Private) Limited|Lahore
+TREC025|Vector Securities (Private) Limited|Karachi
+TREC093|Venus Securities (Private) Limited|Karachi
+TREC062|WE Financial Services Limited|Karachi
+TREC534|Wealth Street (Pvt.) Ltd.|Karachi
+TREC135|Y.H. Securities (Private) Limited|Karachi
+TREC294|Yasir Mahmood Securities (Private) Limited|Lahore
+TREC156|Z. A. Ghaffar Securities (Private) Limited|Karachi
+TREC032|Zafar Moti Capital Securities (Pvt.) Ltd.|Karachi
+TREC068|Zafar Securities (Private) Limited|Lahore
+TREC410|Zahid Latif Khan Securities (Private) Limited|Islamabad
+TREC047|Zillion Capital Securities (Private) Limited|Karachi
+TREC454|ZLK Islamic Financial Services (Pvt.) Limited|Islamabad
+TREC537|Tamkeen Securities (Pvt.) Ltd|Karachi
+TREC455|Prime Capital Management (Private) Limited|Karachi
+TREC538|SIA Equities (Pvt.) Ltd|Karachi
+TREC535|Floret Capitals (Pvt.) Ltd|Karachi
+TREC536|Delight Equity (Pvt.) Ltd|Karachi
+TREC324|Union Securities (Pvt.) Ltd|Lahore
+TREC091|Pine Capital Management (Pvt.) Ltd|Karachi
+TREC539|OS Capital Investments (Pvt.) Ltd|Karachi
+TREC549|Amanah Stocks & Commodities (Pvt.) Ltd|Karachi
+TREC462|ARCH Capital Securities Pvt Ltd|Karachi
+TREC551|Centinel Securities (Pvt.) Ltd|Islamabad
+TREC552|StockHub Securities (Pvt.) Ltd|Lahore

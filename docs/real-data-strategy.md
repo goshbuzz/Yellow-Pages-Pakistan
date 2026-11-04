@@ -408,3 +408,56 @@ Cleaning the corpus is pointless if devices keep the previous payload. The datas
 **network-first** (`public/sw.js`, cache name `ypk-v2`, old caches deleted on activate) and
 `api/directory.js` sends `no-cache, must-revalidate`, so a corrected listing reaches an
 installed app on the next load instead of surviving indefinitely.
+
+---
+
+## 11. Public-source harvest: PSX + SECP (2026-11-04)
+
+The ask: *"add more from google all the public sources SECP and Stock Exchange Pakistan."*
+Google itself is not a data source (§8.1 — Google Maps ToS forbids harvesting), so it was
+used only to **discover** public registers; everything below is free, public, and attributed.
+
+**Imported (+650 real records, catalogue 1,167 → 1,817):**
+
+| Source | Rows | Phones | Provenance | Notes |
+|---|---|---|---|---|
+| PSX listed companies (`github.com/ajwadjaved/PSX-Listed-Companies`, scraped from psx.com.pk company profiles) | 449 of 535 | 449 landlines/lines | `official` + `sourceRef psx:<symbol>` | Address → city for all 535; 86 rows out (unclassifiable name, or a number that is not dialable as published — UANs without an area code etc.). Companies kept only where name/sector maps honestly onto one of the 130 categories. |
+| SECP securities brokers register ("Securities Brokers as on August 31, 2025", secp.gov.pk, wpdmdl=50330) | 201 of 207 | none published | `official` + `sourceRef secp:<TREC>` | The register publishes name + TREC no + CRO city only. Imported with the new `--allow-missing-phone` mode; 6 rows dedupe against existing listings that already carry a phone. |
+
+**Registry rows without a phone** are first-class now: `import-listings --allow-missing-phone`
+(opt-in, default still drops), `stats.mjs` treats an *absent* phone as missing data (not a
+fake number), and the UI shows **"No phone on record"** instead of dead Call/WhatsApp buttons
+(`CompanyCard`, `BusinessDetail`, `WhatsAppButton` guard). A number is never invented.
+
+**Probed and NOT imported (verdicts for the next session):**
+
+- **opendata.com.pk "Yellow Pages of Pakistan" (67k rows, PDDL, from findpk.com 2021)** —
+  real but "legally murky" per §4, and the CKAN API returns 5,000-row resources in ~39
+  fetch chunks each; bulk use needs a real ETL box (or `curl` outside the sandbox). A
+  targeted slice is possible later via `datastore_search_sql` with a trimmed column list.
+- **SECP bulk company register (~200k+ names)** — no public bulk extract exists; the
+  "Companies incorporation data" PDF is a *statistics bulletin* (counts only). GLEIF LEI
+  mirrors SECP legal names + registered addresses (CC0, `api.gleif.org`, no phones) but
+  only 179 PK entities have LEIs and the JSON:API is ~30 fetch chunks per page — rerun
+  offline if wanted. The SECP PDF *registers* (brokers done; NBFCs & SFAs list
+  ~455 KB / wpdmdl file "List-for-NBFcs-and-SFAs-as-on-August-31-2025.pdf", modarabas,
+  credit-rating companies) are the realistic SECP-sourced adds — each is one PDF fetch.
+- **Kaggle PSX dataset** — download requires sign-in; unusable in the sandbox.
+
+**Reproduce:**
+
+```bash
+git clone --depth 1 https://github.com/ajwadjaved/PSX-Listed-Companies /tmp/pubdata/psx-repo
+python3 scripts/convert-psx-secp.py --psx-repo /tmp/pubdata/psx-repo
+npm run import -- --source=csv --in=/tmp/pubdata/psx-listings.csv --as=official --merge \
+  --out=public/data/listings.json \
+  --attribution="PSX listed companies (psx.com.pk profiles via github.com/ajwadjaved/PSX-Listed-Companies)"
+npm run import -- --source=csv --in=/tmp/pubdata/secp-brokers.csv --as=official --merge \
+  --allow-missing-phone --out=public/data/listings.json \
+  --attribution="SECP securities brokers register (secp.gov.pk, Aug 2025)"
+npm run stats
+```
+
+`--merge` appends to an existing `listings.json` (each record keeps its own attribution);
+without it the output file is replaced. `scripts/sources/secp-brokers.txt` is the SECP
+register as published (transcribed from the PDF table).
