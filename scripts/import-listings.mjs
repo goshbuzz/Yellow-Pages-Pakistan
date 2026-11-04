@@ -18,6 +18,11 @@
 // Every emitted record carries `source` + `sourceRef` so the UI and CSV export can be
 // honest about how far the data is trusted. Records without a usable phone number are
 // dropped and counted, never silently invented.
+//
+//   --allow-missing-phone   keep registry rows (SECP/PSX registers) that have no phone
+//                           on record. Off by default: a listing without a number is not
+//                           a lead. Kept rows carry an empty phone, and the UI shows
+//                           "No phone on record" instead of Call/WhatsApp buttons.
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -39,6 +44,7 @@ const args = Object.fromEntries(
 const OUT = args.out || 'public/data/listings.json';
 const DRY = !!args['dry-run'];
 const SOURCE = args.source || 'csv';
+const ALLOW_MISSING_PHONE = !!args['allow-missing-phone'];
 
 const OVERTURE_RELEASE = args.release || '2026-10-21.0';
 
@@ -206,13 +212,17 @@ function readCsv() {
   const header = rows[0];
   const col = detectColumns(header);
   if (col.name == null) throw new Error(`no name column found in: ${header.join(' | ')}`);
-  if (col.phone == null) warn('no phone column — records will be dropped (a listing without a number is not a lead)');
+  if (col.phone == null) warn(ALLOW_MISSING_PHONE
+    ? 'no phone column — rows kept because --allow-missing-phone is set'
+    : 'no phone column — records will be dropped (a listing without a number is not a lead)');
 
   return rows.slice(1).map((r) => {
     const get = (f) => (col[f] != null ? (r[col[f]] || '').trim() : '');
     const name = get('name');
     const phone = get('phone');
-    if (!name || !phone) return null;
+    // Missing phone is only acceptable for opt-in registry imports (--allow-missing-phone).
+    if (!name) return null;
+    if (!phone && !ALLOW_MISSING_PHONE) return null;
 
     // Junk in → junk out is not acceptable: a placeholder name or an impossible number is
     // dropped here, with the reason, instead of being published and audited later.
@@ -220,11 +230,11 @@ function readCsv() {
       warn(`dropped "${name}": not a usable business name`);
       return null;
     }
-    if (isPlaceholderPhone(phone)) {
+    if (phone && isPlaceholderPhone(phone)) {
       warn(`dropped "${name}": placeholder phone "${phone}"`);
       return null;
     }
-    if (!isPlausiblePkPhone(phone)) {
+    if (phone && !isPlausiblePkPhone(phone)) {
       warn(`dropped "${name}": "${phone}" is not a dialable Pakistani number`);
       return null;
     }
@@ -302,7 +312,13 @@ for (const r of collected) {
 
 // Deduplicate on name+city, and drop rows whose number is already used by another entity
 // (shared switchboards are fine to keep — flag them instead of silently deleting leads).
-const seen = new Set();
+// --merge appends to an existing --out file (each import keeps its own attribution);
+// without it the file is replaced, so accidental double-imports cannot double listings.
+let existing = [];
+if (args.merge) {
+  try { existing = JSON.parse(readFileSync(OUT, 'utf8')).records || []; } catch { existing = []; }
+}
+const seen = new Set(existing.map((r) => `${String(r.name).toLowerCase()}|${String(r.city).toLowerCase()}`));
 const unique = [];
 let dupes = 0;
 for (const r of collected) {
@@ -329,12 +345,16 @@ if (DRY) {
   console.log('\n--dry-run: first 3 records\n' + JSON.stringify(unique.slice(0, 3), null, 2));
 } else {
   mkdirSync(dirname(OUT), { recursive: true });
+  const records = [...existing, ...unique];
+  // File-level attribution lists every source that contributed records (a merged file
+  // would otherwise only name the last import).
+  const attributions = [...new Set(records.map((r) => r.attribution).filter(Boolean))];
   writeFileSync(OUT, JSON.stringify({
     generatedAt: new Date().toISOString(),
-    source: SOURCE,
-    attribution: SOURCE === 'overture' ? 'Overture Maps Foundation — CDLA Permissive 2.0' : args.attribution || null,
-    count: unique.length,
-    records: unique,
+    source: [...new Set(records.map((r) => r.source || 'dataset'))].join(','),
+    attribution: attributions.length ? attributions.join(' + ') : (SOURCE === 'overture' ? 'Overture Maps Foundation — CDLA Permissive 2.0' : args.attribution || null),
+    count: records.length,
+    records,
   }, null, 0), 'utf8');
-  console.log(`\nwrote ${unique.length} records → ${OUT}`);
+  console.log(`\nwrote ${records.length} records → ${OUT}` + (existing.length ? ` (${existing.length} existing + ${unique.length} new)` : ''));
 }

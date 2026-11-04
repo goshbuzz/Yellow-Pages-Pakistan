@@ -58,7 +58,7 @@ export default function BusinessDetail() {
 
   const shareBusiness = async () => {
     const url = `${window.location.origin}/b/${id}`;
-    const text = `${b.name} — ${b.cat?.name || 'Business'} in ${b.city}\nPhone: ${b.phone}\n(via Yellow Pages Pakistan)`;
+    const text = `${b.name} — ${b.cat?.name || 'Business'} in ${b.city}\n${b.phone ? `Phone: ${b.phone}\n` : ''}(via Yellow Pages Pakistan)`;
     if (navigator.share) {
       try { await navigator.share({ title: b.name, text, url }); return; } catch { /* cancelled */ }
     }
@@ -68,7 +68,9 @@ export default function BusinessDetail() {
   const detailFaqs = [
     {
       q: `How do I contact ${b.name}?`,
-      a: `You can reach ${b.name} directly by phone at ${b.phone}. ${wa.state === 'landline' ? 'This is a landline number, so WhatsApp is not available for it — tap Call to dial directly.' : `Tap the WhatsApp button to open a direct chat on ${wa.display} from your phone.`}`,
+      a: b.phone
+        ? `You can reach ${b.name} directly by phone at ${b.phone}. ${wa.state === 'landline' ? 'This is a landline number, so WhatsApp is not available for it — tap Call to dial directly.' : `Tap the WhatsApp button to open a direct chat on ${wa.display} from your phone.`}`
+        : `No direct phone number is on record for ${b.name} yet. It is listed from a public company register, and the address in ${b.city} is shown on this page. Once a verified number is added, the Call and WhatsApp buttons will appear here.`,
     },
     {
       q: `Where is ${b.name} located?`,
@@ -89,7 +91,7 @@ export default function BusinessDetail() {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: b.name,
-      telephone: b.phone,
+      telephone: b.phone || undefined,
       address: {
         '@type': 'PostalAddress',
         streetAddress: b.address,
@@ -105,7 +107,7 @@ export default function BusinessDetail() {
     <div className="animate-slide-up pb-8 space-y-4">
       <SeoHead
         title={`${b.name} in ${b.city} — Phone, WhatsApp & Address | Yellow Pages PK`}
-        description={`Contact ${b.name} in ${b.city}, Pakistan. Phone: ${b.phone}, Category: ${b.cat?.name || 'Business'}, address: ${b.address}.`}
+        description={`Contact ${b.name} in ${b.city}, Pakistan.${b.phone ? ` Phone: ${b.phone},` : ''} Category: ${b.cat?.name || 'Business'}, address: ${b.address}.`}
         canonicalPath={`/b/${id}`}
         schema={schema}
       />
@@ -151,21 +153,33 @@ export default function BusinessDetail() {
         <div className="mt-4 space-y-1.5 text-[13px] font-bold text-ink-soft">
           <p className="flex items-start gap-2"><MapPin size={15} className="mt-0.5 shrink-0 text-brand-deeper" /> {b.address}</p>
           <p className="flex items-center gap-2"><Clock size={15} className="shrink-0 text-brand-deeper" /> {b.hours}</p>
-          <p className="flex items-center gap-2 flex-wrap">
-            <Phone size={15} className="shrink-0 text-brand-deeper" /> <a href={telHref(b.phone)} className="hover:underline">{b.phone}</a>
-            {wa.state !== 'landline' && <span className="inline-flex items-center gap-1 text-[11.5px] font-extrabold text-emerald-700"><Check size={11} strokeWidth={3.5} /> WhatsApp {wa.display}</span>}
-          </p>
+          {b.phone ? (
+            <p className="flex items-center gap-2 flex-wrap">
+              <Phone size={15} className="shrink-0 text-brand-deeper" /> <a href={telHref(b.phone)} className="hover:underline">{b.phone}</a>
+              {wa.state !== 'landline' && <span className="inline-flex items-center gap-1 text-[11.5px] font-extrabold text-emerald-700"><Check size={11} strokeWidth={3.5} /> WhatsApp {wa.display}</span>}
+            </p>
+          ) : (
+            <p className="flex items-center gap-2 text-stone-500">
+              <Phone size={15} className="shrink-0 text-stone-400" /> No phone on record
+            </p>
+          )}
           {b.email && <p className="flex items-center gap-2"><Mail size={15} className="shrink-0 text-brand-deeper" /> <a href={`mailto:${b.email}`} className="text-sky-700 hover:underline truncate">{b.email}</a></p>}
           {b.website && <p className="flex items-center gap-2"><Globe size={15} className="shrink-0 text-brand-deeper" /> <a href={`https://${b.website}`} target="_blank" rel="noreferrer" className="text-sky-700 hover:underline">{b.website} <ExternalLink size={11} className="inline" /></a></p>}
         </div>
 
         {/* Actions */}
-        <div className="grid grid-cols-2 gap-2 mt-4">
-          <a href={telHref(b.phone)} className="tap h-11 rounded-2xl bg-ink text-brand font-black text-[14px] flex items-center justify-center gap-2">
-            <Phone size={16} /> {b.phone.length > 15 ? 'Call' : b.phone}
-          </a>
-          <WhatsAppButton b={b} variant="pill" />
-        </div>
+        {b.phone ? (
+          <div className="grid grid-cols-2 gap-2 mt-4">
+            <a href={telHref(b.phone)} className="tap h-11 rounded-2xl bg-ink text-brand font-black text-[14px] flex items-center justify-center gap-2">
+              <Phone size={16} /> {b.phone.length > 15 ? 'Call' : b.phone}
+            </a>
+            <WhatsAppButton b={b} variant="pill" />
+          </div>
+        ) : (
+          <div className="mt-4 h-11 rounded-2xl border border-dashed border-stone-300 text-stone-500 text-[13px] font-bold flex items-center justify-center gap-2">
+            <Phone size={15} /> No phone on record
+          </div>
+        )}
         <div className="flex items-center justify-between gap-2 mt-2">
           <div className="flex items-center gap-2 flex-wrap">
             <WhatsAppStatus b={b} />

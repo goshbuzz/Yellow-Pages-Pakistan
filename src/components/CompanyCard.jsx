@@ -69,12 +69,21 @@ export function CompanyCard({ b, dense = false }) {
       </div>
 
       <div className="flex gap-2 mt-3.5">
-        <a href={telHref(b.phone)} onClick={(e) => e.stopPropagation()}
-          className="tap flex-1 h-9 rounded-xl bg-ink text-brand text-[13px] font-extrabold flex items-center justify-center gap-1.5">
-          <Phone size={14} /> Call
-        </a>
-        {/* Every listing gets a WhatsApp action: chat for mobiles, copy for landlines. */}
-        <WhatsAppButton b={b} variant="card" />
+        {b.phone ? (
+          <>
+            <a href={telHref(b.phone)} onClick={(e) => e.stopPropagation()}
+              className="tap flex-1 h-9 rounded-xl bg-ink text-brand text-[13px] font-extrabold flex items-center justify-center gap-1.5">
+              <Phone size={14} /> Call
+            </a>
+            {/* Every listing with a number gets a WhatsApp action: chat for mobiles, copy for landlines. */}
+            <WhatsAppButton b={b} variant="card" />
+          </>
+        ) : (
+          /* Registry rows can be listed before a number is known — say so, don't fake a button. */
+          <span className="tap flex-1 h-9 rounded-xl border border-dashed border-stone-300 text-stone-500 text-[12.5px] font-bold flex items-center justify-center gap-1.5">
+            <Phone size={13} /> No phone on record
+          </span>
+        )}
         {/* No pin means no Map button: a wrong-country pin is worse than none. */}
         {mapHref && (
           <a href={mapHref} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}

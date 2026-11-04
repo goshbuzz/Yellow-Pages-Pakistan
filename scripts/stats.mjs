@@ -91,7 +91,9 @@ if (!Array.isArray(records) || records.length === 0) {
 const dropped = { foreignPin: 0, placeholderName: 0, placeholderPhone: 0 };
 records = records.filter((r) => {
   if (!isUsableName(r.name)) { dropped.placeholderName++; return false; }
-  if (isPlaceholderPhone(r.phone)) { dropped.placeholderPhone++; return false; }
+  // An absent phone is missing data (registry rows), not a fake number; only junk
+  // numbers are unpublishable.
+  if (r.phone && isPlaceholderPhone(r.phone)) { dropped.placeholderPhone++; return false; }
   if ((r.lat != null || r.lng != null) && !validPkPoint(r.lat, r.lng)) { dropped.foreignPin++; return false; }
   return true;
 });

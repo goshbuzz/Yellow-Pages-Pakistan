@@ -153,6 +153,18 @@ assert('Import keeps real provenance', imported.records.every((r) => r.source ==
 assert('Import downgrades WhatsApp claim on a landline', imported.records.find((r) => r.name === 'Beta Traders').whatsapp === false);
 assert('Import keeps WhatsApp claim on a mobile', imported.records.find((r) => r.name === 'Alpha Software').whatsapp === true);
 
+// Registry rows (SECP/PSX registers) may legitimately have no phone on record — kept
+// only when the importer is explicitly asked to.
+const tmpOut2 = '/tmp/ypk-import-test-nophone.json';
+execFileSync('node', ['scripts/import-listings.mjs', `--in=${tmpCsv}`, '--as=official', `--out=${tmpOut2}`, '--allow-missing-phone'], { encoding: 'utf8' });
+const imported2 = JSON.parse(readFileSync(tmpOut2, 'utf8'));
+assert('Registry import can keep rows with no phone on record', imported2.records.length === 3);
+const gamma = imported2.records.find((r) => r.name === 'Gamma Ltd');
+assert('A no-phone row keeps an empty phone, never an invented one', gamma && gamma.phone === '');
+assert('A no-phone row is not claimed to support WhatsApp', gamma && gamma.whatsapp === false && gamma.whatsappCapable === false);
+const cardJsx3 = readFileSync('src/components/CompanyCard.jsx', 'utf8');
+assert('Cards replace Call/WhatsApp with an honest no-phone notice', cardJsx3.includes('No phone on record'));
+
 console.log('\n=== 1d. OWNER VERIFICATION (CLAIM LOOP) TESTS ===');
 const vNow = Date.now();
 const tok = claimToken('g1', '923001234567', vNow);
