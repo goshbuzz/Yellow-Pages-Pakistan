@@ -1,6 +1,7 @@
 // CSV / TSV export for lead lists.
 
 import { waHref, waNumber } from './whatsapp.js';
+import { provenanceFields } from './provenance.js';
 
 function escapeCsv(v) {
   if (v == null) return '';
@@ -12,7 +13,7 @@ export function leadsToCsv(leads) {
   // "WhatsApp" is a yes/no flag a human can filter on; "WhatsApp Link" is only ever
   // filled with a working direct-chat URL (mobile numbers), so imported lists stay
   // clean instead of carrying dead links for landlines.
-  const head = ['Name', 'Category', 'City', 'Province', 'Address', 'Phone', 'WhatsApp', 'WhatsApp Number', 'WhatsApp Link', 'Email', 'Website', 'Google Maps', 'Rating', 'Reviews', 'Status', 'Note', 'Added'];
+  const head = ['Name', 'Category', 'City', 'Province', 'Address', 'Phone', 'WhatsApp', 'WhatsApp Number', 'WhatsApp Link', 'Email', 'Website', 'Google Maps', 'Rating', 'Reviews', 'Status', 'Note', 'Added', 'Source', 'Trust'];
   const rows = leads.map((l) => {
     const number = waNumber(l.phone);
     const link = number ? waHref(l.phone) : '';
@@ -25,6 +26,8 @@ export function leadsToCsv(leads) {
       `https://www.google.com/maps/search/?api=1&query=${l.lat},${l.lng}`,
       l.rating, l.reviews, l.status, l.note,
       new Date(l.addedAt).toISOString().slice(0, 10),
+      provenanceFields(l).source,
+      provenanceFields(l).trust,
     ];
   });
   return [head, ...rows].map((r) => r.map(escapeCsv).join(',')).join('\n');

@@ -6,13 +6,13 @@ Yellow Pages Pakistan is the definitive digital business directory of Pakistan. 
 
 ## Key facts
 
-- 200,000+ verified business listings — more than any other Pakistani business directory
+- 200,000 sample business records shipped for evaluation (labelled "sample" in the app; not real businesses) — plus an import pipeline for real, licensed listings
 - 420 cities and towns across Punjab, Sindh, Khyber Pakhtunkhwa, Balochistan, Islamabad, Azad Kashmir and Gilgit-Baltistan
 - 130 business categories, from textile mills and surgical instruments to digital marketing agencies
 - Free forever: free search, free business listing, no pay-to-list fees
 - Built-in Lead Workspace for freelancers and marketing agencies: save businesses to lead lists, track outreach status, export contacts to CSV, and auto-draft personalized pitch emails and WhatsApp messages
 - Installable as an app (Android & iPhone) in 5 seconds without an app store; works fully offline
-- Every listing has a phone number, WhatsApp where available, and a real Google Maps location pin
+- Every real listing can carry a phone number, a WhatsApp link where the number is a mobile, and a Google Maps pin — sample records are clearly marked and never offer a live chat
 
 ## Pages
 

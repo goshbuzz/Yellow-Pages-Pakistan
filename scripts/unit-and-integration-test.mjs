@@ -8,6 +8,10 @@ import { CURATED } from '../src/data/curated.js';
 import { makeFaqSchema } from '../src/lib/seo.js';
 import { waNumber, isWaCapable, waHref, waInfo, waDisplayNumber } from '../src/lib/whatsapp.js';
 import { leadsToCsv } from '../src/lib/export.js';
+import { SOURCE, isReal, provenanceFields, trustBadge } from '../src/lib/provenance.js';
+import { derive } from '../src/lib/derive.js';
+import { execFileSync } from 'node:child_process';
+import { writeFileSync } from 'node:fs';
 
 let passed = 0;
 let failed = 0;
@@ -71,6 +75,51 @@ assert('Business detail always shows a WhatsApp action', detailJsx.includes('<Wh
 const waQueueJsx = readFileSync('src/components/WhatsAppQueue.jsx', 'utf8');
 assert('Outreach queue skips landlines explicitly', waQueueJsx.includes("state !== 'landline'"));
 assert('Outreach queue opens the business number', waQueueJsx.includes("info.href.split('?')[0]"));
+
+console.log('\n=== 1c. PROVENANCE & REAL-DATA INTEGRITY TESTS ===');
+assert('A generated row is marked as sample data', derive(['X','1',0,0,0,'B',12345]).source === SOURCE.SAMPLE);
+assert('Sample rows are not real businesses', !isReal({ source: SOURCE.SAMPLE }));
+assert('Curated flagship records are real', isReal({ source: SOURCE.SEED }) && isReal({ verified: true }));
+assert('Owner submissions are real', isReal({ source: SOURCE.OWNER }));
+assert('Sample rows earn no trust badge', trustBadge({ source: SOURCE.SAMPLE }) === null);
+assert('Unknown provenance fails closed to sample', !isReal({ name: 'Mystery', phone: '0300-1234567' }));
+assert('Legacy curated lead is inferred as seed', isReal({ bizId: 'c12', verified: true }));
+assert('Legacy generated lead is inferred as sample', !isReal({ bizId: 'g1234' }));
+assert('Owner submissions earn the top badge', trustBadge({ source: SOURCE.OWNER }).level === 'owner');
+assert('Provenance names the source', provenanceFields({ source: SOURCE.OFFICIAL }).source === 'Official registry');
+assert('Sample rows export as unverified', provenanceFields({ source: SOURCE.SAMPLE }).trust === 'unverified');
+
+const provCsv = leadsToCsv([
+  { name: 'Real Co', phone: '0300-1234567', lat: 1, lng: 2, addedAt: 0, source: SOURCE.OWNER },
+  { name: 'Filler Co', phone: '0300-7654321', lat: 1, lng: 2, addedAt: 0, source: SOURCE.SAMPLE },
+]).split('\n');
+assert('CSV carries Source and Trust columns', provCsv[0].includes('Source') && provCsv[0].includes('Trust'));
+assert('CSV can filter real from sample', provCsv[1].endsWith(',Owner verified,verified') && provCsv[2].endsWith(',Sample data,unverified'));
+
+const waBtn = readFileSync('src/components/WhatsAppButton.jsx', 'utf8');
+assert('WhatsApp button refuses to open a chat for sample rows', waBtn.includes('isReal(b)') && waBtn.includes('Sample record'));
+const cardJsx2 = readFileSync('src/components/CompanyCard.jsx', 'utf8');
+assert('Cards label sample rows as not real', cardJsx2.includes('NOT A REAL BUSINESS'));
+const detailJsx2 = readFileSync('src/pages/BusinessDetail.jsx', 'utf8');
+assert('Detail page warns on sample rows', detailJsx2.includes('Sample record'));
+
+// Import pipeline: real CSV in -> dropped/deduped/flagged records out.
+const tmpCsv = '/tmp/ypk-import-test.csv';
+writeFileSync(tmpCsv, [
+  'Company Name,Nature of Business,City,Telephone,WhatsApp,NTN',
+  'Alpha Software,Software House,Lahore,+92 300 1112223,Yes,1001',
+  'Beta Traders,Wholesale Grocery,Karachi,021-1234567,Yes,1002',   // landline claiming WhatsApp
+  'Beta Traders,Wholesale Grocery,Karachi,021-1234567,Yes,1002',   // duplicate
+  'Gamma Ltd,Trading,Islamabad,,No,1003',                          // no phone
+].join('\n'));
+const tmpOut = '/tmp/ypk-import-test.json';
+execFileSync('node', ['scripts/import-listings.mjs', `--in=${tmpCsv}`, '--as=official', `--out=${tmpOut}`], { encoding: 'utf8' });
+const imported = JSON.parse(readFileSync(tmpOut, 'utf8'));
+assert('Import drops rows with no phone number', imported.records.length === 2);
+assert('Import removes duplicates', imported.records.filter((r) => r.name === 'Beta Traders').length === 1);
+assert('Import keeps real provenance', imported.records.every((r) => r.source === 'official'));
+assert('Import downgrades WhatsApp claim on a landline', imported.records.find((r) => r.name === 'Beta Traders').whatsapp === false);
+assert('Import keeps WhatsApp claim on a mobile', imported.records.find((r) => r.name === 'Alpha Software').whatsapp === true);
 
 console.log('\n=== 2. SEO & AEO SCHEMA GENERATION TESTS ===');
 const sampleFaqs = [

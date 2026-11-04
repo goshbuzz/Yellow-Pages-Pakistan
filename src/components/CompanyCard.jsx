@@ -8,6 +8,7 @@ import { businessId } from '../lib/dataset';
 import { telHref } from '../lib/derive';
 import { WhatsAppButton } from './WhatsAppButton';
 import { findLead, addLead, removeLead } from '../lib/leads';
+import { isReal } from '../lib/provenance';
 
 export function CompanyCard({ b, dense = false }) {
   const toast = useToast();
@@ -44,6 +45,11 @@ export function CompanyCard({ b, dense = false }) {
           <p className="text-[12px] font-bold text-stone-500 mt-0.5 truncate">
             <span>{b.cat?.emoji}</span> {b.cat?.name} · <MapPin size={10} className="inline -mt-0.5" /> {b.area || b.city}
           </p>
+          {!isReal(b) && (
+            <span className="inline-block mt-1 bg-stone-100 text-stone-500 border border-dashed border-stone-300 rounded-full px-1.5 py-[1px] text-[10px] font-extrabold">
+              🧪 SAMPLE — NOT A REAL BUSINESS
+            </span>
+          )}
           {!dense && (
             <div className="flex items-center gap-2.5 mt-1">
               <Stars rating={b.rating} reviews={b.reviews} />

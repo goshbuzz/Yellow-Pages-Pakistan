@@ -43,7 +43,13 @@ export function deleteList(id) {
   write(LS_LEADS, getLeads().filter((l) => l.listId !== id));
 }
 
-export function getLeads() { return read(LS_LEADS, []); }
+export function getLeads() {
+  // Backfill provenance for leads saved before it existed, so old lists are labelled
+  // correctly instead of being silently trusted.
+  return read(LS_LEADS, []).map((l) => (
+    l.source ? l : { ...l, source: typeof l.bizId === 'string' && l.bizId.startsWith('c') ? 'seed' : 'sample' }
+  ));
+}
 export function getLeadsIn(listId) { return getLeads().filter((l) => l.listId === listId); }
 
 export function findLead(bizId) { return getLeads().find((l) => l.bizId === bizId); }
@@ -64,6 +70,7 @@ export function addLead(b, listId = 'default', extra = {}) {
     website: b.website || '',
     lat: b.lat, lng: b.lng,
     rating: b.rating, reviews: b.reviews,
+    source: b.source || (b.__i === -1 || b.__i === undefined ? 'seed' : 'sample'),
     listId, status: 'new', note: '',
     addedAt: Date.now(),
     ...extra,

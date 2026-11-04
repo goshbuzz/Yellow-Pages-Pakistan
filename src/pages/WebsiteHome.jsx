@@ -40,7 +40,7 @@ import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 const HOME_FAQS = [
   {
     q: 'What is Yellow Pages Pakistan?',
-    a: 'Yellow Pages Pakistan is the modern digital business directory and B2B growth engine of Pakistan, listing over 200,000 verified businesses across 420 cities and 130 categories with direct phone numbers, WhatsApp links, and Google Maps pins.',
+    a: 'Yellow Pages Pakistan is a digital business directory for Pakistan, shipping with 200,000 sample records across 420 cities and 130 categories so the product can be evaluated, and designed to run on imported real listings with direct phone numbers, WhatsApp links and Google Maps pins.',
   },
   {
     q: 'How do I access the interactive Directory Web App?',

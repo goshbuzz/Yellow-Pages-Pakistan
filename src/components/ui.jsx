@@ -66,7 +66,9 @@ export function Monogram({ name, color = '#78716C', size = 46, emoji }) {
   );
 }
 
-// ── Verified badge ──────────────────────────────────────────────────────────
+// ── Provenance badge ────────────────────────────────────────────────────────
+// A "verified" pill must mean somebody actually vouched for this record, so it is
+// driven by provenance rather than a boolean flag any row could set.
 export function VerifiedBadge() {
   return (
     <span className="inline-flex items-center gap-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full px-1.5 py-[1px] text-[10px] font-extrabold" title="Flagship verified profile">

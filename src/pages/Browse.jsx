@@ -90,14 +90,14 @@ export default function Browse({ preset = null }) {
     if (q && city) return `"${q}" in ${city}, Pakistan — Business Directory`;
     if (q) return `"${q}" Businesses in Pakistan — Directory Search`;
     if (activeCat && city) return `${activeCat.name} in ${city}, Pakistan`;
-    if (activeCat) return `${activeCat.name} in Pakistan — Verified Directory`;
+    if (activeCat) return `${activeCat.name} in Pakistan — Business Directory`;
     if (city) return `Business Directory ${city}, Pakistan — 200,000+ Listings`;
     return 'Browse & Search 200,000+ Pakistani Businesses';
   }, [q, city, activeCat, preset]);
 
   const pageDesc = useMemo(() => {
     if (preset && !q) return preset.page.description;
-    return `Search and contact verified businesses in ${city || 'Pakistan'}. View direct phone numbers, WhatsApp, addresses, and Google Maps directions. Free online directory.`;
+    return `Search businesses in ${city || 'Pakistan'}. View phone numbers, WhatsApp availability, addresses, and Google Maps directions. Free online directory.`;
   }, [city, preset, q]);
 
   // Canonical: landing pages point at themselves; filtered /browse URLs point at the
@@ -125,7 +125,7 @@ export default function Browse({ preset = null }) {
           {preset ? preset.page.h1 : activeCat ? `${activeCat.emoji} ${activeCat.name}` : city ? `Businesses in ${city}` : 'Search Pakistan Directory'}
         </h1>
         <p className="text-xs sm:text-sm font-semibold text-stone-500 mt-0.5">
-          Find verified phone numbers, WhatsApp, and locations across 420 cities.
+          Find phone numbers, WhatsApp availability and locations across 420 cities.
         </p>
       </div>
 
