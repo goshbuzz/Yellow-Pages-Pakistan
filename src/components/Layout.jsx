@@ -106,7 +106,7 @@ function DatasetGate({ children }) {
   return (
     <div className="flex flex-col items-center justify-center py-24 gap-4">
       <div className="animate-float"><Logo size={72} withWord={false} /></div>
-      <p className="font-extrabold text-ink-soft text-sm animate-pulse">Loading 200,000 businesses…</p>
+      <p className="font-extrabold text-ink-soft text-sm animate-pulse">Loading directory…</p>
       <div className="w-44 h-2 rounded-full bg-stone-200 overflow-hidden">
         <div className="h-full w-1/2 bg-brand rounded-full skeleton" />
       </div>
@@ -165,7 +165,7 @@ export default function Layout() {
             + List your business — free
           </NavLink>
           <p className="text-[11px] font-semibold text-stone-400 mb-1">
-            <Link to="/" className="hover:text-brand-deeper font-bold">Website</Link> · <NavLink to="/categories" className="hover:text-brand-deeper">Categories</NavLink> · <NavLink to="/cities" className="hover:text-brand-deeper">Cities</NavLink> · <NavLink to="/faq" className="hover:text-brand-deeper">FAQ</NavLink> · Yellow Pages Pakistan · 200,000+ listings
+            <Link to="/" className="hover:text-brand-deeper font-bold">Website</Link> · <NavLink to="/categories" className="hover:text-brand-deeper">Categories</NavLink> · <NavLink to="/cities" className="hover:text-brand-deeper">Cities</NavLink> · <NavLink to="/coverage" className="hover:text-brand-deeper">Coverage</NavLink> · <NavLink to="/faq" className="hover:text-brand-deeper">FAQ</NavLink> · Yellow Pages Pakistan · sourced listings
           </p>
         </footer>
         <BottomNav />

@@ -139,22 +139,21 @@ Sample              <- generated demo filler. Never presented as real, never dia
 
 ## 5. The path to 300k real listings
 
-**Phase 0 — stop the trust leak (shipped with this PR)**
+**Phase 0 — stop the trust leak (shipped)**
 Provenance model, honest labels, sample rows that cannot be dialled, provenance columns in
 CSV, and a real import pipeline (`scripts/import-listings.mjs`).
 
-**Phase 1 — free real spine (~1 week)**
+**Phase 1 — free real spine (~1 week, zero budget)**
 1. Overture places for Pakistan (nationwide bbox), keep records with a phone.
 2. Hand-curate corporates: ~550 PSX listed + top 200 groups + banks/telecoms/universities
    (the existing `src/data/curated.js` pattern already does 91).
 3. FBR ATL as a *verification* join: mark entities that appear in ATL as `Official registry`.
 
-**Phase 2 — volume (~2–4 weeks, commercial decision)**
-4. Buy a licensed Pakistani business dataset with phone numbers (or negotiate a
-   redistribution licence). This is the only realistic route through 300k.
-5. If no budget: Overture + owner submissions + public sector/association member lists
-   (chambers of commerce, PIAF, APTMA, FPCCI member directories) — expect 60–150k depending
-   on how many associations publish machine-readable lists.
+**Phase 2 — volume (no purchase)**
+4. ~~Buy a licensed dataset~~ — no budget, so this is out. Volume comes from: Overture
+   nationwide, association member directories (FPCCI, chambers, APTMA, PIAF, TDAP),
+   university/hospital/chain branch lists, and owner submissions. Expect **60–150k**.
+5. Anything beyond that requires either organic owner growth or a future budget decision.
 
 **Phase 3 — verified WhatsApp (ongoing, ~2 months to first 10k)**
 6. Claim-your-listing flow → owner confirms number → `source: owner`.
@@ -179,10 +178,103 @@ CSV, and a real import pipeline (`scripts/import-listings.mjs`).
 - Removed unsupported "verified" claims from Home, Browse, Nearby, Business Detail, FAQ copy.
 - 18 new tests: `99 passed, 0 failed`.
 
-## 7. Open questions for you
+## 7. Decisions taken (2026-11-04)
 
-1. **Budget for a licensed dataset?** That single decision is worth ~200k rows and 2–3 weeks.
-2. **Is `source: sample` filler worth keeping in production** at all, or should the app ship
-   with whatever real data exists plus an empty-state that invites listings?
-3. **Owner opt-in loop:** do you want me to build the claim-listing + WhatsApp confirmation
-   flow next (the only path to genuinely verified numbers)?
+| Question | Decision | What changed |
+|---|---|---|
+| Budget for a licensed dataset? | **No budget** | Path is now Overture + free public lists + owner submissions. See §5 phases, revised below. |
+| Keep sample filler in production? | **No sample data anywhere** | The generator is deleted, the dataset ships empty, and the UI shows an honest empty state. |
+| Build the owner-claim loop? | **Yes** | `src/lib/verify.js`, `ClaimListing` modal, `scripts/claims.mjs`, `scripts/verify-numbers.mjs`. |
+
+### Consequences of "no budget"
+
+Free sources only, so realistic volume is **60–150k real entities**, not 300k — reached from:
+Overture places (licensed, has phones), PSX/curated corporates (~550 + top groups), association
+member lists (FPCCI, chambers, APTMA, PIAF, TDAP member directories) and owner submissions.
+300k remains reachable only through paid data or organic owner growth; the product no longer
+claims otherwise.
+
+### Zero-budget operating loop (everything below is free)
+
+```bash
+npm run import   -- --source=overture --bbox=24.7,66.7,25.1,67.2    # real POIs + phones
+npm run import   -- --source=csv --in=members.csv --as=official     # registries/associations
+npm run hygiene  -- --data=public/data/listings.json --patch        # drop fake/impossible numbers
+npm run claims   -- --claims=claims.json --data=public/data/listings.json
+npm run stats                                                       # runtime payload + counts
+```
+
+Owner verification costs nothing to run: the owner taps a `wa.me` link from their own listing,
+sends the pre-filled code, and pastes it back. No SMS gateway, no OTP provider, no Meta fees.
+Verification is signed, expires after 30 days, and cannot be replayed onto another listing.
+
+---
+
+## 8. Per-city imports and why Google is not a source
+
+### 8.1 Google index / Maps: not usable, and not just "risky"
+
+Google Maps Platform ToS **§3.2.3** prohibits customers from exporting, extracting or
+otherwise scraping Google Maps Content, prohibits caching it except where the Service
+Specific Terms allow (place IDs indefinitely, coordinates for 30 days), and prohibits using
+it to build a substitute or similar service — which is exactly what this directory is.
+Loading Google Maps pages in a headless browser is the precise behaviour the clause names.
+Paying for Places API calls does not license warehousing the results either: the 30-day
+cache rule means a stored directory profile built from Places data is a terms breach by
+construction.
+
+So the answer to "pick listings off the Google index" is: **no** — it would put the company,
+not just the scrape, at risk (API key revocation, IP blocks, C&D, breach of contract).
+
+### 8.2 What *is* licensed for storage and reuse
+
+| Source | Licence | Phone field | Notes |
+|---|---|---|---|
+| **Foursquare OS Places** | Apache-2.0 | `tel` | ~100M POIs worldwide, parquet on S3/HuggingFace. Also carries `website`, `email`, `date_closed`, `facebook_id`, `instagram`. **Best per-city source**: commercial use permitted, Apache needs no share-alike. |
+| **Overture Maps places** | CDLA Permissive 2.0 | `phones[]` | 81M places, monthly releases, no OSM share-alike. |
+| Registries / associations / vendor exports | yours to verify | usually yes | SECP has no phone column; association member lists often do. |
+| Owner submissions | yours | yes, and verifiable | The only source that can be *verified*. |
+
+Neither FSQ nor Overture exposes WhatsApp presence — that is what §8.4 (owner verification)
+solves.
+
+### 8.3 The city workflow
+
+`scripts/import-city.mjs` fills the directory one city at a time and reports what each city
+actually got. It resolves the city against the 420 known coordinates, builds a bounding box
+(default 12 km radius), pulls records from a licensed source, and validates every one:
+
+- must have a real name
+- must have a plausible Pakistani number (mobile or landline) — no number, no listing
+- must be **inside the city radius** (a Lahore record cannot land in Karachi)
+- must not duplicate an existing name in that city
+- must not reuse a number already held by a *different* business
+- `date_closed` rows from FSQ are dropped
+
+```bash
+node scripts/import-city.mjs --city=Karachi --source=fsq
+node scripts/import-city.mjs --city=Sahiwal --source=fsq --radius=15
+node scripts/import-city.mjs --all --source=fsq --min-city-pop=1000000
+node scripts/import-city.mjs --city=Karachi --source=file --from=~/Downloads/karachi.parquet
+node scripts/import-city.mjs --report            # per-city table: listings · located · mobile · WA% · owner
+```
+
+`--report` is the answer to "check each city": it prints, per city, the listing count, how
+many have a map location, how many are WhatsApp-capable, the percentage, owner-verified
+count and the last import date. The same data drives `/coverage` in the app, so users see
+the same truth the operator does.
+
+### 8.4 Checking "phone number and WhatsApp" per city
+
+Three checks, cheapest first — all free:
+
+1. **Structural (automatic, every import).** Is it a mobile? Does it parse? Is it inside the
+   city? Is the same number already assigned to another business? This catches the majority
+   of bad data at zero cost.
+2. **Hygiene (`npm run hygiene`).** Placeholder numbers, landlines wrongly claiming WhatsApp,
+   numbers shared across many unrelated businesses, staleness.
+3. **Owner verification (the only true WhatsApp proof).** Two taps by the owner; signed,
+   expiring code; no SMS/OTP fees. This is what turns "WhatsApp-capable" into "verified".
+
+Colour-coding in the UI already reflects this: a mobile gets the WhatsApp button, a landline
+gets "Copy number", and only an owner claim earns the verified badge.

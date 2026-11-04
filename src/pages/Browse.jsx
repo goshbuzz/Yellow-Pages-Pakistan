@@ -1,7 +1,7 @@
 // Browse — search results with category / city / sort filters, URL-driven.
 
 import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { Search, SlidersHorizontal, MapPin, LayoutGrid } from 'lucide-react';
 import { searchBusinesses } from '../lib/dataset';
 import { CATEGORIES, CATEGORY_BY_ID, slug as catSlug } from '../data/categories';
@@ -9,6 +9,7 @@ import { slugify as citySlug } from '../data/geo';
 import LandingInfo from '../components/LandingInfo';
 import { CompanyCard } from '../components/CompanyCard';
 import { SkeletonList, EmptyState, Chip } from '../components/ui';
+import { STATS } from '../data/stats.generated';
 import { CityPicker } from '../components/CityPicker';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
@@ -91,8 +92,8 @@ export default function Browse({ preset = null }) {
     if (q) return `"${q}" Businesses in Pakistan — Directory Search`;
     if (activeCat && city) return `${activeCat.name} in ${city}, Pakistan`;
     if (activeCat) return `${activeCat.name} in Pakistan — Business Directory`;
-    if (city) return `Business Directory ${city}, Pakistan — 200,000+ Listings`;
-    return 'Browse & Search 200,000+ Pakistani Businesses';
+    if (city) return `Business Directory ${city}, Pakistan`;
+    return 'Browse & Search Pakistani Businesses';
   }, [q, city, activeCat, preset]);
 
   const pageDesc = useMemo(() => {
@@ -182,7 +183,21 @@ export default function Browse({ preset = null }) {
       {!results ? (
         <SkeletonList n={6} />
       ) : results.rows.length === 0 ? (
-        <EmptyState emoji="🕵️" title="No businesses found" hint={`Nothing matches “${q}”. Try a shorter word or different city.`} />
+        STATS.total === 0 ? (
+          <EmptyState
+            emoji="📭"
+            title="No listings imported yet"
+            hint="This directory ships empty by design — every listing is a real, sourced business. Import a dataset or list your business to get started."
+            action={(
+              <div className="mt-3 flex flex-col sm:flex-row gap-2">
+                <Link to="/add" className="bg-ink text-brand font-black text-[13px] rounded-xl px-4 py-2.5">List your business free</Link>
+                <Link to="/" className="bg-white border border-stone-300 text-ink-soft font-black text-[13px] rounded-xl px-4 py-2.5">How data works</Link>
+              </div>
+            )}
+          />
+        ) : (
+          <EmptyState emoji="🕵️" title="No businesses found" hint={`Nothing matches “${q || 'that filter'}”. Try a shorter word or different city.`} />
+        )
       ) : (
         <div className="space-y-3">
           {results.rows.map((b) => <CompanyCard key={(b.bizId || (b.__i >= 0 ? 'g' + b.__i : b.name)) + b.name} b={b} />)}

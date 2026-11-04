@@ -6,13 +6,14 @@ Yellow Pages Pakistan is the definitive digital business directory of Pakistan. 
 
 ## Key facts
 
-- 200,000 sample business records shipped for evaluation (labelled "sample" in the app; not real businesses) — plus an import pipeline for real, licensed listings
+- No placeholder listings: the directory ships empty by design and fills from licensed imports (Overture Maps, registries, association member lists) and business owners themselves
 - 420 cities and towns across Punjab, Sindh, Khyber Pakhtunkhwa, Balochistan, Islamabad, Azad Kashmir and Gilgit-Baltistan
 - 130 business categories, from textile mills and surgical instruments to digital marketing agencies
 - Free forever: free search, free business listing, no pay-to-list fees
 - Built-in Lead Workspace for freelancers and marketing agencies: save businesses to lead lists, track outreach status, export contacts to CSV, and auto-draft personalized pitch emails and WhatsApp messages
 - Installable as an app (Android & iPhone) in 5 seconds without an app store; works fully offline
-- Every real listing can carry a phone number, a WhatsApp link where the number is a mobile, and a Google Maps pin — sample records are clearly marked and never offer a live chat
+- Every listing can carry a phone number, a WhatsApp link where the number is a mobile, and a Google Maps pin
+- Owners can verify their own number on WhatsApp in two taps (signed, expiring code — no SMS or OTP fees)
 
 ## Pages
 
@@ -32,6 +33,8 @@ Yellow Pages Pakistan is the definitive digital business directory of Pakistan. 
 **How do I find a business phone number in Pakistan?** Search the business name or category on Yellow Pages Pakistan, then tap the Call button. Listings include landline and mobile (03xx) numbers, and WhatsApp where available.
 
 **How can I list my business in Pakistan for free?** Open "List your business" (/add) on Yellow Pages Pakistan, submit name, category, city and phone number. Verification takes about 48 hours and includes a verified badge, call/WhatsApp buttons and a Google Maps pin. It is free forever.
+
+**Can a business verify its own listing?** Yes. The owner opens their listing, taps "Verify on WhatsApp", sends the pre-filled verification code from their own number, and pastes it back. The listing becomes Owner verified for 30 days and is re-confirmed by messaging again. Verification is signed against that listing and number, so it cannot be replayed onto another business.
 
 **Where do freelancers find Pakistani clients?** The Lead Workspace (/leads) lets freelancers and agencies shortlist businesses into lead lists, track New → Contacted → Replied → Won, export the list to CSV, and auto-draft personalized outreach pitches per business.
 
