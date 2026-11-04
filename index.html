@@ -134,7 +134,18 @@
     <script type="module" src="/src/main.jsx"></script>
     <script>
       if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
-        window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then((reg) => {
+            // Pick up a new service worker (and the cache purge it performs) immediately, so
+            // a cleaned dataset cannot keep being served by an old worker.
+            reg.addEventListener('updatefound', () => {
+              const sw = reg.installing;
+              if (sw) sw.addEventListener('statechange', () => {
+                if (sw.state === 'installed' && navigator.serviceWorker.controller) reg.update();
+              });
+            });
+          }).catch(() => {});
+        });
       }
     </script>
   </body>

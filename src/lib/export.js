@@ -2,6 +2,7 @@
 
 import { waHref, waNumber } from './whatsapp.js';
 import { provenanceFields } from './provenance.js';
+import { validPkPoint } from './geovalidate.js';
 
 function escapeCsv(v) {
   if (v == null) return '';
@@ -23,7 +24,7 @@ export function leadsToCsv(leads) {
       number ? `+${number}` : '',
       link,
       l.email, l.website ? `https://${l.website}` : '',
-      `https://www.google.com/maps/search/?api=1&query=${l.lat},${l.lng}`,
+      validPkPoint(l.lat, l.lng) ? `https://www.google.com/maps/search/?api=1&query=${l.lat},${l.lng}` : '',
       l.rating, l.reviews, l.status, l.note,
       new Date(l.addedAt).toISOString().slice(0, 10),
       provenanceFields(l).source,

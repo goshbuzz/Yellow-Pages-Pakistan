@@ -29,6 +29,8 @@ import { fileURLToPath } from 'node:url';
 import { CITIES } from '../src/data/geo.js';
 import { CATEGORIES } from '../src/data/categories.js';
 import { waNumber } from '../src/lib/whatsapp.js';
+import { validPkPoint } from '../src/lib/geovalidate.js';
+import { isUsableName, isPlaceholderPhone, isPlausiblePkPhone, matchCategoryByWords } from '../src/lib/quality.js';
 import { hashStr } from '../src/lib/rng.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -89,17 +91,9 @@ function haversineKm(lat1, lng1, lat2, lng2) {
 
 // ── Category mapping ────────────────────────────────────────────────────────
 
+/** Map a free-text industry onto one of the 130 categories (null = unclassifiable). */
 function guessCategory(...hints) {
-  const hay = hints.filter(Boolean).join(' ').toLowerCase();
-  if (!hay) return CATEGORIES[0];
-  let best = null, bestScore = 0;
-  for (const c of CATEGORIES) {
-    const words = c.name.toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 3);
-    let score = 0;
-    for (const w of words) if (hay.includes(w)) score += w.length;
-    if (score > bestScore) { bestScore = score; best = c; }
-  }
-  return best || CATEGORIES[0];
+  return matchCategoryByWords(CATEGORIES, ...hints);
 }
 
 // ── Source fetching ─────────────────────────────────────────────────────────
@@ -256,15 +250,23 @@ function loadCoverage() {
 function validate(raw, city, existing, seenPhones, radiusKm) {
   const name = String(raw.name || '').trim();
   if (!name || name.length < 2) return { skip: 'no name' };
+  if (!isUsableName(name)) return { skip: 'placeholder name' };
   if (!raw.phone) return { skip: 'no phone' };
+  if (isPlaceholderPhone(raw.phone)) return { skip: 'placeholder phone' };
 
   const mobile = waNumber(raw.phone);
   const digits = normPhone(raw.phone);
   // A phone must be a plausible PK number: mobile (3xxxxxxxxx) or landline (0xx…).
-  if (!mobile && !/^[1-9]\d{8,10}$/.test(digits)) return { skip: 'unusable phone' };
+  // (The previous test ran against the number *with* its trunk 0, so every real landline
+  // was rejected — 040-9200377 failed because it starts with 0.)
+  if (!isPlausiblePkPhone(raw.phone)) return { skip: 'unusable phone' };
 
   const lat = Number(raw.lat), lng = Number(raw.lng);
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return { skip: 'no location' };
+  // Belt and braces: the radius test below already rejects a point 4,000 km away, but a
+  // coordinate outside Pakistan must be named as such in the report rather than lumped in
+  // with "outside city radius" — that distinction is how a whole bad import gets noticed.
+  if (!validPkPoint(lat, lng)) return { skip: 'outside Pakistan' };
   const dist = haversineKm(city.lat, city.lng, lat, lng);
   if (dist > radiusKm) return { skip: 'outside city radius' };
 
@@ -277,6 +279,8 @@ function validate(raw, city, existing, seenPhones, radiusKm) {
   }
 
   const cat = guessCategory(raw.categoryHints, name, city.name);
+  // Unclassifiable rows are rejected instead of being filed under category 1.
+  if (!cat) return { skip: 'no matching category' };
   return {
     record: {
       id: raw.id,
@@ -326,7 +330,7 @@ function report() {
     if (waNumber(r.phone)) c.mobile++;
     else if (r.phone) c.landline++;
     if (r.ownerVerified) c.owner++;
-    if (Number.isFinite(r.lat) && r.lat !== 0) c.located++;
+    if (validPkPoint(r.lat, r.lng)) c.located++;
     byCity.set(r.city, c);
   }
 
@@ -345,7 +349,7 @@ function report() {
   if (rows.length > Number(args.top || 40)) log(`… ${rows.length - Number(args.top || 40)} more cities`);
 
   const withMobile = records.filter((r) => waNumber(r.phone)).length;
-  const located = records.filter((r) => Number.isFinite(r.lat) && r.lat !== 0).length;
+  const located = records.filter((r) => validPkPoint(r.lat, r.lng)).length;
   log('-'.repeat(78));
   log(`total ${records.length.toLocaleString()} · with map location ${located.toLocaleString()} · WhatsApp-capable ${withMobile.toLocaleString()} (${records.length ? ((withMobile / records.length) * 100).toFixed(1) : 0}%) · owner verified ${records.filter((r) => r.ownerVerified).length}`);
   log(`${empty} cities still have no listings — run: node scripts/import-city.mjs --city="<name>" --source=fsq\n`);

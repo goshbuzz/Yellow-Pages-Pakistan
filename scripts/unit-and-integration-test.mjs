@@ -12,6 +12,10 @@ import { SOURCE, isReal, provenanceFields, trustBadge, sourceOf } from '../src/l
 import { claimToken, verifyClaim, isVerificationFresh, claimHref } from '../src/lib/verify.js';
 import { execFileSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
+import { inPakistan, validPkPoint, haversineKm, cityForPoint } from '../src/lib/geovalidate.js';
+import { isUsableName, isPlaceholderPhone, isPlausiblePkPhone, resolveCity, matchCategoryByWords } from '../src/lib/quality.js';
+import { googleMapsUrl, googleMapsEmbedUrl } from '../src/lib/derive.js';
+import { buildIndex, runQuery } from '../src/lib/searchCore.js';
 import {
   validateCustomListing, saveCustomListing, getCustomListings, getCustomListing,
   deleteCustomListing, parseCustomImport, mergeCustomResults, asResultRow, matchCategory,
@@ -391,6 +395,160 @@ for (const f of layoutPages) {
 }
 assert('Clear buttons get an expanded hit area', css.includes('.tap-sm'));
 assert('PageHeader stacks actions on phones', readFileSync('src/components/ui.jsx', 'utf8').includes('flex-col sm:flex-row'));
+
+console.log('\n=== 1h. GEO INTEGRITY & FAKE-LISTING TESTS ===');
+
+// The exact failure reported: a "Sahiwal hospital" whose pin was in Africa / Europe.
+assert('A Nairobi coordinate is not in Pakistan', !inPakistan(-1.2921, 36.8219));
+assert('A Lagos coordinate is not in Pakistan', !inPakistan(6.5244, 3.3792));
+assert('A Cairo coordinate is not in Pakistan', !inPakistan(30.0444, 31.2357));
+assert('A London coordinate is not in Pakistan', !inPakistan(51.5074, -0.1278));
+assert('Null island (0,0) is not a location', !validPkPoint(0, 0));
+assert('Missing coordinates are not a location', !validPkPoint(null, null) && !validPkPoint('', ''));
+assert('Sahiwal itself is a valid Pakistani point', validPkPoint(31.9739, 72.3311));
+assert('Karachi, Lahore, Quetta, Gilgit all validate',
+  validPkPoint(24.8608, 67.0104) && validPkPoint(31.5204, 74.3587)
+  && validPkPoint(30.1798, 66.975) && validPkPoint(35.9208, 74.3089));
+
+// A foreign point must not be adopted by "the nearest Pakistani city".
+assert('A foreign point has no nearest Pakistani city', cityForPoint(-1.2921, 36.8219, CITIES) === null);
+// The 420-city list is dense enough that most of Pakistan is within 120 km of a town; this
+// is a genuinely remote corner (821 km from the nearest one).
+assert('A point far from every city has no city', cityForPoint(36.75, 61, CITIES) === null);
+assert('A point in Sahiwal resolves to Sahiwal', cityForPoint(31.9739, 72.3311, CITIES)?.name === 'Sahiwal');
+
+// The Map button must disappear rather than link to the wrong country.
+assert('No Maps link for a foreign pin', googleMapsUrl({ lat: -1.2921, lng: 36.8219 }) === null);
+assert('No Maps embed for a foreign pin', googleMapsEmbedUrl({ lat: 51.5074, lng: -0.1278 }) === null);
+assert('No Maps link when the pin is missing', googleMapsUrl({}) === null && googleMapsUrl({ lat: null, lng: null }) === null);
+assert('A real pin still produces a Maps link', String(googleMapsUrl({ lat: 31.9739, lng: 72.3311 })).includes('31.9739'));
+
+// Placeholder and junk records.
+assert('Placeholder names are refused', ['Test', 'xxxx', '12345', 'sample', 'aaaa', ''].every((n) => !isUsableName(n)));
+assert('Real business names are accepted', ['DHQ Teaching Hospital Sahiwal', 'Al-Madina Kiryana Store', 'علی کلینک'].every(isUsableName));
+assert('Placeholder phone numbers are refused', ['0300-0000000', '1234567890', '1111111111'].every(isPlaceholderPhone));
+assert('A real mobile is not a placeholder', !isPlaceholderPhone('0300-1112223'));
+assert('Real landlines are treated as dialable',
+  ['021-99220100', '042-35761234', '040-9200377', '051-111-911-911'].every(isPlausiblePkPhone));
+assert('Vanity/UAN letters are refused', !isPlausiblePkPhone('051-111-OGDCL-1'));
+assert('Too-short numbers are refused', !isPlausiblePkPhone('12345') && !isPlausiblePkPhone('040-920037'));
+assert('Unknown city names resolve to null, not to a real city',
+  resolveCity('Atlantis', CITIES) === null && resolveCity('', CITIES) === null);
+assert('City names resolve regardless of case and spacing',
+  resolveCity(' sahiwal ', CITIES)?.name === 'Sahiwal' && resolveCity('SAHIWAL', CITIES)?.name === 'Sahiwal');
+
+// Category matching: a wrong category is a wrong listing, so it must not guess.
+assert('A real industry hint maps to its category',
+  matchCategoryByWords(CATEGORIES, 'Hospitals & Medical Centers')?.name === 'Hospitals & Medical Centers');
+assert('Category matching understands Pakistani shop wording ("Kirana Store" → Grocery)',
+  matchCategoryByWords(CATEGORIES, 'Al-Madina Kiryana Store')?.name === 'Grocery & Supermarkets');
+assert('Category matching does not file leftovers under Textile Mills',
+  matchCategoryByWords(CATEGORIES, 'Mystery Services Ltd') === null);
+assert('Category matching needs real evidence (empty hint → null)',
+  matchCategoryByWords(CATEGORIES, '', null) === null);
+assert('"Pharmacy" resolves to Pharmacies & Medical Stores',
+  matchCategoryByWords(CATEGORIES, 'Pharmacy')?.name === 'Pharmacies & Medical Stores');
+assert('"Medicare Centre" is a hospital, not a pharmacy',
+  matchCategoryByWords(CATEGORIES, 'Medicare Centre')?.name === 'Hospitals & Medical Centers');
+assert('"Real Estate Agency" keeps the estate, not the agency suffix',
+  matchCategoryByWords(CATEGORIES, 'Real Estate Agency')?.name === 'Real Estate Agents & Dealers');
+assert('A trade the taxonomy lacks is dropped, not misfiled elsewhere',
+  matchCategoryByWords(CATEGORIES, 'Travel Agency') === null);
+
+// A foreign pin on a custom listing is rejected in the form, not just on import.
+const foreignCustom = validateCustomListing({ name: 'Ghost Hospital', phone: '0300-5556667', cat: '97', city: 'Sahiwal', lat: '-1.2921', lng: '36.8219' }, { existing: [] });
+assert('Custom listing rejects a foreign pin', !foreignCustom.ok && /not inside Pakistan/.test(foreignCustom.errors.location || ''));
+const farCityPin = validateCustomListing({ name: 'Ghost Hospital 2', phone: '0300-5556668', cat: '97', city: 'Sahiwal', lat: '31.5204', lng: '74.3587' }, { existing: [] });
+assert('Custom listing rejects a pin that is in another city', !farCityPin.ok && /km from Sahiwal/.test(farCityPin.errors.location || ''));
+assert('Custom listing refuses a placeholder name',
+  !validateCustomListing({ name: 'Test', phone: '0300-5556669', cat: '97', city: 'Sahiwal' }, { existing: [] }).ok);
+assert('Custom listing refuses a placeholder number',
+  !validateCustomListing({ name: 'Fine Hospital', phone: '0300-0000000', cat: '97', city: 'Sahiwal' }, { existing: [] }).ok);
+
+// The shipping curated data itself must pass the same tests — no hand-entered foreign pin.
+const curatedBad = CURATED.filter((c) => c.lat != null && !validPkPoint(c.lat, c.lng));
+assert('Every curated profile has a Pakistani pin', curatedBad.length === 0, JSON.stringify(curatedBad.map((c) => c.name)));
+const curatedOff = CURATED.filter((c) => {
+  const city = CITIES.find((x) => x.name === c.city);
+  return city && haversineKm(city.lat, city.lng, c.lat, c.lng) > 150;
+});
+assert('No curated profile is pinned more than 150 km from its city', curatedOff.length === 0, JSON.stringify(curatedOff.map((c) => c.name)));
+
+console.log('\n=== 1i. SEARCH FILTER & RANKING TESTS ===');
+
+// A synthetic index that reproduces the reported situation: hospitals in Sahiwal, a hospital
+// in Lahore, and a row that only matches because of its category.
+const idx = buildIndex({
+  names: ['DHQ Teaching Hospital Sahiwal', 'Sahiwal Medicare Centre', 'Lahore General Hospital', 'Al-Madina Kiryana Store'],
+  cats: [97, 97, 97, 1],
+  cityIdxs: [0, 0, 1, 0],
+  reviews: [40, 5, 900, 12],
+  ratings: [4.2, 4.0, 4.5, 4.1],
+  cityNames: ['Sahiwal', 'Lahore'],
+  catNames: { 97: 'hospitals & medical centers', 1: 'textile mills & fabrics' },
+});
+const qq = (params) => runQuery(idx, { page: 1, perPage: 10, ...params });
+
+assert('City filter matches exactly', qq({ city: 'Sahiwal' }).total === 3);
+assert('City filter is case-insensitive ("sahiwal")', qq({ city: 'sahiwal' }).total === 3);
+assert('City filter tolerates pasted whitespace (" Sahiwal ")', qq({ city: ' Sahiwal ' }).total === 3);
+assert('Unknown city returns nothing rather than every city',
+  qq({ city: 'Atlantis' }).total === 0 && qq({ city: 'Atlantis' }).cityUnknown === true);
+assert('City + query keeps only that city', qq({ city: 'Sahiwal', q: 'hospital' }).total === 2);
+assert("A city filter never leaks another city's rows",
+  qq({ city: 'Sahiwal' }).rows.every((i) => idx.cityIdxs[i] === 0));
+assert('Lahore filter returns only the Lahore hospital',
+  qq({ city: 'Lahore' }).rows.map((i) => idx.names[i]).join() === 'Lahore General Hospital');
+assert('A query with no matches returns zero, not everything', qq({ q: 'zzzzz' }).total === 0);
+assert('Category filter still works with a city filter', qq({ cat: '1', city: 'Sahiwal' }).total === 1);
+assert('Name matches outrank category-only matches',
+  idx.names[qq({ q: 'sahiwal hospital' }).rows[0]].toLowerCase().includes('sahiwal'));
+
+const workerSrc = readFileSync('src/lib/dataWorker.js', 'utf8');
+assert('The worker delegates filtering to the tested search core', workerSrc.includes('runQuery(index'));
+assert('Search rules live in one testable module', existsSync('src/lib/searchCore.js'));
+assert('A foreign coordinate is never returned as a location', workerSrc.includes('hasLocation: located'));
+assert('The worker revalidates the dataset instead of trusting the HTTP cache',
+  workerSrc.includes("cache: 'no-cache'"));
+
+const browseTxt = readFileSync('src/pages/Browse.jsx', 'utf8');
+assert('Browse names the empty city instead of blaming the search', browseTxt.includes('No listings in ${city || \'this area\'} yet'));
+assert('Browse explains an unknown city instead of showing other cities',
+  browseTxt.includes('cityUnknown') && browseTxt.includes('no city called'));
+assert('Browse result count states which city was searched', browseTxt.includes('found${city ? ` in ${city}`'));
+
+const datasetTxt = readFileSync('src/lib/dataset.js', 'utf8');
+assert('Curated results are filtered by an exact, case-insensitive city',
+  datasetTxt.includes('c.city.toLowerCase() === cityLc'));
+assert('Custom listings are filtered the same way', datasetTxt.includes('r.city.toLowerCase() !== cityLc'));
+
+const cardTxt = readFileSync('src/components/CompanyCard.jsx', 'utf8');
+assert('The card hides its Map button when there is no pin', cardTxt.includes('{mapHref && ('));
+const detailTxt = readFileSync('src/pages/BusinessDetail.jsx', 'utf8');
+assert('The detail page hides the map and Directions without a pin',
+  detailTxt.includes('{mapEmbed && mapHref ? (') && detailTxt.includes('{mapHref && ('));
+assert('The detail page explains the missing pin', detailTxt.includes('No map pin for this listing'));
+
+const auditSrc = readFileSync('scripts/audit-listings.mjs', 'utf8');
+assert('The audit script detects foreign pins', auditSrc.includes('pin outside Pakistan'));
+assert('The audit script is wired to npm run audit',
+  readFileSync('package.json', 'utf8').includes('node scripts/audit-listings.mjs'));
+assert('stats.mjs refuses to publish foreign pins', readFileSync('scripts/stats.mjs', 'utf8').includes('refused to publish'));
+
+const importSrc = readFileSync('scripts/import-listings.mjs', 'utf8');
+assert('The CSV importer drops foreign coordinates', importSrc.includes('are not in Pakistan'));
+assert('The CSV importer no longer invents a city for unknown names', !importSrc.includes('|| CITIES[0];'));
+assert('The CSV importer no longer invents a category', !importSrc.includes('return best || CATEGORIES[0]'));
+assert('The CSV importer no longer invents coordinates', !importSrc.includes('Math.random() - 0.5'));
+assert('The city importer no longer invents a category',
+  !readFileSync('scripts/import-city.mjs', 'utf8').includes('return best || CATEGORIES[0]'));
+
+const swSrc = readFileSync('public/sw.js', 'utf8');
+assert('Service worker no longer serves the dataset stale-while-revalidate',
+  swSrc.includes("url.pathname.startsWith('/data/')") && swSrc.includes('ypk-v2'));
+assert('Old service-worker caches are purged on activate', swSrc.includes('caches.delete(k)'));
+assert('The dataset endpoint must revalidate',
+  readFileSync('api/directory.js', 'utf8').includes('no-cache, must-revalidate'));
 
 console.log('\n=== 2. SEO & AEO SCHEMA GENERATION TESTS ===');
 const sampleFaqs = [

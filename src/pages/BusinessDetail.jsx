@@ -46,6 +46,10 @@ export default function BusinessDetail() {
   const saved = useMemo(() => (b ? !!findLead(bizKey(b, id)) : false), [b, id, savedTick]);
   const wa = useMemo(() => waInfo(b || {}), [b]);
   const claimState = useMemo(() => (b ? verificationState({ ...b, bizId: bizKey(b, id) }) : 'none'), [b, id, savedTick, claimOpen]);
+  // No pin (missing, or outside Pakistan) → no Directions button and no map embed, rather
+  // than a link that opens in another country.
+  const mapHref = useMemo(() => (b ? googleMapsUrl(b) : null), [b]);
+  const mapEmbed = useMemo(() => (b ? googleMapsEmbedUrl(b) : null), [b]);
 
   if (b === undefined) return <SkeletonList n={4} />;
   if (b === null) return <EmptyState emoji="🤷" title="Business not found" hint="It may have been removed." action={<Link to="/browse" className="mt-3 inline-block bg-ink text-brand font-black text-[13px] rounded-xl px-4 py-2.5">Browse businesses</Link>} />;
@@ -190,26 +194,36 @@ export default function BusinessDetail() {
           <button onClick={shareBusiness} className="tap h-11 rounded-2xl bg-white border border-stone-300 text-ink-soft font-black text-[13px] flex items-center justify-center gap-1.5">
             <Share2 size={15} /> Share
           </button>
-          <a href={googleMapsUrl(b)} target="_blank" rel="noreferrer" className="tap h-11 rounded-2xl bg-white border border-stone-300 text-ink-soft font-black text-[13px] flex items-center justify-center gap-1.5">
-            <Navigation size={14} /> Directions
-          </a>
+          {mapHref && (
+            <a href={mapHref} target="_blank" rel="noreferrer" title={`Open ${b.name} in Google Maps`} className="tap h-11 rounded-2xl bg-white border border-stone-300 text-ink-soft font-black text-[13px] flex items-center justify-center gap-1.5">
+              <Navigation size={14} /> Directions
+            </a>
+          )}
         </div>
       </div>
 
-      {/* Map — real pin */}
-      <div className="mt-4 rounded-[24px] overflow-hidden border border-stone-200/80 shadow-card bg-white">
-        <iframe
-          title={`${b.name} on map`}
-          src={googleMapsEmbedUrl(b)}
-          className="w-full h-[260px] block border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-        <a href={googleMapsUrl(b)} target="_blank" rel="noreferrer" className="tap flex items-center justify-center gap-2 h-11 font-black text-[13px] text-brand-deeper bg-brand-soft/60 hover:bg-brand-soft">
-          <MapPin size={15} /> Open in Google Maps
-        </a>
-      </div>
+      {/* Map — real pin only. A listing without a verified Pakistani coordinate shows an
+          explicit "no map pin" note instead of guessing a location. */}
+      {mapEmbed && mapHref ? (
+        <div className="mt-5 rounded-[24px] overflow-hidden border border-stone-200/80 shadow-card bg-white">
+          <iframe
+            title={`${b.name} on map`}
+            src={mapEmbed}
+            className="w-full h-[260px] block border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+          <a href={mapHref} target="_blank" rel="noreferrer" className="tap flex items-center justify-center gap-2 h-11 font-black text-[13px] text-brand-deeper bg-brand-soft/60 hover:bg-brand-soft">
+            <MapPin size={15} /> Open in Google Maps
+          </a>
+        </div>
+      ) : (
+        <p className="mt-5 flex items-center gap-2 rounded-2xl border border-dashed border-stone-300 bg-white/70 px-3.5 py-3 text-[12.5px] font-bold text-stone-500">
+          <MapPin size={14} className="shrink-0 text-stone-400" />
+          No map pin for this listing — we would rather show none than a wrong location.
+        </p>
+      )}
 
       {/* Similar */}
       {similar.length > 0 && (

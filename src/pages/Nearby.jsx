@@ -80,8 +80,12 @@ export default function Nearby() {
   }, [mode, cat, city, pos?.lat]);
 
   const ranked = useMemo(() => {
-    if (!items || !pos) return items;
-    return items
+    if (!items) return items;
+    // Without a GPS fix there is no distance to rank; without a real Pakistani pin we
+    // cannot compute one, so those rows are left out of a "nearby" answer.
+    const located = items.filter((b) => Number.isFinite(b.lat) && Number.isFinite(b.lng));
+    if (!pos) return located;
+    return located
       .map((b) => ({ ...b, _d: haversine(pos.lat, pos.lng, b.lat, b.lng) }))
       .sort((a, b) => a._d - b._d);
   }, [items, pos]);

@@ -7,6 +7,8 @@
 
 import { CATEGORIES, CATEGORY_BY_ID } from '../data/categories.js';
 import { CITIES } from '../data/geo.js';
+import { validPkPoint } from './geovalidate.js';
+import { runQuery, buildIndex } from './searchCore.js';
 
 // Guarded endpoint first (production); the dev file is the automatic fallback
 // (local dev/preview). A VITE_DATA_URL override wins over both.
@@ -15,6 +17,7 @@ let names, lnames, cats, cityIdxs, areas, ratings, reviews, seeds, total = 0;
 let ids, phones, whatsapps, sources, emails, websites, lats, lngs, hoursArr, addresses, provinces;
 let header = null;
 let cityLower, catLower;
+let index = null;
 
 async function load() {
   const candidates = import.meta.env.VITE_DATA_URL
@@ -24,7 +27,9 @@ async function load() {
   for (const url of candidates) {
     try {
       // App-internal marker header; the guarded endpoint rejects requests without it
-      const res = await fetch(url, { headers: { 'x-ypk-app': '1' } });
+      // `cache: 'no-cache'` forces revalidation: a cleaned corpus must not be served from
+      // a heuristic HTTP cache for the rest of the session.
+      const res = await fetch(url, { headers: { 'x-ypk-app': '1' }, cache: 'no-cache' });
       if (!res.ok) throw new Error(`status ${res.status}`);
       const t = await res.text();
       // Guard against SPA-fallback HTML (e.g. local preview) being mistaken for data
@@ -83,51 +88,27 @@ async function load() {
   cityLower = CITIES.map((c) => c.name.toLowerCase());
   catLower = {};
   for (const c of CATEGORIES) catLower[c.id] = c.name.toLowerCase();
+  index = null; // rebuilt on the next query from the freshly loaded arrays
   lines.length = 0;
 }
 
 function query(q, cat, city, sort, page, perPage) {
-  const tokens = (q || '').toLowerCase().split(/\s+/).filter(Boolean);
-  const cityFilter = city ? CITIES.findIndex((c) => c.name === city) : -1;
-  const catFilter = cat ? +cat : -1;
-
-  const matches = [];
-  for (let i = 0; i < total; i++) {
-    if (catFilter >= 0 && cats[i] !== catFilter) continue;
-    if (cityFilter >= 0 && cityIdxs[i] !== cityFilter) continue;
-    if (tokens.length) {
-      const hay = lnames[i] + ' ' + catLower[cats[i]] + ' ' + cityLower[cityIdxs[i]];
-      let ok = true;
-      for (const t of tokens) {
-        if (!hay.includes(t)) { ok = false; break; }
-      }
-      if (!ok) continue;
-    }
-    matches.push(i);
-  }
-
-  if (sort === 'rating') matches.sort((a, b) => ratings[b] - ratings[a] || reviews[b] - reviews[a]);
-  else if (sort === 'reviews') matches.sort((a, b) => reviews[b] - reviews[a]);
-  else if (sort === 'name') matches.sort((a, b) => names[a].localeCompare(names[b]));
-  else if (sort === 'relevance' && tokens.length) {
-    // exact prefix matches first, then substring position
-    const first = tokens[0];
-    matches.sort((a, b) => {
-      const ai = lnames[a].indexOf(first), bi = lnames[b].indexOf(first);
-      if (ai !== bi) return ai - bi;
-      return reviews[b] - reviews[a];
+  if (!index) {
+    index = buildIndex({
+      names, cats, cityIdxs, reviews, ratings,
+      cityNames: CITIES.map((c) => c.name),
+      catNames: catLower,
     });
   }
-
-  const t = matches.length;
-  const pages = Math.max(1, Math.ceil(t / perPage));
-  const slice = matches.slice((page - 1) * perPage, page * perPage);
-  const rows = slice.map(recordAt);
-  return { total: t, pages, page, rows };
+  // The filter/ranking rules live in searchCore.js so they can be tested directly.
+  return runQuery(index, { q, cat, city, sort, page, perPage }, recordAt);
 }
 
 // A full record — nothing is derived here, so what the UI shows is what was imported.
+// The one correction applied is a safety one: a coordinate outside Pakistan is reported as
+// "no location" (null), because a map pin in Kenya is worse than no map pin at all.
 function recordAt(i) {
+  const located = validPkPoint(lats[i], lngs[i]);
   return {
     __i: i,
     bizId: ids[i],
@@ -142,8 +123,9 @@ function recordAt(i) {
     source: sources[i],
     email: emails[i] || null,
     website: websites[i] || null,
-    lat: lats[i],
-    lng: lngs[i],
+    lat: located ? lats[i] : null,
+    lng: located ? lngs[i] : null,
+    hasLocation: located,
     rating: ratings[i] || null,
     reviews: reviews[i] || null,
     hours: hoursArr[i] || null,

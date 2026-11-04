@@ -15,6 +15,8 @@ import { fileURLToPath } from 'node:url';
 import { CATEGORY_BY_ID } from '../src/data/categories.js';
 import { CITIES } from '../src/data/geo.js';
 import { waNumber } from '../src/lib/whatsapp.js';
+import { validPkPoint } from '../src/lib/geovalidate.js';
+import { isUsableName, isPlaceholderPhone } from '../src/lib/quality.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const args = Object.fromEntries(
@@ -76,9 +78,31 @@ if (args.empty || !existsSync(input)) {
 }
 
 const payload = JSON.parse(readFileSync(input, 'utf8'));
-const records = payload.records || payload;
+let records = payload.records || payload;
 if (!Array.isArray(records) || records.length === 0) {
   writeEmpty('empty file');
+  process.exit(0);
+}
+
+// Last line of defence before anything is published: a record with a placeholder name or
+// number, or a coordinate outside Pakistan, must never reach the runtime payload — even if
+// it somehow got into the corpus file. `npm run audit -- --fix` removes them permanently
+// and prints why; here they are simply not shipped.
+const dropped = { foreignPin: 0, placeholderName: 0, placeholderPhone: 0 };
+records = records.filter((r) => {
+  if (!isUsableName(r.name)) { dropped.placeholderName++; return false; }
+  if (isPlaceholderPhone(r.phone)) { dropped.placeholderPhone++; return false; }
+  if ((r.lat != null || r.lng != null) && !validPkPoint(r.lat, r.lng)) { dropped.foreignPin++; return false; }
+  return true;
+});
+if (dropped.foreignPin || dropped.placeholderName || dropped.placeholderPhone) {
+  console.warn('stats: refused to publish some records:');
+  if (dropped.foreignPin) console.warn(`  ${dropped.foreignPin} with a pin outside Pakistan (run: npm run audit -- --fix)`);
+  if (dropped.placeholderName) console.warn(`  ${dropped.placeholderName} with a placeholder name`);
+  if (dropped.placeholderPhone) console.warn(`  ${dropped.placeholderPhone} with a placeholder phone number`);
+}
+if (!records.length) {
+  writeEmpty('every record failed the quality check');
   process.exit(0);
 }
 
@@ -107,7 +131,8 @@ records.forEach((r, i) => {
   lines.push([
     esc(r.name), cat ? cat.id : catId ?? 0, cityIdx, 0, 0, esc(r.area || r.city), seed,
     esc(r.id), esc(r.phone), r.whatsapp ? 1 : 0, esc(r.source || 'dataset'),
-    esc(r.email), esc(r.website), r.lat ?? '', r.lng ?? '',
+    esc(r.email), esc(r.website),
+    validPkPoint(r.lat, r.lng) ? r.lat : '', validPkPoint(r.lat, r.lng) ? r.lng : '',
     r.rating ?? '', r.reviews ?? '', esc(r.hours), esc(r.area), esc(r.address), esc(r.province),
   ].join('|'));
 });

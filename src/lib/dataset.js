@@ -5,6 +5,7 @@ import { CURATED } from '../data/curated.js';
 import { CITIES } from '../data/geo.js';
 import { CATEGORY_BY_ID } from '../data/categories.js';
 import { getCustomListings, getCustomListing, asResultRow, isCustomId } from './customListings.js';
+import { validPkPoint } from './geovalidate.js';
 
 let worker = null;
 let readyResolvers = [];
@@ -69,10 +70,12 @@ export async function searchBusinesses({ q = '', cat = null, city = null, sort =
 
   // Curated matches (flagship, verified) — shown first
   const ql = q.toLowerCase().trim();
+  const cityLc = String(city || '').trim().toLowerCase();
   const curatedMatches = CURATED
     .map((c, idx) => ({ c, idx }))
-    .filter(({ c }) => (!cat || CATEGORY_BY_ID[cat]?.name === catNameOf(c)) && (!city || c.city === city) &&
-      (!ql || c.name.toLowerCase().includes(ql) || catNameOf(c).toLowerCase().includes(ql) || c.city.toLowerCase().includes(ql)))
+    .filter(({ c }) => (!cat || CATEGORY_BY_ID[cat]?.name === catNameOf(c))
+      && (!cityLc || c.city.toLowerCase() === cityLc)
+      && (!ql || c.name.toLowerCase().includes(ql) || catNameOf(c).toLowerCase().includes(ql) || c.city.toLowerCase().includes(ql)))
     .map(({ c, idx }) => normalizeCurated(c, `c${idx}`));
 
   // The user's own custom listings are theirs to find: they match the same query text
@@ -96,10 +99,11 @@ function catNameOf(c) { return CATEGORY_BY_ID[c.cat]?.name || ''; }
 /** Filter the device's own custom listings with the same rules the worker uses. */
 function matchCustom(q, cat, city) {
   const tokens = String(q || '').toLowerCase().split(/\s+/).filter(Boolean);
+  const cityLc = String(city || '').trim().toLowerCase();
   return getCustomListings()
     .filter((r) => {
       if (cat != null && String(r.catId) !== String(cat)) return false;
-      if (city && r.city !== city) return false;
+      if (cityLc && r.city.toLowerCase() !== cityLc) return false;
       if (!tokens.length) return true;
       const hay = `${r.name} ${r.catName} ${r.city} ${r.area}`.toLowerCase();
       return tokens.every((t) => hay.includes(t));
@@ -107,14 +111,22 @@ function matchCustom(q, cat, city) {
     .map(asResultRow);
 }
 
-/** Curated rows carry no address/province/hours, so fill only what the city data proves. */
+/**
+ * Curated rows carry no address/province/hours, so fill only what the city data proves.
+ * Coordinates are passed through only when they are really in Pakistan: a pin that opens
+ * in the wrong country is worse than no pin, so the map action is hidden instead.
+ */
 function normalizeCurated(c, id) {
-  const city = CITIES.find((x) => x.name === c.city);
+  const cityRec = CITIES.find((x) => x.name === c.city);
+  const located = validPkPoint(c.lat, c.lng);
   return {
     ...c,
+    lat: located ? c.lat : null,
+    lng: located ? c.lng : null,
+    hasLocation: located,
     id,
     cat: CATEGORY_BY_ID[c.cat],
-    province: c.province || city?.province || '',
+    province: c.province || cityRec?.province || '',
     address: c.address || [c.bldg, c.street, c.area, c.city].filter(Boolean).join(', '),
     hours: c.hours || null,
     verified: true,

@@ -17,7 +17,32 @@ Pakistan's business directory, rebuilt for scale and for **freelancers & marketi
 | **USP #1 (no competitor has this)** | **Lead Workspace**: save businesses → lead lists → status pipeline (New/Contacted/Replied/Won/Lost) → notes → **CSV export** → **auto-drafted personalized pitch emails/WhatsApp messages** (6 service types × 3 tones, editable) → **one-tap WhatsApp outreach queue** (walks a list, opens each business's own chat, marks Contacted) |
 | **Get Listed (USP #2 — free forever)** | Full free-listing flow for business owners: 2-min submission, benefits pitch, "My listings" manager, verified badge in 48h, boosted-listings waitlist teaser. Wire `VITE_FORMSPREE_ID` in `.env` to receive submissions by email. |
 
-### Data honesty (read this before demoing)
+### Data integrity
+
+Every published listing is a real Pakistani business. Nothing is generated, and nothing is
+invented to fill a city or a category — the directory ships **empty** when it has no real
+records, and says so.
+
+| Rule | Enforced in |
+| --- | --- |
+| Coordinates must fall inside Pakistan (23.4–37.2 N, 60.5–78.1 E) | `src/lib/geovalidate.js`, used by both importers, the custom-listing form, `stats.mjs` and `audit-listings.mjs` |
+| A pin must be within 120 km of the listing's stated city (150 km at audit time) | importers, `npm run audit` |
+| No pin is better than a wrong pin — a row with a bad coordinate is dropped, and the UI hides Map/Directions | `src/lib/derive.js`, `CompanyCard`, `BusinessDetail` |
+| Unknown city or unclassifiable category → row dropped, never defaulted | `resolveCity()`, `matchCategoryByWords()` in `src/lib/quality.js` |
+| Placeholder names (`Test`, `xxxx`) and junk numbers (`0300-0000000`) are refused | `isUsableName()`, `isPlaceholderPhone()` |
+| The city filter is case- and whitespace-insensitive, and an unknown city returns **zero** rows | `src/lib/searchCore.js` |
+| Publish is gated: `stats.mjs` refuses a corpus containing a foreign pin | `scripts/stats.mjs` |
+| The dataset is served network-first so a fix is not masked by a stale cache | `public/sw.js`, `api/directory.js` |
+
+Check or clean a corpus at any time:
+
+```bash
+npm run audit            # report
+npm run audit -- --fix   # drop/blank the offending rows
+npm run coverage         # per-city coverage table
+```
+
+## Data honesty (read this before demoing)
 
 **No sample data ships.** There is no listing generator any more; the directory is empty until
 real records are imported, and the UI says so instead of showing invented volume.
