@@ -50,7 +50,7 @@ export default function Categories() {
       />
 
       <h1 className="font-black text-2xl text-ink">Browse categories 🗂️</h1>
-      <p className="text-[13px] font-semibold text-stone-500 mt-0.5 mb-3">{CATEGORIES.length} categories · 200,000+ listings</p>
+      <p className="text-[13px] font-semibold text-stone-500 mt-0.5 mb-3">{CATEGORIES.length} categories across Pakistan</p>
 
       <div className="flex items-center gap-2 bg-white rounded-2xl px-3.5 h-11 border border-stone-300 mb-4 sticky top-16 z-20 shadow-card">
         <Search size={16} className="text-stone-400" />

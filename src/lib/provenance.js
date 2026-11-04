@@ -24,10 +24,11 @@ export const SOURCE_LABEL = {
 const TRUSTED = new Set([SOURCE.OWNER, SOURCE.OFFICIAL, SOURCE.SEED, SOURCE.DATASET]);
 
 /**
- * Resolve provenance, failing *closed*: anything we cannot positively attribute is treated
- * as sample data, because the cost of dialling a stranger is higher than the cost of an
- * extra "sample" label. Old saved leads predate the `source` field, so infer from shape:
- * curated ids start with "c", generated rows always carry an `__i` index.
+ * Resolve provenance, failing *closed*: anything we cannot positively attribute is treated as
+ * untrusted, because the cost of dialling a stranger is higher than the cost of an extra
+ * warning label. Old saved leads predate the `source` field, so infer from shape: curated ids
+ * start with "c". `SOURCE.SAMPLE` is retained only to recognise stale browser data from
+ * pre-2026-11 installs — nothing in the app produces it any more.
  */
 export function sourceOf(b = {}) {
   if (b.source) return b.source;

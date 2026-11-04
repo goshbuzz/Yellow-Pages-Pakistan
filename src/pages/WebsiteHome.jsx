@@ -40,7 +40,7 @@ import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 const HOME_FAQS = [
   {
     q: 'What is Yellow Pages Pakistan?',
-    a: 'Yellow Pages Pakistan is a digital business directory for Pakistan, shipping with 200,000 sample records across 420 cities and 130 categories so the product can be evaluated, and designed to run on imported real listings with direct phone numbers, WhatsApp links and Google Maps pins.',
+    a: 'Yellow Pages Pakistan is a business directory for Pakistan covering 420 cities and 130 categories. It ships with no placeholder listings: every record is either imported from a licensed dataset or submitted by the business itself, with direct phone numbers, WhatsApp links and Google Maps pins.',
   },
   {
     q: 'How do I access the interactive Directory Web App?',
@@ -67,19 +67,19 @@ const HOME_FAQS = [
 const POPULAR_CATEGORY_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const TOP_CITIES_PREVIEW = [
-  { name: 'Karachi', count: STATS.byCity['Karachi'] || 19028, province: 'Sindh' },
-  { name: 'Lahore', count: STATS.byCity['Lahore'] || 14004, province: 'Punjab' },
-  { name: 'Faisalabad', count: STATS.byCity['Faisalabad'] || 5509, province: 'Punjab' },
-  { name: 'Rawalpindi', count: STATS.byCity['Rawalpindi'] || 4848, province: 'Punjab' },
-  { name: 'Islamabad', count: STATS.byCity['Islamabad'] || 4520, province: 'Federal' },
-  { name: 'Gujranwala', count: STATS.byCity['Gujranwala'] || 3990, province: 'Punjab' },
-  { name: 'Multan', count: STATS.byCity['Multan'] || 3640, province: 'Punjab' },
-  { name: 'Peshawar', count: STATS.byCity['Peshawar'] || 3210, province: 'KPK' },
-  { name: 'Quetta', count: STATS.byCity['Quetta'] || 2850, province: 'Balochistan' },
-  { name: 'Sialkot', count: STATS.byCity['Sialkot'] || 2540, province: 'Punjab' },
-  { name: 'Hyderabad', count: STATS.byCity['Hyderabad'] || 2420, province: 'Sindh' },
-  { name: 'Sargodha', count: STATS.byCity['Sargodha'] || 1950, province: 'Punjab' },
-];
+  { name: 'Karachi', province: 'Sindh' },
+  { name: 'Lahore', province: 'Punjab' },
+  { name: 'Faisalabad', province: 'Punjab' },
+  { name: 'Rawalpindi', province: 'Punjab' },
+  { name: 'Islamabad', province: 'Federal' },
+  { name: 'Gujranwala', province: 'Punjab' },
+  { name: 'Multan', province: 'Punjab' },
+  { name: 'Peshawar', province: 'KPK' },
+  { name: 'Quetta', province: 'Balochistan' },
+  { name: 'Sialkot', province: 'Punjab' },
+  { name: 'Hyderabad', province: 'Sindh' },
+  { name: 'Sargodha', province: 'Punjab' },
+].map((c) => ({ ...c, count: STATS.byCity[c.name] || 0 }));
 
 export default function WebsiteHome() {
   const navigate = useNavigate();
@@ -179,7 +179,7 @@ export default function WebsiteHome() {
             <div className="inline-flex items-center gap-2 bg-amber-100/90 border border-amber-300/70 rounded-full px-4 py-1.5 mb-6 shadow-sm">
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
               <span className="text-[12.5px] font-extrabold text-amber-900 tracking-wide uppercase">
-                Pakistan’s Largest Business Book · 200,000+ Listings
+                Pakistan’s Business Directory · Real, Sourced Listings
               </span>
             </div>
 
@@ -187,7 +187,7 @@ export default function WebsiteHome() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-ink tracking-tight leading-[1.08]">
               Find, Connect & Pitch to <br />
               <span className="bg-gradient-to-r from-amber-600 via-brand to-amber-700 bg-clip-text text-transparent">
-                200,000+ Pakistani Businesses
+                Pakistani Businesses, Verified at Source
               </span>
             </h1>
 
@@ -289,9 +289,11 @@ export default function WebsiteHome() {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             <div className="bg-white/95 rounded-2xl p-5 border border-stone-200/80 shadow-card text-center">
               <p className="text-3xl md:text-4xl font-black text-ink">
-                <CountUp to={STATS.total} suffix="+" />
+                {STATS.total > 0 ? <CountUp to={STATS.total} /> : 'New'}
               </p>
-              <p className="text-xs font-black tracking-wider text-stone-400 mt-1 uppercase">Active Listings</p>
+              <p className="text-xs font-black tracking-wider text-stone-400 mt-1 uppercase">
+                {STATS.total > 0 ? 'Real listings' : 'Directory — just launched'}
+              </p>
             </div>
             <div className="bg-white/95 rounded-2xl p-5 border border-stone-200/80 shadow-card text-center">
               <p className="text-3xl md:text-4xl font-black text-ink">
@@ -335,12 +337,14 @@ export default function WebsiteHome() {
               <div>
                 <h3 className="text-xl font-black text-ink mb-3">For Business Owners</h3>
                 <p className="text-stone-600 text-[14.5px] leading-relaxed mb-6 font-medium">
-                  Claim your presence on Pakistan’s fastest-growing directory. Receive inbound calls and WhatsApp chats without paying a rupee in commission.
+                  Put your business on the directory before your competitors do. Receive inbound calls and
+                  WhatsApp chats without paying a rupee in commission — and verify your own number so buyers
+                  know it is really you.
                 </p>
                 <ul className="space-y-3 text-[14px] font-bold text-stone-700">
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
-                    <span>Free listing forever with 48h verified badge</span>
+                    <span>Free listing forever — verify your number on WhatsApp</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
@@ -416,7 +420,7 @@ export default function WebsiteHome() {
                 <ul className="space-y-3 text-[14px] font-bold text-stone-700">
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
-                    <span>200,000+ verified listings across 420 cities</span>
+                    <span>Owner-verified numbers across 420 cities</span>
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
@@ -678,7 +682,7 @@ export default function WebsiteHome() {
                 <tbody className="divide-y divide-stone-100 text-[13.5px] font-bold text-stone-700">
                   <tr>
                     <td className="p-4 sm:p-5 font-black text-ink">Listings Database</td>
-                    <td className="p-4 sm:p-5 bg-amber-50/40 text-emerald-700 font-black">200,000+ Active</td>
+                    <td className="p-4 sm:p-5 bg-amber-50/40 text-emerald-700 font-black">Real & verifiable</td>
                     <td className="p-4 sm:p-5 text-stone-400">Fixed & Static</td>
                     <td className="p-4 sm:p-5 text-stone-400">~150k (Many Dead)</td>
                   </tr>
@@ -804,7 +808,7 @@ export default function WebsiteHome() {
             Ready to Explore Pakistan&apos;s Business Book?
           </h2>
           <p className="mt-4 text-stone-300 text-base md:text-lg max-w-2xl mx-auto font-medium">
-            Jump straight into the web application to search 200,000+ businesses, save B2B leads, or list your company in under 2 minutes.
+            Jump straight into the web application to search real businesses, save B2B leads, or list your company in under 2 minutes.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -842,11 +846,11 @@ export default function WebsiteHome() {
                 </span>
               </Link>
               <p className="mt-4 text-stone-400 text-xs leading-relaxed max-w-sm font-medium">
-                The premier digital business directory of Pakistan. 200,000+ verified listings across 420 cities and 130 categories. Built for businesses, shoppers, freelancers, and marketing agencies.
+                A business directory for Pakistan across 420 cities and 130 categories — no invented filler, every listing sourced and its number verifiable on WhatsApp. Built for businesses, shoppers, freelancers, and marketing agencies.
               </p>
               <div className="mt-5 flex items-center gap-2 text-xs font-bold text-stone-400">
                 <span className="inline-block w-2 h-2 rounded-full bg-emerald-500" />
-                <span>200,000+ Listings Active Nationwide</span>
+                <span>Real listings · every number verifiable</span>
               </div>
             </div>
 
