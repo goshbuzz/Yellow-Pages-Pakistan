@@ -314,17 +314,53 @@ for (const r of collected) {
 // (shared switchboards are fine to keep — flag them instead of silently deleting leads).
 // --merge appends to an existing --out file (each import keeps its own attribution);
 // without it the file is replaced, so accidental double-imports cannot double listings.
+function dedupeKey(name, city) {
+  const norm = String(name || '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/\b(pvt|private)\b\.?/g, 'private')
+    .replace(/\b(ltd|limite|limited)\b\.?/g, 'limited')
+    .replace(/\bco\b\.?/g, 'company')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+  return `${norm}|${String(city || '').toLowerCase().trim()}`;
+}
+
+function isGenericAddress(r) {
+  const a = String(r.address || '').trim().toLowerCase();
+  const c = String(r.city || '').trim().toLowerCase();
+  const p = String(r.province || '').trim().toLowerCase();
+  return !a || a === `${c}, pakistan` || a === `${c}, ${p}`;
+}
+
 let existing = [];
 if (args.merge) {
   try { existing = JSON.parse(readFileSync(OUT, 'utf8')).records || []; } catch { existing = []; }
 }
-const seen = new Set(existing.map((r) => `${String(r.name).toLowerCase()}|${String(r.city).toLowerCase()}`));
+const seen = new Map(existing.map((r) => [dedupeKey(r.name, r.city), r]));
 const unique = [];
 let dupes = 0;
+let enriched = 0;
 for (const r of collected) {
-  const key = `${r.name.toLowerCase()}|${r.city.toLowerCase()}`;
-  if (seen.has(key)) { dupes++; continue; }
-  seen.add(key);
+  const key = dedupeKey(r.name, r.city);
+  if (seen.has(key)) {
+    const prev = seen.get(key);
+    let updated = false;
+    if (!prev.phone && r.phone) {
+      prev.phone = r.phone;
+      prev.whatsappCapable = r.whatsappCapable;
+      prev.whatsapp = r.whatsapp;
+      updated = true;
+    }
+    if (!isGenericAddress(r) && isGenericAddress(prev)) {
+      prev.address = r.address;
+      updated = true;
+    }
+    if (updated) enriched++;
+    dupes++;
+    continue;
+  }
+  seen.set(key, r);
   unique.push(r);
 }
 
@@ -334,6 +370,7 @@ const whatsappConfirmed = unique.filter((r) => r.whatsapp).length;
 console.log(`\nimport: ${SOURCE}`);
 log(`records collected   : ${collected.length}`);
 log(`duplicates removed  : ${dupes}`);
+if (enriched) log(`existing enriched   : ${enriched}`);
 log(`kept                : ${unique.length}`);
 log(`WhatsApp-capable    : ${withWa} (${((withWa / (unique.length || 1)) * 100).toFixed(1)}%)`);
 log(`WhatsApp confirmed  : ${whatsappConfirmed}`);
@@ -349,6 +386,10 @@ if (DRY) {
   // File-level attribution lists every source that contributed records (a merged file
   // would otherwise only name the last import).
   const attributions = [...new Set(records.map((r) => r.attribution).filter(Boolean))];
+  if (records.some((r) => r.phoneSource === 'apollo' || r.phone2Source === 'apollo')) {
+    const apolloAttr = 'Apollo.io organization enrichment (head-office phone lines)';
+    if (!attributions.includes(apolloAttr)) attributions.push(apolloAttr);
+  }
   writeFileSync(OUT, JSON.stringify({
     generatedAt: new Date().toISOString(),
     source: [...new Set(records.map((r) => r.source || 'dataset'))].join(','),

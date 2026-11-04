@@ -165,6 +165,26 @@ assert('A no-phone row is not claimed to support WhatsApp', gamma && gamma.whats
 const cardJsx3 = readFileSync('src/components/CompanyCard.jsx', 'utf8');
 assert('Cards replace Call/WhatsApp with an honest no-phone notice', cardJsx3.includes('No phone on record'));
 
+// Merge enrichment & legal-suffix dedupe (used when SECP NBFC/SFA merges into SECP brokers/PSX).
+const tmpMergeCsv = '/tmp/ypk-import-merge-test.csv';
+writeFileSync(tmpMergeCsv, [
+  'Company Name,Nature of Business,City,Address,Telephone',
+  'Gamma Limited,Financial & Investment Services,Islamabad,"Blue Area, Islamabad",0300-5556677',
+  'BETA TRADERS (PVT.) LTD.,Wholesale Grocery,Karachi,"Saddar, Karachi",021-7654321',
+].join('\n'));
+execFileSync('node', ['scripts/import-listings.mjs', `--in=${tmpMergeCsv}`, '--as=official', `--out=${tmpOut2}`, '--merge', '--allow-missing-phone'], { encoding: 'utf8' });
+const mergedRegistry = JSON.parse(readFileSync(tmpOut2, 'utf8'));
+const enrichedGamma = mergedRegistry.records.find((r) => r.name === 'Gamma Ltd');
+assert('Merge deduplicates Ltd vs Limited in the same city', mergedRegistry.records.filter((r) => r.city === 'Islamabad').length === 1);
+assert('Merge enriches an existing phone-less registry row with a real number and address',
+  enrichedGamma && enrichedGamma.phone === '0300-5556677' && enrichedGamma.whatsappCapable === true && enrichedGamma.address === 'Blue Area, Islamabad');
+
+const nbfcSourceLines = readFileSync('scripts/sources/secp-nbfcs.txt', 'utf8').split('\n').filter((l) => l && !l.startsWith('#'));
+assert('SECP NBFCs & SFAs source table is present (281 official license rows)', nbfcSourceLines.length === 281);
+const shippedCorpus = JSON.parse(readFileSync('public/data/listings.json', 'utf8'));
+assert('Shipped corpus matches STATS.total and credits the SECP NBFC/SFA register',
+  shippedCorpus.records.length === STATS.total && shippedCorpus.attribution.includes('SECP NBFCs & Securities/Futures Advisors register'));
+
 console.log('\n=== 1d. OWNER VERIFICATION (CLAIM LOOP) TESTS ===');
 const vNow = Date.now();
 const tok = claimToken('g1', '923001234567', vNow);

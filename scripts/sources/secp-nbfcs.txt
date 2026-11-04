@@ -1,0 +1,284 @@
+# SECP official register: "List for NBFCs and SFAs as on August 31, 2026"
+# Source: https://www.secp.gov.pk/document/list-for-nbfcs-and-sfas-as-on-august-31-2026/ (wpdmdl=67018)
+# Columns: S.No | Entity Name | Activity Type | Activity Category | Registration Date | Last Registration Date | Contact Number | Address
+1|786 Investments Limited|NBFC|Asset Management Services|26/05/2004|26/05/2025|02132603751|G-3, Ground Floor, BRR Tower, Hassan Ali Street, Off I.I. Chundrigar Road Karachi
+2|ABL Asset Management Company Limited|NBFC|Asset Management Services|07/12/2022|07/12/2025|05232305000|Plot No. 14, Mian Bovlerd DHA Phase-6 Lahore
+3|AKD INVESTMENT MANAGEMENT LTD|NBFC|Asset Management Services|21/11/2005|20/11/2025|20/11/2025|216-217, 2ND FLOOR, CONTINENTAL TRADE CENTRE, BLOCK 8, CLIFTON, KARACHI KARACHI karachi south Sindh
+4|AL HABIB ASSET MANAGEMENT LIMITED|NBFC|Asset Management Services|-|18/04/2026|02132469115|3rd Floor, MacKinnon's Building, I.I. Chundrigar Road, Karachi
+5|Alfalah Asset Management Ltd.|NBFC|Asset Management Services|09/05/2005|09/05/2026|02135306741|8-B, 8th Floor, Executive Tower, Dolmen City, Block # 04, Karachi.
+6|Al-Meezan Investment Management Limited|NBFC|Asset Management Services|05/09/2003|01/05/2026|02135630722|Ground Floor, Block "B", Finance & Trade Center Shahrah-e- Faisal, Karachi
+7|Atlas Asset Management Limited|NBFC|Asset Management Services|16/06/2003|15/06/2025|02135379501|Ground Floor, Federation House, Sharae Firdousi, Clifton, Karachi
+8|AWT Investment Limited|NBFC|Asset Management Services|23/12/2011|22/12/2023|02135361371|AWT Plaza, I.I Chundrigar Road, Karachi
+9|BMA Investment Advisors Limited|NBFC|Asset Management Services|18/11/2025||03212150442|Suit No. 804, Uni Tower, I. I. Chundrigar Road, Karachi-74000
+10|Faysal Asset Management Limited|NBFC|Asset Management Services|12/11/2003|17/11/2025|02132277321|7th Floor, Faysal house, ST-02, Main Shahrah-e-Faisal Karachi
+11|First Capital Investments Limited|NBFC|Asset Management Services|09/11/2008|10/09/2022|04235778217|96-B/1, Lower ground floor, M.M Alam Road, Gulberg III, Lahore
+12|HBL Asset Management Limited|NBFC|Asset Management Services|15/05/2014|15/05/2026|3333013010|7th Floor, Emerald Tower G-19, Block 5, Main Clifton Road Clifton, Karachi
+13|Image Investments Limited|NBFC|Asset Management Services|03/03/2026|||STANDARD CHARTERED BANK, P. O. BOX 5556, I. I. CHUNDRIGAR ROAD, KARACHI.
+14|LUCKY INVESTMENTS LIMITED|NBFC|Asset Management Services|18/04/2022|18/04/2025|03320348402|Suite No. 205, 2nd Floor, The Forum, Clifton, Block 9, Khayanban-e- Room, Karachi.
+15|JS Investments Limited|NBFC|Asset Management Services|14/05/2003|14/05/2025|02137243501|The center 19 floor, Plot No. 28 SB-5, Abdullah Haroon Road Saddar Karachi
+16|Lakson Investments Limited|NBFC|Asset Management Services|18/05/2009|18/05/2025|02135698000|Lakson Square, Building No. 2, Sarwar Shaheed Road, Karachi
+17|Mahaana Wealth Limited|NBFC|Asset Management Services|28/04/2022|28/04/2025|03329234413|Office No 48,4th Floor Building, No 38-C, Lane 8, Main Khayaban e Muslim, DHA Phase 6 Bukhari Commercial
+18|MCB INVESTMENT MANAGEMENT LIMITED|NBFC|Asset Management Services|23/08/2003|20/08/2025|-|2nd Floor, Adamjee house, I.I Chundrigar Road, Karachi
+19|National Investment Trust Limited|NBFC|Asset Management Services|14/05/2003|12/05/2025|02132417361|Head Office, 6th Floor National Bank Building, I.I. Chundrigar Road, Karachi
+20|NBP Fund Management Limited|NBFC|Asset Management Services|13/12/2005|13/12/2025|-|7th Floor, Diamond Building, Block-4, Scheme-5, Clifton, Karachi
+21|Pak Oman Asset Management Company Limited|NBFC|Asset Management Services|11/12/2006|12/12/2022|02135639808|Icon House-83 C, 12th Commercial Street, Phase II Extension, DHA Karachi.
+22|Pak Qatar Asset Management Co. Limited|NBFC|Asset Management Services|12/08/2021|12/08/2024|03332295195|Business Arcade, Block-6, PECHS, Shahrah-e-Faisal, Karachi
+23|UBL Fund Managers Limited|NBFC|Asset Management Services|16/06/2003|15/06/2025|02135290080|4th floor, STSM Building, Beaumont Road, Civil Lines, Karachi.
+24|Awwal Corporate Restructuring Company Limited|NBFC|Corporate Restructuring Companies|31/08/2023|PERPETUAL|02138771685|3rd Floor Horizon Vista Plot NO. Commercial 10 Block No 4 Scheme No,5 Clifton Karachi 7500
+25|LSE VENTURES LIMITED|NBFC|Corporate Restructuring Companies|27/01/2026|PERPETUAL||LSE Plaza, 19, Khayaban-e-Aiwan-e-Iqbal, Lahore, Lahore Data Gunj Bukhsh Town, LAHORE, Punjab
+26|PAKISTAN CORPORATE RESTRUCTURING COMPANY LIMITED|NBFC|Corporate Restructuring Companies|31/12/2019|PERPETUAL||13th Floor, UBL Building, Jinnah Avenue, Blue Area Islamabad islamabad Islamabad Capital Territory
+27|Akhuwat Housing Finance Co Ltd|NBFC|Housing Finance Services|01/02/2022|01/02/2025|04235122743|Head Office No 19-Civic Centre, sSector A-2, Township Lahore
+28|Asaan Ghar Finance Limited|NBFC|Housing Finance Services|22/06/2021|22/06/2024|03333516772|House No .A,22,3rd Floor Block 13,B,Gulshan-e-Iqbal Karachi
+29|GOSHA HOUSING FINANCE COMPANY LIMITED|NBFC|Housing Finance Services|30/09/2024|-|042 35755165 0321 442 2222|Suite 5, Polo Residence, Adjacent to DHA Phase 8-A Block, Service Lane, DHA Phase 9, Lahore Cantonement, LAHORE, Punjab
+30|Pakistan Housing Finance Company Limited|NBFC|Housing Finance Services|16/03/2021|15/03/2024|03008227188|Lakson Square Building No 1,Sarwar Shaheed Road Karachi 74200
+31|786 Investments Limited|NBFC|Investment Advisory Services|25/04/2004|25/05/2025|02132603751|G-3, Ground Floor, BRR Tower, Hassan Ali Street, Off I.I. Chundrigar Road Karachi
+32|Aaraf Investment Advisory Limited|NBFC|Investment Advisory Services|18/11/2022|18/11/2025|03232756440|Flat No 1,37-C Commercial Area A DHA Phase II Karachi
+33|ABL Asset Management Company Limited|NBFC|Investment Advisory Services|12/07/2007|12/07/2025|04232305000|Plot No. 14, Mian Bovlerd DHA Phase-6 Lahore
+34|AKD Investment Management Limited|NBFC|Investment Advisory Services|21/11/2005|20/11/2025|02135810461|216-217, Continental Trade Centre, Block 8, Clifton - Karachi
+35|ALFALAH ASSET MANAGEMENT LIMITED|NBFC|Investment Advisory Services|09/03/2005|09/03/2026|02135306741|8-B, 8th Floor, Executive Tower, Dolmen City, Block # 04, Karachi.
+36|Alliance Investment Management Limited|NBFC|Investment Advisory Services|25/04/2006|25/04/2025|02132466252|424,The Cotton Exchange Building II Chundrigar Road Karachi
+37|Al-Meezan Investment Management Limited|NBFC|Investment Advisory Services|05/09/2003|01/05/2026|02135630722|Ground Floor, Block "B", Finance & Trade Center Shahrah-e- Faisal, Karachi
+38|Atlas Asset Management Limited|NBFC|Investment Advisory Services|13/06/2003|14/11/2024|02135379501|Ground Floor, Federation House, Sharae Firdousi, Clifton, Karachi
+39|AWT Investment Limited|NBFC|Investment Advisory Services|23/12/2011|22/12/2023|02135361371|AWT Plaza, I.I Chundrigar Road, Karachi
+40|BMA Investment Advisors Limited|NBFC|Investment Advisory Services|01/07/2005|19/04/2025|03212150442|Suit No. 804, Uni Tower, I. I. Chundrigar Road, Karachi-74000
+41|Faysal Asset Management Limited|NBFC|Investment Advisory Services|10/06/2004|09/06/2025|02132277321|7th Floor, Faysal house, ST-02, Main Shahrah-e-Faisal Karachi
+42|FEDERAL GOVERNMENT PENSIONS FUND MANAGEMENT COMPANY LIMITED|NBFC|Investment Advisory Services|25/07/2025|||Finance Division Q Block, Pak Secretariat
+43|AL HABIB ASSET MANAGEMENT LIMITED|NBFC|Investment Advisory Services|04/03/2006|15/05/2026||3rd Floor, MacKinnons Building,I.I. Chundrigar Road, Karachi. Karachi karachi south Sindh
+44|HBL ASSET MANAGEMENT LIMITED|NBFC|Investment Advisory Services|15/05/2014|15/05/2026|3333013010|7TH FLOOR, EMERALD TOWER, G-19, BLOCK 5, MAIN CLIFTON ROAD, CLIFTON KARACHI SINDH
+45|LUCKY INVESTMENTS LIMITED|NBFC|Investment Advisory Services|18/04/2022|18/04/2025|03320348402|Suite No. 205, 2nd Floor, The Forum, Clifton, Block 9, Khayanban-e- Roomi, Karachi.
+46|JS Investment Limited|NBFC|Investment Advisory Services|14/05/2003|14/05/2025|02137243501|The center 19 floor, Plot No. 28 SB-5, Abdullah Haroon Road Saddar Karachi
+47|Kifayah Investment Management Limited|NBFC|Investment Advisory Services|14/03/2019|14/03/2025|03002134377|Office No. 402, 4th floor, plot No. 66, Khayaban-e- Rizwan, Phase-VI, DHA Karachi
+48|Lakson Investments Limited|NBFC|Investment Advisory Services|18/05/2009|18/05/2025|02135698000|Lakson Square, Building No. 2, Sarwar Shaheed Road, Karachi
+49|Magnus Investment Advisors Limited|NBFC|Investment Advisory Services|11/08/2007|07/05/2025|02135639616|Suite no.101, Glass tower, Frere town, Clifton Karachi
+50|Mahaana Wealth Limited|NBFC|Investment Advisory Services|19/10/2023|-|03329234413|Office No 48,4th Floor Building,No 38-C,Lane 8,Main Khayaban e Muslim,DHA Phase 6 Bukhari Commercial
+51|MCB INVESTMENT MANAGEMENT LIMITED|NBFC|Investment Advisory Services|24/12/2008|20/08/2025||2ND FLOOR ADAMJEE HOUSE II CHUNDRIGAR ROAD KARACHI karachi south Sindh
+52|National Investment Trust Limited|NBFC|Investment Advisory Services|11/07/2019|11/07/2025|02132417361|Head Office, 6th Floor National Bank Building, I.I. Chundrigar Road, Karachi
+53|NBP Fund Management Limited|NBFC|Investment Advisory Services|07/04/2006|07/04/2025||7th Floor, Diamond Building, Block-4, Scheme-5, Clifton, Karachi
+54|Pak Oman Asset Management Company Limited|NBFC|Investment Advisory Services|16/10/2006|16/10/2022|02135639808|Icon House-83 C, 12th Commercial Street, Phase II Extension, DHA Karachi.
+55|Pak Qatar Asset Management Co. Limited|NBFC|Investment Advisory Services|12/08/2021|12/08/2024|03332295195|Business Arcade, Block-6, PECHS, Shahrah-e-Faisal, Karachi
+56|Sarmuz Investments Limited|NBFC|Investment Advisory Services|14/11/2017|14/11/2023|04257854030|Suit No. 18, 2nd Floor, Alflofeoz Tower, MM Alam Road, Lahore
+57|UBL Fund Managers Limited|NBFC|Investment Advisory Services|16/06/2003|15/07/2025|04257854030|Suit No. 18, 2nd Floor, Alflofeoz Tower, MM Alam Road, Lahore
+58|Vision Capital Limited|NBFC|Investment Advisory Services|23/02/2021|23/02/2024|0345-2660435|M-14, Mezzanine Floor, Progressive Plaza, Beaumont Road, Civil Lines Quarter, Karachi
+59|WEALTHBRIDGE MANAGEMENT LIMITED|NBFC|Investment Advisory Services|26/02/2026|||PLOT#10C, SHAHBAZ COMMERCIAL, LANE 4, PHASE VI DHA, KARACHI.
+60|4Sight Financial Services (Pvt) Limited|NBFC|Investment Finance Services|31/03/2023|31/03/2026|03137375555|First Floor, Plot No 31, Street No 3, Sector I-10/3, Islamabad, Pakistan
+61|Abhi (Private) Limited|NBFC|Investment Finance Services|15/04/2022|15/04/2025|03041115276|505-A, 5th Floor, Fortune Towers, Shahrah-e-Faisal, Karachi
+62|AITEBAR FINANCIAL SERVICES (PRIVATE) LIMITED|NBFC|Investment Finance Services|29/07/2026|||Office No.06, 2nd Floor, Margalla Plaza Sector F-10 Markaz Islamabad,
+63|ALIF FINANCE (PRIVATE) LIMITED|NBFC|Investment Finance Services|13/07/2025|||House no 5B, Street 25, F-7/2
+64|Agahe Pakistan|NBFC|Investment Finance Services|14/12/2016|14/12/2025|04235191211|House No; 3, Block A, Lalazar Colony, Phase II, Raiwand Road Lahore
+65|Akhuwat Islamic Microfinance Co. Ltd.|NBFC|Investment Finance Services|15/01/2018|15/01/2024|04235122743|19 Civic center A-2, Township Lahore
+66|Alkhidmat Islamic Microfinance|NBFC|Investment Finance Services|03/03/2025|-||Alkhidmat Complex, 3-KM, Khayaban-e-Jinnah, Lahore.
+67|AL-Muwakhat Microfinance Company Limited|NBFC|Investment Finance Services|20/04/2022|-||Office # 2, FB/3, 2nd floor, Awami Complex, Usman Block New Garden Town, Lahore, Pakistan.
+68|BARG FINANCIAL SERVICES (PRIVATE) LIMITED|NBFC|Investment Finance Services|27/03/2026|||House # 11, Block E, OPF Housing Society, Lahore
+69|Bluesky Financial Services Limited|NBFC|Investment Finance Services|10/03/2023|10/03/2026|02134801551|Office B-18 Block 16 Gulshan Iqbal Karachi
+70|Awami Financial (Private) Limited|NBFC|Investment Finance Services|20/03/2025|-||Office Number 19 (Mezzanine floor), Civic center, executive block,, Gulberg Greens, Islamabad.
+71|DIGI KHATA FINANCIAL SERVICES (PRIVATE) LIMITED|NBFC|Investment Finance Services|10/09/2025||3457769669|House No. 535B, Aziz Masjid Road, Peoples Colony No. 1, Faisalabad
+72|Care Financial Services (Pvt) Limited|NBFC|Investment Finance Services|19/05/2023|19/05/2026|03004396364|PHA Flats Services Road G-7/1 Near ZTBL Head Office Building Islamabad
+73|Cordoba Financial Services Limited|NBFC|Leasing|21/11/2022|21/11/2025|03002345304|PLOT NO H-3/A, SECTOR NO 5, ROAD NO 3000, EBM CAUSEWAY ROAD, KORANGI INDUSTRIAL AREA, KARACHI KORANGI TOWN, KORANGI, SINDH
+74|Cordoba Financial Services Limited|NBFC|Investment Finance Services|17/11/2024|-|03002345304|PLOT NO H-3/A, SECTOR NO 5, ROAD NO 3000, EBM CAUSEWAY ROAD, KORANGI INDUSTRIAL AREA, KARACHI KORANGI TOWN, KORANGI, SINDH
+75|CREDSYS (PRIVATE) LIMITED|NBFC|Investment Finance Services|08/04/2026|||4th Floor PMSTP Bahria University, Karachi Campus, 13th National Stadium Road Karachi, Pakistan
+76|Creditbook Financial Services (Pvt) Limited|NBFC|Investment Finance Services|03/05/2023|03/05/2026|03211114444|GA-51,A-6 Korangi Creek Industrial Park Karachi
+77|Creditfix Financial Services Limited|NBFC|Investment Finance Services|04/11/2021|-|05183027370|1st Floor, Manzoor Plaza, Plot 14E2 Fazal e Haq Rd, G-6/2 Blue Area, Islamabad, Islamabad Capital Te
+78|CSC Empowerment & Inclusion Programme|NBFC|Investment Finance Services|14/12/2016|20/12/2025|04235123623|319-4/ D-1, Green Town, Lahore, Pakistan.
+79|Damen Support Programme|NBFC|Investment Finance Services|04/10/2016|04/10/2025|04235310471|26-C, Nawab Town, Raiwind Road, Lahore, Pakistan
+80|Din Global Financial Services (Pvt) Limited|NBFC|Investment Finance Services|27/02/2024|-|03038506668|Plot No 110 Street 8,I-10/3 Islamabad
+81|Easy Finance (Pvt) Limited|NBFC|Investment Finance Services|19/04/2024|-|03365555010|House 4-B Street No 16 Block A Naval Anchorage Islamabad
+82|Edufi Financial Services (Pvt) Limited|NBFC|Investment Finance Services|23/04/2024|-|03088377055|Authorized Representative Lex Legal Practice 137-A,Street 11 Cavalry Ground Extension Lahore CEO Ad
+83|Escort Investment Bank Limited|NBFC|Investment Finance Services|03/06/2003|28/05/2020|03004653034|Ground Floor 26,Davis Road Lahore
+84|Farmers Development Organization|NBFC|Investment Finance Services|02/11/2021|02/11/2024||House No. 11.Danish Street ,Ahhab Colony Bahadur Pur Chowk Bosan Road Multan
+85|FFO Support Program|NBFC|Investment Finance Services|04/04/2017|04/04/2026||Civil Lines, Sheikhupura
+86|FINTECH GHARANA FINANCIAL (PRIVATE) LIMITED|NBFC|Investment Finance Services|30/04/2025|||Office No.5B, Mezzanine Floor, Al Malik Centre, Jinnah Avenue, Blue Area, Islamabad
+87|First Credit & Investment Bank Limited|NBFC|Investment Finance Services|15/01/2004|03/01/2023|02135658750|2nd Floor , Sidco Avenue Center, Stratchen Road, R.A. Lines, Karachi
+88|FORAN FINANCE SOLUTIONS (PRIVATE) LIMITED|NBFC|Investment Finance Services|30/06/2026|||Building#67, I&T Center, Sector G10/1, Islamabad
+89|FOREMOST FINANCIAL SERVICES (PRIVATE) LIMITED|NBFC|Investment Finance Services|27/08/2025|||Office No.10, 1st floor, city square, MR - 01, near gate number 01, block B , multi gardens b17, Islamabad, Islamabad Urban, ISLAMABAD, Islamabad Capital Territory (I.C.T.)
+90|FUTURE FINANCE SOLUTIONS (PRIVATE) LIMITED|NBFC|Investment Finance Services|27/07/2026|||Office No.115, First Floor, Land Mark 3, Opposite NUST University Gate No. 6 Sector H13 Islamabad
+91|Ghazi Barotha Tariqati Idara|NBFC|Investment Finance Services|13/07/2016|13/07/2025|03005196856|GT Road,Hattian,Near Old Pak,PWD Rest House District Attock.
+92|Gold Lion Financials (Private) Ltd.|NBFC|Investment Finance Services|31/10/2022|31/10/2025|03352005055|Office No.12, 3rd Floor, Moscow Plaza, Jinnah Avenue, Blue Area Islamabad.
+93|Goldfin Ltd.|NBFC|Investment Finance Services|09/06/2023|09/06/2026|04235890557|264, Street - 16, Sector -AA, Phase 4, DHA Lahore
+94|Grays Leasing Limited|NBFC|Leasing|14/05/2003|16/05/2025|04235770381|701-A, 7th Floor, City Towers Main Boulevard Gulberg 2, Lahore
+95|HALAN FINANCE LIMITED|NBFC|Investment Finance Services|14/07/2026||3005515360|Gate No.3, 3rd Floor, Islamic Chamber of Commerce Building, Clifton Block-9, Karachi-75600, Sindh Pakistan
+96|Humraah Financial Services Ltd|NBFC|Investment Finance Services|31/10/2022|-|03345327351|Office 259, & 260, 2nd floor, Luxus Mall Gulberg Greens, Islamabad
+97|Infra Zamin Pakistan Limited|NBFC|Investment Finance Services|19/02/2021|19/02/2024|02135297642|4A, 4th floor, Executive Tower, Dolmen Mall, Block 4, Clifton, Karachi, Pakistan
+98|Invest Capital Investment Bank Limited|NBFC|Investment Finance Services|29/02/2008|28/02/2026|02135894022|Flat No 2-Plot No.38-C,22nd Commercial Street Phase 11 Ext, DHA Karachi
+99|ISHTIRAK MICROFINANCE (PRIVATE) LIMITED|NBFC|Investment Finance Services|29/05/2025|||96-A, Block G, Gulberg III, Lahore
+100|Jazzcash (Pvt) Limited|NBFC|Investment Finance Services|13/09/2023|12/09/2026|03009724749|Jazz Digital Headquarters,DHQ-3,16-G,Kohistan Road F-8 Markaz Islamabad
+101|JingleCred Digital Finance Limited|NBFC|Investment Finance Services|10/03/2023|10/03/2026||Street No. 26 National Police Foundation E11/4, Islamabad
+102|JWS Pakistan|NBFC|Investment Finance Services|20/10/2016|20/10/2025|03018643697|11-Jinnah Road, Link D.C. Road Gujranwala (52250), Pakistan
+103|Kashf Foundation|NBFC|Investment Finance Services|20/10/2016|19/10/2025|04235248916|1-C, Shahrah Nazrea-e- Pakistan, Lahore
+104|KOKO TECH PAKISTAN (PRIVATE) LIMITED|NBFC|Investment Finance Services|02/04/2026|||Daraz Office, 1st Floor, National Aerospace Science and Technology Park (NASTP) Silicone Building, Faisal Cantonment, Karachi
+105|Legend Financial Services (Private) Limited|NBFC|Investment Finance Services|10/03/2023|||Office No.106, First Floor, Capital Business Centre, F-10 Markaz Islamabad Islamabad Islamabad Islamabad Islamabad Capital Territory (I.C.T.) 44000
+106|LOGISERVE (PRIVATE) LIMITED|NBFC|Investment Finance Services|19/08/2025|-|3005552206|10th Floor, State Life Tower, Blue Area Islamabad Islamabad Islamabad Capital Territory (I.C.T.)
+107|MEHFOOZ FINANCE (PRIVATE) LIMITED|NBFC|Investment Finance Services|01/06/2026|||CCA-2 197 G floor Phase 6 Dha Lahore
+108|MG Financial Services (Pvt) Limited|NBFC|Investment Finance Services|01/06/2022|01/06/2025|03072229343|2nd Floor Bank Side Wing State Life Building No 2,Wallace Road Karachi
+109|Mojaz Support Program|NBFC|Investment Finance Services|30/03/2017|30/03/2026|05424123130|MSP Main Office Opposite Old DC House, Tehsil & District, Narowal.
+110|National Credit Guarantee Co Limited|NBFC|Investment Finance Services|13/06/2024|-|03214010084|Karandaaz Pakistan,1-E Ali Plaza, Nazimuddin Road, Blue Area,Islamabad
+111|National Rural Support Programme|NBFC|Investment Finance Services|02/09/2016|02/09/2025|05128223240|7th Floor, UBL Building,Jinnah Avenue,Islamabad
+112|NAVICRED FINTECH (PRIVATE) LIMITED|NBFC|Investment Finance Services|01/06/2026||3177900148|No. C3, Daftarkhwan / Vanguard, 5-A Constitution Ave, F-5/1 F-5
+113|Naymet Pakistan|NBFC|Investment Finance Services|06/05/2025|-||173-H, DHA Lahore Cantt LAHORE Punjab
+114|Neem Exponential Financial Services (Pvt.) Ltd.|NBFC|Investment Finance Services|15/12/2022|15/12/2025|03222222201|The Hive, 1st Floor, MA Tabba Foundation Building Block 9,Gizri Road Karachi.
+115|NOVA LINE (PRIVATE) LIMITED|NBFC|Investment Finance Services|02/04/2026|||5-A Constitution Ave, F-5/1,Islamabad
+116|OLP Financial Services Pakistan Limited|NBFC|Investment Finance Services|03/06/2003|07/12/2023|02135144029|OLP Building, Plot No. 16, Sector No. 24, Korangi Industrial Area, Karachi
+117|Oraan Financial Services (Pvt) Limited|NBFC|Investment Finance Services|03/06/2024|-|03172037220|Office No 602,6th Floor STMF Building,CL-10/20,Civil Lines Beaumont Road Karachi
+118|ORGANIZATION FOR POVERTY REDUCTION AND COMMUNITY TRAINING PROGRAM|NBFC|Investment Finance Services|31/10/2017|31/10/2023|02136656960333352292|Plot No: ST-4, Sector 5/A, Qasba Township,Manghopir Road Karachi
+119|ORIGINAL KHAATA FINANCIAL SERVICES (PRIVATE) LIMITED|NBFC|Investment Finance Services|08/01/2026|||Daftarkhwan Plot 94, Street 7, Sector I-10/3,Islamabad
+120|Pak Gulf Leasing Company Limited|NBFC|Leasing|14/05/2003|16/05/2025|02135824401|UNIBRO HOUSE Ground and Mezzanine Floor Plot No114,9th East Street Phase DHA Karachi -75500
+121|Pakisnova Microfinance Company (Pvt) Limited|NBFC|Investment Finance Services|02/05/2023|02/05/2026|03335263063|5TH Floor Gulberg Business Centre Civic Centre Gulberg Green Islamabad
+122|Pakistan Development Fund Limited|NBFC|Investment Finance Services|23/04/2015|22/04/2024|05192048440|Ministry of Finance, Finance Division, Pak-Secretariat, Islamabad
+123|Pakistan Microfinance Investment Co|NBFC|Investment Finance Services|09/09/2016|10/09/2025|05184878200|The 21st Floor, Plot 55-C, Ufone Tower, Jinnah Avenue, Blue Area,Islamabad
+124|PALMPAY (PRIVATE) LIMITED|NBFC|Investment Finance Services|20/10/2025|||31-A, Street 3, Nisar Colony, Khursheed Alam Road, Lahore Cantt
+125|Parwaaz Financial Services Limited|NBFC|Investment Finance Services|22/06/2021|22/06/2024|05184497610|Karandaaz Pakistan,1-E Ali Plaza, Nazimuddin Road, Islamabad
+126|PIONEER DIGITAL FINANCIAL (PRIVATE) LIMITED|NBFC|Investment Finance Services|24/07/2026|||Office No, 25. 1st Floor Al Rehman Mall G-11 Markaz Islamabad
+127|PostEx Financial Services (Pvt) Limited|NBFC|Investment Finance Services|10/03/2023|10/03/2026|03218292877|4th Floor, CCA14, Sector C, Phase V, DHA Lahore
+128|Primus Leasing Limited|NBFC|Leasing|25/09/2017|25/09/2023|02138771548|Horizon Vista Plot No Commercial -10-Block 4 Scheme No 5 Clifton Karachi
+129|Punjab Rural Support Program|NBFC|Investment Finance Services|06/06/2016|06/06/2025|04235422651|33-Civic Center, Mustafa Town, Lahore.
+130|QistBazaar (Private) Limited|NBFC|Investment Finance Services|10/10/2022|10/10/2025||F-15/2-1, Block-7, Clifton, Karachi, Pakistan.
+131|Quark Financials (Pakistan (Private) Limited|NBFC|Investment Finance Services|24/10/2024|-||Plot No.134, D&U Heights., Second Floor, I&T Center, Sector G-9/1, Islamabad.
+132|Rural Community Development Programme|NBFC|Investment Finance Services|04/10/2016|04/10/2025|04237170280|House; 04, Block: D, Al-Rehman Garden, Phase II Near Faizpur, Interchange Sharaqpur Road, Lahore
+133|Safco Microfinance Company (Pvt) Limited|NBFC|Investment Finance Services|14/07/2022|14/07/2025|03332759952|House No. C-415/416 Behind Byco Petrol Pump, Phase-I, Qasimabad, Hyderabad, Sindh, Pakistan.
+134|Sarhad Rural Support Programme|NBFC|Investment Finance Services|10/01/2017|10/01/2026|03459004433|109, Street No. 2-B, Defence Officer's Colony Khyber Road, Peshawar, Pakistan.
+135|Sarmaya Microfinance (Pvt) Ltd.|NBFC|Investment Finance Services|01/02/2022|-|03365679995|Software Technology Park- Level 1, Block A, STP, Service Road N, 1-9/3, Islamabad
+136|Sayya Micrfinance Company|NBFC|Investment Finance Services|12/07/2017|12/07/2026|03336443291|Rojhan Road, Kotla Naseer, Rajanpur.
+137|Security Investment Bank Limited|NBFC|Investment Finance Services|03/06/2003|29/05/2025|02135659750|502, 5th Floor, Madina City Mall, Abdullah Haroon Road, Saddar, Karachi (Head office)
+138|Shah Sachal Sami Foundation|NBFC|Investment Finance Services|30/03/2017|30/03/2026|02443304890|Banglow No. 160, Society Nawabshah.
+139|SHAAMILKAR FINANCIAL SERVICES (PRIVATE) LIMITED|NBFC|Investment Finance Services|30/03/2017|14/04/2025||Colabs Cantt NASTP, 69 Abid Majeed Road,, Cantonement, Lahore.
+140|Simak Financial Services (Private) Limited|NBFC|Investment Finance Services|18/09/2023|-|03458511012|Office No 201,3rd Floor, Plot No 13-C, ZamZam Commercial Lane No 4. Phase V, D.H.A., Karachi
+141|Sindh Rural Support Organization|NBFC|Investment Finance Services|04/10/2016|04/10/2025|07156271820|SRSO Head office Complex: Shikarpur Road Near Taj Petrol Pump, Sukkur.
+142|Sirat Microfinancr Limited|NBFC|Investment Finance Services|04/04/2024|-|03213587785|3rd Floor Plot 26C, Khayaban e Rahat Lane-3, Phase-VI D,H,A, Karachi
+143|Smart Finance Limited|NBFC|Discounting|30/09/2022|30/09/2025|03008452847|103-K, DHA Phase 1-C Lahore- Pakistan
+144|SMARTCRED FINANCE (PRIVATE) LIMITED|NBFC|Investment Finance Services|27/07/2026|||Office No. 113, 1st Floor, Aria Tower, E-11/2 Markaz Islamabad
+145|Soon Valley Development Programme|NBFC|Investment Finance Services|13/01/2017|13/01/2026|04546108990|Sakesar Road Naushera, Distt. Khushab
+146|STAR CREDIT FINANCIALS (PRIVATE) LIMITED|NBFC|Investment Finance Services|28/07/2026|||Office No. 113, 1st Floor, Aria Tower, E11/2 Markaz Islamabad
+147|Taleem Finance Company Limited|NBFC|Investment Finance Services|12/06/2019|12/06/2025|04235246536|1st Floor, 15 S Gulberg 2, Lahore, Pakistan.
+148|TEZ Financial Services Ltd.|NBFC|Investment Finance Services|10/07/2018|09/07/2024|03452339451|1st Floor, Plot No. 8 & 9, Mai Kolachi Bypass, Intelligence Colony, Karachi, Pakistan
+149|Thardeep Microfinance Foundation Pakistan|NBFC|Investment Finance Services|21/11/2016|21/11/2022|02123226123|Near Old Naka, Naukot Road, Mithi (69230) District Tharparkar, Sindh, Pakistan
+150|Trukkr Financial Services Limited|NBFC|Investment Finance Services|03/03/2023|-|03222005477|House No. 100/1, Street No. 10 khayaban Rahat Phase 6 DHA Karachi.
+151|UDL Financial Services Limited|NBFC|Investment Finance Services|23/04/2024|-|03218220156|1st Floor, Business Enclave 77-C 12th Commercial Street Off Kh-e-Ittehad, DHA Phase II Ext. Karachi -7
+152|Umeed Pay (Pvt) Limited|NBFC|Investment Finance Services|07/11/2023|-|03458244427|Buidinag No 29-C,Mezzanine Floor,Sunset Lane 1,Phase 02 EXT DHA Karachi
+153|Union Microfinance Company Ltd|NBFC|Investment Finance Services|30/09/2021|30/09/2024|02131234567|401, Clifton Diamond Building, Block-4, Clifton, Karachi
+154|Visioncred Financial Services (Pvt) Limited|NBFC|Investment Finance Services|10/03/2023|10/03/2026|03111588395|1st Floor, The Hive Manzoor Plaza, Plot 14E, Blue Area G-6/2 Islamabad
+155|Walee Financial Services (Pvt) Limited|NBFC|Investment Finance Services|05/12/2023|-|03465346326|Plot No 02,Commercial Aria,G 10/2 Islamabad
+156|WASL Investment Finance Limited|NBFC|Investment Finance Services|03/04/2020|02/04/2023|03444441009|43/11 FCC Lahore
+157|Zanda Financial Services (Pvt) Limited|NBFC|Investment Finance Services|08/03/2024|-|3005223378|House No 9a+M145 Street 19,F-8/2 Islamabad
+158|FINLEAP FINANCIAL SERVICES (PRIVATE) LIMITED|NBFC|Investment Finance Services|26/08/2024|-|0370 6009762 0370 6009762|Daftarkhwan / Vanguard, 5-A Constitution Avenue, Sector F-5/1, Islamabad.
+159|KAFALAH FOUNDATION|NBFC|Investment Finance Services|06/09/2024|-|0518442252 03008527567|Plot No. 1, Street 38, G-10/4, Islamabad, Islamabad Urban, ISLAMABAD, Islamabad Capital Territory (I.C.T.)
+160|VIVA FINANCE (PVT.) LTD|NBFC|Investment Finance Services|25/10/2024|-|3218888515|Quick Office, 304 Upper Mall Road, Lahore
+161|786 Investments Limited|NBFC|Pension Fund Scheme Business|27/04/2026||02132603751|G-3, Ground Floor, BRR Tower, Hassan Ali Street, Off I.I. Chundrigar Road Karachi
+162|ABL Asset Management Company Limited|NBFC|Pension Fund Scheme Business|23/09/2023|PERPETUAL|05232305000|Plot No. 14, Mian Bovlerd DHA Phase-6 Lahore
+163|AL HABIB ASSET MANAGEMENT LIMITED|NBFC|Pension Fund Scheme Business|06/05/2022|PERPETUAL|02132469115|3rd Floor, MacKinnon's Building, I.I. Chundrigar Road, Karachi
+164|Alfalah Asset Management Limited|NBFC|Pension Fund Scheme Business|21/02/2015|PERPETUAL|02135306741|8-B, 8th Floor, Executive Tower, Dolmen City, Block # 04, Karachi.
+165|Al-Meezan Investment Management Limited|NBFC|Pension Fund Scheme Business|08/01/2007|PERPETUAL|02135630806|Ground Floor, Block "B", Finance & Trade Center Shahrah-e-Faisal, Karachi
+166|Atlas Asset Management Limited|NBFC|Pension Fund Scheme Business|08/01/2007|PERPETUAL|02135379501|Ground Floor, Federation House, Sharae Firdousi, Clifton, Karachi
+167|AWT INVESTMENT LTD|NBFC|Pension Fund Scheme Business|26/02/2024|PERPETUAL||
+168|EFU Life Assurance Limited|NBFC|Pension Fund Scheme Business|05/07/2024|PERPETUAL|03018293880|Plot No 112 8th East Street Phase .1 DHA Karachi
+169|Faysal Asset Management Limited|NBFC|Pension Fund Scheme Business|28/08/2020|PERPETUAL|02138657800|7th Floor, Faysal house, ST-02, Main Shahrar-e-Faisal Karachi
+170|HBL Asset Management Limited|NBFC|Pension Fund Scheme Business|06/05/2011|PERPETUAL|03333013010|7th Floor, Emerald Tower G-19, Block 5, Main Clifton Road Clifton, Karachi
+171|IGI Life Insurance Limited|NBFC|Pension Fund Scheme Business|26/07/2023|PERPETUAL|02135360040|ECO Postal Staff College G-8/4 Islamabad
+172|JS Investment Limited|NBFC|Pension Fund Scheme Business|18/01/2007|PERPETUAL|02137243501|The center 19 floor, Plot No. 28 SB-5, Abdullah Haroon Road Saddar Karachi
+173|Lakson Investments Limited|NBFC|Pension Fund Scheme Business|05/06/2025|PERPETUAL||Lakson Square, Building No. 2, Sarwar Shaheed Road, Karachi
+174|LUCKY INVESTMENTS LIMITED|NBFC|Pension Fund Scheme Business|16/06/2025||03320348402|Suite No. 205, 2nd Floor, The Forum, Clifton, Block 9, Khayanban-e- Roomi, Karachi.
+175|MCB INVESTMENT MANAGEMENT LIMITED|NBFC|Pension Fund Scheme Business|16/11/2023|PERPETUAL||2nd Floor, Adamjee house, I.I Chundrigar Road, Karachi
+176|National Investment Trust Limited|NBFC|Pension Fund Scheme Business|31/01/2015|PERPETUAL|02132417361|Head Office, 6th Floor National Bank Building, I.I.Chundrigar Road, Karachi
+177|NBP Fund Management Limited|NBFC|Pension Fund Scheme Business|11/07/2012|PERPETUAL||7th Floor, Diamond Building, Block-4, Scheme-5, Clifton, Karachi
+178|Pak Qatar Family Takaful Limited|NBFC|Pension Fund Scheme Business|26/01/2022|PERPETUAL|02134311747|101-105, Business Arcade, Plot # 27A, Block 6, P.E.C.H.S, Sharea Faisal, Karachi
+179|STATE LIFE INSURANCE COMPANY LIMITED|NBFC|Pension Fund Scheme Business|11/04/2025|PERPETUAL||STATE LIFE INSURANCE COMPANY LIMITED PRINCIPAL OFFICE STATE LIFE BUILDING NO 09 DR ZIAUDDIN AHMED ROAD KARACHI SINDH
+180|UBL Fund Managers Limited|NBFC|Pension Fund Scheme Business|29/07/2007|PERPETUAL|02135290080|4th floor, STSM Building, Beaumont Road, Civil Lines, Karachi.
+181|Alfalah Asset Management Limited|NBFC|Private Equity & Venture Capital|22/05/2023|22/05/2026||2nd Floor Islamic Chamber of Commence Industry Agriculture Building Block -9 Clifton Karachi 75600
+182|Atlas Asset Management Limited|NBFC|Private Equity & Venture Capital|09/03/2021|09/03/2024||GROUND FLOOR, FEDERATION HOUSE, SHARAE FIRDOUSI, CLIFTON, KARACHI.
+183|Cordoba PE Management Limited|NBFC|Private Equity & Venture Capital|13/08/2025|-||H-3/A Road No 3000 Sector 5 EBM Causeway Korangi Industrial Area, Karachi
+184|Fatima Gobi Ventures (Pvt) Limited|NBFC|Private Equity & Venture Capital|24/06/2022|24/06/2025|02135909449|Sasi Arcade, Room 3, 2nd Floor, Main Clifton Road, Karachi
+185|Faysal Asset Management Limited|NBFC|Private Equity & Venture Capital|27/04/2021|27/04/2024||WEST WING, 7TH FLOOR, FAYSAL HOUSE, ST-02, SHARAH-E-FAISAL, KARACHI KARACHI KARACHI SOUTH SINDH
+186|HBL ASSET MANAGEMENT LIMITED|NBFC|Private Equity & Venture Capital|08/05/2025|-|3333013010|7TH FLOOR, EMERALD TOWER, G-19, BLOCK 5, MAIN CLIFTON ROAD, CLIFTON KARACHI SINDH
+187|Ijara Capital Partners Limited|NBFC|Private Equity & Venture Capital|24/10/2016|24/10/2025|02135822312|1st Floor Federation House, Main Abdullah Shah Ghazi Road, Block-5, Clifton, Karachi
+188|JS Investment Limited|NBFC|Private Equity & Venture Capital|10/08/2018|10/08/2024|02137243501|The center 19 floor, Plot No. 28 SB-5, Abdullah Haroon Road Saddar Karachi
+189|Lakson Investments Limited|NBFC|Private Equity & Venture Capital|13/10/2016|13/10/2025|02135698000|Lakson Square, Building No. 2, Sarwar Shaheed Road, Karachi
+190|Magnus Investment Advisors Limited|NBFC|Private Equity & Venture Capital|01/01/2020|01/01/2026|02135639616|Suite no.101, Glass tower, Frere town, Clifton Karachi
+191|NIIDA Venture Capital Management Limited|NBFC|Private Equity & Venture Capital|01/09/2023|-|05161246620|Office No.1,15th Floor State Life Tech Tower, BluE Aria F-7 Jinnah Avenue, Islamabad
+192|PNO Capital Limited|NBFC|Private Equity & Venture Capital|10/11/2016|10/11/2022||D - 71/1, Block No.2, KDA Scheme No.5 Clifton Karachi Sindh
+193|Shields REIT Management Company Limited|NBFC|Private Equity & Venture Capital|19/06/2025|-|03008275500|Shields REITS Management Co. Ltd. Ebrahim estate D-1 block7&8 K.C.H.C.U. Shahrah e Faisal Karachi
+194|Sai Venture Capital (Pvt) Limited|NBFC|Private Equity & Venture Capital|18/09/2023|-|03044444005|House 99,Sarwar Colony,Lahore Cant,Lahore
+195|TMT Ventures Limited|NBFC|Private Equity & Venture Capital|11/12/2007|09/12/2022|02135303038|610, Continental Trade Centre, Block #8, Clifton,Karachi
+196|Vision Capital Limited|NBFC|Private Equity & Venture Capital|27/01/2022|27/01/2025|0345-2660435|M-14, Mezzanine Floor, Progressive Plaza, Beaumont Road, Civil Lines Quarter Karachi karachi south Sindh
+197|AKD REIT Management Company Ltd|NBFC|REIT Management Company|23/07/2010|22/07/2025|02135250371|214, Zulfiqar Street No.1, Opposite Golf Club, Phase VIII, Defence Housing Authority, Karachi
+198|ALPHA REIT MANAGEMENT COMPANY LIMITED|NBFC|REIT Management Company|03/10/2025||3018481950|House No. 217/1, Street No. 12, Block B, Phase 5, DHA, Lahore Cant,Lahore, Pakistan,Lahore Cantonement, LAHORE,
+199|Alfalah Asset Management Limited|NBFC|REIT Management Company|20/06/2023|20/06/2026|03018233569|2nd floor, Islamic Chamber of Commerce, Industry and Agriculture Building, Block 9, Clifton,Karachi
+200|Al-Meezan Investment Management Limited|NBFC|REIT Management Company|26/05/2022|26/05/2025||Ground Floor, Block "B", Finance & Trade Center Shahrah-e-Faisal,Karachi
+201|Arif Habib Dolmen REIT Management Ltd|NBFC|REIT Management Company|03/09/2009|04/09/2025||Arif Habib Centre, 23 M.T. Khan Road,Karachi
+202|Atlas Asset Management Limited|NBFC|REIT Management Company|09/03/2021|09/03/2024|02135379501|Ground Floor, Federation House, Sharae Firdousi, Clifton,Karachi
+203|ATMT VENTURES LIMITED|NBFC|REIT Management Company|22/04/2025||+923008506832|Office No. 24, 2nd Floor, Gulberg Business Centre, Islamabad Urban, Islamabad
+204|Bodla REIT Management Company Limited|NBFC|REIT Management Company|13/01/2023|-|03219999119|Office No. 4, Opposite DHA Multan main office, Multan Public School Road, Bosantown, Multan.
+205|BURJ INVESTMENT MANAGEMENT LIMITED|NBFC|REIT Management Company|20/08/2026|-|923343077630.00|Office No. 202,11-C, Al-Murtaza Commercial Lane-2, Phase - VIII, D.H.A, Karachi
+206|CLOUD REIT MANAGEMENT COMPANY LIMITED|NBFC|REIT Management Company|22/08/2025|-||479-G, DHA Phase VI, Lahore
+207|Fast REIT Management Company Limited|NBFC|REIT Management Company|07/07/2022|-|03335653200|House No. 1, Street No. 1, Hill Top Villas, Bahria City, Phase 7, Islamabad.
+208|Faysal Asset Management Limited|NBFC|REIT Management Company|27/04/2021|27/04/2024|02138657800|7th Floor, Faysal house, ST-02, Main Shahrar-e-Faisal Karachi
+209|Greenworld REIT Management Company Limited|NBFC|REIT Management Company|31/12/2025|||26-27 first floor, Beverly Centre, Blue Area, Islamabad.
+210|HBL Asset Management Limited|NBFC|REIT Management Company|22/10/2025||3333013010|7TH FLOOR, EMERALD TOWER, G-19, BLOCK 5, MAIN CLIFTON ROAD, CLIFTON KARACHI SINDH
+211|HMR REIT Management Co Limited|NBFC|REIT Management Company|22/05/2024|-|03212222534|Second Floor, Abdul Sattar Edhi Ave, Phase VIII Extension D,H,A Karachi
+212|Hussain Lakhsni REIT Management Co Limited|NBFC|REIT Management Company|29/12/2023|-|03353243096|M-79,Mezzanine Floor, Gulfway Tower H/1 Block 8,Scheme 05,Clifton Karachi
+213|Ijara Capital Partners Limited|NBFC|REIT Management Company|13/04/2022|13/04/2025|02135822312|1st Floor Federation House, Main Abdullah Shah Ghazi Road, Block-5, Clifton, Karachi
+214|Imarat REIT Management Co Limited|NBFC|REIT Management Company|30/04/2024|-|03425203411|4th Floor Beverly Centre, Blue Area Islamabad
+215|IMM REIT Management Company Limited|NBFC|REIT Management Company|13/07/2022|13/07/2025|03008566565|Master House, Mscan (Pvt) Ltd., 82-C-1, Gulber III, Lahore
+216|Intermarket REIT Management Company Limited|NBFC|REIT Management Company|14/11/2024|-||Plot no. 38-A, adjacent Genix Pharma, Korangi Creek, Karachi
+217|ISE REIT Management Company Limited|NBFC|REIT Management Company|18/05/2026|||G-12, 55-B, ISE Towers, Jinnah Avenue, Blue Area, Islamabad
+218|JS Investment Limited|NBFC|REIT Management Company|28/07/2020|29/07/2023|02137243501|The center 19 floor, Plot No. 28 SB-5, Abdullah Haroon Road Saddar Karachi
+219|KAIZEN REIT MANAGEMENT LIMITED|NBFC|REIT Management Company|17/12/2025|||34 S, 6th Floor, Main Boulevard, Gulberg 2, Lahore
+220|Lake City REIT Management Company Limited|NBFC|REIT Management Company|06/11/2023|-|03008227188|121 The Form,G-20,Block 9,Khayaban -e-Jami,Clifton Karachi
+221|Magnus Investment Advisors Limited|NBFC|REIT Management Company|24/12/2019|24/12/2025|02135639616|Suite no.101, Glass tower, Frere town, Clifton Karachi
+222|Mukab REIT Management Company Limited|NBFC|REIT Management Company|06/05/2025|-||1st Floor, Razia Sharif Plaza, Jinnah Avenue, Blue Area, Islamabad
+223|ORBIT REIT MANAGEMENT COMPANY LIMITED|NBFC|REIT Management Company|01/09/2025||92-42-35741715-15|The Springs apartment Homes, Opposite Izmir Town, Canal Road, Lahore, Punjab, Pakistan
+224|Providential REIT Management Company Limited|NBFC|REIT Management Company|26/10/2022|26/10/2025|04237396785|Akbar Road, Off New Apirport Road, Near Toyota Motors, Lahore
+225|Rockville REIT Management Company Limited|NBFC|REIT Management Company|28/11/2023|-|03009000000|Plot No 67&82 Business Square Gulberg Green Islamabad
+226|SB Global REIT Management Co. Limited|NBFC|REIT Management Company|14/07/2016|14/07/2025|04235788808|Suite No.801 C, City Tower, Gulber-II, Lahore
+227|SBD REITS LIMITED|NBFC|REIT Management Company|15/07/2024|-|3008227270|Room 206, 2nd Floor Business & Finance Centre, I.I.Chundrigar Road, Karachi.
+228|Shields REIT Management Company Ltd.|NBFC|REIT Management Company|19/04/2023|19/04/2026|03008275500|Shields REITS Management Co. Ltd. Ebrahim estate D-1 block7&8 K.C.H.C.U. Shahrah e Faisal Karachi
+229|Sinolink REIT Management Company Limited|NBFC|REIT Management Company|07/02/2022|07/02/2025|02134370475|A/33 Central Commercial Area, Block 7/8, KCHSU, Karachi.
+230|SKYLINE 47 REIT MANAGEMENT COMPANY LIMITED|NBFC|REIT Management Company|30/04/2026|||FFBL Tower, Plot C-1/2, Sector B, Jinnah Boulevard, DHA-II
+231|SMART REIT MANAGEMENT COMPANY LIMITED|NBFC|REIT Management Company|22/04/2025|-||Silver Square Plaza, Plot 15, Street 73, Mehr Ali Road, F-11 Markaz, Islamabad
+232|TPL Reit Management Company Limited|NBFC|REIT Management Company|30/05/2019|27/05/2025|02137130227|TPL REIT, 20th Floor, Sky Tower - East Wing, Dolmen City, HC-3, Block 4, Abdul Sattar Edhi Avenue, C
+233|TULIP REIT MANAGEMENT CO. LTD|NBFC|REIT Management Company|24/05/2024|24/05/2024||Tulip 3, Club / Murree Road, Islamabad
+234|VERITAS REIT MANAGEMENT COMPANY LIMITED|NBFC|REIT Management Company|28/02/2020|28/02/2023|021-111-111-584|AL-9, 15th Lane, Khayaban-e-Hial, Phase VII, DHA Saddar Town Sindh 7550
+235|Vision Capital Limited|NBFC|REIT Management Company|10/03/2023|10/03/2026|0345-2660435|M-14, Mezzanine Floor, Progressive Plaza, Beaumont Road, Civil Lines Quarter, Karachi
+236|Zameen REIT Management Company Limited|NBFC|REIT Management Company|16/05/2023|16/05/2026|03008117267|3rd Floor Pearl One 94-B-1 MM Alam Road, Gulberg III Lahore
+237|CG Global RMC Limited|NBFC|REIT Management Company|04/11/2024|-||Islamic Chamber of Commerce & Industry, Gate-02, ST-2/A, Block 09, Clifton Karachi
+238|AD Securities Advisory Services (SMC-Pvt) Limited|SA & FA|Securities And Future Advisors|03/06/2024|30/06/2025|03320348400|Habib Centre No D-4, Block 5, Kehkashan Clifton, Karachi, Sindh
+239|Akseer Research (Pvt) Limited|SA & FA|Securities And Future Advisors|07/05/2018|25/06/2026|03219203173|2nd Floor, Shaheen Chambers, A-4, Central commercial Area, KCH Society Block 7 & 8, Near Virtual Uni
+240|Al-Hilal Securities Advisors (Pvt) Limited|SA & FA|Securities And Future Advisors|20/02/2018|25/03/2026|02135305931|Suite 619, 6th Floor, Clifton Centre, Schon Circle, block-5, Clifton, Karachi
+241|Alpha Beta Core Solution (Pvt) Ltd|SA & FA|Securities And Future Advisors|28/02/2024|28/02/2026|03002318626|3rd Floor Star Chambers, 12-C Itehad Commercial Lane Phase VI DHA Karachi
+242|ARN Financial Advisors (Pvt) Limited|SA & FA|Securities And Future Advisors|14/03/2024|14/03/2026|03030027875|House No 60 Block F, North Nazimabad, Gulshan Town Karachi
+243|Behtari Capital (Pvt) Limited|SA & FA|Securities And Future Advisors|24/01/2022|24/01/2026|03222555225|Office No.611, Al Hafeez Business Centre, 89 B III, Gulberg III, Lahore
+244|BMA CAPITAL MANAGEMENT LTD|SA & FA|Securities And Future Advisors|28/03/2023|28/03/2026||ROOM NO. 801, UNI TOWER, I.I CHUNDRIGAR ROAD, KARACHI. KARACHI SINDH
+245|CAPMONEY (SMC-PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|02/02/2026|||Flat No.2, Building 3C, 31st Street, Tauheed Commercial, Phase 5, DHA.
+246|EK GLOBAL CAPITAL (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|27/10/2020|27/10/2025||3rd Floor, Building 10-C Itehad Commercial Lane 9, Phase 6, DHA, DHA Phae 6 Saddar Town Sindh
+247|FRIM ADVISORY (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|23/04/2026|||House No. 14-A, 2nd West Street, Phase 1, DHA
+248|GAAINS (Pvt) Limited|SA & FA|Securities And Future Advisors|08/12/2017|09/12/2025|03009463473|93-F, Model Town, Lahore
+249|H.G. MARKETS (PVT.) LIMITED|SA & FA|Securities And Future Advisors|13/06/2025|||2, RACE COURSE ROAD LAHORE, PUNJAB 54000
+250|Integrated Equities Limited|SA & FA|Securities And Future Advisors|11/02/2022|11/02/2026|03008474598|203 Y Commercial, 1st Floor, DHA, Lahore
+251|Investlink Advisor (Private) Limited|SA & FA|Securities And Future Advisors|09/01/2019|21/11/2025|03468202104|F20/2 Abdullah Trace 2nd Floor Apartment No 202 New PNT Gizri Road Clifton Nearby AL-Tamash Dental
+252|Investimate (Private) Limited|SA & FA|Securities And Future Advisors|08/05/2018|30/09/2025|03332229447|Suite 802, Anum Empire (Near Duty Free Shop), Baloch Coloney, Shahra e Faisal, Karachi.
+253|INVESTKAAR SECURITIES ADVISORY SERVICES (SMC-PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|30/12/2025|||Third floor, Suit #7, Z-house, Clifton block 8
+254|IT Minds Limited|SA & FA|Securities And Future Advisors|23/07/2020|09/12/2025||CDC House, 99-B, Block B, SMCHS, Main Shahrah-e-Faisal, Karachi
+255|Metro Capital (Pvt) Limited|SA & FA|Securities And Future Advisors|08/06/2018|08/06/2026|02134530702|33-H, Block-6, PECHS, Karachi
+256|MG Financial Services (Pvt) Limited|SA & FA|Securities And Future Advisors|24/06/2023|24/06/2025|03072229343|2nd Floor Bank Side Wing State Life Building No 2,Wallace Road Karachi
+257|Muhammad Munir Muhammad Ahmed Khanani Securities Limited|SA & FA|Securities And Future Advisors|31/03/2023|31/03/2026||Room No. 623-627 6th floor PSX Building Karachi.
+258|MUNAAFA INVESTMENTS (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|15/08/2022|15/08/2026||
+259|NID CAPITAL (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|09/06/2026||3440111112|61-A,, 2nd Floor, Commercial Phase-6, DHA, Lahore, Lahore, Cantonement, LAHORE,
+260|NMR CAPITAL ADVISORY (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|30/01/2025|30/01/2026||20-K, Gulberg II
+261|One Capital (Pvt) Limited|SA & FA|Securities And Future Advisors|23/07/2022|23/07/2026|03018233738|5th Floor, Valika Chambers, Off: I.I. Chundrigar Road, Karachi
+262|Optimus Capital Management (Pvt) Limited|SA & FA|Securities And Future Advisors|14/01/2022|14/01/2026|02135296888|Plot No.13-C, Stadium Lan 2, DHA Phase V, Stadium Commercial Area 5, Karachi
+263|Pasban Capital (Pvt) Limited|SA & FA|Securities And Future Advisors|25/01/2024|25/01/2026|03445188483|509,Ceaser Tower Shahrah e Faisal Karachi
+264|Ping Up (Private) Limited|SA & FA|Securities And Future Advisors|03/11/2022|03/11/2026|03350250690|1-C Street 7-A, Badar Commercial Area Phase 5 EXT-DHA Karachi Saddar Town Karachi
+265|Pyramid Financial Consultants (Pvt.) Ltd.|SA & FA|Securities And Future Advisors|30/07/2018|16/02/2026|03008288822|518, Progressive Plaza, Beaumont Road, Karachi
+266|PRIME STEP CAPITAL (SMC-PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|03/12/2025|||1st Floor, ACM Tower, Plot No. G-21/22, Khaliq-uz-Zaman Road, Block 8, Clifton, Karachi
+267|Rabia Fida|SA & FA|Securities And Future Advisors|22/04/2021|22/04/2026|03214002040|House No.163, Street No.4, Cavalry Ground, Lahore Cantt
+268|SMART SOLUTION CONSULTANTS (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|04/04/2025|04/04/2026||House # 16, 7th Gizri Lane, Phase IV, DHA, Karachi Saddar Town Sindh
+269|SONERI BANK LIMITED|SA & FA|Securities And Future Advisors|01/08/2019|01/08/2025||2ND FLOOR, 307-UPPER MALL SCHEME LAHORE LAHORE PUNJAB 54000
+270|SAKARWALA CAPITAL SECURITIES (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|14/06/2024|14/06/2026|3219232489|114, KARACHI STOCK EXCHANGE BUILDING, STOCK ECCHANGE ROAD, KARACHI
+271|Samiuddin Ahmed|SA & FA|Securities And Future Advisors|14/05/2024|14/05/2026|03018222405|House No 150/3 St.No 35,Phase VI DHA Karachi
+272|STANDARD CHARTERED BANK (PAKISTAN) LIMITED|SA & FA|Securities And Future Advisors|09/03/2026||021-2450937|STANDARD CHARTERED BANK, P. O. BOX 5556, I. I. CHUNDRIGAR ROAD, KARACHI.
+273|STOCK IFYY (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|30/12/2025|||Office No. 4101, 4th Floor, World Trade Center, Islamabad 44000
+274|STOCK BAZAR (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors|29/04/2026|||402, Business Forum, 3/58, MSGB Co-Operative Society, Khalid Bin Waleed Road, Karachi.
+275|TOPLINE RESEARCH & CONSULTING (PRIVATE) LIMITED|SA & FA|Securities And Future Advisors||03/03/2026||SD-164 DOHS Phase II Malir Cantt Karachi
+276|Summit Capital (Pvt.) Limited|SA & FA|Securities And Future Advisors|23/06/2024|23/06/2025|3002197440|8th Floor, Horizon Tower, Plot No. 2/6, Block-III, Clifton, Karachi
+277|Topline Securities Limited|SA & FA|Securities And Future Advisors|23/09/2024|23/09/2025|3008232726|8th Floor, Horizon Tower, Plot No. 2/6, Block-III, Clifton, Karachi
+278|Vector Securities (Pvt) Limited|SA & FA|Securities And Future Advisors|08/04/2024|08/04/2026|03432287439|351, Street 20, Block 3, Sharfad Karachi
+279|Wajid Ali Marwat|SA & FA|Securities And Future Advisors|19/04/2023|19/04/2026|03335194077|29 H Street 20-F-7/2 Rana Market Islamabad
+280|YOUNGS CAPITAL (PRIVATE) LIMITE|SA & FA|Securities And Future Advisors|03/10/2025||3390336990|Office # 11, Floor 1, Mall of Lahore Tufail Road Lahore Cantt, Lahore, Lahore, Punjab, Pakistan
+281|Al-Meezan Investment Management Limited|NBFC|Private Equity & Venture Capital|18/02/2026|||Ground Floor, Block "B", Finance & Trade Center Shahrah-e-Faisal, Karachi

@@ -50,14 +50,16 @@ real records are imported, and the UI says so instead of showing invented volume
 - `src/lib/provenance.js` — trust levels: `owner` > `official` > `seed` > `dataset` (nothing else).
 - `src/lib/verify.js` — owner verification: signed, expiring, non-replayable, no SMS/OTP cost.
 
-**What ships today:** 1,817 real records in `public/data/listings.json` — 1,167 from the
+**What ships today:** 2,020 real records in `public/data/listings.json` — 1,167 from the
 public ypages.pk dataset, 449 PSX listed companies (phones/emails/websites from psx.com.pk
 company profiles, via `github.com/ajwadjaved/PSX-Listed-Companies`), 201 SECP-registered
-securities brokers (the official SECP register, `secp.gov.pk`, Aug 2025 — name + TREC
-registration no + city; the register publishes no phone numbers, so those rows show "No
-phone on record" instead of a call button), plus 91 hand-curated flagships
+securities brokers (`secp.gov.pk`, Aug 2025 — 6 enriched with official phones/addresses
+from the SFA list; rows without a published number show "No phone on record" instead of a
+call button), and 203 SECP-licensed NBFCs & Securities/Futures Advisors (`secp.gov.pk`,
+Aug 2026 — 281 license rows consolidated per entity, adding 139 official phone lines
+including 85 `03xx` WhatsApp-capable mobiles), plus 91 hand-curated flagships
 (`src/data/curated.js`). Rebuild any time with
-`python3 scripts/convert-psx-secp.py` + two `npm run import -- --source=csv --merge` runs
+`python3 scripts/convert-psx-secp.py` + `npm run import -- --source=csv --merge` runs
 (see `docs/real-data-strategy.md` §11).
 
 ```bash

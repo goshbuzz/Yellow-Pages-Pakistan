@@ -417,12 +417,13 @@ The ask: *"add more from google all the public sources SECP and Stock Exchange P
 Google itself is not a data source (§8.1 — Google Maps ToS forbids harvesting), so it was
 used only to **discover** public registers; everything below is free, public, and attributed.
 
-**Imported (+650 real records, catalogue 1,167 → 1,817):**
+**Imported (+853 real records, catalogue 1,167 → 2,020):**
 
 | Source | Rows | Phones | Provenance | Notes |
 |---|---|---|---|---|
 | PSX listed companies (`github.com/ajwadjaved/PSX-Listed-Companies`, scraped from psx.com.pk company profiles) | 449 of 535 | 449 landlines/lines | `official` + `sourceRef psx:<symbol>` | Address → city for all 535; 86 rows out (unclassifiable name, or a number that is not dialable as published — UANs without an area code etc.). Companies kept only where name/sector maps honestly onto one of the 130 categories. |
-| SECP securities brokers register ("Securities Brokers as on August 31, 2025", secp.gov.pk, wpdmdl=50330) | 201 of 207 | none published | `official` + `sourceRef secp:<TREC>` | The register publishes name + TREC no + CRO city only. Imported with the new `--allow-missing-phone` mode; 6 rows dedupe against existing listings that already carry a phone. |
+| SECP securities brokers register ("Securities Brokers as on August 31, 2025", secp.gov.pk, wpdmdl=50330) | 201 of 207 | 6 enriched via SFA list | `official` + `sourceRef secp:<TREC>` | The brokers register publishes name + TREC no + CRO city only. Imported with `--allow-missing-phone`; 6 rows dedupe against PSX listings, and 6 more gain official phones (5 WhatsApp-capable mobiles) + street addresses from the SECP SFA register below. |
+| SECP NBFCs & Securities/Futures Advisors register ("List for NBFCs and SFAs as on August 31, 2026", secp.gov.pk, wpdmdl=67018) | 203 of 223 entities (281 license rows) | 139 new (85 `03xx` mobiles + 54 landlines) | `official` | Multi-license rows for the same firm (Asset Mgmt, Investment Advisory, Investment Finance, Housing Finance, Leasing, REIT Mgmt, PE/VC, Pension Fund, Securities/Futures Advisory) are consolidated per entity. 3 rows without a resolvable city are dropped; 17 dedupe against existing PSX/broker records (enriching 8 broker rows in place with phones/street addresses). |
 
 **Registry rows without a phone** are first-class now: `import-listings --allow-missing-phone`
 (opt-in, default still drops), `stats.mjs` treats an *absent* phone as missing data (not a
@@ -439,9 +440,10 @@ fake number), and the UI shows **"No phone on record"** instead of dead Call/Wha
   "Companies incorporation data" PDF is a *statistics bulletin* (counts only). GLEIF LEI
   mirrors SECP legal names + registered addresses (CC0, `api.gleif.org`, no phones) but
   only 179 PK entities have LEIs and the JSON:API is ~30 fetch chunks per page — rerun
-  offline if wanted. The SECP PDF *registers* (brokers done; NBFCs & SFAs list
-  ~455 KB / wpdmdl file "List-for-NBFcs-and-SFAs-as-on-August-31-2025.pdf", modarabas,
-  credit-rating companies) are the realistic SECP-sourced adds — each is one PDF fetch.
+  offline if wanted. Among SECP's specialised PDF *registers*, securities brokers and
+  NBFCs & SFAs are now imported (and 29 listed Modarabas are already covered via PSX);
+  smaller remaining registers include credit-rating companies, debt securities trustees,
+  insurance/takaful registers, and share registrars.
 - **Kaggle PSX dataset** — download requires sign-in; unusable in the sandbox.
 
 **Reproduce:**
@@ -455,9 +457,15 @@ npm run import -- --source=csv --in=/tmp/pubdata/psx-listings.csv --as=official 
 npm run import -- --source=csv --in=/tmp/pubdata/secp-brokers.csv --as=official --merge \
   --allow-missing-phone --out=public/data/listings.json \
   --attribution="SECP securities brokers register (secp.gov.pk, Aug 2025)"
+npm run import -- --source=csv --in=/tmp/pubdata/secp-nbfcs.csv --as=official --merge \
+  --allow-missing-phone --out=public/data/listings.json \
+  --attribution="SECP NBFCs & Securities/Futures Advisors register (secp.gov.pk, Aug 2026)"
+node scripts/apply-apollo.mjs
 npm run stats
 ```
 
-`--merge` appends to an existing `listings.json` (each record keeps its own attribution);
-without it the output file is replaced. `scripts/sources/secp-brokers.txt` is the SECP
-register as published (transcribed from the PDF table).
+`--merge` appends to an existing `listings.json` (each record keeps its own attribution, and
+phone-less registry rows are enriched in place when a subsequent official register supplies a
+phone or street address); without it the output file is replaced.
+`scripts/sources/secp-brokers.txt` and `scripts/sources/secp-nbfcs.txt` are the SECP
+registers as published (transcribed from the PDF tables).
