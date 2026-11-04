@@ -195,6 +195,51 @@ assert('Hygiene never deletes a merely odd number', clean.find((r) => r.id === '
 assert('Hygiene reports an owner claim with no date', /owner claim without verification date/.test(hygieneLog));
 assert('Hygiene flags shared numbers', /numbers shared by/.test(hygieneLog));
 
+console.log('\n=== 1f. PER-CITY IMPORT TESTS ===');
+const cityCsv = '/tmp/ypk-city-karachi.csv';
+writeFileSync(cityCsv, [
+  'name,tel,latitude,longitude,address,locality,category',
+  'Real Kiryana Store,0300-4455667,24.8607,67.0011,Bolton Market,Karachi,Kirana Store',
+  'Burns Road Biryani,0321-8877665,24.8559,67.0144,Burns Road,Karachi,Biryani Restaurant',
+  'Landline Textiles,021-32770123,24.8540,66.9990,Jodia Bazar,Karachi,Textile Wholesaler',
+  'Number Reuser,0321-8877665,24.8600,67.0200,Burns Road,Karachi,Restaurant',   // steals a number
+  'No Phone Shop,,24.8610,67.0100,Boulton Market,Karachi,Traders',               // no phone
+  'Lahore Intruder,0300-9998887,31.5204,74.3587,Mall Road,Lahore,Kirana Store',   // outside radius
+].join('\n'));
+
+// Keep the working files out of the repo's real dataset.
+const cityWork = '/tmp/ypk-city-work';
+execFileSync('node', ['-e', `
+  const fs = require('fs');
+  fs.rmSync('${cityWork}', { recursive: true, force: true });
+  fs.mkdirSync('${cityWork}/public/data', { recursive: true });
+`]);
+const cityLog = execFileSync('node', ['scripts/import-city.mjs', '--city=Karachi', '--source=file', `--from=${cityCsv}`, `--data=${cityWork}/public/data/listings.json`], { encoding: 'utf8' });
+assert('City import runs for a named city', /Karachi\s+fetched/.test(cityLog));
+assert('City import rejects a number reused by another business', /number already used by another business/.test(cityLog));
+assert('City import rejects a record with no phone', /no phone/.test(cityLog));
+assert('City import rejects a record outside the city radius', /outside city radius/.test(cityLog));
+
+const cityListings = JSON.parse(readFileSync(`${cityWork}/public/data/listings.json`, 'utf8'));
+const karachiRecords = cityListings.records.filter((r) => r.city === 'Karachi');
+assert('Only valid Karachi records were kept', karachiRecords.length === 3, `kept ${karachiRecords.length}`);
+assert('Landline listing is kept for calls but not marked WhatsApp-capable',
+  karachiRecords.find((r) => r.name === 'Landline Textiles').whatsappCapable === false);
+assert('Kept records carry a map location', karachiRecords.every((r) => Number.isFinite(r.lat) && r.lat !== 0));
+assert('Kept records carry provenance', karachiRecords.every((r) => r.source === 'dataset' && r.sourceRef));
+assert('Mobile numbers are marked WhatsApp-capable', karachiRecords.find((r) => r.name === 'Real Kiryana Store').whatsappCapable === true);
+assert('No record claims unverified WhatsApp presence', karachiRecords.every((r) => r.whatsapp === false));
+
+// The importer must never silently accept Google-sourced input.
+const citySrc = readFileSync('scripts/import-city.mjs', 'utf8');
+assert('City importer documents the Google restriction', citySrc.includes('3.2.3') && citySrc.toLowerCase().includes('google maps platform'));
+assert('City importer supports licence-clean sources only', citySrc.includes('fsq') && citySrc.includes('overture'));
+assert('Coverage report exists', /CITY COVERAGE/.test(execFileSync('node', ['scripts/import-city.mjs', '--report'], { encoding: 'utf8' })));
+
+const coverageJsx = readFileSync('src/pages/Coverage.jsx', 'utf8');
+assert('Coverage page shows per-city counts', coverageJsx.includes('CITY_COVERAGE'));
+assert('Coverage page distinguishes WhatsApp-capable from verified', coverageJsx.includes('whatsappCapable'));
+
 console.log('\n=== 2. SEO & AEO SCHEMA GENERATION TESTS ===');
 const sampleFaqs = [
   { q: 'What is Yellow Pages Pakistan?', a: 'Pakistan business directory with 200,000+ listings.' },

@@ -9,5 +9,18 @@ export const STATS = {
   byCity: {},
 };
 
+export const CITY_COVERAGE = [];
+
+export const COVERAGE = {
+  citiesCovered: 0,
+  citiesTotal: 420,
+  total: 0,
+  whatsappCapable: 0,
+  whatsappPct: 0,
+  ownerVerified: 0,
+  ownerVerifiedPct: 0,
+  withWebsite: 0,
+};
+
 /** Shown in the UI instead of fake volume. */
 export const DATASET_MODE = 'empty';

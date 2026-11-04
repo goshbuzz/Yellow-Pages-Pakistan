@@ -32,8 +32,7 @@ import { waNumber } from '../src/lib/whatsapp.js';
 import { hashStr } from '../src/lib/rng.js';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const LISTINGS = `${ROOT}/public/data/listings.json`;
-const COVERAGE = `${ROOT}/public/data/coverage.json`;
+
 
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {
@@ -41,6 +40,10 @@ const args = Object.fromEntries(
     return [k, rest.join('=') || true];
   })
 );
+
+// --data/--coverage let a caller (or a test) work on a scratch dataset.
+const LISTINGS = args.data || `${ROOT}/public/data/listings.json`;
+const COVERAGE = args.coverage || LISTINGS.replace(/listings\.json$/, 'coverage.json');
 
 const FSQ_RELEASE = args.release || '2026-09-15';
 const OVERTURE_RELEASE = args.release || '2026-10-21.0';

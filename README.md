@@ -26,12 +26,19 @@ real records are imported, and the UI says so instead of showing invented volume
 - `src/lib/verify.js` — owner verification: signed, expiring, non-replayable, no SMS/OTP cost.
 
 ```bash
-npm run import  -- --source=overture --bbox=24.7,66.7,25.1,67.2   # real POIs + phones (CDLA 2.0)
-npm run import  -- --source=csv --in=members.csv --as=official     # registries / associations
-npm run hygiene -- --data=public/data/listings.json --patch       # drop fake / impossible numbers
+npm run city    -- --city=Karachi --source=fsq        # fill one city (Apache-2.0 data, has phones)
+npm run city    -- --all --source=fsq --min-city-pop=1000000
+npm run city    -- --report                          # per-city: listings · located · mobile · WA% · owner
+npm run import  -- --source=csv --in=members.csv --as=official   # registries / associations
+npm run hygiene -- --data=public/data/listings.json --patch      # drop fake / impossible numbers
 npm run claims  -- --claims=claims.json --data=public/data/listings.json
-npm run stats                                                     # runtime payload + counts
+npm run stats                                                    # runtime payload + counts
 ```
+
+**Google Maps is deliberately not a source.** Its platform ToS §3.2.3 forbids extracting or
+warehousing Maps content, and a 30-day cache limit makes a stored directory profile a breach
+by construction. The importer uses Foursquare OS Places (Apache-2.0) and Overture Maps
+(CDLA-2.0), which permit storage and commercial reuse. See `docs/real-data-strategy.md` §8.
 
 Import rules: rows without a phone are dropped, duplicates are removed, a WhatsApp claim is
 downgraded to "no" unless the number is actually a mobile, and every record keeps `sourceRef`

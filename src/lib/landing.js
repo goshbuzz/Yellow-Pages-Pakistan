@@ -223,6 +223,7 @@ export const STATIC_PAGES = [
   { path: '/leads', title: 'B2B Lead Workspace & CSV Export | Yellow Pages PK', description: 'Save Pakistani company leads, track outreach, draft WhatsApp and email pitches and export contacts to CSV.', h1: 'Lead workspace for agencies and freelancers', intro: ['Save businesses into lead lists, track their status and export them to CSV.'] },
   { path: '/add', title: 'List Your Business in Pakistan Free | Yellow Pages PK', description: 'Add your business to the Pakistan directory for free. Add phone, WhatsApp and a map pin, then submit it for review.', h1: 'List your business free', intro: ['Submit your business name, category, city and phone number. Listings are reviewed before they appear.'] },
   { path: '/faq', title: 'Help Centre & FAQ | Yellow Pages Pakistan', description: 'Answers about finding companies, free business listings, B2B lead generation and installing the app on Yellow Pages Pakistan.', h1: 'Help centre and FAQ', intro: ['Answers to common questions about the directory.'] },
+  { path: '/coverage', title: 'Coverage Map — Which Cities Have Real Listings | Yellow Pages PK', description: 'Live per-city coverage for Pakistan: real listing counts, how many numbers are WhatsApp-capable, and when each city was last imported. No invented listings.', h1: 'City coverage', intro: ['Every city shows its real listing count. Cities without listings invite the business owner to list instead of displaying filler.'] },
 ];
 
 // Every indexable URL, in sitemap order.

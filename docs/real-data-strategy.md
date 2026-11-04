@@ -207,3 +207,74 @@ npm run stats                                                       # runtime pa
 Owner verification costs nothing to run: the owner taps a `wa.me` link from their own listing,
 sends the pre-filled code, and pastes it back. No SMS gateway, no OTP provider, no Meta fees.
 Verification is signed, expires after 30 days, and cannot be replayed onto another listing.
+
+---
+
+## 8. Per-city imports and why Google is not a source
+
+### 8.1 Google index / Maps: not usable, and not just "risky"
+
+Google Maps Platform ToS **§3.2.3** prohibits customers from exporting, extracting or
+otherwise scraping Google Maps Content, prohibits caching it except where the Service
+Specific Terms allow (place IDs indefinitely, coordinates for 30 days), and prohibits using
+it to build a substitute or similar service — which is exactly what this directory is.
+Loading Google Maps pages in a headless browser is the precise behaviour the clause names.
+Paying for Places API calls does not license warehousing the results either: the 30-day
+cache rule means a stored directory profile built from Places data is a terms breach by
+construction.
+
+So the answer to "pick listings off the Google index" is: **no** — it would put the company,
+not just the scrape, at risk (API key revocation, IP blocks, C&D, breach of contract).
+
+### 8.2 What *is* licensed for storage and reuse
+
+| Source | Licence | Phone field | Notes |
+|---|---|---|---|
+| **Foursquare OS Places** | Apache-2.0 | `tel` | ~100M POIs worldwide, parquet on S3/HuggingFace. Also carries `website`, `email`, `date_closed`, `facebook_id`, `instagram`. **Best per-city source**: commercial use permitted, Apache needs no share-alike. |
+| **Overture Maps places** | CDLA Permissive 2.0 | `phones[]` | 81M places, monthly releases, no OSM share-alike. |
+| Registries / associations / vendor exports | yours to verify | usually yes | SECP has no phone column; association member lists often do. |
+| Owner submissions | yours | yes, and verifiable | The only source that can be *verified*. |
+
+Neither FSQ nor Overture exposes WhatsApp presence — that is what §8.4 (owner verification)
+solves.
+
+### 8.3 The city workflow
+
+`scripts/import-city.mjs` fills the directory one city at a time and reports what each city
+actually got. It resolves the city against the 420 known coordinates, builds a bounding box
+(default 12 km radius), pulls records from a licensed source, and validates every one:
+
+- must have a real name
+- must have a plausible Pakistani number (mobile or landline) — no number, no listing
+- must be **inside the city radius** (a Lahore record cannot land in Karachi)
+- must not duplicate an existing name in that city
+- must not reuse a number already held by a *different* business
+- `date_closed` rows from FSQ are dropped
+
+```bash
+node scripts/import-city.mjs --city=Karachi --source=fsq
+node scripts/import-city.mjs --city=Sahiwal --source=fsq --radius=15
+node scripts/import-city.mjs --all --source=fsq --min-city-pop=1000000
+node scripts/import-city.mjs --city=Karachi --source=file --from=~/Downloads/karachi.parquet
+node scripts/import-city.mjs --report            # per-city table: listings · located · mobile · WA% · owner
+```
+
+`--report` is the answer to "check each city": it prints, per city, the listing count, how
+many have a map location, how many are WhatsApp-capable, the percentage, owner-verified
+count and the last import date. The same data drives `/coverage` in the app, so users see
+the same truth the operator does.
+
+### 8.4 Checking "phone number and WhatsApp" per city
+
+Three checks, cheapest first — all free:
+
+1. **Structural (automatic, every import).** Is it a mobile? Does it parse? Is it inside the
+   city? Is the same number already assigned to another business? This catches the majority
+   of bad data at zero cost.
+2. **Hygiene (`npm run hygiene`).** Placeholder numbers, landlines wrongly claiming WhatsApp,
+   numbers shared across many unrelated businesses, staleness.
+3. **Owner verification (the only true WhatsApp proof).** Two taps by the owner; signed,
+   expiring code; no SMS/OTP fees. This is what turns "WhatsApp-capable" into "verified".
+
+Colour-coding in the UI already reflects this: a mobile gets the WhatsApp button, a landline
+gets "Copy number", and only an owner claim earns the verified badge.
