@@ -37,7 +37,7 @@ const records = payload.records || payload;
 
 /** Landline shape after stripping formatting: 0 + area code (2–3 digits) + 6–8 digits. */
 function isLandline(phone) {
-  const d = String(phone || '').replace(/[^\d]/g, '').replace(/^92/, '').replace(/^0/, '');
+  const d = String(phone || '').replace(/[^\d]/g, '').replace(/^(?:0092|92|0)/, '');
   return /^[1-9]\d{8,10}$/.test(d);
 }
 

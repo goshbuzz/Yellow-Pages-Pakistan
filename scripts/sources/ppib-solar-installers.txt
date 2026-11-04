@@ -1,0 +1,427 @@
+# Official PPIB / AEDB Certified Solar & Wind Installers under AEDB (Certification) Regulations, 2021
+# Source 1: https://www.ppib.gov.pk/installers/List%20of%20Certified%20Installer%20C-1%20(25-10-2024).pdf (Category C-1: up to and above 500 kW)
+# Source 2: https://www.ppib.gov.pk/installers/List%20of%20Certified%20Installer%20C-3%20(25-10-2024).pdf (Category C-3: up to 250 kW)
+# Format: CertNo|Company Name|City|Phone|Email|Address
+CR/23/001/C-1|Zonergy (Tianjin) Company Limited|Islamabad|0345-9422961; 051-2826888|attaullah_jan@zonergy.com|House No. 04, Street No. 32, Sector F-6/1, Islamabad
+CR/21/002/C-1|Sky Electric (Private) Limited|Islamabad|0323-2326863; 051-8487480|info@skyelectric.com|Floor 15, Islamabad Stock Exchange, Blue Area, Islamabad
+CR/24/003/C-1|Zahid & Company|Lahore|0300-4008288; 0321-4065420|info@rsenergy.com.pk|113-D, Sukh Chayn Gardens, Near Bahria Town, Multan Road, Lahore
+CR/21/004/C-1|Hisel Power Pakistan (Private) Limited|Islamabad|0344-4473993|info@hiselpower.com|House No. 40, Street No. 63, Sector G-6/4, Islamabad
+CR/24/005/C-1|Adaptive Technologies (Private) Limited|Karachi|0345-8280123; 021-35865896|shaaf@adaptive-tec.com|Suite # 3, 4th Floor, Dean Arcade, Clifton Block 8, Karachi
+CR/21/006/C-1|Mobiserve Pakistan (Private) Limited|Islamabad|0301-8446376; 051-2223319|rshah@mobiserve.com.pk|1st Floor, Al Rehman Plaza, G-11 Markaz, Islamabad
+CR/21/007/C-1|Four Brothers Energy Limited|Lahore|0342-8333333; 042-35782691|fbenergy@4bgroup.com|77-D/1, 1st Floor, Lahore Center, Main Boulevard, Gulberg-III, Lahore
+CR/24/008/C-1|Samber Energy (Private) Limited|Lahore|0306-3795237; 042-35311009|info@samberenergy.com|Office No. 9, 1st Floor, Khalid Business Center, H3 Johar Town, Lahore
+CR/24/009/C-1|Feroze Power (Private) Limited|Karachi|0300-2033529; 021-34545570|info@ferozepower.com|42, Darul Aman Housing Society, Block 7/8, Shahrah-e-Faisal, Karachi
+CR/23/010/C-1|Haji Sons International|Lahore|0307-4444727; 042-35790637|info@hsinternational.pk|72-B, Gulberg II, Lahore
+CR/24/011/C-1|MK Engineers & Constructors (Private) Limited|Lahore|0321-6767307; 042-35778186|solar@mkengineers.com.pk|65/1, FCC, Syed Maratib Ali Road, Gulberg-IV, Lahore
+CR/21/012/C-1|Safeway Renewable Energy (Private) Limited|Islamabad|0300-5000466; 051-4852734|info@safewayenergy.com|Plot # 28, Areej Towers, Top Roof Office, E-11/3, Islamabad
+CR/22/013/C-1|Renew Power Projects (Private) Limited|Karachi|0320-2020131|amit@renew-power.co|Office No. 301, 3rd Floor, Clifton Center, Block No. 05, KDA Scheme No. 05, Clifton, Karachi
+CR/23/014/C-1|Aerospace Baykee Pakistan (Private) Limited|Lahore|0321-9812222; 042-35300112|info@baykee.com.pk|1-GCP Housing Society, Near PCSIR-II, Nazria-e-Pakistan Road, Johar Town, Lahore
+CR/23/015/C-1|Grace Solar|Lahore|0321-4083040; 042-35913431|gracesolarpk@gmail.com|31/10, Abu Bakar Block, Garden Town, Lahore
+CR/24/016/C-1|Catkin Engineering Sales & Services (Private) Limited|Islamabad|0321-5180644; 051-4100081|catkin@catkin.com.pk|Plot No. 14-15, Hospital Boulevard, Sector-A, DHA-II, Islamabad
+CR/21/017/C-1|Cellsol Trade (Private) Limited|Lahore|0304-1110210; 042-32020436|fraaz.aftab@cellsolgroup.com|House No. 31, Street No. 14, Cavalry Ground (Ext), Lahore
+CR/22/018/C-1|Brisk International (Private) Limited|Lahore|0322-4998044; 042-35730150|solar@briskintl.com|111-Y, Commercial, 2nd Floor, Phase-III, DHA, Lahore
+CR/21/019/C-1|Ghulam Rasool & Company (Private) Limited|Multan|0300-8624152; 061-4513749|info@grc.com.pk|6-A, Lalazar Colony, Old Bahawalpur Road, Multan
+CR/24/020/C-1|Direct Energy (Private) Limited|Karachi|0322-2450322; 0300-8268264|danishbaghpati@gmail.com|Plot No. SB-4, 3rd Floor, Zohra Chambers, Gulshan-e-Iqbal, Block-12, University Road, Karachi
+CR/21/021/C-1|Zi Solar (Private) Limited|Karachi|0345-9440202; 021-37452582|info@zisolar.com.pk|Mezzanine Floor, Block D, FTC, Shahrah-e-Faisal, Karachi
+CR/21/022/C-1|Green Volts Energy (Private) Limited|Lahore|0321-8088890; 042-111-486-587|juniad.arshad@greenvolts.com.pk|219-F, Street No. 1, DHA Phase 8, Ex-Park View, Lahore
+CR/24/023/C-1|JKS (Private) Limited|Lahore|0321-7280088; 042-35230701|ali@jks-int.com|Office No. 278, 1st Floor, Block-D, OPF Housing Society Phase-1, Raiwind Road, Lahore
+CR/21/024/C-1|Albario Engineering (Private) Limited|Lahore|0300-8449290; 042-111-001-954|info@aepl.com.pk|91-C, Model Town, Lahore
+CR/24/025/C-1|Mianoor Engineering|Karachi|0301-8299787; 0315-8665901|shahzad@mianoorengineering.com.pk|Plot No. F-74/E, S.I.T.E. Industrial Area, Karachi
+CR/21/026/C-1|Orient Operating Company (Private) Limited|Lahore|0347-3471111; 042-35911164|usaedch@gmail.com|10, Ali Block, New Garden Town, Lahore
+CR/22/027/C-1|Al-Watan Associates (Private) Limited|Quetta|0322-7990614; 081-2867076|agha.sameen@gmail.com|Kabul Singh Street, McConaghey Road, Quetta
+CR/24/028/C-1|DS Global (Private) Limited|Lahore|0321-6342004; 042-35885533|daniyal@dsgroupco.com|20, Tariq Block, Garden Town, Lahore
+CR/24/029/C-1|Quantum Mechanics (Private) Limited|Islamabad|0336-9558129; 051-4442632|ceo@quantummechanics.com.pk|Plot No. 32, Street No. 4, Sector I-10/3, Islamabad
+CR/23/030/C-1|Reon Energy Limited|Karachi|0333-3261396; 021-35632200|mujtaba.khan@dawoodhercules.com|3rd Floor, Dawood Center, M.T. Khan Road, Karachi
+CR/22/031/C-1|Elite Engineering (Private) Limited|Lahore|0300-5003332; 042-35225708|shams@eliteengineering.com.pk|11-L1, Valencia Town, Lahore
+CR/24/032/C-1|Minerva Builders & Innovations (Private) Limited|Islamabad|0322-8299486; 051-8482779|minervabuilder@hotmail.com|38-E, Zahoor Plaza, D-Chowk, Blue Area, Islamabad
+CR/23/033/C-1|Akhunzada Associates (Private) Limited|Timargara|0334-2541778; 0315-9195736|akhunzada.associates@gmail.com|House No. 09, Mohallah Malikabad, Village Barkalay, District Lower Dir
+CR/22/034/C-1|Roomi Engineering Services (Private) Limited|Multan|0300-8731065|info@roomiengineering.com|1777/52, Chungi No. 9, Main Khanewal Road, Multan
+CR/22/035/C-1|Associated Technologies (Private) Limited|Lahore|0321-5120003; 042-35178801|atl@atlpvt.com|21-L, Model Town Extension, Lahore
+CR/24/036/C-1|Nimir Energy Limited|Lahore|0321-7907000|waqas.ahmed@sunstationenergy.com|House No. 122B, New Muslim Town, Lahore
+CR/23/037/C-1|Allied Engineering & Services (Private) Limited|Karachi|0345-5551079; 021-35066901|zahid.ahmed@aesl.com.pk|21/3, Sector 22, Korangi Industrial Area, Karachi
+CR/22/038/C-1|Supernet Limited|Islamabad|051-2344130||75 East, Fazal-e-Haq Road, Blue Area, Islamabad
+CR/24/039/C-1|Orient Energy Systems (Private) Limited|Karachi|021-111-507-507|info@orient-power.com|Plot No. 9, Sector 24, Korangi Industrial Area, Karachi
+CR/22/040/C-1|Mecatech (Private) Limited|Lahore|0321-8411958; 042-35892711|info@mecatech.com.pk|8A, XX Block, Khayaban-e-Iqbal, Phase-III, DHA, Lahore
+CR/22/041/C-1|Zeus Energy (Private) Limited|Islamabad|0300-5359877; 051-2870777|ceo@zeus.com.pk|Plot No. 113, Street No. 08, Sector I-10/3, Islamabad
+CR/22/042/C-1|Total Network Solutions|Karachi|0300-8543890; 021-34013353|info@tnspk.com|Suite No. 301, 3rd Floor, B.B. Mall, Opp. NED University, Karachi
+CR/24/043/C-1|Alpha Renewables (Private) Limited|Lahore|0321-6149491; 042-35227135|info@alphasolar.com.pk|703, Block Q, Phase-2, Johar Town, Lahore
+CR/22/044/C-1|Hadron Solar (Private) Limited|Lahore|0311-0446857; 042-35240526|info@hadronsolar.com|326, Johar Avenue, New Campus Road, Lahore
+CR/22/045/C-1|Resolv (Private) Limited|Lahore|0300-8705329; 042-37135048|info@resolvld.com|248-C, 4th Floor, Commercial Broadway, Phase-8, DHA, Lahore
+CR/23/046/C-1|InterMark Product Lines (Private) Limited|Karachi|0300-0809989; 021-34300121|info@intermarkproduct.com|42-Y, Block 6, PECHS, Karachi
+CR/24/047/C-1|R & R Engineering (Private) Limited|Karachi|0346-8222314; 021-34392448|k.ghufran@agc.green.com|Suite No. 314, 3rd Floor, Anum Estate, Shahrah-e-Faisal, Karachi
+CR/24/048/C-1|Zaid Enterprises|Quetta|0333-6659719; 081-2821446|zaidenterprises64@gmail.com|Display # 2-3, Angle Road, M.A. Jinnah Town, Quetta
+CR/22/049/C-1|Beyond Green (Private) Limited|Karachi|0347-2828085; 021-32770555|info@beyondgreen.com.pk|Flat No. 14, 2nd Floor, Rehman Mansion, Preedy Street, Near Regal Chowk, Saddar, Karachi
+CR/23/050/C-1|Pantera Energy (Private) Limited|Lahore|0322-4409444; 042-111-112-886|contact@panteraenergy.pk|12-A, XX, Khayaban-e-Iqbal, Phase-III, DHA, Lahore
+CR/22/051/C-1|H & M Enterprises|Faisalabad|0321-8666684; 041-8505684|hme@hme.com.pk|Beside Overhead Bridge, Nishatabad, Sheikhupura Road, Faisalabad
+CR/22/052/C-1|Watt Tech (Private) Limited|Faisalabad|0321-1109900; 0304-1111098|watttechs@gmail.com|P-3/74, Muhammadia Colony, Jaranwala Road, Madina Town, Faisalabad
+CR/22/053/C-1|ICON (Private) Limited|Lahore|0321-4222550; 042-35752266|info@iconpvltd.com|175, Street No. 4, Scotch Corner, Upper Mall, Lahore
+CR/24/054/C-1|Smart EPC Services (Private) Limited|Lahore|0334-4739992; 042-36298138|info@ses.org.pk|216-G, Phase VIII, DHA, Ex-Park View, Lahore
+CR/23/055/C-1|Greenvision Energy (Private) Limited|Karachi|0311-1371371|info@greenvisionenergy.pk|Outlet No. 2, Block 5C, Small Shahbaz Commercial, Main Khayaban-e-Sehar, Phase-6, DHA, Karachi
+CR/22/056/C-1|SunTech PowerSystems (Private) Limited|Rawalpindi|0300-8561111|info@suntechps.com|267, Block-A, Room No. 02, Off The Mall, Saddar, Rawalpindi
+CR/22/057/C-1|EBR Energy Pakistan (Private) Limited|Lahore|042-35817340; 042-111-476-527|info.pak@ebr-energy.com|43/4, Main Gulberg, Lahore
+CR/24/058/C-1|I4 Junction (Private) Limited|Lahore|0304-4000988|umeraulakh3@gmail.com|52-D, Commercial Area near Zaitoon Corporate Office, New Lahore City, Lahore
+CR/22/059/C-1|Venture Universal Trade (Private) Limited|Islamabad|051-5418323|vutpak@gmail.com|Plaza No. 20, Street No. 26-A, Lavender Road, Sector H, DHA Phase-II, Islamabad
+CR/24/060/C-1|Dynamic Green (Private) Limited|Lahore|0321-4497511; 042-36372914||109, C-1, Model Town, Lahore
+CR/22/061/C-1|Mehver Technologies (Private) Limited|Lahore|0302-0003999; 0321-3444420|shabbirengr@hotmail.com|14-B, IRCHS, Main Boulevard, LDA Avenue-1, Raiwind Road, Lahore
+CR/24/062/C-1|Smartech Solar (Private) Limited|Islamabad|0321-5074353; 051-2356030|mail@smartechsolar.pk|Plot No. 353, Street No. 05, Industrial Area, Sector I-9/3, Islamabad
+CR/22/063/C-1|Muhammad Iqbal Sheikh & Co.|Hyderabad|0300-8372315|muhammadiqbalshaikh06@gmail.com|F/1248, Aziz Nest, Near Ibrat Press, Gari Khata, Hyderabad
+CR/22/064/C-1|Noor Ul Haq & Brothers|Karachi|0300-8383877; 021-35853637|nb.karachiooffice@gmail.com|Plot No. 8C, 21st Commercial Street, DHA Phase-2, Karachi
+CR/24/065/C-1|M Square R Engineering Services|Islamabad|0305-8880037; 051-4494870|msr.islamabad@gmail.com|5th Floor, Plot No. 07, Al-Nayan Street, Sector-A, DHA Phase-II, G.T. Road, Islamabad
+CR/24/066/C-1|Skyblue Builders|Lahore|0333-4500443; 042-37515266|skybluebuilders@gmail.com|14-KM, Multan Road, Opp. Metro Store, Near Thokar Niaz Baig, Lahore
+CR/24/067/C-1|Solar Sigma Limited|Islamabad|0301-5356635; 051-5421006|info@solarsigma.com|31-A, PWD Society, Main Expressway, Islamabad
+CR/24/068/C-1|Solar Tech (Private) Limited|Lahore|0321-4099222; 042-35226063|info@solartech.com.pk|Solar Tech Head Office, Main Pine Avenue, Near Alhamd Gardens, Lahore
+CR/24/069/C-1|Nizam Energy (Private) Limited|Karachi|0300-2024593; 021-111-176-527|sales@nizamenergy.com|G-30/4, KDA Scheme No. 5, Block-8, Clifton, Karachi
+CR/23/070/C-1|Zero Carbon (Private) Limited|Lahore|0311-1111926|amera.mazhar@zerocarbon.com.pk|63-E-1, Gulberg-III, Lahore
+CR/22/071/C-1|Creative Electronics (Private) Limited|Lahore|0314-7706776; 042-35111117|mubashar@gmail.com|160-S, Quaid-e-Azam Industrial Estate, Kot Lakhpat, Lahore
+CR/24/072/C-1|BS Engineering & Construction Works|Lahore|0324-4458522; 042-35139166|info@bsecw.com|Suite No. 97-E, Street No. 03, Firdous Market, Opp. General Hospital, Chungi Amar Sidhu, Lahore
+CR/23/073/C-1|Tesla Industries (Private) Limited|Islamabad|0321-8375218; 051-4441404|accounts@tesla-pv.com|Plot No. 81-G, Street No. 06, Sector I-10/3, Islamabad
+CR/24/074/C-1|TSK Engineering International (Private) Limited|Peshawar|0346-8595604; 091-5830596|tskpakistan@gmail.com|54-A, Small Industrial Estate, Jamrud Road, Hayatabad, Peshawar
+CR/22/075/C-1|Penta-H (Private) Limited|Lahore|0301-8445040|info@pentahenergy.com|289, Block Jani Pur, Sector C, Bahria Town, Lahore
+CR/22/076/C-1|IM Solar Limited|Lahore|042-35911050; 042-35911164|info@imsolar.pk|10, Ali Block, New Garden Town, Lahore
+CR/24/077/C-1|Green Industrial Solutions (Private) Limited|Lahore|0345-2112250; 042-35458586|info@greenindsol.com|104-J, Johar Town, Near Expo Center, Lahore
+CR/24/078/C-1|Enabling Solutions (SMC-Private) Limited|Islamabad|0311-1822220; 0343-2224411|rehan.adnan@e-sols.com|Office No. 4, 2nd Floor, Oakland City Center, I-8 Markaz, Islamabad
+CR/24/079/C-1|STZ Engineers|Lahore|0321-4474467; 042-35218937|info@stzengineers.com|Suite 2-B, 2nd Floor, Kiran Plaza, Civic Center, Model Town Extension, Lahore
+CR/22/080/C-1|AE Power Alternative Energy (Private) Limited|Gujranwala|0301-8711300; 055-4555400|info@aepower.pk|Near Kangniwala Bypass, G.T. Road, Gujranwala
+CR/22/081/C-1|Foundation Solar Energy (Private) Limited|Rawalpindi|0345-8482030; 051-5153543|info@fsel.com.pk|Fauji Tower, 68, Tipu Road, Chaklala, Rawalpindi
+CR/22/082/C-1|Sleek Solar International (Private) Limited|Faisalabad|0346-8666256; 041-8736256|info@sleeksolar.com|House No. 622A, Block-A, Peoples Colony No. 1, Faisalabad
+CR/24/083/C-1|Highrise (Private) Limited|Islamabad|0300-8566375; 051-4863931|zahid@highrise.com.pk|Plot No. 10, Sanitary Market, Sector I-11/3, Islamabad
+CR/22/084/C-1|Sharif International|Rawalpindi|0333-5559761; 051-5766380|info@sharifinternational.net|House No. 151-A, Street No. 8, Chaklala Scheme III, Rawalpindi
+CR/22/085/C-1|Futurecon Enterprises|Faisalabad|0306-1548930|info@futureconent.com|56, Shadman Colony No. 2, Faisalabad
+CR/23/086/C-1|Synergy Corporation|Karachi|0300-8270234; 021-38899030|info@synergycorp.com.pk|Plot No. WH-18-A8, National Industrial Park, Korangi, Karachi
+CR/24/087/C-1|E-Cube Solutions (Private) Limited|Lahore|0316-4500061; 042-32172111|info@ecubeltd.com|17, Bukhari Plaza, Quaid Commercial, Bahria Town, Lahore
+CR/24/088/C-1|M & R Engineering (Private) Limited|Lahore|0324-8407202|mnreng@gmail.com|House No. 67, J-Block, Gulberg-III, Lahore
+CR/22/089/C-1|Wah Solar (Private) Limited|Karachi|0321-2232991; 021-35205578|haider@wahsolar.com|5th Floor, City View Tower, Main Shaheed-e-Millat Road, Karachi
+CR/23/090/C-1|MAK Pumps Company (Private) Limited|Peshawar|0300-8581815; 091-5812472|info@makpumps.com|Plot No. 87, Industrial Estate, Jamrud Road, Peshawar
+CR/24/091/C-1|K-Solar (Private) Limited|Karachi|0300-8236226; 021-32637133|naz.khan@ke.com.pk|KE House, 39-B, Sunset Boulevard, Phase-II, DHA, Karachi
+CR/22/092/C-1|JD Aviation Sourcing & Engineering Services (Private) Limited|Rawalpindi|0335-0050020; 051-4578427|jdaviation.sourcing@gmail.com|BF-1, Mid City Apartments, Near Fazaia Housing Society, Khokhar Road, Rawalpindi
+CR/24/093/C-1|Ahmad & Co.|Lahore|0322-4379415; 042-35153188|fbsaleem@gmail.com|956, Block E1, Johar Town, Lahore
+CR/24/094/C-1|Nanx Engineering (Private) Limited|Islamabad|0334-0002212; 051-2723537|info@nanx.com.pk|21, Main Service Road, Block-B, Media Town, Islamabad
+CR/23/095/C-1|Beacon Energy (Private) Limited|Islamabad|051-111-235-235|info@beaconenergy.pk|789, Capital View Road, Mohra Noor, Banigala, Islamabad
+CR/22/096/C-1|Kasib Builders & Developers (Private) Limited|Islamabad|051-2224215|contracts@kasibbuilders.com|102, 1st Floor, Savoy Arcade, Plot No. 25, Hill Road, F-11 Markaz, Islamabad
+CR/22/097/C-1|Myson Engineering Systems (Private) Limited|Islamabad|0300-8502779; 051-2150055|badar@myson.com.pk|13, Malik Complex, 80-West, Blue Area, Islamabad
+CR/22/098/C-1|Premier Energy (Private) Limited|Lahore|0320-4150505; 042-37180722|info@premierenergy.com.pk|42E/1, Ghalib Road, Gulberg-III, Lahore
+CR/23/099/C-1|Ningbo Green Light Energy (Private) Limited|Lahore|0321-4761001; 042-35292060|gasim@glenergy.pk|2nd Floor, Pace Mall, MM Alam Road, Gulberg-III, Lahore
+CR/23/100/C-1|Iceberg Industries|Karachi|021-35391871|info@icebergindustries.net|51-D, Commercial Area A, Phase-II, DHA, Karachi
+CR/24/101/C-1|Solis Energy Solutions (Private) Limited|Karachi|0333-0562565; 021-35294301|info@solis-energy.com|D-180, Block-5, Clifton, Karachi
+CR/22/102/C-1|Atlas Energy Limited|Lahore|042-37132636|maqbas@atlas.com.pk|64/XX, Khayaban-e-Iqbal, DHA Phase-3, Lahore
+CR/22/103/C-1|Tamzeer Construction Company|Hyderabad|0300-9252249|teehyd99@gmail.com|Block-D, Unit 06, Latifabad, Hyderabad
+CR/23/104/C-1|RE Nergy Solutions (Private) Limited|Islamabad|051-8733596|haroon.hamid@ren-sol.com|House No. 16, Street No. 85, G-6/4, Islamabad
+CR/22/105/C-1|Greaves Pakistan (Private) Limited|Karachi|021-35682565|information@gfg.com.pk|Modern Motors House, Beaumont Road, Karachi
+CR/23/106/C-1|Thaheem International|Multan|0300-0991337; 061-6564497|info@thaheemgroup.com|Thaheem Plaza, 23-24-GC, Shah Rukn-e-Alam Colony, Multan
+CR/24/107/C-1|S.M. Jaffer & Co.|Karachi|021-111-765-765|info@smjaffer.com|Jaffer House, 17 Timber Pond, Keamari, Karachi
+CR/23/108/C-1|WETCO Synergies (Private) Limited|Multan|0300-8385849|wetcosynergies@gmail.com|Office No. 6-7, Hadi Commercial Centre, Nagana Chowk, Multan
+CR/23/109/C-1|IIW Industrial Engineers & Contractors|Karachi|0300-2513075; 021-35250220|info@iiwengr.com.pk|Office No. 101, 1st Floor, Plot No. 41-C, Bukhari Commercial, Lane 9, Phase VI, DHA, Karachi
+CR/22/110/C-1|The Pak Indenting Company (Private) Limited|Lahore|042-36313235; 042-36362348|pak.indenting@gmail.com|2nd Floor, Al-Maalik, 19 Davis Road, Lahore
+CR/24/111/C-1|Riaz & Sons|Islamabad|0333-5128141; 051-2271145|info@riazandsons.com.pk|Office No. 2, 2nd Floor, Ali Plaza, B-Block, Fazal-e-Haq Road, Blue Area, Islamabad
+CR/22/112/C-1|Renewable Power (Private) Limited|Peshawar|0333-9158881; 0309-8888470|renewablepower@live.com|Plot No. 3A, Industrial Estate, Hayatabad, Peshawar
+CR/23/113/C-1|Rising Technologies|Quetta|0313-8266389; 081-2820778|rising.technologies@hotmail.com|Office No. B-8, Jinnah Apartments, Near Imdad Hospital, Jinnah Road, Quetta
+CR/24/114/C-1|Exide Pakistan Limited|Karachi|021-32598061|solar@exide.com.pk|A-44, Hill Street, Off Manghopir Road, S.I.T.E., Karachi
+CR/23/115/C-1|Omecta International (Private) Limited|Faisalabad|0302-8200000; 041-8403267|mian.adnan.aslam@gmail.com|P-24-Y-J, Y-Block, Madina Town, Faisalabad
+CR/24/116/C-1|WSKB & Company|Karachi|0300-8312772; 021-37296290|waliullahbhutto@yahoo.com|Suite No. B-1, 1st Floor, Court View Apartment, Court Road, Karachi
+CR/24/117/C-1|SB Electronics Engineering & Control (Private) Limited|Lahore|0333-4805151; 042-37133181|info@entrack-sb.com|165MB, Shabbir Sharif Boulevard, Phase VI, DHA, Lahore
+CR/22/118/C-1|Netsat (Private) Limited|Karachi|0300-8245039; 0311-1222950|info@netsat.net.pk|87/10, Sector-5, Korangi Industrial Area, Karachi
+CR/22/119/C-1|Humayoun & Brothers|Quetta|0333-7811764; 0345-8324340||Decent Plaza, Opposite Old AG Office, 1st Floor, Office No. 4, Model Town, Quetta Cantt, Quetta
+CR/24/120/C-1|AYK (Private) Limited|Gujranwala|0321-6456446; 055-3255800|info@ayk.com.pk|1st Floor, Al-Sharif Market, Main Model Road, Near Gourmet Bakery, Gujranwala
+CR/24/121/C-1|Supertek (Private) Limited|Quetta|0321-8002221; 081-2870252|ceo@supertek.com.pk|House No. 6-9/380, Dr. Ghulam Nabi Road, Quetta
+CR/22/122/C-1|Siddiq Renewable Energy (Private) Limited|Lahore|0300-8453973; 042-36883600|info@sre.com|47, Grand Trunk Road, Hide Market, Lahore
+CR/23/123/C-1|Renewables & Technologies (Private) Limited|Rawalpindi|0312-5878033|gasimjaved93@gmail.com|House No. CB-916, Muhammad Khan Lane, Peshawar Road, Rawalpindi
+CR/23/124/C-1|Sky Green Engineering (Private) Limited|Nowshera|0300-8582097|info@skygreenengg.com|Quaid Plaza, Aziz Bhatti Road, Nowshera Cantt, Nowshera
+CR/24/125/C-1|Safe Zone International (Private) Limited|Peshawar|0300-8591444|shahsenterprises@gmail.com|101, B-Block, Amin Mansion, G.T. Road, Peshawar
+CR/23/126/C-1|Ingenuity (Private) Limited|Lahore|0300-9276995; 042-32172069|ingenuitycorporation@gmail.com|Plaza 54, 1st Floor, Block-C, CCA-1, Phase 6, DHA, Lahore
+CR/24/127/C-1|Sunbelt Energy (Private) Limited|Peshawar|0332-9737009; 091-5822244|azmatullah198813@gmail.com|A-3, New Dil Jan Arcade, Achini Chowk, Ring Road, Peshawar
+CR/24/128/C-1|Sunhance (Private) Limited|Lahore|0300-8497929|anwar@sunhance.pk|54 MB, 4th Floor, Phase 6, DHA, Lahore
+CR/23/129/C-1|MEFA Industries (Private) Limited|Lahore|0300-8544548; 042-35702291|ali@mefasolution.com|House No. 6, B-Block, Divine Gardens, Main Airport Road, Lahore
+CR/22/130/C-1|Energy Conscious Engineering (Private) Limited|Lahore|0303-0668388; 042-32319201|info@ece.com.pk|Office No. 1114, Al-Hafeez Heights, 65 D-1, Gulberg-III, Ghalib Road, Lahore
+CR/23/131/C-1|Balochistan Engineering Company|Quetta|0300-3803940|rahimtareen969@gmail.com|China Machinery Store, Suraj Ganj Bazar, Quetta
+CR/24/132/C-1|Tricom PWR (SMC-Private) Limited|Karachi|0346-8288000; 0311-1874266|imranbhaila@tricompower.com|Plot No. 63, Sector 12/D, North Karachi Industrial Area, Karachi
+CR/23/133/C-1|Techno Time Construction (Private) Limited|Islamabad|0345-4006565; 051-2344440|ttc_atta@yahoo.com|3-A, 3rd Floor, ATS Centre, 30-West, Fazal-e-Haq Road, Block-A, Blue Area, Islamabad
+CR/23/134/C-1|SC Technologies Global (Private) Limited|Islamabad|0331-8777999; 051-4443368|bilal.qureshi@sctechglobal.com|Plot No. 205, Korang Road, Industrial Area, Sector I-10/3, Islamabad
+CR/23/135/C-1|Zulfiqar & Brothers|Dera Ghazi Khan|0333-6474347; 0346-7010777|zulfiqarandbrothers81@gmail.com|Fort Munro Tehsil, Dera Ghazi Khan
+CR/23/136/C-1|DWP Technologies (Private) Limited|Lahore|0302-8495122; 042-111-005-006|info@dwp.com.pk|5, Zafar Ali Road, Gulberg-V, Lahore
+CR/23/137/C-1|Zomo Ashro Engineering Services (Private) Limited|Islamabad|0332-9925656; 051-4102037|zomoashro@hotmail.com|Plot No. 277, Street No. 01, Sector I-9/3, Industrial Area, Islamabad
+CR/23/138/C-1|National Radio & Telecommunication Corporation (Private) Limited|Haripur|0995-666735|marketing@nrtc.com.pk|T & T Complex, Haripur
+CR/24/139/C-1|Fazal Malik & Co.|Islamabad|0345-8631324; 051-2160291|fazal_ahmad@hotmail.com|Office No. 10, 2nd Floor, Khyber-1 Plaza, G-15, Islamabad
+CR/24/140/C-1|Colts Engineering LLP|Islamabad|0333-5844385; 051-2271145|info@colts.com.pk|Plot No. 29, Block BS-03, Business Square, Gulberg Greens, Islamabad
+CR/23/141/C-1|Permanand & Company|Sanghar|0331-3300855; 0304-2300589|permananddodani101@gmail.com|Ward No. 74, Hashmat Mal Mohallah, Khipro, Sanghar
+CR/23/142/C-1|Energy Solutions (Private) Limited|Karachi|0321-8726278; 021-111-222-375|maroof@eslpk.com|ESL House, DP-01, Sector-21, Korangi Industrial Area, Karachi
+CR/24/143/C-1|Cititek (Private) Limited|Peshawar|0345-9046001; 091-2211637|cititekpvltd@gmail.com|Room No. 7B-8B, 1st Floor, Peshawar Medical Center, Khyber Bazar, Peshawar
+CR/23/144/C-1|Al-Awan Electric Works & Construction Co.|Islamabad|0333-6700006; 051-8736815|moin@alawanconstruction.com|Plot No. 195, Street No. 01, Sector I-10/3, Islamabad
+CR/23/145/C-1|Garibsons (Private) Limited|Karachi|0334-3368042; 021-111-427-421|ab.mannam@fhgraib.com|C-69/71, 12th Commercial Street, Phase II Ext., DHA, Karachi
+CR/23/146/C-1|M. Z. Awan & Sons|Peshawar|0333-9166991; 091-5810421|mzawanandsons@outlook.com|Office No. 123E-2, Street No. 05, Phase 1, Hayatabad, Peshawar
+CR/23/147/C-1|R & S Engineering & Services (SMC-Private) Limited|Islamabad|0334-5655558|rabbaninadir@gmail.com|Plot No. 44, AWS Steel Market, Sector I-10/3, Islamabad
+CR/23/148/C-1|Diamond Star International|Karachi|0300-2509264; 021-35630584|dsi.vaswani@gmail.com|F-115, 1st Floor, Glass Tower, Adjacent PSO Head Office, Clifton, Karachi
+CR/24/149/C-1|Manjhi Construction (Private) Limited|Hyderabad|0300-9377982; 022-2650584|manjhiconstr@gmail.com|Flat No. 01, 1st Floor, Fazal Heights, Main Road, Qasimabad, Hyderabad
+CR/23/150/C-1|Zeal Engineering Services (Private) Limited|Rawalpindi|0333-5302605; 051-8432639|info@zealengineering.org|Opposite Amazon Mall, Near DHA II Gate-1, G.T. Road, Rawalpindi
+CR/23/151/C-1|Hitech Networks (Private) Limited|Lahore|0342-4446000; 042-35854071|info@hnl.com.pk|63-P, Gulberg-III, Lahore
+CR/24/152/C-1|Khan Nasir Khan|Peshawar|0300-5919197; 0335-6262628|nkconstruction@gmail.com|Chawa Gujar, Umar Abad, P.O. Chamkani, Peshawar
+CR/24/153/C-1|M.D.S. & Co.|Hyderabad|0300-3378560; 022-2654632|mdsandco26@gmail.com|House No. A-14, Near Soneri Book Depot, Mid Land Colony, Qasimabad, Hyderabad
+CR/23/154/C-1|Ignite Power (Private) Limited|Lahore|0321-5727676; 042-111-000-100|asfand.yar@secl.pk|1st Floor, Tricon Corporate Centre, 73-E, Main Jail Road, Gulberg-II, Lahore
+CR/23/155/C-1|Sharjeel Brothers Enterprises|Dera Ghazi Khan|0336-6367777|sbedgk@gmail.com|House No. 77, Opp. Sharqi Gate Stadium, Rukan-e-Abad, Dera Ghazi Khan
+CR/24/156/C-1|Safroon Energy (Private) Limited|Dera Ismail Khan|0300-0222210|info@safroonenergy.com|Safroon Energy Office, Grid Road, Opposite Bandhan Shadi Hall, Dera Ismail Khan
+CR/23/157/C-1|Mazcorp Engineering|Gujranwala|0300-9753532|info@mazcorp.net|G.T. Road, Near Jamia Islamia, Sadhoke, Gujranwala
+CR/23/158/C-1|Wateen Solutions (Private) Limited|Lahore|042-111-999-919|customercare@wateen.com|Main Walton Road, Opp. Bab-e-Pakistan, Walton Cantt, Lahore
+CR/23/159/C-1|Maxell Power (Private) Limited|Lahore|0334-4254455; 042-111-441-441|Ali@maxellpower.com|House No. 203, D-II, Gulshan-e-Ravi, Lahore
+CR/23/160/C-1|National Logistics Corporation|Rawalpindi|0330-9522525; 051-5916200|hqnlcconst@yahoo.com|Headquarter Engineers, National Logistics Corporation, Harding Road, R.A. Bazar, Rawalpindi
+CR/23/161/C-1|Sympl Energy (Private) Limited|Lahore|0304-1117675; 0345-8514644|hello@sympl.pk|149-CCA, DD Block, Phase 4, DHA, Lahore
+CR/23/162/C-1|Kausar Ali & Brothers|Charsadda|0345-9090954; 0345-2826473|kausarkhancnw@gmail.com|Mohallah Shadab Colony, Barazai, Tehsil Tangi, Charsadda
+CR/23/163/C-1|Apple Energy Technologies (Private) Limited|Karachi|0321-2100969; 021-32568899|hamid@aetechpvltd.com|Office No. 35, Plot No. E-2, Ground Floor, Dhedhi Business Avenue, Estate Avenue Road, S.I.T.E., Karachi
+CR/24/164/C-1|Delta Energy Limited|Karachi|0333-2224226; 021-34542468|hasan@deltaenergy.com.pk|F/244-B, S.I.T.E., Karachi
+CR/23/165/C-1|Sarwar Engineering Works|Sukkur|0321-2696999|muitabasew17@gmail.com|A-660/1, Pirzada Mohalla, Old Sukkur, Sukkur
+CR/24/166/C-1|Ali Haider & Brothers Engineering Co. (Private) Limited|Peshawar|0334-9595649; 0300-9359386|ahandbe@gmail.com|Umar Gul Road, Behind Police Check Post, Gari Sikander Khan, Ring Road, Peshawar
+CR/24/167/C-1|Wahab Engineering Services (Private) Limited|Multan|0321-7307000; 0321-7304000|wahabengineeringservices4@gmail.com|Villa No. V-308/IK-09, Lane No. Pearl-16, Pearl City Housing Scheme, Multan Cantt, Multan
+CR/24/168/C-1|CDigital|Rawalpindi|0300-9148378; 051-5133790|info@cdigital.com.pk|275C, Street No. 13, Chaklala Scheme III, Rawalpindi
+CR/24/169/C-1|Vector Engineering & Services (Private) Limited|Peshawar|0333-9173343|ug.vectorengineering@gmail.com|Plot No. 13, 14A, Small Industrial Estate, Hayatabad, Peshawar
+CR/24/170/C-1|Professional Energy Solutions (SMC-Private) Limited|Lahore|0345-4191944; 042-36665530|info@pes-pk.com|Plot No. 621/A, Block No. 5, D-1, Bank Stop, New Township, Lahore
+CR/24/171/C-1|Rahim & Sons Enterprises|Islamabad|0301-5555788; 051-8319970|info@rahimsons.tech|Office No. 09, 1st Floor, Askari Centre, E-11/3, Islamabad
+CR/24/172/C-1|Yahya Hussain Builders (Private) Limited|Multan|0333-4555518|yahyahussainbuilder@gmail.com|House No. 25, Askari-3, Multan Cantt, Bosan Town, Multan
+CR/24/173/C-1|The Imperial Electric Company (Private) Limited|Lahore|0323-4341097; 042-36304861|info@iec.com.pk|28-Egerton Road, National Tower, Lahore
+CR/24/174/C-1|Premium Petroleum (Private) Limited|Multan|0302-8636666; 061-4780954|ceo@alliedgroup.pk|Office No. 17, Abdullah Center, LMQ Road, Multan
+CR/24/175/C-1|Bestway Renewable Technologies Limited|Islamabad|0300-0555555; 051-2654856|ir@bestway.com.pk|Bestway Building, 19-A, College Road, F-7 Markaz, Islamabad
+CR/24/176/C-1|Iqra Energy|Karachi|0300-2037097|iqraenergy786@gmail.com|Plot No. A-523, Sector No. 6-A, Mehran Town Industrial Area, Karachi
+CR/24/177/C-1|Skyzone Technologies (Private) Limited|Karachi|0307-2850988; 021-36821110|skyzonetechnologies@gmail.com|Plot No. 18-C, 2nd Floor, Block-2, P.E.C.H.S, Shahrah-e-Quaideen, Karachi
+CR/24/178/C-1|Abid Brothers Contractors (Private) Limited|Islamabad|0321-5777775; 051-2809666|abc653@hotmail.com|Office No. 02, 2nd Floor, Super Trade Center, Near NBP, F-10 Markaz, Islamabad
+CR/24/179/C-1|Dablew Jay Engineering Company (Private) Limited|Islamabad|0301-3106104|dablew.jay.ahsan@gmail.com|House No. 292, Street No. 56, Block-C1, Multi Gardens, B-17, Islamabad
+CR/24/180/C-1|Unik Construction (SMC-Private) Limited|Dera Ismail Khan|0313-9144777; 0336-7474976|unikconstructionsmc@gmail.com|House No. 03, VIP Colony, Sheikh Yousaf Baba Adda, Bannu Road, Dera Ismail Khan
+CR/24/181/C-1|Sohail Kashif & Co.|Faqirwali|0300-7922122; 0346-7522122|sohailkashifandco@gmail.com|Chak No. 123/6, Faqirwali, District Bahawalnagar
+CR/24/182/C-1|Lawagher Construction (Private) Limited|Peshawar|0335-3013636|lawagher1980@gmail.com|House No. 373, Sector No. P-2, Street 11, Phase-4, Hayatabad, Peshawar
+CR/24/183/C-1|Tech4Life (Private) Limited|Lahore|0300-0845848; 0333-4388058|tech4lifeltd@gmail.com|House 64, Block K, Valencia Town, Lahore
+CR/24/184/C-1|Haji Sirajuddin Soomro|Hyderabad|0333-2779929; 022-2730935|hssoomro@gmail.com|Office No. 72/41, Hamid Plaza, Saddar Cantt, Hyderabad
+CR/24/185/C-1|B & N Construction Co (Private) Limited|Islamabad|0315-9175190|idrees.acca985@gmail.com|Office No. 01, 1st Floor, Bilal Market, Street No. 73, G-9/3, Islamabad
+CR/24/186/C-1|Damaan Builders (Private) Limited|Bahawalnagar|0300-7929411; 0300-7900489|damaanbuilders411@gmail.com|Jahangir Garden, House No. 02, Block-A, Bahawalnagar
+CR/24/187/C-1|Dewmak Energy (Private) Limited|Karachi|0300-0444245; 021-34322226|info@dewmakenergy.com|Suite No. 204, Park Avenue, 24-A, PECHS Block-6, Main Shahrah-e-Faisal, Karachi
+CR/24/188/C-1|Zafar Ali Toor Construction Company|Burewala|0300-6991443; 0300-6921812|zafaralitoor88@gmail.com|Chak No. 443/EB, Tehsil Burewala, District Vehari
+CR/24/189/C-1|Turnotech (Private) Limited|Islamabad|0300-8551228; 051-2712151|salman.azam@turnotech.com|2nd Floor, Plot No. 23, The Pearl Arcade, North Commercial, Margalla Road, FECHS, E-11/2, Islamabad
+CR/24/190/C-1|Arafat Computers|Quetta|0334-8363330; 081-2301058|arafatcomputers@yahoo.com|Office No. 6, Faiz Muhammad Road, Near Jamia Masjid, Liaquat Bazar, Quetta
+CR/24/191/C-1|Hot Chand Bhuromal|Naukot|0333-8333660; 0233-867509|hubcontractor191@outlook.com|Beside Sindh Fine Flour Mill, Mithi Road, Naukot, Tharparkar
+CR/24/192/C-1|Naveed Constructions (Private) Limited|Burewala|0300-6990760|naveedconstructionco@gmail.com|Mujahid Colony II No. 497, Street No. 8, Burewala, District Vehari
+CR/24/193/C-1|Surge Energies (Private) Limited|Karachi|0325-9223355|rohailhussainofficial@gmail.com|Flat No. 613, Falak Naz Plaza, Near Natha Khan Bridge, Shahrah-e-Faisal, Karachi
+CR/24/194/C-1|A & A Enterprises Engineering|Karachi|0321-2088225; 021-34130050|a_a_enter@yahoo.com|Shop No. 7 & 8, Opposite Happy Home School, Shaheed-e-Millat Road, Karachi
+CR/24/195/C-1|Abdul Ghaffar Memon|Hyderabad|0300-8374871||Office No. A/49, State Life Cooperative Housing Society, Qasimabad, Hyderabad
+CR/24/196/C-1|Muhammad Siddique Ch. & Co.|Lahore|0301-8473709; 042-35320444|salmanmsc0@gmail.com|28-A, T&T Housing Society, Green Acres, Raiwind Road, Lahore
+CR/24/197/C-1|Rizwan Electric Works|Karachi|0300-2425368|services@rew.net.pk|Plot No. A4/A53, Block-G, Abdullah Shah Ghazi Goth Scheme 33, Near Al-Azhar Garden, Karachi
+CR/24/198/C-1|Solcraft (Private) Limited|Karachi|0300-0648892; 021-32734260|bd.energy@solcraft.com.pk|Office No. 5/10, Rimpa Plaza, M.A. Jinnah Road, Karachi
+CR/24/199/C-1|FB & Sons (Private) Limited|Karachi|0301-8312772|saifullahbhutto@icloud.com|Plot No. 43/2/L, PECHS, Block-6, Opp. Jheel Park, Gate No. 2, Karachi
+CR/24/200/C-1|ESA Energy (SMC-Private) Limited|Karachi|0310-4699555|ekramsolaragency05@gmail.com|Shop No. 120, Gate No. 2, Bismillah Market, New Sabzi Mandi, Super Highway, Karachi
+CR/24/202/C-1|Saad Construction & Engineering Services|Vihari|0308-7181884|sces.info.pk@gmail.com|House No. 60, Street No. 02, Southern Block, Sharqi Colony, Vehari
+CR/24/203/C-1|Nippon Energy (Private) Limited|Lahore|0333-4937157; 042-35177777|noman@nipponenergy.co|1st Floor, 755, Block-C, Faisal Town, Lahore
+CR/24/204/C-1|Ch. Abdul Ghafoor Goheer|Shahkot|0300-7797501; 056-3710991|goheerconstruction@yahoo.com|Main Sheikhupura-Faisalabad Road, Shahkot, District Nankana Sahib
+CR/24/205/C-1|Elum Construction Co.|Daggar|0300-5962697|fa83ad@gmail.com|Village Pacha Kalay, Tehsil & Post Office Daggar, District Buner
+CR/24/206/C-1|Saddaqat Builders (Private) Limited|Bahawalnagar|0300-7929294|saddaqatbuilders@yahoo.com|House No. 1, Pull Fordwah, Near Mehmoodia Eye Care Clinic, Bahawalnagar
+CR/24/207/C-1|Pak Reliable Engineering Co. (Private) Limited|Upper Dir|0346-8001333|sahibzadasiyaf@gmail.com|House No. 1, Sahibabad, Kotkey Tehsil, Wari, District Upper Dir
+CR/24/208/C-1|Union Group Industries|Karachi|0333-3120972|abbas@uniongroupindustries.com|Plot No. 1-B-2, Sector 29, Korangi Industrial Area, Karachi
+CR/24/209/C-1|Green Fuel Energy|Lahore|0344-4494001|info@gfenergy.pk|House No. 27, Street No. 4A, Eden Value Homes, Lahore
+CR/24/211/C-1|Hajvairy Enterprises|Islamabad|0332-5240275; 0316-5331433|rafaqatalihajvairy@hotmail.com|House No. 1200, Street No. 48, Sector F-17, Islamabad
+CR/24/002/C-3|Axovolt (SMC-Private) Limited|Lahore|0305-4009082; 042-35342996|axovolt3@gmail.com|Office No. 9, Commercial Complex, Bahria Town, Lahore
+CR/24/003/C-3|Inverex Power Solution|Karachi|0321-2099988; 021-32750760|info@aptinverex.com|Shop No. 1-A, Jubilee Mansion, Shahrah-e-Liaquat, Regal Chowk, Saddar, Karachi
+CR/22/004/C-3|Pak Evergreen Energy (Private) Limited|Islamabad|051-4444758|info@pakevergreenenergy.com|Plot No. 277, Street No. 01, Sector I-9/3, Industrial Area, Islamabad
+CR/23/005/C-3|Haroon Brothers|Lahore|0300-4845001; 042-37238421|info@haroonbrothers.com|House No. 26, Street No. 01, Link-2, Cavalry Ground, Lahore
+CR/21/006/C-3|Indus Solar International (Private) Limited|Lahore|0300-4022093|info@indus-solar.com|164-B, Street No. 4, Cavalry Ground, Lahore
+CR/22/007/C-3|AccuTech International|Rawalpindi|0344-4000374|accutechinternational@gmail.com|32, Quaid-e-Azam Market, Aslam Market, Wah Cantonment, Rawalpindi
+CR/21/008/C-3|Benchmark Technologies|Rawalpindi|0333-5170711; 051-5167020|benchmark@bmtpak.com|Ground Floor, National Plaza, Lane No. 5, Peshawar Road, Rawalpindi
+CR/23/009/C-3|Sun Players & Co (Private) Limited|Lahore|0322-2023999; 042-37207888|aamir.271jb@gmail.com|89-K, Commercial Basement, DHA Phase-I, Lahore
+CR/23/010/C-3|Arista Solutions|Islamabad|0300-5138959; 051-4918254|info@aristasols.com|Office No. 13-14, Sunrise Arcade, Main G.T. Road, DHA-II, Islamabad
+CR/23/011/C-3|Read Solar (Private) Limited|Lahore|0321-6808222|info@readgroup.com.pk|97/8, Baber Block, New Garden Town, Lahore
+CR/24/012/C-3|Al-Asr Renewable Energies|Karachi|0323-2932123|alasrenergies@gmail.com|C-3, Railway Society Projects, 5-A, Block-4, Gulshan-e-Iqbal, Karachi
+CR/22/014/C-3|Buraq Energy Solutions|Lahore|0307-1068107; 0331-4140607|info@buraqsolar.com|House No. 39, GSII Ext. Larech Colony, Garhi Shahu, Lahore
+CR/24/015/C-3|Aayems (Private) Limited|Islamabad|0321-5014107|ahmed.annus157@gmail.com|Office No. 1, 2nd Floor, Plaza No. 28, Jinnah Boulevard West Sector, DHA-2, Islamabad
+CR/23/016/C-3|Indus Clean Energy (Private) Limited|Karachi|0300-8241835; 021-34394311|queries@induscleanenergy.com|House 45-G, 2nd Floor, P.E.C.H.S, Block-6, Karachi
+CR/22/017/C-3|Tajsol|Karachi|0302-8313999; 021-35308637|yar.muhammad@tajsol.com|Office No. 118, 1st Floor, Plot No. G-7, Block-9, KDA Scheme No. 5, Kehkashan, Clifton, Karachi
+CR/24/018/C-3|Trisun Energies (Private) Limited|Karachi|0336-5770608|trisunenergies@gmail.com|Office No. 49-50, Moin Arcade, Sarmad Road, Near Passport Office, Saddar, Karachi
+CR/23/019/C-3|Power Technology International (Private) Limited|Karachi|0322-2784784; 021-34313818|ptiups@yahoo.com|79-C, Khayaban-e-Bahriya, Phase-VII, DHA, Karachi
+CR/22/021/C-3|Solaris Engineering (SMC-Private) Limited|Faisalabad|0341-9441124; 041-6074250|ceo@solaris.pk|P-43, Super Kareem Market, Eden Garden, Canal Road, Faisalabad
+CR/22/022/C-3|DS Technologies|Karachi|0307-7753333|shajeerashid@gmail.com|ST-2/7, Sector 16, Korangi Industrial Area, Karachi
+CR/24/023/C-3|UB Solar & Security Solutions|Rawalpindi|0321-5314540; 051-4853105|ubsolarpk@gmail.com|Shop No. G-24, Ground Floor, Midway Centre, Murree Road, Rawalpindi
+CR/24/024/C-3|Growatt PK (Private) Limited|Karachi|0321-6226141|info@growattpk.com|Office No. 5, 2nd Floor, Above Meezan Bank, Rehmania Mansion, Shahrah-e-Liaquat, Saddar, Karachi
+CR/22/025/C-3|SkyPower (Private) Limited|Lahore|0314-7706776|mubashar677@gmail.com|160-S, Qais, Kot Lakhpat, Lahore
+CR/24/026/C-3|Irek Merx|Islamabad|0304-5777665|irekmerx@gmail.com|Shop No. 3, Plot No. 86, I & T Centre, G-8/1, Islamabad
+CR/22/027/C-3|Shahzad Solar (Private) Limited|Faisalabad|0332-7619344|shahzadsolar.director@gmail.com|160-A, Sheikh Colony, Jhang Road, Faisalabad
+CR/23/028/C-3|Pearl Energy Solution (Private) Limited|Karachi|0300-2013286; 021-35157171|info@pearlenergysolution.com.pk|Ebrahim Estate, D-1, Block-7 & 8, KCHSU, Shahrah-e-Faisal, Karachi
+CR/22/029/C-3|EcoEnergy Engineering (Private) Limited|Karachi|0340-0383400|inquiries@ecoenergyfinance.org|1401-1405, Dilkusha Forum, Tariq Road, Karachi
+CR/22/030/C-3|Solarage|Faisalabad|0322-4607712|solarageinfo1@gmail.com|Plot No. 15-16, Main Market, New Garden Town, Faisalabad
+CR/22/031/C-3|Smart Solar|Lahore|0321-4850907; 042-35211617|info@smartsolar.pk|497-A, Revenue Housing Society, Johar Town, Lahore
+CR/23/032/C-3|Instant Energy (Private) Limited|Islamabad|0322-2499009|contact@instanenergy.net|Office No. F-402, 4th Floor, Hamdan Heights, Service Road, Zone-V, Islamabad
+CR/22/034/C-3|MIS Energy (Private) Limited|Karachi|0336-3507455; 0336-2051187|misenergy@outlook.com|Shop No. 08, Sunny Arcade, Near Maskan Chowrangi, Gulshan-e-Iqbal, Block-7, Karachi
+CR/24/035/C-3|Shahani Impex Int'l|Hyderabad|0333-2649599|neelshahany@hotmail.com|Office No. 38, Ground Floor, Digital Centre Plaza, Old Rahat Cinema Street, Hyderabad
+CR/22/036/C-3|Sunrise Electric & Civil Engineering|Peshawar|0344-9121255; 0334-9256906|sunrise.pk21@gmail.com|Office No. 74, Ground Floor, Block-B, Kabul Plaza, Karkhano Market, Peshawar
+CR/24/037/C-3|Solar First Enterprises|Peshawar|0314-5553030; 091-5891222|solarfirst1987@gmail.com|Plot No. 138-H, Industrial Estate, Hayatabad, Peshawar
+CR/24/038/C-3|Jointech Solar Enterprises|Lahore|0333-1413264|rasibhussnain@gmail.com|43-B, Abu Bakar Block, New Garden Town, Lahore
+CR/22/039/C-3|Apower Engineering & Services|Lahore|0311-1363786; 042-38939322|info@apower.com.pk|Jamal Chowk, Main Khayaban-e-Jinnah, Near Valencia Town, Lahore
+CR/24/040/C-3|Infralectric (Private) Limited|Islamabad|0331-8777999; 051-4443368|bilal.qureshi@sctechglobal.com|4th Floor, 205-B, Korang Road, Sector I-10/3, Islamabad
+CR/23/041/C-3|IMH Technologies|Faisalabad|0321-8973635; 041-8555688|imhtechnologies362@gmail.com|Shop No. UG7, Ground Floor, Mall of Lyallpur, Near Harrian Wala Chowk, D-Ground, Faisalabad
+CR/24/042/C-3|Areebah Technologies Limited|Islamabad|0300-5233358|support@areebah.com|Plot No. 07, RCCI, Centre Road Extension, Industrial Area, Rawat, Islamabad
+CR/22/043/C-3|Pleasant Solar (Private) Limited|Islamabad|0346-4333338|pleasantsolar1081@gmail.com|Mezzanine Floor, Chenab Center, Opposite Ufone Tower, Jinnah Avenue, Blue Area, Islamabad
+CR/24/044/C-3|Techno World International|Islamabad|0321-8505044; 051-2305719|technoworld.int@gmail.com|10G, Potohar Plaza, Fazal-e-Haq Road, Islamabad
+CR/22/045/C-3|BinRoshan Engineering|Lahore|0323-8485086; 042-35302810||945, Block-J2, Johar Town, Lahore
+CR/23/046/C-3|Tech Care Solution|Karachi|0333-2106205; 0304-0123451|info@techcare.pk|House No. 106, Street No. 05, Sector I, Manzoor Colony, Karachi
+CR/24/047/C-3|Kaiynat Hitech Services|Rawalpindi|0321-8550914; 051-8335373|info@khs.com.pk|Office No. 1, Basement Plaza No. 50, Street No. 7, Wallayat Complex, Bahria Town, Phase-VII, Rawalpindi
+CR/23/048/C-3|SolarX Energy (SMC-Private) Limited|Faisalabad|0300-0076527; 041-8787699|info@solarx.pk|A230, 1st Floor, Shoaib Bilal Market, Main Sargodha Road, Faisalabad
+CR/23/049/C-3|Fast Solar (Private) Limited|Lahore|0311-1123278; 042-35132344|info@fastsolar.com.pk|137-A, Block-D, Architects Engineers Housing Society, Lahore
+CR/24/050/C-3|Solway Energy (Private) Limited|Karachi|0300-2038530; 021-34140200|info@solway.pk|Plot No. 241, Street 13 (BYJCHS), Bahadurabad, Karachi
+CR/23/051/C-3|Renergent Energy (Private) Limited|Lahore|0300-4403004; 042-35970111|info@renergent.com|22-C, Government Employees Cooperative Housing Society, Phase-III, Peco Road, Lahore
+CR/24/052/C-3|EJ Solar|Karachi|0335-3230148|ahmadgodil@gmail.com|House No. 461, Block 7/8, CP Berar Society, Karachi
+CR/22/053/C-3|Shamsi Bijli (Private) Limited|Lahore|0342-8333333|info@shamsibijli.pk|77-D/1, 1st Floor, Lahore Center, Main Boulevard Gulberg, Lahore
+CR/24/055/C-3|Balochistan Solar Company|Dera Ghazi Khan|0333-8575268||Muslim Town, Near Shell Petrol Pump, Manka Canal Road, Dera Ghazi Khan
+CR/24/056/C-3|Haji Ali Akbar Khan Jadoon|Quetta|0333-9881116; 081-2830376||58, Universal Electric Panel Store, Civic Centre, Ali Bhoy Road, Quetta
+CR/24/057/C-3|Solartrack Services (Private) Limited|Multan|0333-0616199; 0317-0669570|info@solartrackservices.com|House No. 35, MDA Cooperative Society, M.A. Jinnah Road, Multan
+CR/23/059/C-3|DH Energy Solutions|Sahiwal|0334-7906395; 040-4510123|dhenergysolutions2020@gmail.com|Nadeem Arcade, 1st Floor, College Chowk, Sahiwal
+CR/24/060/C-3|The Zainab Engineering|Faisalabad|0300-8651336; 041-2651336|zec2001@hotmail.com|2KM Opp. Decent Marriage Hall, Jhang Road, Faisalabad
+CR/23/061/C-3|Bright Sun Engineering Services|Islamabad|0305-8889210; 051-5427133|info@brightsun-engineering.com|Office No. 6, Lower Ground, ICON Center, Sector-B, Zaraj Housing Society, G.T. Road, Zone-V, Islamabad
+CR/23/062/C-3|Elahi Energy|Faisalabad|0300-8667430; 041-8729458|info@elahienergy.com|148, C-1, Peoples Colony, Faisalabad
+CR/23/063/C-3|Reliance Energy Solutions|Lahore|0331-4884244|info@res.com.pk|21, Block-A, Ext. Judicial Colony, Phase 1, Raiwind Road, Lahore
+CR/24/064/C-3|Akhtar Hussain|Quetta|0315-8864004|tahjee525@gmail.com|House No. D-31, Wahdat Colony, Brewery Road, Quetta
+CR/24/065/C-3|E.A.K. Solar & Co.|Lahore|0320-4043750; 0308-4088980|abdulmaieed0447@gmail.com|65, Commercial Plaza, 3rd Floor, Cavalry Ground, Lahore
+CR/24/066/C-3|Muhammad Jamil Kakar Construction Co.|Quetta|0333-7844135|jamilkakar2001@yahoo.com|Awami Electronic Center, Shop No. 33, Waheed Shah Market, Qandhari Bazar, Quetta
+CR/23/068/C-3|Royal Energy Pakistan|Multan|0330-5845448|royalsolarpak@gmail.com|3, Shalimar Colony, Near Mall of Multan, Bosan Road, Multan
+CR/23/069/C-3|Innovative Solar Solutions|Sialkot|0323-6451111; 052-6613644|engr.jahanzaib14@gmail.com|Office No. 01, Nizam Heights, Near Clock Tower, General Bus Stand, Daska, Sialkot
+CR/23/070/C-3|S & I Enterprises|Quetta|0334-2418165; 0301-3704007|nationalpvc.pk@gmail.com|5-3/1154, Haji Ismail Street, Sirki Road, Quetta
+CR/24/071/C-3|Artisan Solar|Karachi|0333-2354464|artisansolar@outlook.com|2, 1st Floor, Usmania Center, F-2, Commercial Area, M.A.M.H.S, Karachi
+CR/24/072/C-3|Teravolt Energy (Private) Limited|Bahawalpur|0301-6833666|aribmalik@gmail.com|6-B, 1297/8, Heavy Industrial Area, Bahawalpur
+CR/24/073/C-3|Greenergy Solutions (Private) Limited|Rawalpindi|0308-5815410|hr635906@gmail.com|1st Floor, Nusrat Plaza, Opp. Koh-e-Noor Mills, Main Peshawar Road, Rawalpindi
+CR/24/074/C-3|Mehran Engineering Services|Karachi|0332-3750668; 021-36336126|mes.engineering20@gmail.com|WSA-32, Block-14, F.B. Area, Karachi
+CR/24/075/C-3|Solar Valley (Private) Limited|Sialkot|0333-8000173|solarvalleypk@gmail.com|1st Floor, Head Start School, Model Town, Daska, Sialkot
+CR/23/076/C-3|Amica Energy (Private) Limited|Karachi|0315-2780066|asif.iqbal@amicapakistan.com|Plot No. HC-5 & 6, Block-3, K.C.H.S, Gulshan Town, Bahadurabad, Karachi
+CR/23/077/C-3|Capital Solar|Islamabad|0311-5022426; 0341-0012426|capitalsolarnetmetering@gmail.com|Office No. 1 & 2, Ground Floor, Pacific Centre, Johar Road, F-8 Markaz, Islamabad
+CR/24/078/C-3|Kasheef Brothers|Karachi|0321-8235819; 021-32210952|bilalr57@gmail.com|Office No. 1, Shop No. 18, Sheesh Mahal, Blasis Street, Karachi
+CR/24/079/C-3|Gulf Contractor & Works|Karachi|0333-3990881|gulfc.w@gmail.com|Office No. 102, 1st Floor, Al-Rehman Trade Centre, Shahrah-e-Liaquat, New Challi, Karachi
+CR/23/080/C-3|JJ Constructors|Karachi|0301-8216820; 021-36334447|jjc.adnan@yahoo.com|Plot No. B-84, Bhangoria Town (Industrial Area), Azizabad, F.B. Area No. 8, Karachi
+CR/23/081/C-3|Sun Influx (Private) Limited|Karachi|0301-8202366; 021-36452224|sun.influxpk@gmail.com|Office No. 502, 5th Floor, Beaumont Plaza, Civil Lines Quarters, Karachi
+CR/23/082/C-3|Sparkle Energy|Gujranwala|0345-6253137|sparkle.grw@gmail.com|Opposite Gujranwala Board of Education, Near Sialkot Bypass, Gujranwala
+CR/23/083/C-3|Pakistan Power Systems|Bahawalpur|0333-7294329|pakistanpowersystems@gmail.com|160-B, Model Town B, Bahawalpur
+CR/23/084/C-3|Mazher Hassan Solar Energy Dadu|Dadu|0311-5533273|msolarenergydadu@gmail.com|Kachehri Road, New Chowk, Taluka & District Dadu
+CR/24/085/C-3|MaxGreen Energy (Private) Limited|Karachi|0303-2117909; 021-35340586|sales@maxgreenenergy.com.pk|Office No. 402, 44-C, Lane 5, Bukhari Commercial Area, Phase 6, DHA, Karachi
+CR/24/086/C-3|MaxTek Electrical Solutions|Lahore|0300-1830555; 042-35466721|info@maxteksols.com|58-Kacha Lawrence Road, Lahore
+CR/24/087/C-3|AceTech Solutions|Lahore|0302-1888666; 042-35134770|info@acetechsolar.com|A1, 8C, Commercial Block H, Valencia Town, Lahore
+CR/23/089/C-3|Skylines Solar Solution|Lahore|0321-4074839; 0300-6617464|nawabarshad746@gmail.com|2nd Floor, Plaza No. 66, Block-CCA, DHA Phase-5, Lahore
+CR/23/091/C-3|Madina Solar (Private) Limited|Hafizabad|0314-4668030; 0324-4404405|madinasolar232@gmail.com|Main Gujranwala Road, Opp. Bank Al-Habib Limited, Hafizabad
+CR/23/092/C-3|Ahmed Traders Solar System|Rawalpindi|0321-5244002|ahmedtraders99@gmail.com|502, 5th Floor, Makkah Tower, Adamjee Road, Rawalpindi
+CR/23/093/C-3|T.K Enterprises (SMC-Private) Limited|Peshawar|0320-9894745; 091-5893159|teela66866@gmail.com|Office No. 9, Block-C, Amin Shopping Plaza, Karkhano Market, Peshawar
+CR/23/094/C-3|R-Power|Lahore|0309-4862022|sales@r-power.com.pk|2nd Floor, 291-MB, Commercial Phase-VI, DHA, Lahore
+CR/23/095/C-3|Power Ace Solutions (Private) Limited|Rawalpindi|0348-0569603|tahir2710@gmail.com|House No. 3, Safari Avenue, Safari Villas-1, Near Safari Hospital, Rawalpindi
+CR/23/096/C-3|Omesia Engineering|Multan|0320-6327727|usmanlodhi00000@gmail.com|G-29, Ground Floor, Multan Trade Centre, Khanewal Road, Multan
+CR/23/097/C-3|Cosmos Energies|Karachi|0319-8184038|shamskapadia@cosmosenergies.com|WS-4, 3rd Floor, Block 7 & 8, Shahrah-e-Faisal, Central Commercial Area, KCHS, Karachi
+CR/23/098/C-3|Rouelite Techno (Private) Limited|Sukkur|0308-6516968; 071-5804600|info@rouelite.com|Plot No. C-17, Government Employee Society, Airport Road, Sukkur
+CR/23/099/C-3|SID|Karachi|0300-3833836; 021-35853637|siddiq_khan@hotmail.com|Plot No. 8-C, 21st Commercial Street, DHA Phase-II Ext., Karachi
+CR/24/100/C-3|ZEM Co.|Karachi|0332-8777703; 0312-8777701|zemcorp10@gmail.com|Shop No. 93/2-B-2, S.No. 208, New Sabzi Mandi, Malir, Gadap Town, Karachi
+CR/23/101/C-3|REKNO Company|Karachi|0321-2043334; 021-32733644|safwan.bakhar@gmail.com|Office No. 71, 2nd Floor, Gul Plaza, M.A. Jinnah Road, Karachi
+CR/23/102/C-3|Ravi Technologies|Lahore|0309-9778157; 042-36610302|faisaln77@gmail.com|3-G, Commercial Plaza No. 26, Cavalry Centre, Walton, Lahore
+CR/23/103/C-3|Saving Energy Corporation|Karachi|0300-2188224; 021-35680591|se-electronics@hotmail.com|701-727, 7th Floor, Paradise Garment Centre, Near Passport Office, South Saddar Town, Karachi
+CR/24/104/C-3|Bin Hameed Enterprises|Islamabad|0335-2963338; 051-2712667|binhameed.ento@gmail.com|Plot No. 16, Block-A, Main PWD Road, Islamabad
+CR/23/105/C-3|Fusion Solar Energy (Private) Limited|Multan|0300-0850606; 0300-0850609|info@fusionsolarenergy.pk|41-M, 2nd Floor, WAPDA Town, Phase-2, Multan
+CR/24/106/C-3|Solar Professional|Karachi|0335-1203275|solarprofessional232@gmail.com|A-125, Sec X, Gulshan-e-Maymar, Sohrab Goth, Malir, Karachi
+CR/23/107/C-3|S M Industries|Karachi|0300-0633243; 0321-8266060|shahidlehra77@gmail.com|Office No. 06, 8th Floor, Textile Plaza, M.A. Jinnah Road, Karachi
+CR/23/108/C-3|S.T. Brothers|Karachi|0300-8238184; 021-35892359|st.brothers@live.com|Plot No. 69-C, 4th Floor, 12th Commercial Street, DHA Phase-II, Karachi
+CR/24/109/C-3|Safa Industry|Karachi|021-35120360|safaindustry232@gmail.com|Plot No. H-2/11, Sector 5, Korangi Industrial Area, Karachi
+CR/23/110/C-3|Lodhi Enterprises|Rawalpindi|0300-9753532|lodhie115@gmail.com|Shop No. 04, Basement, Al-Waris Market, Novelty Cinema, Ratta Road, Rawalpindi
+CR/23/111/C-3|Faiz Traders 010|Rawalpindi|0345-4362115|faiz.m9220@gmail.com|Shop No. 04, W-571-3, Al-Waris Market, Ratta Road, Rawalpindi
+CR/24/112/C-3|AFM Energy (Private) Limited|Lahore|0307-5840000|info@afmenergy.com.pk|Flat No. 4, 4th Floor, 305/30-31H-111, Tariq Centre, Johar Town, Lahore
+CR/23/113/C-3|SK Prime Enterprises (SMC-Private) Limited|Peshawar|0305-9750120|shamalhassan447711@gmail.com|Shop No. 74, Block-B, Amin Market, Karkhano, Peshawar
+CR/24/114/C-3|Impact Solutions (Private) Limited|Islamabad|0300-5545520|info@impactsols.com|House No. 21, Street No. 07, Phase-2, Sector-D, DHA, Islamabad
+CR/24/115/C-3|Multan Solar Technologies (Private) Limited|Multan|0321-6324485; 0300-9630334|shafqat@multansolar.com|103/3-D, Fiesta Garden, Opp. Income Tax Office, LMQ Road, Multan
+CR/23/116/C-3|SM Solar (Private) Limited|Lahore|0304-8888240; 042-34941571|smsolarpvltd@gmail.com|House No. 93-A, Aibak Block, New Garden Town, Lahore
+CR/24/117/C-3|3 Ray Solutions (Private) Limited|Karachi|0346-2742262|info@3raysolutions.com|Plot No. 02, Survey No. 473, Jaffer Bagh, Model Colony, Karachi
+CR/24/118/C-3|Habib Trading Company|Rawalpindi|0315-9310720|habibreham54401@gmail.com|Shop No. 01, 1st Floor, Plaza No. 04, C.E.O, Comm, Mohan Pura, Rawalpindi
+CR/23/119/C-3|Primax Solar Energy (Private) Limited|Lahore|0324-4370152; 042-35227077|primaxsolarenergy@gmail.com|415-E, 2nd Floor, PIA Society, Lahore
+CR/24/120/C-3|Burraq Energy Solutions|Karachi|0335-3572756; 0318-1257242|burraq.esolutions@gmail.com|C-24, Sector 16-B, Malik Anwar Goth, Near Godhra Stop, Karachi
+CR/23/121/C-3|Vohra Traders|Karachi|0321-8205805; 021-32477348|vohratraders@gmail.com|Plot No. 18, Sector No. 12/A, North Karachi Industrial Area, Karachi
+CR/24/122/C-3|Solar Energy Solution Company|Karachi|0300-8968964|hammad424147@gmail.com|A-523, Sector 6-1, Mehran Town, Industrial Area, Korangi Town, Karachi
+CR/24/123/C-3|Sogo Solar Solutions|Karachi|0332-2228051; 0331-1176527|sj@sogosolarsolutions.com|Shop No. 4-5, Street No. 12-1/A, Nobel Heights, Opp. Askari Park, Chandni Chowk, University Road, Karachi
+CR/24/124/C-3|Supreme Industrial Films (Private) Limited|Karachi|0300-8269398|info@sifl.com.pk|F-202, Textile Avenue, S.I.T.E., Karachi
+CR/24/125/C-3|Sheikh Mohammad Ibrahim & Co.|Karachi|0333-2132142; 021-32427405|smico1950@gmail.com|Office No. MR-7/1, Virjee Street, Jodia Bazar, Fakhri Building, Karachi
+CR/23/126/C-3|ZAK|Faisalabad|0322-7677069|kashif@zakengineering.com|12/13/14 E, Allama Iqbal Colony, Faisalabad
+CR/23/127/C-3|Lucky Energy Solutions|Gujranwala|0321-6404067|rizwanullahgorraya@gmail.com|Near Poshak Textile Mills, Kamran Colony, Attawa Main GT Road, Gujranwala
+CR/23/128/C-3|OUTDO Trading Company|Rawalpindi|0333-5939006; 0317-0003337|outdotrading@gmail.com|G-644, 1st Floor, Deluxe Tower, DAV College Road, Rawalpindi
+CR/23/129/C-3|Maaz Trading|Rawalpindi|0300-9753532|su.sanaulah2001@gmail.com|Shop No. 37, Upper Ground Floor, Novelty Plaza, Ratta Amral Road, Rawalpindi
+CR/23/130/C-3|3 SAT Traders|Rawalpindi|0323-9013090|kw.khan1990@gmail.com|Shop No. 40, Ground Floor, Novelty Plaza, Ratta Amral Road, Rawalpindi
+CR/24/131/C-3|Azmi Traders|Karachi|021-35640150|azmitraders232@gmail.com|Office No. 312, 3rd Floor, Rafique Market, Sohrab Katrak Road, Saddar, Regal, Karachi
+CR/23/132/C-3|Sunlight Corporation|Karachi|0316-0408875|sunlightcorporations552@gmail.com|Plot No. 11/1 G.K.8, Office No. 7, Bombay Plaza Upper Floor, Bohri Road, Karachi
+CR/23/133/C-3|Sigma Electronics|Karachi|0332-3329542; 021-35642803|sigmapk99@gmail.com|Office No. 20, 2nd Floor, Hassan Center, Sohrab Katrak Road, Saddar, Karachi
+CR/24/134/C-3|Solar Zamana (Private) Limited|Karachi|0333-3417234; 021-35156172|solarzamana@gmail.com|House No. 2/1, Khayaban-e-Janbaz, Phase 5, DHA, Karachi
+CR/23/135/C-3|Best Energy Solution|Karachi|0317-8000046|bestenergysolu@gmail.com|Office No. 4, Burhani Building, 4th Floor, Bohri Road, Opp. Custom House, Karachi
+CR/23/136/C-3|Muhammad Yousaf Traders|Karachi|0331-8008101|mytradrs@gmail.com|G.K. 8/5, Ground Floor, Amin Terrace, Bohri Road, Karachi
+CR/23/137/C-3|H.M Electric Traders|Rawalpindi|0321-5008300|sanishaeikh1433@gmail.com|Property No. E-169-172, Iqbal Road, Rawalpindi
+CR/24/138/C-3|IKFFA (Private) Limited|Karachi|0322-8206665; 021-32290032|ikffalimited@gmail.com|Plot No. CD-387, Gabol Goth, KDA Scheme No. 16, Federal B Area, Karachi
+CR/23/139/C-3|Maco Enterprises|Karachi|0332-8251000|ahsanhanif@gmail.com|Office No. C10/5, 10th Floor, Sidco Avenue Center, Opp. Karachi Press Club, 164 R.A. Lines, Karachi
+CR/24/140/C-3|C Right Energy|Karachi|0333-3770880; 021-32237823|crightmobile1@gmail.com|Office No. 806, 8th Floor, Star City Mall, N.I. Lines, Karachi
+CR/23/141/C-3|KNK Engineering|Hyderabad|0333-2638595; 022-2670006|knkengineering9@gmail.com|C-22, Phase-1, Near Ali CNG, Opp. LUMHS Diagnostic Lab, Qasimabad, Hyderabad
+CR/23/142/C-3|Capital Trading Corporation|Karachi|0300-8281002; 021-32767670|zeeshancapital@gmail.com|Office No. 206, 2nd Floor, Japan Plaza, M.A. Jinnah Road, Karachi
+CR/23/143/C-3|Sunlife Solar Co. (Private) Limited|Shekhupura|0334-3232414; 0345-4129039|info@sunlifesolar.com.pk|Mouza Battianwala, Tehsil Ferozewala, Sheikhupura
+CR/23/144/C-3|SSEM Metals|Lahore|0322-4439751; 042-37199474|contact@ssemmetals.com|12 A-XX, Khayaban-e-Iqbal, Phase-3, DHA, Lahore
+CR/23/145/C-3|Hussain Technologies|Lahore|0305-5555089; 0300-8414834|timmehdi@gmail.com|4/A, Officer Colony, Ghazi Road, Lahore Cantt, Lahore
+CR/23/146/C-3|Shah Brothers|Karachi|0321-3360708|shahbrothers2001@gmail.com|Office No. 308, 3rd Floor, Zohra Square, Opp. New Memon Masjid, Karachi
+CR/24/147/C-3|Smart Energy Engineering and Electronic Technologies (Private) Limited|Rawalpindi|0300-2666111|mahtab72@gmail.com|Office No. 04, Mezzanine Floor, Midway Centrum, Rawalpindi
+CR/24/148/C-3|AZ Energy Solutions|Lahore|0304-5588859; 042-37238877|fenterc6@gmail.com|LG-54, Qazi Centre, Hall Road, Lahore
+CR/24/149/C-3|QuWatt (Private) Limited|Islamabad|0300-5000304; 051-2150004|info@quwatt.com|Office No. 01, 3rd Floor, Safdar Mansion, 16-D, Blue Area, Islamabad
+CR/24/150/C-3|JNS International|Karachi|0345-2244802|jnsgenerators@hotmail.com|Office No. 01/21, 1st Floor, Arkay Square, Karachi West, Karachi
+CR/24/151/C-3|Mati Ullah Traders|Rawalpindi|0316-5329122|mt.matiullah1996@gmail.com|Shop No. 40, Upper Ground Floor, Novelty Plaza, Ratta Amral Road, Rawalpindi
+CR/24/152/C-3|Go Supplier & Services (Private) Limited|Islamabad|0331-5332521|malikshahid0331@gmail.com|Soan Medical Complex, 1st Floor, Office No. 104, Main Double Road, Block-B, Soan Garden, Islamabad
+CR/24/153/C-3|Diwan International (Private) Limited|Karachi|0332-8285611; 021-111-333-926|saleemdeewan@hotmail.com|Office No. 1201, 12th Floor, Al Najeebi Electronic Market, Abdullah Haroon Road, Saddar, Karachi
+CR/24/154/C-3|Alternative Technical Solution (SMC-Private) Limited|Islamabad|0334-2245514; 0316-5134558|technicalalternative@gmail.com|2nd Floor, Hassan Zai Plaza, CB-179, Khalid Bin Waleed Lane, Near Kachha Stop, IJP Road, Islamabad
+CR/24/155/C-3|Bilwani International|Karachi|0334-3199445; 021-32567485|a.moiz.bilwani@gmail.com|Mezzanine Floor, Plot No. 3/6, Block-D, Main Shershah Road, Opp. Amreli Steel, S.I.T.E. Area, Karachi
+CR/24/156/C-3|S.A.Q Communication|Karachi|0321-8244489|muhammadsalman@saqcommunication.com|Office No. 1119, 11th Floor, Star City Mall, Saddar, Karachi
+CR/24/157/C-3|Al-Razzaq Fibres (Private) Limited|Karachi|021-34545703|office@alrazzaqfibres.com|Plot No. 28-B, Off Shahrah-e-Faisal, P.E.C.H.S, Block-6, Near Business Arcade, Karachi
+CR/24/158/C-3|M.F Enterprises|Karachi|0343-5813807|mfenterprises232@gmail.com|3rd Floor, Office No. 346, Star City Mall, Opp. Bambino Cinema, Abdullah Haroon Road, Karachi
+CR/24/159/C-3|GS Corporation|Islamabad|0314-9037904|gscorporation2017@yahoo.com|Plot No. 13, Sector W7, Rawat Industrial Area, Islamabad
+CR/24/160/C-3|Integra Solar (SMC-Private) Limited|Rawalpindi|0321-2888887; 051-2724261|mahmood@integrasolar.com.au|Office No. 6, 5th Floor, Plaza No. 37 Civic Center, Phase-4, Bahria Town, Rawalpindi
+CR/24/161/C-3|Muhib International|Karachi|0332-2418046|fahad.mirza@hotmail.com|House No. 339, Street No. 26/B, Mehmoodabad, 5-1/2, Karachi
+CR/24/162/C-3|Salim Winding Works (Private) Limited|Karachi|0300-8267292; 021-32566309|info@salimwww.com.pk|Plot No. D-158, S.I.T.E., Karachi
+CR/24/163/C-3|EMECH Engineering|Karachi|0307-2222733; 0333-2227936|info@emechengineering.com|Office No. A-4, Row-N, Gulshan-e-Kaneez Fatima, Karachi
+CR/24/164/C-3|RCO Engineering (Private) Limited|Karachi|0336-3780875; 021-33393802|omerusman4@gmail.com|Office No. 401-A, 4th Floor, Plot No. 85-C, Main Khayaban-e-Ittehad, Phase 2 Ext., DHA, Karachi
+CR/24/165/C-3|Gerrys Global Trade|Karachi|0301-2727407|aamir.sheikh@danytech.com|Basement-2, Cambridge Mall, Near CIA Centre, Saddar, Karachi
+CR/24/166/C-3|Fayyaz Traders|Peshawar|0300-5961382; 0321-9019202|info@fytraders.com|Shop No. 11, Electric Street, United Plaza, Karkhano Market, Hayatabad, Peshawar
+CR/24/167/C-3|Maqsood Inc.|Karachi|0321-5729669|asifaati55@gmail.com|Room No. 512, 5th Floor, Hassan Chamber, Bohri Road, Opp. Custom House, Karachi
+CR/24/168/C-3|Technical Associates Pakistan (Private) Limited|Lahore|042-35758724|akram.toor@tapl.com.pk|Office No. 04, Bawa Park, Upper Mall, Lahore
+CR/24/169/C-3|Barq Power Solutions|Karachi|0300-2017035; 021-32477308|barqpowersolution@gmail.com|G-K 7/1000, M.A. Jinnah Road, Office No. 215 & 216, Jelani Center, Karachi
+CR/24/170/C-3|Solar Sight (Private) Limited|Lahore|0315-9460852; 0304-8888322|solarsight04@gmail.com|Office No. 13, Basement Mian Plaza, Hall Road, Lahore
+CR/24/171/C-3|M. Ramzan Machinery Co.|Multan|0300-8732258; 061-4589067|operations@mramzan.net|Shop No. 1660, Inside Delhi Gate Chowk, Multan
+CR/24/172/C-3|Fahad Mubarak Trading (Private) Limited|Karachi|0333-1111232|fahadmubaraktrading@gmail.com|House No. S-26, Staff Lane-8, DHA Phase-1, Karachi
+CR/24/173/C-3|PAWA (Private) Limited|Layyah|0342-9555555; 0606-374355|zubair@ekgot.com|Chak No. 304/TDA, Main MM Road, Karor Lal Esan, Layyah
+CR/24/174/C-3|Neelum Solar (SMC-Private) Limited|Okara|0320-8855444; 044-4771344|neelumsolarpvltd@gmail.com|Mohalla Ghalla Mandi, Basirpur, Tehsil Depalpur, District Okara
+CR/24/175/C-3|Aliz International|Lahore|0322-4001332; 042-36370758|ali@alizpk.com|Office No. 39, 1st Floor, Sadiq Plaza, 69-The Mall Road, Lahore
+CR/24/176/C-3|Aston Energy|Karachi|0331-2224445; 0330-2000402|aygroup.ar@gmail.com|Office No. 32/17A, Burhani Avenue, Bangalore Town, Karachi
+CR/24/177/C-3|Skyland Energy (Private) Limited|Lahore|0300-8385245; 042-32188810|info@skylandenergy.pk|30-Phase-1, Nasheman-e-Iqbal Cooperative Housing Society, Lahore
+CR/24/178/C-3|Oslo Power & Energy Company (Private) Limited|Islamabad|0342-5202782; 051-2726503|info@oslopower.com.pk|House No. 12, Street No. 88, Sector G-6/3, Islamabad
+CR/24/179/C-3|Trisun Energies|Karachi|0300-8370844|zbawani95@gmail.com|Office No. 49-50, Moin Arcade, Sarmad Road, Near Passport Office, South Saddar Town, Karachi
+CR/24/180/C-3|Osaka Impex|Karachi|0334-3730727; 021-35872127|contact@osakaintl.com|Suite No. 504, Marine Pride, Block-7, Clifton, Karachi
+CR/24/181/C-3|Sultan Energy International (Private) Limited|Lahore|0345-2252223; 0321-2252223|info@sultanenergys.com|67-K, Commercial Ghazi Road, DHA Phase-1, Lahore
+CR/24/182/C-3|Waqar Trading Company|Lahore|0321-5370242; 0316-4022222|jay.londonmet@gmail.com|352-E-Block, PIA Housing Society, Near Johar Town, Lahore
+CR/24/183/C-3|Solaronic International|Karachi|0322-2572227; 021-35386004|solaronic@hotmail.com|C-5-E, Mezzanine Floor, Sunset Lane-2, DHA Phase II (Ext.), Karachi
+CR/24/184/C-3|Archies|Karachi|0333-9912299; 0332-8217779|info@archies.com.pk|Office No. E-41, Executive Floor, Glass Tower, Near Teen Talwar, Clifton, Karachi
+CR/24/185/C-3|Swift Solar Energy (Private) Limited|Multan|0304-7266266; 0300-0780825|swiftsolarenergy786@gmail.com|Office No. 52/A, Business City Plaza, Bosan Road, Multan
+CR/24/186/C-3|Green Craft Engineering Works|Lahore|0345-4375761; 0342-4555552|jiajee121@hotmail.com|2-KM, Katar Bund Road, Thokar Niaz Baig, Lahore
+CR/24/187/C-3|Noorsons Trading Corporation|Lahore|0321-8477120; 042-35711916|noorsonstrading@gmail.com|MZ-16, 1st Floor, Hafeez Center, Gulberg-III, Lahore
+CR/24/188/C-3|Onyx Energies (Private) Limited|Lahore|0321-6163063; 0300-4871107|engr.abdulrauf.10@gmail.com|House No. 49, Pak Block, Allama Iqbal Town, Lahore
+CR/24/189/C-3|Sikandar & Company|Karachi|0321-8254699; 021-32428038|babar5176@icloud.com|10-15, Mian Chambers, Opp. Sindh Madrassah Market, Shahrah-e-Liaquat, Karachi
+CR/24/190/C-3|Crown Green Power (Private) Limited|Karachi|0345-3537476|cfo@crowngroup.com.pk|Shed No. 7, Plot No. 672-673, Deh Joreji, Near Indigo Textile, Bin Qasim Town, Malir, Karachi
+CR/24/191/C-3|Perfect Services|Multan|0303-6459002|fair_abid@live.com|1507/RH, Sui Gas Road, Samejabad No. 02, Shah Rukn-e-Alam Town, Multan Cantt, Multan
+CR/24/192/C-3|I&N Energy Solutions (Private) Limited|Karachi|0300-8283955; 021-35243540|waqas@iandninternational.com|Suite No. 201, 30-C/II, Lane 4, Khayaban-e-Shahbaz, DHA Phase-VI, Karachi
+CR/24/193/C-3|Terrific Solutions|Lahore|0320-7837978; 042-35847800|info@terrific.pk|Property No. 61, Street No. 13-A, Ram Garh Mughalpura, Shalimar Town, Lahore
+CR/24/194/C-3|Union Enterprises|Karachi|0321-8251572|amir@azamtelesources.com|Suite No. 805, Japan Plaza, M.A. Jinnah Road, Karachi
+CR/24/195/C-3|N.A International|Karachi|0321-8229261|nainternationalcorp@gmail.com|Suite No. M-1, Mezzanine Floor, T-Centre, MR 4/16, Ali Akbar Street, Jodia Bazar, Karachi
+CR/24/196/C-3|Power Solar 99|Lahore|0315-8842033|attiqurrahman970@gmail.com|House No. 334, Al-Hamra Town, Lahore
+CR/24/197/C-3|Abbottabad Battery Center|Abbottabad|0316-7041982|abatterycenter@gmail.com|Opp. Sui Gas Office, Near Jab Pull, Mansehra Road, Abbottabad
+CR/24/198/C-3|Trisun Power (Private) Limited|Faisalabad|0300-8664834|sawalawan68@yahoo.com|P-354, Askari Plaza, Kashmir Road, Amin Town, Faisalabad
+CR/24/199/C-3|Galaxy International Builders|Quetta|0321-8112514|gxy.trad@gmail.com|Office No. 12, Crown Well Hotel, Agha Siraj Complex, Jinnah Road, Quetta
+CR/24/200/C-3|Qaisar Associates|Lahore|0321-4982584|gaiserpasha1973@gmail.com|House No. 65, Ahmed Block, New Garden Town, Lahore
+CR/24/201/C-3|NGECS|Islamabad|0306-6040369; 051-2249769|info@ngecs.com|Flat No. 01, PHA Block No. 02, G-11/3, Islamabad
+CR/24/202/C-3|Xiamen Zhizheng Energy Services (Private) Limited|Islamabad|0315-5650597|ethishamakbar1@gmail.com|House No. 473, Street No. 28, Sector D-12/3, Islamabad
+CR/24/203/C-3|JVCA Solar Corporation|Peshawar|0333-6859994; 091-5816556|sabzali.jvca@gmail.com|Shop No. 29, 30, Amin Plaza, Block-A, Karkhano Market, Jamrud Road, Peshawar
+CR/24/204/C-3|AA Solar Energy|Faisalabad|0321-6557373; 041-2412824|wadiat.rehman@gmail.com|Office No. 16, Siddique Plaza, 1st Floor, Circular Road, Faisalabad
+CR/24/205/C-3|Fincera (Private) Limited|Lahore|0345-2308889; 042-37185791|info@fincera.com.pk|Plaza No. 135-CCA, Phase-4, DHA, Lahore Cantonment, Lahore
+CR/24/206/C-3|Ehsan Importer and Exporter|Quetta|0316-8164569; 0315-2100003|ehsanimpex@gmail.com|Shop No. FF2-3, 1st Floor, Madina Tower, Masjid Road, Quetta
+CR/24/207/C-3|ABK Solar Traders (Private) Limited|Multan|0334-6068265|abksolartraders@gmail.com|37B, Commercial Area, B-Block, Model Town, Multan
+CR/24/208/C-3|Tahir Energy Links (Private) Limited|Islamabad|0334-1966008; 051-6122162|tahirenergylinks@gmail.com|Plot No. 4L, Street No. 43/44, Business Bay Apartments, Bahria Town, Phase-7, Islamabad
+CR/24/209/C-3|Heaven Solar Energy (Private) Limited|Karachi|0344-6000075|heavensolarenergy@outlook.com|Suite No. 1302, 13th Floor, Al-Najeebi Electronic Bazar, Preedy Street, Main Abdullah Haroon Road, Saddar, Karachi
+CR/24/210/C-3|Global Business International|Karachi|0321-2434620; 021-32768774|globalbusinessint3@gmail.com|Suite No. 01, 1st Floor, Zeenat Medicine Market, Opp. HBL North Napier Road, Karachi
+CR/24/211/C-3|Mian Shafiq Business International|Karachi|0300-8230821; 021-32750551|kashif@msbintl.com|Office No. 301 & 302, 3rd Floor, Bahadurshah Centre, Opp. Urdu Bazar, Mohan Road, Karachi
+CR/24/212/C-3|Sidra International|Karachi|0323-8203104|hassanfarooq278@gmail.com|M-156, Ground Floor, Block No. 2, P.E.C.H.S, Tariq Road, Karachi
+CR/24/213/C-3|Genesys Energy Solutions|Karachi|0321-8777895; 021-35141256|malinawaz@hotmail.com|Plot No. MB-94, Sector 6B, Mehran Town, Korangi Industrial Area, Karachi
+CR/24/214/C-3|PNC Suppliers (Private) Limited|Islamabad|0321-3499092; 051-8350281|saif.abbas@pncsuppliers.com|Office No. 12 & 13, First Floor, Lord Trade Centre, F-11 Markaz, Islamabad
+CR/24/215/C-3|Saeed & Co.|Peshawar|0300-8329599|saeedu407@gmail.com|Prime Apartments, Flat No. F-16, 4th Floor, Gulberg No. 1, Peshawar Cantt, Peshawar
+CR/24/216/C-3|Faiz & Co.|Peshawar|0331-5559072|faizullahhaji@gmail.com|Awami Market, Bara Bazar Shop, Khyber Bara, Peshawar
+CR/24/217/C-3|Moosa Trading Co.|Peshawar|0342-5928682|bakhtrawantrading2020@gmail.com|Prime Apartments, Flat No. F-16, 4th Floor, Gulberg No. 1, Peshawar Cantt, Peshawar
+CR/24/218/C-3|UK International|Peshawar|0318-5086655|usmankhan101@icloud.com|Prime Apartments, Flat No. F-16, 4th Floor, Gulberg No. 1, Peshawar Cantt, Peshawar
+CR/24/219/C-3|M Yousaf Traders|Rawalpindi|0301-9016084|yousaftraders545@gmail.com|Shop No. 08, Property No. W-571, Behind Novelty Market, Ratta Road, Rawalpindi
+CR/24/220/C-3|IZ International Impex (Private) Limited|Islamabad|0345-9622101; 0300-5245065|shahinaam53@gmail.com|Ground Floor, Zaman Plaza, Near Faysal Islamic Bank, Main G.T. Road, Tarnol, Islamabad
+CR/24/221/C-3|N.Z.K Traders|Islamabad|0349-5685184|nzktraders05@gmail.com|Shop No. 08, Block No. 1, Ittihad Plaza, G.T. Road, Tarnol, Islamabad
+CR/24/222/C-3|Al Kafi Engineering Service LLP|Karachi|021-34988990|sales@alkafiengineering.com|Office No. 402, 4th Floor, Al Samad Tower, Gulshan-e-Iqbal, Block 13B, Karachi
+CR/24/223/C-3|RZ Traders|Lahore|0300-4028071|risingimpex99@gmail.com|Room No. 203, 2nd Floor, Sufi Chamber, Patiala Ground, Lahore

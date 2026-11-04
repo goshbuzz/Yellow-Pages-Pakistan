@@ -1,0 +1,268 @@
+# Official ICAP Geographical Directory of Practising Chartered Accountant Firms in Pakistan
+# Source: https://icap.org.pk/files/per/members/dir/geographicalfirms_pakistan.pdf
+# Format: Ref|Firm Name|City|Phone|Email|Address
+ICAP-ATK-001|Yasir Khan & Co.|Attock City|0331-5705225|yasir.khan662@gmail.com|House No. 346-B, Mola Gali, Chhoi East, Attock
+ICAP-BWP-001|H. M. H. B. Yaqoob & Co.|Bahawalpur|0321-6804200||33-A, Muhammadia Colony, Bahawalpur
+ICAP-FSD-001|A. Rasheed & Co.|Faisalabad|0321-7821002|ashanrasheedbt@gmail.com|5th Floor, AZ Mall, Kohinoor City, Faisalabad
+ICAP-FSD-002|A. Sattar & Co.|Faisalabad|0321-8838383; 041-2611812|asc_pk@yahoo.com|Al Razzaq Center, P-119, 3rd Floor, Pak Gole Bazar, Aminpur Bazar, Faisalabad
+ICAP-FSD-003|Abdus Slam & Co.|Faisalabad|0321-7765289; 0345-7765288|abdusslamco@gmail.com|17-Z, Sufi Tower, Commercial Area, Madina Town, Faisalabad
+ICAP-FSD-005|Ahmad Jabbar & Co.|Faisalabad|0301-8662019; 041-8502082|ahmadjabbarfca@gmail.com|Office No. 1, 6th Floor, Legacy Tower, Kohinoor City Commercial Area, Faisalabad
+ICAP-FSD-006|Akram & Co.|Faisalabad|0300-9663451; 041-8724323|akramandco@gmail.com|Behind HBL, West Canal Road, Near Toyota Motors, Faisalabad
+ICAP-FSD-007|Akram Saleem & Co.|Faisalabad|041-8724323|saleem@ascpk.com|Upper Storey HBL, West Canal Road, Near Toyota Motors, Faisalabad
+ICAP-FSD-008|Ali Akhtar Adnan|Faisalabad|041-8503441||Office No. 1, 1st Floor, Noor Centre, Madina Town, Faisalabad
+ICAP-FSD-009|Ali Sufyan & Co.|Faisalabad|0345-7758202|alisufyanbaig@gmail.com|Plaza No. 55, First Floor, Ravi Market, Susan Road, Madina Town, Faisalabad
+ICAP-FSD-010|Amin Mudassar & Co.|Faisalabad|041-8718891|ghulammudassar@yahoo.com|207-208, Hassan Shopping Mall, 20-A Peoples Colony, Faisalabad
+ICAP-FSD-011|Amin Rasool Usman & Co.|Faisalabad|0321-8664404|info@arco.pk|54-BC Tower, 3rd Floor, Jinnah Colony, Faisalabad
+ICAP-FSD-012|Ammar Ahmed & Co.|Faisalabad|041-2602359|ammarahmed9722@gmail.com|East Canal Road, Adjacent to Honda Faisalabad Motors, Saeed Colony, Faisalabad
+ICAP-FSD-013|Anas & Co.|Faisalabad|041-2664541||P-33, Satellite Town, Opp. Coca Cola Factory, Samundri Road, Faisalabad
+ICAP-FSD-014|Anas & Rehman|Faisalabad|041-2624445|anasrehman.co@gmail.com|P-17 A/B, Club Road, Civil Lines, Faisalabad
+ICAP-FSD-015|Asif Bashir & Co.|Jaranwala|0313-2323332|asif.ssml@yahoo.com|House No. 2, Sadaat Park, Jhumra Road, Jaranwala, Faisalabad
+ICAP-FSD-016|Ather Rasool Imran & Co.|Faisalabad|041-8711930||35-Z, Ameer Plaza, Opposite Mujahid Hospital, Commercial Center, Madina Town, Faisalabad
+ICAP-FSD-017|Atif Ahmad & Co.|Faisalabad|0300-9668892|atif_zjc@live.com|13-X-2, Madina Town, Faisalabad
+ICAP-FSD-018|Avais|Faisalabad|041-8541165||478-D, Peoples Colony No. 1, Faisalabad
+ICAP-FSD-019|Azhar Zafar & Co.|Faisalabad|041-8733564||36-W-101, Madina Town, Faisalabad
+ICAP-FSD-021|Bilal Shafiq & Co.|Faisalabad|0303-6211722|bilalshafiq249@gmail.com|2nd Floor, Fazal Heights, GCU Road, Jinnah Colony, Faisalabad
+ICAP-FSD-022|Faheem & Co.|Faisalabad|0321-9666756; 041-2635150|shaukat977@gmail.com|2nd Floor, 114-A, Zee Garden, Sheikhupura Road, Faisalabad
+ICAP-FSD-023|Haroon Sulaman & Co.|Faisalabad|0333-6661790||First Floor, Hafiz Mart Building, Opposite Faizan-e-Madina, Main Susan Road, Faisalabad
+ICAP-FSD-024|Ibrahim, Shaikh & Co.|Faisalabad|041-8718892||207-208, Hassan Shopping Mall, 20-A, D Ground, Peoples Colony, Faisalabad
+ICAP-FSD-025|Iqbal Yasir & Co.|Faisalabad|0332-6941346||764-B, Peoples Colony No. 1, ChenOne Road, Faisalabad
+ICAP-FSD-027|Kreston Hyder Bhimji & Co.|Faisalabad|041-8731632; 041-8731650||Office No. 1, 2nd Floor, Legacy Tower, Kohinoor City, Faisalabad
+ICAP-FSD-028|M. Mazhar & Co.|Faisalabad|0334-0781655; 041-8710185|m.mazhar.aca@gmail.com|P-26, Ravi Market, Susan Road, Madina Town, Faisalabad
+ICAP-FSD-029|M. Zahid & Co.|Faisalabad|0301-8660299|cazahid@yahoo.com|Office No. 81, Lower Ground Floor, Regent Mall Plaza, ChenOne Road, Peoples Colony No. 1, Faisalabad
+ICAP-FSD-030|Nabeel & Co.|Faisalabad|0300-4039933|nabeelarshadmirza@gmail.com|Plot No. 159, New Civil Lines, Behind Commissioner Office, Goraya House Road, Faisalabad
+ICAP-FSD-031|Parker Russell-A. J. S.|Faisalabad|041-8502083|info.fsd@parkerrussell.pk|Office No. 1, 6th Floor, Legacy Tower, Kohinoor City Commercial Area, Faisalabad
+ICAP-FSD-033|Qummar Waheed|Faisalabad|0300-0333279; 041-5392192|qummarwaheed@gmail.com|Business 3-G Commercial, Jamal Plaza, Office No. 1, 1st Floor, Main Boulevard, WAPDA City, Faisalabad
+ICAP-FSD-034|R.S. & Associates|Faisalabad|041-8508789||2nd Floor, 35-Z, Ameer Plaza, Opposite Mujahid Hospital, Commercial Center, Madina Town, Faisalabad
+ICAP-FSD-035|RSM Avais Hyder Liaquat Nauman|Faisalabad|041-8541965|h.masood@rsmpakistan.pk|478-D Ground, Peoples Colony No. 1, Faisalabad
+ICAP-FSD-036|Riaz Ahmad & Co.|Faisalabad|041-5488081|racofsd@racopk.com|FS Tower, Outside Al-Fateh, Garden East Canal Road, Faisalabad
+ICAP-FSD-037|S. Raza & Co.|Faisalabad|041-2624422|shahbazrazaca110@yahoo.com|P-249, Jinnah Colony, Faisalabad
+ICAP-FSD-038|S. Saleem & Co.|Faisalabad|0333-6504864; 041-2604864|sadiqsaleem56@gmail.com|P-305, Abdullah Gardens, East Canal Road, Faisalabad
+ICAP-FSD-040|Sheikh & Chaudhri|Faisalabad|041-8401228||Sufi Tower, 17-Z, Commercial Area, Opp. Mujahid Hospital, Madina Town, Faisalabad
+ICAP-FSD-041|Talat Mehboob & Co.|Faisalabad|041-8732537|talat@tmc.org.pk|36-W-101, Madina Town, Susan Road, Faisalabad
+ICAP-FSD-042|Tariq Rashid & Co.|Faisalabad|0336-0004477; 041-8524440|trcoca@gmail.com|24M-25M, First Floor, Hassan Commercial Market, Kashmir Bridge, East Canal Road, Faisalabad
+ICAP-FSD-043|Tauheed Mubashir & Co.|Faisalabad|0301-7160044|mubashirtauheedca@yahoo.com|House No. 164-B, Ground Floor, Muslim Park, Peoples Colony No. 2, Faisalabad
+ICAP-FSD-044|Tayyab Arshad & Co.|Faisalabad|0321-6741800|tayyabarshad255@gmail.com|Suite No. 6, Mall of Faisalabad, Faisalabad
+ICAP-FSD-045|Umer & Co.|Faisalabad|0321-6505460|ranaumer144@gmail.com|P-20, Asif Street, Bilal Road, Civil Lines, Faisalabad
+ICAP-FSD-046|Yaqub & Co.|Faisalabad|041-8720811|yaqubco@yahoo.com|374-A, 1st Floor, Peoples Colony No. 2, Faisalabad
+ICAP-FSD-047|Yousuf Adil|Faisalabad|041-111-552-626; 041-8542065|hmasood@deloitte.com|478-D, Peoples Colony No. 1, Faisalabad
+ICAP-FSD-048|Z. Ahmad & Co.|Faisalabad|0333-4735939; 041-8502077|z.ahmadandco@gmail.com|Plaza No. 55, First Floor, Ravi Market, Susan Road, Officer Colony 1, Madina Town, Faisalabad
+ICAP-FSD-049|Zahid Ali Faisal Asjad & Co.|Faisalabad|041-8531357||5th Floor, AZ Mall, Kohinoor City, Faisalabad
+ICAP-FSD-050|Zahid Jamil & Co.|Faisalabad|041-8725065|infofsd@zahidjamilco.com|1st Floor, Al-Jamil, 7-Madina Town Ext., Kohinoor Chowk, Off Jaranwala Road, Faisalabad
+ICAP-GRW-001|Akhter Mahmood Mian|Gujranwala|055-4284645|ghazanfarfca@yahoo.com|13/A, Top Floor, Bhutta Center, G.T. Road, Gujranwala
+ICAP-GRW-002|Asjad Amin & Co.|Gujranwala|055-3254674|asjad@asjadaminca.com|E/4, First Floor, Trust Plaza, G.T. Road, Gujranwala
+ICAP-GRW-003|Atif Javaid & Co.|Gujranwala|055-3252440||Office No. B-4, Gujranwala Business Center, Trust Plaza, Gujranwala
+ICAP-GRW-004|Atta Ur Rehman & Co.|Gujranwala|0300-6499641|attaurrehman19am@gmail.com|Office No. 1, D Block, 1st Floor, Near HBL Bank, Trust Plaza, Gujranwala
+ICAP-GRW-005|Ch. Shafaqat Ali & Co.|Gujranwala|0333-8103052; 055-3856796|ch.shafaqatali@gmail.com|3-B, 1st Floor, Trust Plaza, G.T. Road, Gujranwala
+ICAP-GRW-006|Faiza & Co.|Gujranwala|0337-4847782|faiza.ysc@gmail.com|B-2, 394, WAPDA Town, Gujranwala
+ICAP-GRW-008|HLB Ijaz Tabussum & Co.|Gujranwala|055-3258025|gujranwala@ijaztabussum.com|Office No. J-3, First Floor, Jinnah Library Block, Trust Plaza, Gujranwala
+ICAP-GRW-009|Hassan Majid & Co.|Gujranwala|055-3733936|hasanaujla@gmail.com|K-5 (1), Trust Plaza, Gujranwala
+ICAP-GRW-011|M. A. Chaudhri & Co.|Gujranwala|055-3259556; 055-3822599|macgrw@gmail.com|2/C, Trust Plaza, G.T. Road, Gujranwala
+ICAP-GRW-012|Mahboob Sheikh & Co.|Gujranwala|0333-8153399|cma_zafar@hotmail.com|4th Floor, Appt. No. 1, Bhutta Center, Nigar Chowk, G.T. Road, Gujranwala
+ICAP-GRW-013|Mubarik Ali Khadija & Co.|Gujranwala|055-3256258||2/C Block, 1st Floor, Trust Plaza, Model Town, G.T. Road, Gujranwala
+ICAP-GRW-014|Muhammad Salman Naseem & Co.|Gujranwala|0300-6415015|msalmannaseem@gmail.com|C-3, First Floor, Trust Plaza, Model Town, Gujranwala
+ICAP-GRW-015|Umer Farooq & Co.|Gujranwala|055-3252426|shiekhumer1977@gmail.com|7-B, 1st Floor, Trust Plaza, Gujranwala
+ICAP-GRW-016|Wasim Ghaffar & Co.|Gujranwala|0300-8482671|wasimghaffar@gmail.com|Rajpoot House, Ehtasham Colony, Near Sui Gas Office, Gujranwala
+ICAP-GRW-017|Zafarullah & Co.|Gujranwala|055-4294205|zac_ca@hotmail.com|5th Floor, Appt. No. 1, Bhutta Center, Nigar Chowk, GT Road, Gujranwala
+ICAP-GRW-018|Zahid Ali Faisal Asjad & Co.|Gujranwala|0300-6409641||E-4, First Floor, Trust Plaza, G.T. Road, Gujranwala
+ICAP-GRW-019|Zohaib Ansar & Co.|Gujranwala|0321-6188121; 0315-7270092|zohaibansar786@gmail.com|4-C, First Floor, Trust Plaza, Gujranwala
+ICAP-GRT-001|Ibrar Ahmad & Co.|Gujrat|0333-8423470|ibrar.pak@gmail.com|Kalra Khasa, Post Office S.A. Fans, G.T. Road, Gujrat
+ICAP-HYD-001|A. H. Memon & Co.|Hyderabad|022-2785232; 022-2618173|anwar.hussain.memon@yahoo.com|Office No. 5, Mezzanine Floor, Zulfiqar Centre, Foujdari Road, Hyderabad
+ICAP-HYD-002|Haider Shamsi & Co.|Hyderabad|022-3864252; 022-3817378|info@haidershamsi.com|Office No. 7, 15 & 21, Mezzanine Floor, Reshmeen Centre, Near NBP, Unit No. 8, Latifabad, Hyderabad
+ICAP-HYD-004|Shah & Co.|Hyderabad|022-2783044||Room No. 4, 6 & 10, 3rd Floor, Manzoor Chambers, Garikhata, Hyderabad
+ICAP-ISB-001|A. B. M. & Co.|Islamabad|0300-9523128||1st Floor, Plot No. 80, Street No. 34, I & T Centre, Opp. Islamabad High Court, Sector G-10/1, Islamabad
+ICAP-ISB-002|A. F. Ferguson & Co.|Islamabad|051-2273457|affco.pk@pwc.com|74-East, 2nd Floor, Blue Area, Jinnah Avenue, Islamabad
+ICAP-ISB-003|A. H. W. & Co.|Islamabad|0344-4568897; 0302-2492490|hassan@ahwnco.com|1st Floor, 1A Building, Jinnah Avenue, R Block, Blue Area, Islamabad
+ICAP-ISB-004|Abdal Raza & Co.|Islamabad|051-6125245|razazaidi431@gmail.com|Office No. 3151A, 3rd Floor, WTC, Giga Mall, DHA II, Islamabad
+ICAP-ISB-005|Abdul Basit|Islamabad|0332-6296666||House No. 874, Street No. 104, Sector G-9/4, Islamabad
+ICAP-ISB-007|Abdullah & Co.|Islamabad|0345-8485856|abdullah.yousafzai1@gmail.com|Lower Ground, Leads Arcade, Khyber Market, G-13/4, Islamabad
+ICAP-ISB-009|Abid Raza & Co.|Islamabad|0302-6053720|ca.abidraza@gmail.com|Office No. 201, 2nd Floor, Ginza Centre, Blue Area, Islamabad
+ICAP-ISB-010|Adeel Ahmad & Co.|Islamabad|0300-5009946|adeelahmad.fca@outlook.com|First Floor, House 919, Street 71, G-10/4, Islamabad
+ICAP-ISB-011|Adnan Ali & Co.|Islamabad|0333-3807610||House No. 7, Street No. 12, Korang Town, Islamabad
+ICAP-ISB-012|Afrasiab Tanveer & Co.|Islamabad|051-2818072|tanveer.asif.khan@gmail.com|Office No. 12, 2nd Floor, Al-Babar Center, F-8 Markaz, Islamabad
+ICAP-ISB-013|Agha Mujeeb & Co.|Islamabad|0333-5118780|agha_mujib@yahoo.com|Suite No. 31, Ground Floor, Twin City Plaza, Faizabad Highway, Islamabad
+ICAP-ISB-016|Alam & Aulakh|Islamabad|0341-5001000|info@alamaulakh.com.pk|16th Floor, State Life Building 5, Jinnah Avenue, F-6, Islamabad
+ICAP-ISB-017|Alam & Co.|Islamabad|0333-5233523; 051-2355777|hassain.alam17@yahoo.com|1227, 3rd Road, G-10/4, Islamabad
+ICAP-ISB-018|Amin Bhatti & Co.|Islamabad|0345-8567358; 051-2769617|aminbhatti54@yahoo.com|Office No. 18, 3rd Floor, Al-Hameed Plaza, G-11 Markaz, Islamabad
+ICAP-ISB-019|Amin Mudassar & Co.|Islamabad|051-4864533||House No. 585, Street No. 32, Sector I-8, Islamabad
+ICAP-ISB-020|Amir Alam Khan & Co.|Islamabad|051-2353978||Plot 1, Street 40, I & T Centre, G-10/4, Islamabad
+ICAP-ISB-021|Asad Fouad|Islamabad|051-2342429; 051-2342430|asadazam@yahoo.com|406, Dossul Arcade, Jinnah Avenue, Blue Area, Islamabad
+ICAP-ISB-022|Asad Ijaz & Co.|Islamabad|0345-5156670; 051-2350252|asad@aic.com.pk|Unit 2, Tariq Heights, Street 73, F-11/1, Islamabad
+ICAP-ISB-023|Asif Associates|Islamabad|051-2120368; 051-2120378|asif@asifassociates.com|72 West, 2nd Floor, Benazir Plaza, Jinnah Avenue, Blue Area, Islamabad
+ICAP-ISB-024|Aslam Malik & Co.|Islamabad|051-2374282|info@aslammalik.com|House No. 726, Street 34, Margalla Town, Off Murree Road, Islamabad
+ICAP-ISB-026|Atif Faisal & Co.|Islamabad|0346-9590166; 0334-8257073|faisal@afco.com.pk|2nd Floor, Plot No. 88, Chinar Road, Sector I-10/3, Islamabad
+ICAP-ISB-027|Atif Zeeshan & Co.|Islamabad|0300-5260417; 0300-8548763|atif.zeeshan.co@gmail.com|Office 510, 5th Floor, Vista Tower, I-8 Markaz, Islamabad
+ICAP-ISB-028|Avais|Islamabad|051-2340491||Plot No. 18-B-1, 1st Floor, Chohan Plaza, G-8 Markaz, Islamabad
+ICAP-ISB-029|Awais A. M. & Co.|Islamabad|0333-4175209|awaisadyan@gmail.com|Block 1, Office 5, PHA Suites, G-7/2, Islamabad
+ICAP-ISB-031|Azeemullah & Co.|Islamabad|051-2352305|azeemullahandcompany@gmail.com|Office No. 1 & 2, Plot No. 80, Street No. 34, Opp. Islamabad High Court, Islamabad
+ICAP-ISB-032|BDO Ebrahim & Co.|Islamabad|051-2604461|info@bdo.com.pk|3rd Floor, Saeed Plaza, 22 East Blue Area, Jinnah Avenue, Islamabad
+ICAP-ISB-035|Bilal Khan and Co.|Islamabad|0300-4506012|bilalkhanca@gmail.com|House No. 7, Street No. 48, Sector-B, DHA Phase III, Islamabad
+ICAP-ISB-036|Chaudhury Ahmed Habib & Co.|Islamabad|0321-8550423; 051-5737581|cahabib2@gmail.com|House No. 982, Street No. 21, Phase IV, Bahria Town, Islamabad
+ICAP-ISB-038|Crowe Hussain Chaudhury & Co.|Islamabad|051-4938138|isb@crowe.pk|Office No. 13, First Floor, Ahmed Centre, I-8 Markaz, Islamabad
+ICAP-ISB-040|EY Ford Rhodes|Islamabad|051-111-113-937|ey.isb@pk.ey.com|12th & 13th Floor, Randhawa Tower, Plot B-3, New Blue Area, F-9/G-9, Islamabad
+ICAP-ISB-041|Fahad Talal & Co.|Islamabad|0333-5443544|fahadtalal@yahoo.com|House No. 16, Street 38, G-6/2, Islamabad
+ICAP-ISB-042|Faheem Piracha & Co.|Islamabad|051-8480701|faheempiracha@gmail.com|193, Main Road (Khalid Bin Waleed), SCHS, E-11/2, Islamabad
+ICAP-ISB-043|Faisal Latif & Co.|Islamabad|0300-5000270; 051-2280226|faisallatiffca@yahoo.com|Suite No. 202, 1st Floor, Kashif Plaza, G-8 Markaz, Islamabad
+ICAP-ISB-044|Faiz & Co.|Islamabad|0333-5111832; 051-8354698|info@faizco.com|House No. 839, Street 02, Sector G-14/4, Islamabad
+ICAP-ISB-045|Faizan Sajid & Co.|Islamabad|0349-0593356|info@faizansajidca.com|Flat 616, Block 12, Downtown Rd, Sector A, DHA Phase II, Islamabad
+ICAP-ISB-046|Fariha & Co.|Islamabad|0346-5345857; 051-8317400|farihaco.ca@gmail.com|Suite No. 03, 1st Floor, Warraich Plaza, I-9 Markaz, Islamabad
+ICAP-ISB-047|Faruq Ali & Co.|Islamabad|051-4541429; 051-4533429|umerfarooq_isb@hotmail.com|A-59/29, Beside CB Ground, The Mall Road, Islamabad
+ICAP-ISB-049|Fazal Mahmood & Co.|Islamabad|051-2280226||Suite No. 202, 1st Floor, Kashif Plaza, G-8 Markaz, Islamabad
+ICAP-ISB-051|Ghazanfar Nauman & Co.|Islamabad|0321-5366207; 051-8354379|ghazanfarg@hotmail.com|Office No. 3, 2nd Floor, Al-Asad Plaza, F-10 Markaz, Islamabad
+ICAP-ISB-052|Grant Thornton Anjum Rahman|Islamabad|051-2271906; 051-2273883||302-B, 3rd Floor, Evacuee Trust Complex, Aga Khan Road, F-5/1, Islamabad
+ICAP-ISB-053|H. A. M. D. & Co.|Islamabad|051-2805360|asif@group.com.pk|2nd Floor, Benazir Plaza, Fazal-e-Haq Road, Islamabad
+ICAP-ISB-054|H. Bilal & Co.|Islamabad|0334-5398694|bilalkhann32@gmail.com|Office No. 04, Mir Plaza, I & T Center, G-10/4, Islamabad
+ICAP-ISB-055|HLB Ijaz Tabussum & Co.|Islamabad|051-2354801|admin@hlbitc.com|303, Sawan Road, G-10/1, Islamabad
+ICAP-ISB-057|Hina Shahrukh & Co.|Islamabad|0301-8114232|hinas@hsco.pk|Office No. 1, 2nd Floor, Al-Hameed Plaza, G-11 Markaz, Islamabad
+ICAP-ISB-058|Hussain Rathore & Co.|Islamabad|051-2825775; 051-2273473|hussainrathore@yahoo.com|32, Block 8, School Road, Super Market, F-6 Markaz, Islamabad
+ICAP-ISB-059|IECnet S.K.S.S.S.|Islamabad|0300-8507614; 051-2805107|ghazali@iecnet.com.pk|Office No. 26-A, Street No. 48, F-8/4, Islamabad
+ICAP-ISB-060|Ibrahim & Co.|Islamabad|0349-6166180|ibbikhan77@gmail.com|Office No. 11 & 24, 2nd Floor, Business Center, Gulberg Greens, Islamabad
+ICAP-ISB-061|Ijaz Ahmad & Co.|Islamabad|0311-5191403|ijazahmedca@gmail.com|Basement, Haydat Plaza, Ghauri Town, Phase-II, Islamabad
+ICAP-ISB-062|Ilyas Saeed & Co.|Islamabad|051-4938026; 051-4938027|info@ilyassaeed.com|Office No. 26, 2nd Floor, Rose Plaza, I-8 Markaz, Islamabad
+ICAP-ISB-063|Iqbal Yasir & Co.|Islamabad|051-2287347; 051-2287316|riaz_yasir@hotmail.com|Room No. 2, 2nd Floor, Pacific Centre, F-8 Markaz, Islamabad
+ICAP-ISB-064|Ishfaq & Tayyaba|Islamabad|0333-9168591|ishfaq.ca@gmail.com|House No. 418, Street No. 56, I-8/3, Islamabad
+ICAP-ISB-065|Ishtiaq Ahmad & Co.|Islamabad|0333-6371856|asim.major@gmail.com|Huma Plaza, Mezzanine Floor, Blue Area, Islamabad
+ICAP-ISB-066|J. A. S. B. & Associates|Islamabad|0333-5241947|arsalan.vardag@jasb-associates.com|2nd Floor, Rafi Centre, Plot No. 13, Street No. 28, G-7/1, Islamabad
+ICAP-ISB-067|J. Khan & Co.|Islamabad|0333-4652158; 051-4861322|jikhanca@hotmail.com|Office No. 1, 2nd Floor, VIP Square, I-8 Markaz, Islamabad
+ICAP-ISB-069|Junaid & Co.|Islamabad|0335-5763550|junaidnawaz_24@yahoo.com|House No. 45, Street 18, G-13/3, Islamabad
+ICAP-ISB-071|Junaidy Shoaib Asad|Islamabad|051-8356316|info@jsa.com.pk|77-A, Street No. 45, F-10/4, Islamabad
+ICAP-ISB-072|KPMG Taseer Hadi & Co.|Islamabad|051-2825956|islamabad@kpmg.com|6th Floor, State Life Building No. 5, Jinnah Avenue, Blue Area, Islamabad
+ICAP-ISB-075|Khurram Aziz & Co.|Islamabad|0301-8500464|khurram@kca.com.pk|Office No. 6, 1st Floor, 12-I, Abbas Plaza, G-8 Markaz, Blue Area, Islamabad
+ICAP-ISB-077|Kreston Hyder Bhimji & Co.|Islamabad|051-2700990||Suite No. 12, Abu Dhabi Tower, F-11 Markaz, Islamabad
+ICAP-ISB-078|M. A. P. S. Sadiq Azeem Mohiuddin|Islamabad|0346-9590166||Office No. 14, 2nd Floor, Anique Arcade, I-8 Markaz, Islamabad
+ICAP-ISB-079|M. Asadullah & Co.|Islamabad|0308-5050001|muasadullah@gmail.com|House No. 154, Sohni Road, I-10/4, Islamabad
+ICAP-ISB-081|M. Ussama Anees & Co.|Islamabad|0335-8283623|sheikhusama958@gmail.com|Office No. 12, Second Floor, Ahmed Center, I-8 Markaz, Islamabad
+ICAP-ISB-082|MAZARS M.F. & Co.|Islamabad|051-2870521||2nd Floor, Evacuee Trust Complex, Sir Agha Khan Road, F-5/1, Islamabad
+ICAP-ISB-084|Malik Mirza & Co.|Islamabad|0335-5100055; 051-5402217|malik@malikmirza.com|Second Floor, Farooq Plaza, Kuri Road, Near Zong HQ, Islamabad
+ICAP-ISB-085|Mansoor Shahid S. & Co.|Islamabad|0314-9500077|mansoor.shahid@ericsson.com|House 492, Street 77, G-8/1, Islamabad
+ICAP-ISB-087|Masood Pervaiz & Co.|Islamabad|051-2605672|masood.aca@gmail.com|3rd Floor, Al Rehman Chamber, Fazal-e-Haq Road, Blue Area, Islamabad
+ICAP-ISB-088|Masoom Akhtar & Co.|Islamabad|0300-9501063; 051-2894652|masoomakhtarca@gmail.com|Office 611, 6th Floor, ISE Towers, Jinnah Avenue, Blue Area, Islamabad
+ICAP-ISB-089|Mazhar Iqbal & Co.|Islamabad|0333-5455400; 051-2803014|mazhariqbalrazaq@gmail.com|10-11, First Floor, Masco Plaza, 64 West Jinnah Avenue, Islamabad
+ICAP-ISB-090|Mian Saleem & Co.|Islamabad|051-2331709; 051-2331710|msaleem@ncbms.com.pk|Plot No. 35, I & T Centre, G-8/4, Islamabad
+ICAP-ISB-091|Muhammad Abbas & Co.|Islamabad|0301-5343058; 0300-6186284|info@mac.org.pk|2nd Floor, Jaspal Arcade, Street 22, G-8/4, Islamabad
+ICAP-ISB-093|Muhammad Ishaq & Co.|Islamabad|0333-6667172|ishaq.mastoi89@gmail.com|House No. 133, Street No. 33, G-11/2, Islamabad
+ICAP-ISB-094|Muhammad Mudasser & Co.|Islamabad|051-8356346|muhammad.mudasser@gmail.com|Plot 24, Street 52, Sector F-11/3, Islamabad
+ICAP-ISB-095|Muhammad Umair & Co.|Islamabad|0333-5588876|umaire86@gmail.com|Office No. 1, 3rd Floor, Huzaifa Center, I-8 Markaz, Islamabad
+ICAP-ISB-097|Murad Ali & Co.|Islamabad|0300-5554054; 051-5564871|muradali76@gmail.com|Office 2, First Floor, Street 36, New Climate Plaza, G-13/2, Islamabad
+ICAP-ISB-098|Murtaza H. & Co.|Islamabad|0333-5295346|murtazahussain88@gmail.com|MGC, G-8 Markaz, Islamabad
+ICAP-ISB-099|Mushtaq & Co.|Islamabad|051-2224970||Apartment No. 313, 1st Floor, Millennium Heights, Sector F-11/1, Islamabad
+ICAP-ISB-100|Nadeem Safdar & Co.|Islamabad|0300-5150568|nsafdar66@gmail.com|Office No. 2, 1st Floor, VIP Square, I-8 Markaz, Islamabad
+ICAP-ISB-101|Naeem Associates|Islamabad|0307-7845808|naeemaca16@gmail.com|Upper Floor, House No. 2651, F-Block, Multi Gardens, B-17, Islamabad
+ICAP-ISB-102|Nasir Javaid Maqsood Imran|Islamabad|051-2228138; 051-2228139|njmiconsultants@gmail.com|Office No. 17, 2nd Floor, Hill View Plaza, Blue Area, Islamabad
+ICAP-ISB-103|Nauman Haider & Co.|Islamabad|0315-1196210|mnhaider.official@gmail.com|House 40-B, Street 30, Johar Road, F-8/1, Islamabad
+ICAP-ISB-105|Naureen Akhtar Raja & Co.|Islamabad|0342-5058621|naureen.akhtar1957@gmail.com|House 5, Street 63, Jinnah Garden, Islamabad
+ICAP-ISB-106|Naveed Zafar Ashfaq Jaffery & Co.|Islamabad|051-2822785; 051-2878530|isl@nzaj.com.pk|2-B, ATS Centre, 30-West, Fazal-ul-Haq Road, Block A, Blue Area, Islamabad
+ICAP-ISB-107|Obaid Associates|Islamabad|0336-0156289; 0315-3443410|obaid@obaidassociates.com|Flat No. 3, 1st Floor, Rawal Arcade, F-8 Markaz, Islamabad
+ICAP-ISB-108|Omer Adil & Co.|Islamabad|051-2163001|mail@omeradil.com|Office 2, First Floor, Shaheen One Plaza, D-12 Markaz, Islamabad
+ICAP-ISB-109|PKF F.R.A.N.T.S.|Islamabad|051-8731022; 051-2825775|islamabad@frants.pk|Plot No. 395-396, Fazal Software Technology Park, I-9/3, Islamabad
+ICAP-ISB-111|Parker Russell-A. J. S.|Islamabad|0333-6686696; 051-2100170|info.isb@parkerrussell.pk|Office No. 2, 2nd Floor, Ace Upton-2, Plot No. 22-B, E-11, Islamabad
+ICAP-ISB-112|Peter & Co.|Islamabad|051-4861050|info@peterco.com.pk|Office No. 1, 1st Floor, Plot No. 193, Street No. 1, Korang Road, I-10/3, Islamabad
+ICAP-ISB-113|Qadeer & Co.|Islamabad|0300-8505168|trko@gmail.com|Office No. 503, 5th Floor, ISE Towers, Jinnah Avenue, Blue Area, Islamabad
+ICAP-ISB-114|Qasim Adeel & Co.|Islamabad|051-2873431|info@qaco.com.pk|Office No. 401, 4th Floor, RDF Centre, Mauve Area, G-9/1, Islamabad
+ICAP-ISB-115|RSM Avais Hyder Liaquat Nauman|Islamabad|051-2340490|naveed.abbas@rsmpakistan.pk|Plot No. 18-B-1, First Floor, Chohan Plaza, G-8 Markaz, Islamabad
+ICAP-ISB-116|Rafaqat Babar & Co.|Islamabad|051-2856605||1st Floor, Panther Plaza, F-8 Markaz, Islamabad
+ICAP-ISB-117|Rafaqat Mansha Mohsin Dossani Masoom & Co.|Islamabad|051-2894653||Office No. 611, 6th Floor, ISE Towers, Jinnah Avenue, Islamabad
+ICAP-ISB-118|Reanda Haroon Zakaria Aamir Salman Rizwan & Co.|Islamabad|051-5913300||Office No. 303, 3rd Floor, Premium Square, Business Park, Gulberg Greens, Islamabad
+ICAP-ISB-119|Riaz Ahmad & Co.|Islamabad|051-2274121; 051-2274122|racoisd@racopk.com|2nd Floor, Al-Malik Centre, 70 West, Jinnah Avenue, Blue Area, Islamabad
+ICAP-ISB-120|Riaz Ahmad, Saqib, Gohar & Co.|Islamabad|051-2804245||Office No. 06 & 07, 3rd Floor, Plot No. 08, Pakland Business Centre, I-8 Markaz, Islamabad
+ICAP-ISB-122|Rizwan Saeed & Co.|Islamabad|0321-5367810|rizwansaeed73@gmail.com|Office No. 1, 2nd Floor, VIP Square, I-8 Markaz, Islamabad
+ICAP-ISB-123|S. Amin & Co.|Islamabad|0323-5114494|sadiqamin75@gmail.com|Office No. 7, Second Floor, Pakland Square, G-8 Markaz, Islamabad
+ICAP-ISB-124|S. M. Suhail & Co.|Islamabad|051-8354699|info@faizco.com|Basement, Plot No. 839, Street No. 2, Sector G-14/4, Islamabad
+ICAP-ISB-125|S. Mubeen & Co.|Islamabad|051-2224971|saad.awsm@gmail.com|House No. 113, Street No. 7, Sector E-11/1, Islamabad
+ICAP-ISB-126|SC John Sajjad & Co.|Islamabad|0331-5274763|cheemasajjad@yahoo.com|House No. 1139, Road E, Bahria Town, Phase 5, Islamabad
+ICAP-ISB-128|Saif Abbas & Co.|Islamabad|0300-5195261; 051-5162005|saif@saifabbas.com|House No. 8, Street No. 7, Sector A, DHA Phase II, Islamabad
+ICAP-ISB-129|Sarah & Co.|Islamabad|0324-4517179|sarahsidd7@gmail.com|Apartment No. 078, Lower Ground Floor, Abu Dhabi Tower, F-11 Markaz, Islamabad
+ICAP-ISB-131|Saud & Co.|Islamabad|0335-5299899||House No. 10, Street No. 18, G-13/3, Islamabad
+ICAP-ISB-132|Sehgal Shahid & Safdar|Islamabad|051-8732952; 051-8735360|mazhar@sssca.net|Office No. 01, 1st Floor, Plot No. 80, Street No. 34, I & T Center, G-10/1, Islamabad
+ICAP-ISB-134|Shafqat Niazi & Co.|Islamabad|0332-5455352; 051-2360546|skniazi.ec@gmail.com|Office No. 31, 3rd Floor, Capital Plaza, G-11 Markaz, Islamabad
+ICAP-ISB-135|Shahid Ahmad & Co.|Islamabad|051-8316887; 051-8318771|ghazali@saco.com.pk|House No. 22, Street No. 13, F-7/2, Islamabad
+ICAP-ISB-136|Shahzad Qazi & Co.|Islamabad|051-4938139|sq1960@yahoo.com|Office No. 12, 13 & 14, Ahmed Center, I-8 Markaz, Islamabad
+ICAP-ISB-137|Shibli Islam Rehan & Co.|Islamabad|051-2211577|shibli.rehan@sirandco.com|361-B, Street No. 33, F-11/2, Islamabad
+ICAP-ISB-141|Sundas Panni & Associates|Islamabad|0322-5562222; 051-8431443|sundaspanni@hotmail.com|House No. 328, Street No. 35, F-11/3, Islamabad
+ICAP-ISB-142|Suriya Nauman Rehan & Co.|Islamabad|051-2610931|nauman_73@yahoo.com|House No. 2, Street 2, F-7/3, Islamabad
+ICAP-ISB-143|Tahir Razzaque Khan & Co.|Islamabad|051-2297780|trko@hotmail.com|61-B, Street No. 46, F-10/4, Islamabad
+ICAP-ISB-144|Tahir Shah & Co.|Islamabad|051-4862577|tahirshah.ca@gmail.com|Office No. 10, 2nd Floor, Ahmed Center, I-8 Markaz, Islamabad
+ICAP-ISB-146|Taiyab Shahid & Co.|Islamabad|0334-4060520||Apartment 407, Millennium Heights, F-11/1, Islamabad
+ICAP-ISB-148|Tariq Abdul Ghani & Co.|Islamabad|051-2831322|info@tagglobalservices.com|2, Street 80, G-6/4, Islamabad
+ICAP-ISB-150|UHY Hassan Naeem & Co.|Islamabad|051-2873432|infoisb@uhy-hnco.com|West Lower Ground, Park Plaza (19-A), Fazal-e-Haq Road, Blue Area, Islamabad
+ICAP-ISB-151|Usman Hassan & Co.|Islamabad|051-4861058|usmangfatm@gmail.com|Office No. 22, Second Floor, Rehmat Plaza, I-8 Markaz, Islamabad
+ICAP-ISB-152|Usman Rasheed & Co.|Islamabad|0334-4590610; 051-8899468|usman@urcapk.com|URCA, 7th Floor, EOBI House, G-10/4, Islamabad
+ICAP-ISB-154|Waqas Muhammad & Company|Islamabad|0331-4617846|wmc.waqas@gmail.com|Flat No. 712, Block 04, Khudadad Heights, Margalla Road, E-11, Islamabad
+ICAP-ISB-155|Waqas Shabbir & Co.|Islamabad|051-8356038|connect@waqasshabbir.com|Office No. 123, 1st Floor, Luxus Mall, Expressway, Gulberg Greens, Islamabad
+ICAP-ISB-156|Waseem Siddiqi & Co.|Islamabad|051-2206996|waseemsiddiqico@hotmail.com|240, Street No. 54, Sector I-8/3, Islamabad
+ICAP-ISB-157|Wasif & Co.|Islamabad|0336-7231746|malikwasif18@gmail.com|Unit No. 2, Ground Floor, Block 7, PHA Flats, Service Road West, G-7/1, Islamabad
+ICAP-ISB-158|Yasser Sajjad & Co.|Islamabad|0300-8860544|yasser72pk@yahoo.com|14-E, Najam Arcade, F-8 Markaz, Islamabad
+ICAP-ISB-159|Yousuf Adil|Islamabad|051-8734400|shahzad@yousufadil.com|Chohan Mansion, Plot No. 18-B/1, G-8 Markaz, Islamabad
+ICAP-ISB-160|Z. Hassan & Co.|Islamabad|0321-9829317|zoobihassan@hotmail.com|House 1112, Street 23, G-11/1, Islamabad
+ICAP-ISB-161|Z. M. K. & Co.|Islamabad|051-2111906|info@thezmk.com|Suite No. 508, 5th Floor, Al-Safa Heights-1, Hilal Road, F-11/1, Islamabad
+ICAP-ISB-162|Zahid Farooq & Co.|Islamabad|051-4575605|info@zfc.com.pk|Suite No. 31, Ground Floor, Twin City Plaza, Faizabad Highway, Islamabad
+ICAP-ISB-163|Zahid Jamil & Co.|Islamabad|0345-5514664; 051-6142257|infoisb@zahidjamilco.com|Office No. 9, Third Floor, Sajjad Sharif Plaza, G-11 Markaz, Islamabad
+ICAP-ISB-165|Zainab & Company|Islamabad|0345-5052683|zainab_bhatti@hotmail.com|Suite 237, 2nd Floor, Luxus Mall, Gulberg Greens, Islamabad
+ICAP-ISB-166|Zia Ullah & Co.|Islamabad|051-2111907|ziaca@msn.com|Suite No. 508, 5th Floor, Al-Safa Heights-1, Hilal Road, F-11/1, Islamabad
+ICAP-ISB-167|Zia-Ur-Rehman Khalid & Co.|Islamabad|0334-0103731|ch.zia.1215@gmail.com|Office No. 4, First Floor, Gulberg Square, Gulberg Business Park, Gulberg Greens, Islamabad
+ICAP-KHI-001|A. A. Baig & Co.|Karachi|021-34558476; 021-34391128|info@aabaig.com|Suite No. 506, Marine Faisal Building, Plot 10-A, P.E.C.H.S, Block-6, Main Shahrah-e-Faisal, Karachi
+ICAP-KHI-002|A. Basit Ghori & Co.|Karachi|0308-2229561|basit.ghouri1975@gmail.com|Office No. 312, 3rd Floor, Mashriq Centre, Sir Shah Suleman Road, Gulshan-e-Iqbal Block-14, Karachi
+ICAP-KHI-003|A. D. Akhawala & Co.|Karachi|021-32411268; 021-32427857|msohail@adaco.com.pk|321, Third Floor, Uni Center, I.I. Chundrigar Road, Karachi
+ICAP-KHI-004|A. F. Ferguson & Co.|Karachi|021-32426711; 021-32426682|affco.pk@pwc.com|State Life Building No. 1-C, Off I.I. Chundrigar Road, Karachi
+ICAP-KHI-005|A. G. Habib & Co.|Karachi|0306-2542295; 021-35890876||83/II, 4th Commercial Street, Phase-IV, DHA, Karachi
+ICAP-KHI-006|A. M. Laliwala & Co.|Karachi|021-32636705|laliwala@finosys.com|D-38, Block 5, KDA Scheme No. 5, Clifton, Near Boat Basin, Karachi
+ICAP-KHI-007|A. Rahim Qasim & Co.|Karachi|0332-2803851|arahim_qasim@hotmail.com|B-23, Sector W/4, Gulshan-e-Maymar, Karachi
+ICAP-KHI-008|A. S. Ahmed & Co.|Karachi|021-32732251|aamirsaeed221@yahoo.com|Suite 608, Noman Towers, Marston Road, Karachi
+ICAP-KHI-009|Aamir Anwar & Co.|Karachi|0321-2938179|aamiranwaraca@gmail.com|Flat 703, The Residence Tower, Clifton Block 8, Karachi
+ICAP-KHI-010|Abbas & Co.|Karachi|0333-2118853; 021-32791966|info@abbasandco.com.pk|Suite No. 717 & 718, Caesars Towers, Shahrah-e-Faisal, Karachi
+ICAP-KHI-011|Abdan & Co.|Karachi|021-32424194; 021-32423407|iqbal@abdanco.com|2/37-39, Arkay Square, Shahrah-e-Liaquat, Karachi
+ICAP-KHI-012|Aftab Tanvir & Co.|Karachi|021-35640050||Suite No. 1601, Kashif Centre, Shahrah-e-Faisal, Karachi
+ICAP-KHI-013|Ahmed & Co.|Karachi|0334-3216189|adeel8000@gmail.com|L-24/25, First Floor, Block-12, F.B. Area, Karachi
+ICAP-KHI-015|Ahmed Associates|Karachi|021-35686107|a-402@hotmail.com|402, Paradise Chambers, 149 A.M., Shahrah-e-Iraq, Near Saddar Passport Office, Karachi
+ICAP-KHI-016|Akbar G. Merchant & Co.|Karachi|0321-2093520|akbarmerchant.ca@gmail.com|Plot No. 31-C, 4th Floor, Khayaban-e-Shamsheer, DHA Phase 5 Ext., Karachi
+ICAP-KHI-017|Ali Asgher & Associate|Karachi|0335-0005351; 0333-3025969|aliasghar250@hotmail.com|Office No. 1, Mezzanine Floor, 19-C, Commercial Lane No. 4, Zamzama, Phase V, DHA, Karachi
+ICAP-KHI-018|Alliott Shahid Hadi|Karachi|021-35215703; 021-35661192|alliott@cyber.net.pk|Office No. 912, 9th Floor, Trade Tower, Abdullah Haroon Road, Karachi
+ICAP-KHI-019|Altaf Noor Ali|Karachi|0333-2274452; 021-35830696|altafnoorali@gmail.com|F-42/4, Block-7, Clifton, Karachi
+ICAP-KHI-020|Amin Mudassar & Co.|Karachi|021-35210577|mibrahimsheikh@yahoo.com|259-260, 2nd Floor, Panorama Centre, Fatima Jinnah Road, Karachi
+ICAP-KHI-021|Amir Abdullah Naveed & Co.|Karachi|0321-2753077|naveed.yar.khan@gmail.com|Office No. 4, 4th Floor, 117/C, Commercial Area B, DHA, Karachi
+ICAP-KHI-022|Ammar Junaid & Co.|Karachi|0300-3914692; 021-34932053|ammarjunaid_301@hotmail.com|Flat No. 301, Jetpur Arcade, Chandni Chowk, Off Stadium Road, Karachi
+ICAP-KHI-024|Arqam Ayubi & Co.|Karachi|0330-2199932; 021-36965000|arqamayubi@gmail.com|Ground Floor, R-8, Sector 16-A, Buffer Zone, Near Peoples Chowrangi, Karachi
+ICAP-KHI-026|Asif Mahmood & Company|Karachi|0301-6060602|asif.mahmood1021@gmail.com|201, Second Floor, 16-C, 1st Shahbaz Commercial Street, Phase VI, DHA, Karachi
+ICAP-KHI-027|Asim & Co.|Karachi|0344-2651200|muhammadasim.810@gmail.com|Office No. 4, Mezzanine Floor, Shireen Arcade, Plot No. A-41, Block 7/8, K.C.H.S, Karachi
+ICAP-KHI-029|Avais|Karachi|021-35655975||Suite No. 407, Progressive Plaza, Beaumont Road, Karachi
+ICAP-KHI-030|BDO Ebrahim & Co.|Karachi|021-35683030; 021-35683189|info@bdo.com.pk|2nd Floor, Block-C, Lakson Square Bldg. No. 1, Sarwar Shaheed Road, Karachi
+ICAP-KHI-032|Baker Tilly Mehmood Idrees Qamar|Karachi|021-35644872|info@bakertilly.pk|4th Floor, Central Hotel Building, Civil Lines, Mereweather Road, Karachi
+ICAP-KHI-033|Beerbal & Co.|Karachi|0331-2243288; 021-34380408|beerbalmal@beerbalco.com|Office No. 403, Amber Estate Ext., Near Cavish Court, Shahrah-e-Faisal, Karachi
+ICAP-KHI-035|Bilal & Co.|Karachi|0321-2859637|bilalyaseen@hotmail.com|Office No. 408, 4th Floor, Progressive Center, Block-6, P.E.C.H.S., Shahrah-e-Faisal, Karachi
+ICAP-KHI-036|Bilal Arsalan & Co.|Karachi|021-34853838|marsalan132@gmail.com|Office No. 205, 2nd Floor, Balad Trade Center, Main Bahadurabad, Karachi
+ICAP-KHI-037|Bilwani & Co.|Karachi|021-32411952; 021-32411302|bilwanico@cyber.net.pk|12, Idrees Chambers, Talpur Road, Opp. National Bank of Pakistan Head Office, Karachi
+ICAP-KHI-038|Clarkson Hyde Saud Ansari|Karachi|021-32803221|info@clarksonhyde.pk|1501, 5th Floor, Caesars Towers, Plot No. ST-10, Shahrah-e-Faisal, Karachi
+ICAP-KHI-039|Crowe Hussain Chaudhury & Co.|Karachi|021-35877806|najeeb.moochhala@crowe.pk|Level 4, 31-C, Khayaban-e-Shamsheer, Phase-5, DHA, Karachi
+ICAP-KHI-040|Daudally Lalani & Co.|Karachi|021-35868483|info@daudallylalani.com|Unit No. 8, Plot No. FL-12, Karsaz Town, Block-5, Clifton, Karachi
+ICAP-KHI-041|Dawood Associates|Karachi|0300-2330880; 021-34322638|daudassociates@hotmail.com|Ground Floor, W-174, Block-2, P.E.C.H.S., Karachi
+ICAP-KHI-044|EY Ford Rhodes|Karachi|021-111-113-937; 021-35650007|ey.khi@pk.ey.com|17th Floor, Sky Tower-West Wing, Dolmen City, HC-3, Block-4, Scheme 5, Clifton, Karachi
+ICAP-KHI-045|F. Nini & Co.|Karachi|021-34301966|faisal@fnini.com|C-88, KDA Scheme-1, Main Karsaz Road, Karachi
+ICAP-KHI-046|F. R. Merchant & Co.|Karachi|021-34933417; 021-34141114|info@frmerchantandco.com.pk|Room No. 10 & 11, 4th Floor, Shahnaz Arcade, Shaheed-e-Millat Road, Karachi
+ICAP-KHI-047|Fahad Ahmed & Co.|Karachi|0333-3242325; 021-34014533|fahad.a.khan.99@outlook.com|A-15, Kehkashan Terrace, Block-13, Gulistan-e-Jauhar, Karachi
+ICAP-KHI-049|Faiz & Co.|Karachi|021-34314057; 021-34314163|mashkoor@faizco.com|Suite 1112, 11th Floor, Park Avenue, Block-6, PECHS, Main Shahrah-e-Faisal, Karachi
+ICAP-KHI-050|Faiza Farhan & Associate|Karachi|0335-3129629|faizafarhanlatif1@gmail.com|Decent Villa A-161, Block 4, Gulistan-e-Jauhar, Karachi
+ICAP-KHI-051|Farrukh Mateen & Co.|Karachi|0302-8297884; 021-36801171|farrukh.mateenco@hotmail.com|C-208, Block-10, F.B. Area, Karachi
+ICAP-KHI-052|Faruq Ali & Co.|Karachi|021-34301967|info@fac.com.pk|C-88, Ground Floor, KDA Scheme No. 1, Main Karsaz Road, Opp. Maritime Museum, Karachi
+ICAP-KHI-053|Fazal Mahmood & Co.|Karachi|0300-8242393||58-U, Block 6, PECHS, Karachi
+ICAP-KHI-054|Feroz Aziz & Co.|Karachi|021-34382086|ferozaziz@cyber.net.pk|211, 2nd Floor, Business Arcade, Block 6, P.E.C.H.S, Shahrah-e-Faisal, Karachi
+ICAP-KHI-055|Feroze Nisar Saeed & Co.|Karachi|021-32734401; 021-32729621|nhq_co@sat.net.pk|Room No. 1, 6th Floor, Office Tower, Rimpa Plaza, M.A. Jinnah Road, Karachi
+ICAP-KHI-057|Feroze Sharif Tariq & Co.|Karachi|0300-2250731; 021-34540891|ghalib3030@yahoo.com|4-N-4, Block 6, P.E.C.H.S., Karachi
+ICAP-KHI-058|Furqan Ahmed & Co.|Karachi|0333-2313494; 021-35310098|furqanahmad6442@gmail.com|M-21, Mezzanine Floor, Centrum Centre, Rashid Minhas Road, Near Lucky One Mall, Karachi
+ICAP-KHI-059|G. M. Chhotani & Co.|Karachi|021-34542860; 021-34534392|gmchhota@yahoo.com|306, Windsong Place, Plot No. A/16-17, Block 7 & 8, KCHS, Off Shahrah-e-Faisal, Karachi
+ICAP-KHI-061|Ghouri & Co.|Karachi|0300-8200622; 021-34321220|ghouriandco@hotmail.com|402, Anum Estate Building, Main Shahrah-e-Faisal, Karachi
+ICAP-KHI-062|Grant Thornton Anjum Rahman|Karachi|021-35672951|krahman@gtpak.com|1st & 3rd Floor, Modern Motors House, Beaumont Road, Karachi
+ICAP-KHI-063|Gul Ahmed & Co.|Karachi|021-32424303|naufal.ahmed@gmail.com|48, Bangalore Town, Off Shahrah-e-Faisal, Karachi
+ICAP-KHI-065|H. A. M. D. & Co.|Karachi|0333-3270703; 021-32630651|contact@nadeemca.com|1506-B, Saima Trade Towers, I.I. Chundrigar Road, Karachi
+ICAP-KHI-069|H. M.|Karachi|0345-2864318|munir.shafi@hmconsulting.biz|Office 703, 7th Floor, Iconic Business Centre, Plot 247/3, Sharfabad, Karachi
+ICAP-KHI-070|Hafiz & Co.|Karachi|0322-2468446|jlakhani@hafcoca.com|Office No. 707, Seventh Floor, Anum Blessings, Shahrah-e-Faisal, Karachi
+ICAP-KHI-071|Hafizullah & Co.|Karachi|021-32629515; 021-32629518|syedhafizullah@hotmail.com|244, Sunny Plaza, Hasrat Mohani Road, Off I.I. Chundrigar Road, Karachi
+ICAP-KHI-072|Haider Shamsi & Co.|Karachi|021-34536080; 021-34380861|info@haidershamsi.com|180-B, S.M.C.H.S., Shahrah-e-Faisal, Karachi
+ICAP-KHI-073|Hashmi & Co.|Karachi|0300-8941822; 021-32400292|hashmicoca@hotmail.com|Office No. 02, 5th Floor, Karachi Chamber, Hasrat Mohani Road, Karachi
+ICAP-KHI-074|Hayat Ahmed Paracha & Co.|Karachi|0315-0631444|hayat_paracha@hotmail.com|B-55, Block-8, Gulshan-e-Iqbal, Karachi
+ICAP-KHI-076|Hussain Lakhani & Co.|Karachi|0323-2458546|cbphlakhani@gmail.com|Lakhani House A-10, Rufi Cottages Block 13-D1, Gulshan-e-Iqbal, Karachi
+ICAP-KHI-077|IECnet S.K.S.S.S.|Karachi|021-34150811|info@iecnet.com.pk|Suite No. 209, Parsa Tower, Plot No. 31-1-A, Block-6, PECHS, Main Shahrah-e-Faisal, Karachi
+ICAP-KHI-078|Ibadullah & Co.|Karachi|0310-0370241|ibadullah1092@gmail.com|Suite 606, M. Yousuf Chamber, Plot A-30, Block 7/8 KCHSU, Baloch Colony, Shahrah-e-Faisal, Karachi
+ICAP-KHI-080|Ibrahim, Shaikh & Co.|Karachi|021-35671853; 021-35673529|imranahmedzaki@yahoo.com|259-260, Panorama Centre, Fatima Jinnah Road, Karachi
+ICAP-KHI-081|Ibrar Ali & Co.|Karachi|0313-2559680|ibrarali680@gmail.com|Office No. 618, Clifton Centre, Block 5, Clifton, Karachi
+ICAP-KHI-082|Idris & Co.|Karachi|021-32630652|idris.co.ca@gmail.com|302, Land Mark Plaza, Muhammad Bin Qasim Road, Off I.I. Chundrigar Road, Karachi
+ICAP-KHI-083|Ifham Khan & Co.|Karachi|0345-3499739|ifhamkhan@hotmail.com|Office 504, Amber Estate (Ext), Plot A/32, KCHSU Block 7/8, Shahrah-e-Faisal, Karachi
+ICAP-KHI-085|Ilyas & Co.|Karachi|0332-3052149; 021-32464106|me@ilyasanis.com|Office 901, Dawood Trade Center, New Challi, Opp. Hussain Trade Center, Karachi

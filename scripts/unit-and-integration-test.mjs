@@ -179,11 +179,71 @@ assert('Merge deduplicates Ltd vs Limited in the same city', mergedRegistry.reco
 assert('Merge enriches an existing phone-less registry row with a real number and address',
   enrichedGamma && enrichedGamma.phone === '0300-5556677' && enrichedGamma.whatsappCapable === true && enrichedGamma.address === 'Blue Area, Islamabad');
 
+// Exact category names in CSVs win over company-name keywords, and two-pass TREC merge
+// enriches CRO-city broker rows in place without colliding on swapped SECP TREC numbers.
+const tmpTrecSeed = '/tmp/ypk-trec-seed.csv';
+const tmpTrecMerge = '/tmp/ypk-trec-merge.csv';
+const tmpTrecOut = '/tmp/ypk-trec-out.json';
+writeFileSync(tmpTrecSeed, [
+  'Company Name,Nature of Business,City,Address,Telephone,Registration No',
+  'Aba Ali Habib Securities (Private) Limited,Stock Brokers & Securities,Karachi,"Karachi, Pakistan",,TREC311',
+  'Abbasi & Company (Private) Limited,Stock Brokers & Securities,Lahore,"Lahore, Pakistan",,TREC162',
+  'Ahsam Securities (Private) Limited,Stock Brokers & Securities,Islamabad,"Islamabad, Pakistan",,TREC501',
+].join('\n'));
+execFileSync('node', ['scripts/import-listings.mjs', `--in=${tmpTrecSeed}`, '--as=official', `--out=${tmpTrecOut}`, '--allow-missing-phone'], { encoding: 'utf8' });
+const seedIds = Object.fromEntries(JSON.parse(readFileSync(tmpTrecOut, 'utf8')).records.map((r) => [r.name, r.id]));
+writeFileSync(tmpTrecMerge, [
+  'Company Name,Nature of Business,City,Address,Telephone,Email,Website,Registration No',
+  'Aba Ali Habib Securities (Private) Limited,Stock Brokers & Securities,Karachi,"Business Plaza, Karachi",021-32429664,info@abaalihabib.com,https://www.abaalihabib.com,TREC162',
+  'Abbasi & Company (Private) Limited,Stock Brokers & Securities,Lahore,"6-Shadman, Lahore",042-38302028,info@abbasiandcompany.com,https://www.abbasiandcompany.com,TREC311',
+  'Ahsam Securities (Private) Limited,Stock Brokers & Securities,Rawalpindi,"27-A, Gulistan Colony, Rawalpindi",0321-5178338,ahsamsec@hotmail.com,https://www.ahsam.org,TREC501',
+  'All Pakistan Textile Mills Association,NGOs & Community Organizations,Karachi," Clifton, Karachi",021-35875941,aptma@aptma.org.pk,https://www.aptma.org.pk,FPCCI-999',
+].join('\n'));
+execFileSync('node', ['scripts/import-listings.mjs', `--in=${tmpTrecMerge}`, '--as=official', `--out=${tmpTrecOut}`, '--merge'], { encoding: 'utf8' });
+const trecMerged = JSON.parse(readFileSync(tmpTrecOut, 'utf8')).records;
+const abaMerged = trecMerged.find((r) => r.name.startsWith('Aba Ali Habib'));
+const abbasiMerged = trecMerged.find((r) => r.name.startsWith('Abbasi & Company'));
+const ahsamMerged = trecMerged.find((r) => r.name.startsWith('Ahsam Securities'));
+const aptmaMerged = trecMerged.find((r) => r.name.startsWith('All Pakistan Textile Mills'));
+assert('Two-pass merge keeps swapped TREC rows matched to their own name+city',
+  abaMerged.phone === '021-32429664' && abbasiMerged.phone === '042-38302028');
+assert('TREC fallback enriches CRO-city broker row in place while preserving its id slug',
+  ahsamMerged.id === seedIds['Ahsam Securities (Private) Limited']
+    && ahsamMerged.city === 'Rawalpindi'
+    && ahsamMerged.phone === '0321-5178338'
+    && ahsamMerged.email === 'ahsamsec@hotmail.com'
+    && ahsamMerged.website === 'https://www.ahsam.org');
+assert('Exact category name in CSV is respected over company-name words',
+  aptmaMerged && aptmaMerged.cat === 56);
+
 const nbfcSourceLines = readFileSync('scripts/sources/secp-nbfcs.txt', 'utf8').split('\n').filter((l) => l && !l.startsWith('#'));
 assert('SECP NBFCs & SFAs source table is present (281 official license rows)', nbfcSourceLines.length === 281);
+const psxTrecLines = readFileSync('scripts/sources/psx-trec-holders.txt', 'utf8').split('\n').filter((l) => l && !l.startsWith('#'));
+const pmexLines = readFileSync('scripts/sources/pmex-brokers.txt', 'utf8').split('\n').filter((l) => l && !l.startsWith('#'));
+const insurerLines = readFileSync('scripts/sources/secp-insurers.txt', 'utf8').split('\n').filter((l) => l && !l.startsWith('#'));
+const ppibLines = readFileSync('scripts/sources/ppib-solar-installers.txt', 'utf8').split('\n').filter((l) => l && !l.startsWith('#'));
+const icapLines = readFileSync('scripts/sources/icap-ca-firms.txt', 'utf8').split('\n').filter((l) => l && !l.startsWith('#'));
+const fpcciLines = readFileSync('scripts/sources/fpcci-trade-bodies.txt', 'utf8').split('\n').filter((l) => l && !l.startsWith('#'));
+assert('Official PSX TREC, PMEX, SECP Insurers, PPIB Solar, ICAP & FPCCI source tables are present',
+  psxTrecLines.length === 206
+    && pmexLines.length >= 100
+    && insurerLines.length === 48
+    && ppibLines.length >= 420
+    && icapLines.length >= 260
+    && fpcciLines.length >= 230);
 const shippedCorpus = JSON.parse(readFileSync('public/data/listings.json', 'utf8'));
-assert('Shipped corpus matches STATS.total and credits the SECP NBFC/SFA register',
-  shippedCorpus.records.length === STATS.total && shippedCorpus.attribution.includes('SECP NBFCs & Securities/Futures Advisors register'));
+assert('Shipped corpus matches STATS.total and credits all imported official registers',
+  shippedCorpus.records.length === STATS.total
+    && shippedCorpus.attribution.includes('SECP NBFCs & Securities/Futures Advisors register')
+    && shippedCorpus.attribution.includes('PSX Active TREC Holders register')
+    && shippedCorpus.attribution.includes('PMEX Licensed Futures Brokers')
+    && shippedCorpus.attribution.includes('SECP Active Insurers')
+    && shippedCorpus.attribution.includes('PPIB/AEDB Certified Solar & Wind Installers')
+    && shippedCorpus.attribution.includes('ICAP Directory of Practising Chartered Accountant Firms')
+    && shippedCorpus.attribution.includes('FPCCI Registered Member Trade Organizations'));
+const shippedHygieneLog = execFileSync('node', ['scripts/verify-numbers.mjs', '--data=public/data/listings.json'], { encoding: 'utf8' });
+assert('Shipped corpus has zero unparseable phones and zero >5 shared numbers',
+  !/unparseable number/.test(shippedHygieneLog) && /numbers shared by >5 different businesses: 0/.test(shippedHygieneLog));
 
 console.log('\n=== 1d. OWNER VERIFICATION (CLAIM LOOP) TESTS ===');
 const vNow = Date.now();

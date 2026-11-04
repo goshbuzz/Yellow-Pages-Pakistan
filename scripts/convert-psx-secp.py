@@ -16,17 +16,30 @@ Sources (all public):
      transcribed to scripts/sources/secp-nbfcs.txt (281 license rows across 223
      entities, with published phones and registered addresses). Multi-license rows
      for the same entity are consolidated onto one canonical record.
+  4. PSX Active TREC Holders register (psx.com.pk, August 6, 2026) — transcribed to
+     scripts/sources/psx-trec-holders.txt (206 active brokerage houses with head-office
+     phones, emails, websites, and street addresses; enriches SECP TREC rows in place).
+  5. PMEX Licensed Futures Brokers & SECP-approved regional branches (pmex.com.pk,
+     August 2025 / May 2026) — transcribed to scripts/sources/pmex-brokers.txt.
+  6. SECP Active Insurers, Takaful Operators, Reinsurer & Health Insurance TPAs
+     (secp.gov.pk, June 30, 2026, wpdmdl=49068 & 49347) — scripts/sources/secp-insurers.txt.
+  7. PPIB / AEDB Certified Solar & Wind Installers, Categories C-1 & C-3 (ppib.gov.pk) —
+     transcribed to scripts/sources/ppib-solar-installers.txt.
+  8. ICAP Geographical Directory of Practising Chartered Accountant Firms (icap.org.pk) —
+     transcribed to scripts/sources/icap-ca-firms.txt.
+  9. FPCCI Registered Member Trade Organizations 2024–2026 (fpcci.org.pk, August 13,
+     2026) — transcribed to scripts/sources/fpcci-trade-bodies.txt.
 
-Output: /tmp/pubdata/{psx-listings,secp-brokers,secp-nbfcs}.csv with columns
+Output: /tmp/pubdata/*.csv with columns
 Company Name, Nature of Business, City, Address, Telephone, Email, Website,
 Registration No. Classification values are exact category names; city comes from the
-address text matched against the app's own 420-city list. Nothing is invented.
+address/register matched against the app's own 420-city list. Nothing is invented.
 
 Usage:
   python3 scripts/convert-psx-secp.py
   python3 scripts/convert-psx-secp.py --psx-repo /tmp/pubdata/psx-repo
 """
-import re, csv, os, argparse
+import re, csv, os, json, argparse
 from collections import Counter, defaultdict
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -288,11 +301,30 @@ with open(f'{OUT_DIR}/secp-brokers.csv', 'w', newline='', encoding='utf-8') as f
 # Major trunk codes we can cross-check against a resolved city so spreadsheet
 # typos (e.g. Sialkot 052 on a Lahore address, or Karachi 021 on Mithi/Islamabad)
 # are dropped rather than published as wrong numbers.
-MAJOR_TRUNK_CODES = {'21': 'Karachi', '42': 'Lahore', '52': 'Sialkot'}
+MAJOR_TRUNK_CODES = {
+    '21': {'Karachi'},
+    '22': {'Hyderabad'},
+    '40': {'Sahiwal'},
+    '41': {'Faisalabad', 'Jaranwala'},
+    '42': {'Lahore'},
+    '51': {'Islamabad', 'Rawalpindi', 'Taxila'},
+    '52': {'Sialkot'},
+    '55': {'Gujranwala'},
+    '61': {'Multan'},
+    '71': {'Sukkur'},
+    '81': {'Quetta'},
+    '91': {'Peshawar'},
+}
+
+TWO_DIGIT_TRUNKS = {
+    '21', '22', '40', '41', '42', '44', '46', '47', '48', '49',
+    '51', '52', '53', '55', '56', '57', '61', '62', '63', '64',
+    '65', '66', '67', '68', '71', '74', '81', '86', '91',
+}
 
 
 def parse_secp_phones(raw, city=''):
-    """Extract clean, dialable PK numbers from an SECP contact cell; mobiles first."""
+    """Extract clean, dialable PK numbers from a register cell; mobiles first."""
     if not raw or raw.strip() in ('-', ''):
         return []
     s = raw.strip()
@@ -305,14 +337,14 @@ def parse_secp_phones(raw, city=''):
     # Split multi-number cells ('042 35755165 0321 442 2222', '0518442252 03008527567').
     tokens = re.findall(
         r'\+?92[-\s]?\d{2,3}[-\s]?\d{6,8}(?:-\d{1,3})?'
-        r'|0\d{2}-111-\d{3}-\d{3}'
+        r'|0\d{2,3}-111-\d{3}-\d{3}'
         r'|0?3\d{2}[-\s]?\d{3}[-\s]?\d{4}'
         r'|0?3\d{9}'
         r'|0\d{2,3}[-\s]?\d{6,8}',
         s,
     )
     if not tokens:
-        tokens = [s]
+        tokens = [p.strip() for p in re.split(r'[;,/|]', s) if p.strip()]
 
     out = []
     for tok in tokens:
@@ -332,15 +364,15 @@ def parse_secp_phones(raw, city=''):
 
         if re.fullmatch(r'3\d{9}', d):
             out.append((f'0{d[:3]}-{d[3:]}', True))
-        elif re.fullmatch(r'21111\d{6}', d):
-            if city and city != 'Karachi':
+        elif len(d) == 11 and d[:2] in TWO_DIGIT_TRUNKS and d[2:5] == '111':
+            if d[:2] in MAJOR_TRUNK_CODES and city and city not in MAJOR_TRUNK_CODES[d[:2]]:
                 continue
-            out.append((f'021-111-{d[5:8]}-{d[8:]}', False))
+            out.append((f'0{d[:2]}-111-{d[5:8]}-{d[8:]}', False))
         elif 9 <= len(d) <= 11 and d[0] != '0':
             trunk2 = d[:2]
-            if trunk2 in MAJOR_TRUNK_CODES and city and city != MAJOR_TRUNK_CODES[trunk2]:
+            if trunk2 in MAJOR_TRUNK_CODES and city and city not in MAJOR_TRUNK_CODES[trunk2]:
                 continue
-            if trunk2 in ('21', '42', '51'):
+            if trunk2 in TWO_DIGIT_TRUNKS:
                 fmt = f'0{d[:2]}-{d[2:]}'
             else:
                 fmt = f'0{d[:3]}-{d[3:]}'
@@ -448,3 +480,238 @@ with open(f'{OUT_DIR}/secp-nbfcs.csv', 'w', newline='', encoding='utf-8') as f:
     w = csv.DictWriter(f, fieldnames=FIELDNAMES)
     w.writeheader()
     w.writerows(nbfc_rows)
+
+
+# ── 4–9. Active PSX TREC Holders, PMEX Brokers, SECP Insurers, PPIB Solar,
+#          ICAP Practising CA Firms, and FPCCI Trade Organizations ────────────
+
+def read_pipe_lines(filename):
+    path = f'{REPO}/scripts/sources/{filename}'
+    if not os.path.isfile(path):
+        return []
+    out = []
+    with open(path, encoding='utf8') as fh:
+        for raw_line in fh:
+            s = raw_line.replace('\r', '').rstrip('\n')
+            if not s.strip() or s.startswith('#'):
+                continue
+            out.append([c.strip() for c in s.split('|')])
+    return out
+
+
+def clean_url(u):
+    u = (u or '').strip()
+    if not u or u in ('-', 'N/A', 'NA'):
+        return ''
+    if not re.match(r'^https?://', u, re.I):
+        u = 'https://' + u
+    return u
+
+
+def clean_email(e):
+    e = (e or '').strip().lstrip('\\')
+    if not e or '@' not in e or ' ' in e:
+        return ''
+    return e
+
+
+def canon_city(c):
+    c = (c or '').strip()
+    if c in CITIES:
+        return c
+    low = c.lower()
+    if low in CITY_ALIASES and CITY_ALIASES[low] in CITIES:
+        return CITY_ALIASES[low]
+    for known in CITIES:
+        if known.lower() == low:
+            return known
+    return ''
+
+
+def phone_digits_key(p):
+    d = re.sub(r'\D', '', p or '')
+    if d.startswith('0092'):
+        d = '0' + d[4:]
+    elif d.startswith('92') and len(d) >= 11:
+        d = '0' + d[2:]
+    return d
+
+
+# Track phone ownership across the existing corpus + all incoming batches so
+# consultant/secretary numbers shared across 3+ unrelated entities are skipped
+# in favour of an entity's own secondary line (or omitted).
+phone_owners = defaultdict(set)
+existing_json = f'{REPO}/public/data/listings.json'
+if os.path.isfile(existing_json):
+    try:
+        for rec in json.load(open(existing_json, encoding='utf8')).get('records', []):
+            dk = phone_digits_key(rec.get('phone', ''))
+            if dk:
+                phone_owners[dk].add(norm_name(rec.get('name', '')) or rec.get('name', '').lower())
+    except Exception:
+        pass
+
+staged_batches = []
+
+
+def stage_batch(out_name, category, rows_spec, allow_empty_phone=False):
+    staged = []
+    for spec in rows_spec:
+        city = canon_city(spec['city']) or find_city(spec['address'])
+        cands = parse_secp_phones(spec['raw_phone'], city)
+        owner = norm_name(spec['name']) or spec['name'].lower()
+        for c in cands:
+            phone_owners[phone_digits_key(c)].add(owner)
+        staged.append({
+            **spec,
+            'city': city,
+            'cands': cands,
+            'owner': owner,
+            'category': category,
+        })
+    staged_batches.append((out_name, staged, allow_empty_phone))
+
+
+# 4. PSX Active TREC Holders
+stage_batch(
+    'psx-trec-holders.csv',
+    'Stock Brokers & Securities',
+    [
+        {
+            'reg': p[0],
+            'name': p[1],
+            'city': p[2],
+            'raw_phone': p[3],
+            'email': clean_email(p[4]),
+            'website': clean_url(p[5]),
+            'address': p[6],
+        }
+        for p in read_pipe_lines('psx-trec-holders.txt')
+    ],
+    allow_empty_phone=True,
+)
+
+# 5. PMEX Licensed Futures Brokers & SECP-approved regional branches
+#    Prefix Registration No with PMEX- so PMEX TREC numbers never collide with PSX TREC###.
+stage_batch(
+    'pmex-brokers.csv',
+    'Stock Brokers & Securities',
+    [
+        {
+            'reg': f'PMEX-{p[2]}',
+            'name': p[3],
+            'city': p[4],
+            'raw_phone': p[5],
+            'email': '',
+            'website': clean_url(p[6]),
+            'address': p[7],
+        }
+        for p in read_pipe_lines('pmex-brokers.txt')
+    ],
+)
+
+# 6. SECP Active Insurers, Takaful Operators, Reinsurer & Health Insurance TPAs
+stage_batch(
+    'secp-insurers.csv',
+    'Insurance & Takaful',
+    [
+        {
+            'reg': f'SECP-INS-{idx:03d}',
+            'name': p[1],
+            'city': p[2],
+            'raw_phone': p[3],
+            'email': clean_email(p[4]),
+            'website': clean_url(p[5]),
+            'address': p[6],
+        }
+        for idx, p in enumerate(read_pipe_lines('secp-insurers.txt'), start=1)
+    ],
+)
+
+# 7. PPIB / AEDB Certified Solar & Wind Installers (Categories C-1 & C-3)
+stage_batch(
+    'ppib-solar-installers.csv',
+    'Solar & Renewable Energy',
+    [
+        {
+            'reg': f'PPIB-{p[0]}',
+            'name': p[1],
+            'city': p[2],
+            'raw_phone': p[3],
+            'email': clean_email(p[4]),
+            'website': '',
+            'address': p[5],
+        }
+        for p in read_pipe_lines('ppib-solar-installers.txt')
+    ],
+)
+
+# 8. ICAP Practising Chartered Accountant Firms
+stage_batch(
+    'icap-ca-firms.csv',
+    'Tax Consultants & Auditors',
+    [
+        {
+            'reg': p[0],
+            'name': p[1],
+            'city': p[2],
+            'raw_phone': p[3],
+            'email': clean_email(p[4]),
+            'website': '',
+            'address': p[5],
+        }
+        for p in read_pipe_lines('icap-ca-firms.txt')
+    ],
+)
+
+# 9. FPCCI Registered Member Trade Organizations (Chambers & Associations)
+stage_batch(
+    'fpcci-trade-bodies.csv',
+    'NGOs & Community Organizations',
+    [
+        {
+            'reg': f'FPCCI-{int(p[0]):03d}',
+            'name': p[2],
+            'city': p[3],
+            'raw_phone': p[4],
+            'email': clean_email(p[5]),
+            'website': clean_url(p[6]),
+            'address': p[7],
+        }
+        for p in read_pipe_lines('fpcci-trade-bodies.txt')
+    ],
+)
+
+for out_name, staged, allow_empty_phone in staged_batches:
+    emitted = []
+    dropped_shared = 0
+    for item in staged:
+        if not item['city']:
+            continue
+        chosen = ''
+        for cand in item['cands']:
+            owners = phone_owners[phone_digits_key(cand)]
+            if len(owners) < 3:
+                chosen = cand
+                break
+        if not chosen and item['cands']:
+            dropped_shared += 1
+        if not chosen and not allow_empty_phone:
+            continue
+        emitted.append({
+            'Company Name': item['name'],
+            'Nature of Business': item['category'],
+            'City': item['city'],
+            'Address': item['address'],
+            'Telephone': chosen,
+            'Email': item['email'],
+            'Website': item['website'],
+            'Registration No': item['reg'],
+        })
+    mobs = sum(1 for r in emitted if r['Telephone'].startswith('03'))
+    phones_cnt = sum(1 for r in emitted if r['Telephone'])
+    print(f'{out_name}: {len(emitted)} rows (from {len(staged)}) | phones: {phones_cnt} (mobiles: {mobs}) | shared-phone-dropped: {dropped_shared}')
+    with open(f'{OUT_DIR}/{out_name}', 'w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=FIELDNAMES)
+        w.writeheader()
+        w.writerows(emitted)

@@ -1,0 +1,53 @@
+# Official SECP Active Insurers, Takaful Operators, Reinsurer & Health Insurance TPAs (as on June 30, 2026)
+# Source 1: https://www.secp.gov.pk/document/list-of-insurers-updated/?wpdmdl=49068
+# Source 2: https://www.secp.gov.pk/document/list-of-third-party-administrators-for-insurance/?wpdmdl=49347
+# Strictly excludes companies under Section 63 cease directions or Section 143 winding-up proceedings.
+# Format: Sector|Company Name|City|Phone|Email|Website|Address
+Non-Life|Adamjee Insurance Company Limited|Karachi|021-32412623||http://www.adamjeeinsurance.com|6th Floor, Adamjee House, I.I. Chundrigar Road, Karachi
+Non-Life|Alfalah Insurance Company Limited|Lahore|042-111-786-234||http://www.alfalahinsurance.com|5, Saint Mary Park, Main Boulevard, Gulberg-III, Lahore
+Non-Life|Alpha Insurance Company Limited|Karachi|021-32416045||http://www.alphainsurance.com.pk|4th Floor, Building No. 1-B, State Life Square, Off I.I. Chundrigar Road, Karachi
+Non-Life|Asia Insurance Company Limited|Lahore|042-35865574; 042-35778820||http://www.asiainsurance.com.pk|Asia House, 19 C/D, Block-L, Gulberg III, Main Ferozepur Road, Lahore
+Non-Life|Askari General Insurance Company Limited|Rawalpindi|051-9272425||http://www.agico.com.pk|3rd Floor, AWT Plaza, The Mall, Rawalpindi
+Non-Life|Atlas Insurance Limited|Lahore|042-37320542||http://www.atlasinsurance.com.pk|63/A, Block-XX, Phase III (Commercial), Khayaban-e-Iqbal, DHA, Lahore
+Non-Life|Century Insurance Company Limited|Karachi|021-35698525; 021-35698000||http://www.cicl.com.pk|Lakson Square Building No. 2, Sarwar Shaheed Road, Karachi
+Non-Life|Chubb Insurance Pakistan Limited|Karachi|021-111-789-789||https://www.chubb.com/pk-en/|6th Floor, NIC Building, Abbasi Shaheed Road, Off Shahrah-e-Faisal, Karachi
+Non-Life|Crescent Star Insurance Company Limited|Karachi|021-32415471||http://www.cstar.com.pk|2nd Floor, Nadir House, I.I. Chundrigar Road, Karachi
+Non-Life|East West Insurance Company Limited|Karachi|021-35630400||http://www.eastwestinsurance.com.pk|401-404, Block B, 4th Floor, Lakson Square Building No. 3, Sarwar Shaheed Road, Karachi
+Non-Life|EFU General Insurance Limited|Karachi|021-32313471||http://www.efuinsurance.com|EFU House, M.A. Jinnah Road, Karachi
+Non-Life|Habib Insurance Company Limited|Karachi|021-111-030-303||http://www.habibinsurance.net|State Life Building No. 6, 1st Floor, Habib Square, M.A. Jinnah Road, Karachi
+Non-Life|IGI General Insurance Limited|Karachi|021-35301726; 021-111-234-234||http://www.igilinsurance.com.pk|Suite 701-713, 7th Floor, The Forum, G-20, Block 9, Khayaban-e-Jami, Clifton, Karachi
+Non-Life|Jubilee General Insurance Company Limited|Karachi|021-32412628; 021-111-654-111|||2nd Floor, Jubilee Insurance House, I.I. Chundrigar Road, Karachi
+Non-Life|National Insurance Company Limited|Karachi|021-99225547; 021-111-642-642||http://www.nicl.com.pk|NICL Building, Abbasi Shaheed Road, Shahrah-e-Faisal, Karachi
+Takaful|Pak-Qatar General Takaful Limited|Karachi|021-34380357; 021-111-825-328|||Suite # 402-403, 4th Floor, Business Arcade, Block 6, PECHS, Shahrah-e-Faisal, Karachi
+Non-Life|Premier Insurance Limited|Karachi|021-32416331||http://www.pil.com.pk|5th Floor, State Life Building No. 2-A, Wallace Road, Off I.I. Chundrigar Road, Karachi
+Non-Life|Reliance Insurance Company Limited|Karachi|021-34539415||http://www.relianceins.com|Reliance Insurance House, 181-A, Sindhi Muslim Cooperative Housing Society, Karachi
+Non-Life|Security General Insurance Company Limited|Lahore|042-35775024||http://www.sgicl.com|SGI-House, 18-C/E-1, Gulberg-III, Lahore
+Non-Life|Shaheen Insurance Company Limited|Karachi|021-32630370||http://www.shaheeninsurance.com|10th Floor, Shaheen Complex, M. R. Kayani Road, Karachi
+Non-Life|Sindh Insurance Limited|Karachi|021-35640715||http://www.sindhinsuranceltd.com|1st Floor, Imperial Court, Dr. Ziauddin Ahmed Road, Karachi
+Takaful|Salaam Takaful Limited|Karachi|021-34373171; 021-111-875-111||http://www.takaful.com.pk|Plot No. 19-1-A, 6th Floor, Business Centre, Block-6, P.E.C.H.S, Shahrah-e-Faisal, Karachi
+Non-Life|The Cooperative Insurance Society of Pakistan|Lahore|042-37352306; 042-37242798|coinspl@live.com||Cooperative Insurance Building, 23 Shahrah-e-Quaid-e-Azam, Lahore
+Non-Life|The Pakistan General Insurance Company Limited|Lahore|042-37323569; 042-37223224||http://www.pgi.com.pk|5-Bank Square, Shahrah-e-Quaid-e-Azam, Lahore
+Non-Life|The Universal Insurance Company Limited|Lahore|042-37353453; 042-37353315||http://www.uic.com.pk|Universal Insurance House, 63 Shahrah-e-Quaid-e-Azam, Lahore
+Non-Life|TPL Insurance Limited|Karachi|021-34322555; 021-37130223||http://www.tplinsurance.com|11th & 12th Floor, Centrepoint, Off Shaheed-e-Millat Expressway, Near KPT Interchange, Karachi
+Non-Life|TRAFCO Insurance Company Limited|Lahore|042-35760006; 042-35871173|info@trafcoinsurance.com.pk||TRAFCO House, 1st Floor, 1-C-1, Canal Bank Road, Canal Park, Gulberg-II, Lahore
+Non-Life|UBL Insurers Limited|Karachi|021-111-845-111||http://www.ublinsurers.com|1st Floor, 126-C, Jami Commercial, Street No. 14, Phase VII, DHA, Karachi
+Non-Life|DIGI Insurance Limited|Islamabad|||http://www.diginsurance.com.pk|Plot # 320, River View Commercial, Lilly Road, Bahria Town Phase 7, Islamabad
+Takaful|First Digital Takaful Company Limited|Karachi|||https://firstdigitaltakaful.com|Room 501, 5th Floor, Beaumont Plaza, Beaumont Road, Near Dawood Center, PIDC House, Saddar Town, Karachi
+Reinsurance|Pakistan Reinsurance Company Limited|Karachi|021-99202908|prcl@pakre.org.pk|http://www.pakre.org.pk|PRC Towers, 32-A, Lalazar Drive, M.T. Khan Road, Karachi
+Life|Adamjee Life Assurance Company Limited|Karachi|021-35362620||http://www.adamjeelife.com|The Forum, Suite No. 301, 3rd Floor, Plot G-20, Block 9, Clifton, Karachi
+Life|Askari Life Assurance Company Limited|Karachi|021-35630421||http://www.askarilife.com|Room Number 802, 8th Floor, Lakson Square Building Number 01, Opp. Karachi Press Club, Karachi
+Takaful|Dawood Family Takaful Limited|Karachi|021-111-338-786||http://www.dawoodtakaful.com|1701-A, Saima Trade Towers, I.I. Chundrigar Road, Karachi
+Life|EFU Life Assurance Company Limited|Karachi|021-111-338-111||http://www.efulife.com|EFU Life House, Plot No. 112, 8th East Street, Phase I, DHA, Karachi
+Takaful|5th Pillar Family Takaful Limited|Karachi|||http://www.5thpillartakaful.com|E-23, 2nd Zamzama Commercial Lane, Karga Building, 2nd Floor (E-Street), Phase V, DHA, Karachi
+Life|IGI Life Insurance Limited|Karachi|021-35360040; 021-111-111-711||http://www.igilife.com.pk|Suite No. 701-713, 7th Floor, The Forum, G-20, Block 9, Khayaban-e-Jami, Clifton, Karachi
+Life|Jubilee Life Insurance Company Limited|Karachi|021-35611802; 021-35205094||http://www.jubileelife.com|74/1-A, Lalazar, M.T. Khan Road, Karachi
+Takaful|Pak-Qatar Family Takaful Limited|Karachi|021-34311747; 021-111-825-238||http://www.pakqatar.com.pk|Suite # 102-105, 1st Floor, Business Arcade, Block 6, PECHS, Shahrah-e-Faisal, Karachi
+Life|State Life Insurance Corporation of Pakistan|Karachi|021-99202800; 021-111-111-888||http://www.statelife.com.pk|State Life Building No. 9, Dr. Ziauddin Ahmed Road, Karachi
+Life|TPL Life Insurance Limited|Karachi|021-35302072; 021-35302066||http://www.tpllife.com|12th Floor, Centrepoint, Off Shaheed-e-Millat Expressway, Adjacent KPT Interchange Flyover, Karachi
+Life|Postal Life Insurance Company Limited|Islamabad|051-9260016|||DG PPO, G-8/4, Islamabad
+Takaful|Salam Family Takaful Limited|Karachi|021-111-875-111||http://www.salamtakaful.com|6th Floor, Business Centre, Plot No. 19-1-A, Block 6, P.E.C.H.S, Shahrah-e-Faisal, Karachi
+Life|Punjab Life Insurance Company Limited|Lahore||||1st Floor, PEC Building, 97-A / D-1, Liberty Market, Gulberg III, Lahore
+TPA|Tawasul Healthcare TPA (Private) Limited|Lahore|042-35779643||http://www.tawasultpa.com|6-A, Upper Mall Scheme, Lahore
+TPA|Health eConnex (Private) Limited|Karachi|021-111-266-639||http://www.healtheconnex.com.pk|111-C Jami Commercial, Street # 11, Phase VII, D.H.A., Karachi
+TPA|Crescent Care (Private) Limited|Karachi|0311-1122273||http://www.crescentcare.pk|Room # 501, 5th Floor, Beaumont Plaza, Beaumont Road, Karachi
+TPA|Mediq Solutions Pvt. Limited|Islamabad||info@mediq.com.pk||M-13, Second Floor, Emirates Tower, F-7 Markaz, Islamabad

@@ -32,7 +32,7 @@ import { CATEGORIES } from '../src/data/categories.js';
 import { waNumber } from '../src/lib/whatsapp.js';
 import { hashStr } from '../src/lib/rng.js';
 import { validPkPoint, cityForPoint, haversineKm } from '../src/lib/geovalidate.js';
-import { isUsableName, isPlaceholderPhone, isPlausiblePkPhone, resolveCity, matchCategoryByWords } from '../src/lib/quality.js';
+import { isUsableName, isPlaceholderPhone, isPlausiblePkPhone, resolveCity, matchCategoryByWords, similarity } from '../src/lib/quality.js';
 
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {
@@ -63,8 +63,12 @@ function nearestCity(lat, lng, maxKm = 120) {
   return cityForPoint(+lat, +lng, CITIES, maxKm);
 }
 
+const CATEGORY_BY_LOWER = new Map(CATEGORIES.map((c) => [c.name.toLowerCase(), c]));
+
 /** Map a free-text industry onto one of the 130 categories (null = unclassifiable). */
 function guessCategory(...hints) {
+  const exact = CATEGORY_BY_LOWER.get(String(hints[0] || '').trim().toLowerCase());
+  if (exact) return exact;
   return matchCategoryByWords(CATEGORIES, ...hints);
 }
 
@@ -314,16 +318,42 @@ for (const r of collected) {
 // (shared switchboards are fine to keep — flag them instead of silently deleting leads).
 // --merge appends to an existing --out file (each import keeps its own attribution);
 // without it the file is replaced, so accidental double-imports cannot double listings.
-function dedupeKey(name, city) {
-  const norm = String(name || '')
+function normEntityName(name) {
+  return String(name || '')
     .toLowerCase()
     .replace(/&/g, ' and ')
-    .replace(/\b(pvt|private)\b\.?/g, 'private')
+    .replace(/\bm\/s\.?\s+/g, ' ')
+    .replace(/\b(smc[\s-]*)?(pvt|private)\b\.?/g, 'private')
     .replace(/\b(ltd|limite|limited)\b\.?/g, 'limited')
     .replace(/\bco\b\.?/g, 'company')
     .replace(/[^a-z0-9]+/g, ' ')
     .trim();
-  return `${norm}|${String(city || '').toLowerCase().trim()}`;
+}
+
+function dedupeKey(name, city) {
+  return `${normEntityName(name)}|${String(city || '').toLowerCase().trim()}`;
+}
+
+const BROKER_STOPWORDS = new Set([
+  'private', 'limited', 'company', 'securities', 'capital', 'management',
+  'investments', 'investment', 'equities', 'stocks', 'commodities', 'financial',
+  'services', 'pakistan', 'and', 'the', 'smc', 'brokers', 'brokerage',
+]);
+
+function coreBrokerName(name) {
+  return normEntityName(name)
+    .split(/\s+/)
+    .filter((t) => t && !BROKER_STOPWORDS.has(t))
+    .join(' ');
+}
+
+function sharesBrokerIdentity(a, b) {
+  const ca = coreBrokerName(a);
+  const cb = coreBrokerName(b);
+  if (!ca || !cb) return similarity(normEntityName(a), normEntityName(b)) >= 0.75;
+  if (ca === cb || similarity(ca, cb) >= 0.70) return true;
+  const ta = new Set(ca.split(' ').filter((w) => w.length >= 3));
+  return cb.split(' ').some((w) => w.length >= 3 && ta.has(w));
 }
 
 function isGenericAddress(r) {
@@ -333,32 +363,100 @@ function isGenericAddress(r) {
   return !a || a === `${c}, pakistan` || a === `${c}, ${p}`;
 }
 
+function enrichRecord(prev, r, seen) {
+  let updated = false;
+  const hadGenericAddr = isGenericAddress(prev);
+  if (!prev.phone && r.phone) {
+    prev.phone = r.phone;
+    prev.whatsappCapable = r.whatsappCapable;
+    prev.whatsapp = r.whatsapp;
+    updated = true;
+  }
+  if (!prev.email && r.email) {
+    prev.email = r.email;
+    updated = true;
+  }
+  if (!prev.website && r.website) {
+    prev.website = r.website;
+    updated = true;
+  }
+  if (!isGenericAddress(r) && hadGenericAddr) {
+    prev.address = r.address;
+    updated = true;
+    if (r.city && prev.city !== r.city) {
+      const nextKey = dedupeKey(prev.name, r.city);
+      if (!seen.has(nextKey)) {
+        seen.delete(dedupeKey(prev.name, prev.city));
+        prev.city = r.city;
+        prev.province = r.province;
+        prev.area = r.area || r.city;
+        seen.set(nextKey, prev);
+      }
+    }
+  }
+  return updated;
+}
+
 let existing = [];
 if (args.merge) {
   try { existing = JSON.parse(readFileSync(OUT, 'utf8')).records || []; } catch { existing = []; }
 }
-const seen = new Map(existing.map((r) => [dedupeKey(r.name, r.city), r]));
+const existingSet = new Set(existing);
+const existingByKey = new Map(existing.map((r) => [dedupeKey(r.name, r.city), r]));
+const seen = new Map(existingByKey);
+const matchedExisting = new Set();
+const handledCollected = new Set();
 const unique = [];
 let dupes = 0;
 let enriched = 0;
+
+// Pass 1: exact normalized (name + city) matches against existing records first so swapped
+// registry numbers in upstream PDFs never steal a record that already matches by name+city.
 for (const r of collected) {
+  const key = dedupeKey(r.name, r.city);
+  if (existingByKey.has(key)) {
+    const prev = existingByKey.get(key);
+    matchedExisting.add(prev);
+    if (enrichRecord(prev, r, seen)) enriched++;
+    dupes++;
+    handledCollected.add(r);
+  }
+}
+
+// Pass 2: intra-batch dedupe + TREC registry fallback for CRO-city / OCR-variant broker rows.
+for (const r of collected) {
+  if (handledCollected.has(r)) continue;
   const key = dedupeKey(r.name, r.city);
   if (seen.has(key)) {
     const prev = seen.get(key);
-    let updated = false;
-    if (!prev.phone && r.phone) {
-      prev.phone = r.phone;
-      prev.whatsappCapable = r.whatsappCapable;
-      prev.whatsapp = r.whatsapp;
-      updated = true;
-    }
-    if (!isGenericAddress(r) && isGenericAddress(prev)) {
-      prev.address = r.address;
-      updated = true;
-    }
-    if (updated) enriched++;
+    if (enrichRecord(prev, r, seen) && existingSet.has(prev)) enriched++;
     dupes++;
     continue;
+  }
+  if (r.ntn && /^TREC\d+$/.test(r.ntn)) {
+    let prev = existing.find(
+      (e) => !matchedExisting.has(e)
+        && e.ntn === r.ntn
+        && (!e.phone || isGenericAddress(e))
+        && sharesBrokerIdentity(e.name, r.name)
+    );
+    if (!prev) {
+      const rNorm = normEntityName(r.name);
+      prev = existing.find(
+        (e) => !matchedExisting.has(e)
+          && !e.phone
+          && isGenericAddress(e)
+          && /^TREC\d+$/.test(e.ntn || '')
+          && (normEntityName(e.name) === rNorm
+            || (e.city === r.city && similarity(normEntityName(e.name), rNorm) >= 0.92))
+      );
+    }
+    if (prev) {
+      matchedExisting.add(prev);
+      if (enrichRecord(prev, r, seen)) enriched++;
+      dupes++;
+      continue;
+    }
   }
   seen.set(key, r);
   unique.push(r);
