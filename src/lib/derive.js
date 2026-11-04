@@ -85,6 +85,8 @@ export function derive(row) {
     name, catId, cat, city: city.name, province: city.province, area, street, address, bldg,
     phone, whatsapp, email, website, lat, lng, rating, reviews, employees, est, hours, description,
     verified: false,
+    // Generated filler: real-looking, but NOT a real business. Never presented as verified.
+    source: 'sample',
   };
 }
 

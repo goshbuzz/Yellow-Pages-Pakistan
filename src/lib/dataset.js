@@ -69,7 +69,7 @@ export async function searchBusinesses({ q = '', cat = null, city = null, sort =
   const curatedMatches = CURATED
     .filter((c) => (!cat || CATEGORY_BY_ID[cat]?.name === catNameOf(c)) && (!city || c.city === city) &&
       (!ql || c.name.toLowerCase().includes(ql) || catNameOf(c).toLowerCase().includes(ql) || c.city.toLowerCase().includes(ql)))
-    .map((c) => ({ ...c, cat: CATEGORY_BY_ID[c.cat], verified: true, __i: -1 }));
+    .map((c) => ({ ...c, cat: CATEGORY_BY_ID[c.cat], verified: true, source: 'seed', __i: -1 }));
 
   let merged;
   if (page === 1) merged = [...curatedMatches, ...generated];
@@ -95,7 +95,7 @@ export async function getBusiness(id) {
   if (id[0] === 'c') {
     const c = CURATED[+id.slice(1)];
     if (!c) return null;
-    return { ...c, cat: CATEGORY_BY_ID[c.cat], verified: true, __i: -1, id };
+    return { ...c, cat: CATEGORY_BY_ID[c.cat], verified: true, source: 'seed', __i: -1, id };
   }
   const row = await getGeneratedRow(+id.slice(1));
   if (!row) return null;

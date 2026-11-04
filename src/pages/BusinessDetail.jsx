@@ -7,6 +7,7 @@ import { ArrowLeft, Phone, MapPin, Mail, Globe, ExternalLink, Navigation, Bookma
 import { getBusiness, searchBusinesses, businessId } from '../lib/dataset';
 import { telHref, googleMapsUrl, googleMapsEmbedUrl } from '../lib/derive';
 import { waInfo, waShareHref } from '../lib/whatsapp';
+import { isReal, provenanceNote } from '../lib/provenance';
 import { Monogram, Stars, VerifiedBadge, SkeletonList, EmptyState, useToast } from '../components/ui';
 import { PitchModal } from '../components/PitchModal';
 import { findLead, addLead, removeLead } from '../lib/leads';
@@ -96,7 +97,7 @@ export default function BusinessDetail() {
     <div className="animate-slide-up pb-8 space-y-4">
       <SeoHead
         title={`${b.name} in ${b.city} — Phone, WhatsApp & Address | Yellow Pages PK`}
-        description={`Contact ${b.name} in ${b.city}, Pakistan. Phone: ${b.phone}, Category: ${b.cat?.name || 'Business'}, address: ${b.address}, verified listing.`}
+        description={`Contact ${b.name} in ${b.city}, Pakistan. Phone: ${b.phone}, Category: ${b.cat?.name || 'Business'}, address: ${b.address}.`}
         canonicalPath={`/b/${id}`}
         schema={schema}
       />
@@ -104,6 +105,18 @@ export default function BusinessDetail() {
       <button onClick={() => navigate(-1)} className="tap flex items-center gap-1.5 text-[13px] font-extrabold text-stone-500 mb-1 -mt-1">
         <ArrowLeft size={15} /> Back
       </button>
+
+      {!isReal(b) && (
+        <div className="rounded-2xl bg-amber-50 border border-amber-300 px-3.5 py-2.5">
+          <p className="text-[12.5px] font-extrabold text-amber-900">🧪 Sample record</p>
+          <p className="text-[11.5px] font-semibold text-amber-800 mt-0.5">{provenanceNote(b)}</p>
+        </div>
+      )}
+      {isReal(b) && provenanceNote(b) && (
+        <div className="rounded-2xl bg-stone-100 border border-stone-300 px-3.5 py-2.5">
+          <p className="text-[11.5px] font-semibold text-stone-600">ℹ️ {provenanceNote(b)}</p>
+        </div>
+      )}
 
       {/* Header card */}
       <div className="bg-white/95 rounded-[24px] border border-stone-200/80 shadow-card p-5 relative overflow-hidden">

@@ -11,6 +11,7 @@
 
 import { Phone, Copy } from 'lucide-react';
 import { waInfo } from '../lib/whatsapp';
+import { isReal } from '../lib/provenance';
 import { copyToClipboard } from '../lib/export';
 import { useToast } from './ui';
 
@@ -48,6 +49,28 @@ export function WhatsAppButton({
   const ver = VARIANT[variant] || VARIANT.card;
   const glyphSize = size ?? (variant === 'icon' ? 13 : variant === 'pill' ? 17 : 14);
   const iconOnly = variant === 'icon' || !label;
+
+  // Sample rows are demo filler. Rendering their digits as a live WhatsApp chat would
+  // send a stranger to an unrelated real person's phone — so the button stays, but it
+  // explains itself instead of opening a chat.
+  if (!isReal(b)) {
+    return (
+      <button
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toast('Sample record — import real listings to message this business', '🧪');
+        }}
+        title="Sample marketing record, not a real business. Its number is not a live WhatsApp line."
+        aria-label="Sample record — not a real business"
+        className={`tap shrink-0 flex items-center justify-center font-extrabold bg-stone-100 text-stone-400 border border-dashed border-stone-300 ${ver} ${className}`}
+      >
+        <WhatsAppGlyph size={glyphSize} />
+        {!iconOnly && <span>{variant === 'pill' ? 'Sample record' : 'Sample'}</span>}
+      </button>
+    );
+  }
 
   const onCopy = async (e) => {
     e.preventDefault();
@@ -92,6 +115,13 @@ export function WhatsAppButton({
 /** Small, honest status label: is this really a WhatsApp line? */
 export function WhatsAppStatus({ b, className = '' }) {
   const info = waInfo(b);
+  if (!isReal(b)) {
+    return (
+      <span className={`inline-flex items-center gap-1 text-[10.5px] font-bold text-stone-400 ${className}`}>
+        <Copy size={10} /> Sample record · not a real business
+      </span>
+    );
+  }
   if (info.state === 'landline') {
     return (
       <span className={`inline-flex items-center gap-1 text-[10.5px] font-bold text-stone-400 ${className}`}>

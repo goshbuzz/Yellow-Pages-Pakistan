@@ -22,7 +22,7 @@ function haversine(lat1, lng1, lat2, lng2) {
 const NEARBY_FAQS = [
   {
     q: 'How does the GPS Nearby locator find Pakistani businesses?',
-    a: 'It uses your browser or smartphone geolocation coordinates to calculate real-time haversine distances to verified businesses, sorting the closest establishments first.',
+    a: 'It uses your browser or smartphone geolocation coordinates to calculate real-time haversine distances to businesses in the directory, sorting the closest establishments first.',
   },
   {
     q: 'What happens if I decline GPS location permissions?',
@@ -30,7 +30,7 @@ const NEARBY_FAQS = [
   },
   {
     q: 'Are the distance estimates accurate in Pakistani cities?',
-    a: 'Distance is measured in direct kilometres/metres from your GPS fix to the verified latitude/longitude pin of each business.',
+    a: 'Distance is measured in direct kilometres/metres from your GPS fix to the latitude/longitude pin of each business.',
   },
   {
     q: 'Can I filter nearby listings by category like Food or Hospitals?',

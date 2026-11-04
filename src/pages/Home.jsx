@@ -74,7 +74,7 @@ export default function Home() {
     <div className="space-y-7 animate-slide-up pb-6">
       <SeoHead
         title="Directory Web App — Search 200,000+ Pakistani Businesses | Yellow Pages PK"
-        description="Search 200,000+ verified Pakistani businesses in the interactive web app. Fast directory search, B2B lead lists, offline mode, and 1-tap WhatsApp."
+        description="Search 200,000+ sample Pakistani business records in the interactive web app. Fast directory search, B2B lead lists, offline mode, and 1-tap WhatsApp."
         canonicalPath="/app"
         schema={makeFaqSchema(APP_FAQS)}
       />
