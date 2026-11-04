@@ -1,0 +1,22 @@
+{
+  "source": "Apollo.io organization enrichment, Nov 2026. Matched only when Apollo's primary_domain equalled the listing's website domain; mismatched, hijacked and phoneless matches were rejected.",
+  "note": "All numbers are head-office landlines/UANs. None is WhatsApp-capable, so they only feed the Call buttons.",
+  "records": [
+    { "domain": "aasml.com", "phone": "021-111111224" },
+    { "domain": "abl.com", "phone": "042-35880043" },
+    { "domain": "adam.com.pk", "phone": "021-32417812" },
+    { "domain": "aghasteel.com", "phone": "021-111112442" },
+    { "domain": "agico.com.pk", "phone": "051-111444687" },
+    { "domain": "agp.com.pk", "phone": "021-111247247" },
+    { "domain": "agriauto.com.pk", "phone": "042-35916856" },
+    { "domain": "aishasteel.com", "phone": "021-32468317" },
+    { "domain": "alghazitractors.com", "phone": "021-35318901" },
+    { "domain": "allawasaya.com", "phone": "061-4233624" },
+    { "domain": "alnoorsugar.co", "phone": "021-34550161" },
+    { "domain": "amrelisteels.com", "phone": "021-111267354" },
+    { "domain": "apl.com.pk", "phone": "051-5127250" },
+    { "domain": "apnabank.com.pk", "phone": "042-111771772" },
+    { "domain": "arifhabibcorp.com", "phone": "021-32460717" },
+    { "domain": "arifhabibdolmenreit.com", "phone": "021-111245111" }
+  ]
+}

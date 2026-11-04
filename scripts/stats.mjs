@@ -128,14 +128,14 @@ records.forEach((r, i) => {
   if (r.ownerVerified) ownerVerified++;
   if (r.website) withWebsite++;
 
-  // Pipe format: name|catId|cityIdx|areaIdx|streetIdx|bldg|seed|id|phone|whatsapp|source|email|website|lat|lng|rating|reviews|hours|area|address|province
+  // Pipe format: name|catId|cityIdx|areaIdx|streetIdx|bldg|seed|id|phone|whatsapp|source|email|website|lat|lng|rating|reviews|hours|area|address|province|phone2
   const esc = (v) => (v == null ? '' : String(v).replace(/\|/g, '/').replace(/\n/g, ' '));
   lines.push([
     esc(r.name), cat ? cat.id : catId ?? 0, cityIdx, 0, 0, esc(r.area || r.city), seed,
     esc(r.id), esc(r.phone), r.whatsapp ? 1 : 0, esc(r.source || 'dataset'),
     esc(r.email), esc(r.website),
     validPkPoint(r.lat, r.lng) ? r.lat : '', validPkPoint(r.lat, r.lng) ? r.lng : '',
-    r.rating ?? '', r.reviews ?? '', esc(r.hours), esc(r.area), esc(r.address), esc(r.province),
+    r.rating ?? '', r.reviews ?? '', esc(r.hours), esc(r.area), esc(r.address), esc(r.province), esc(r.phone2),
   ].join('|'));
 });
 

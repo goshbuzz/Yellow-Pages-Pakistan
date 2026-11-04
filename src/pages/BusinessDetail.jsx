@@ -91,7 +91,7 @@ export default function BusinessDetail() {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: b.name,
-      telephone: b.phone || undefined,
+      telephone: (b.phone2 ? [b.phone, b.phone2] : b.phone) || undefined,
       address: {
         '@type': 'PostalAddress',
         streetAddress: b.address,
@@ -161,6 +161,12 @@ export default function BusinessDetail() {
           ) : (
             <p className="flex items-center gap-2 text-stone-500">
               <Phone size={15} className="shrink-0 text-stone-400" /> No phone on record
+            </p>
+          )}
+          {b.phone2 && (
+            <p className="flex items-center gap-2 flex-wrap">
+              <Phone size={15} className="shrink-0 text-brand-deeper" /> <a href={telHref(b.phone2)} className="hover:underline">{b.phone2}</a>
+              <span className="text-[11.5px] font-extrabold text-stone-500">Head office</span>
             </p>
           )}
           {b.email && <p className="flex items-center gap-2"><Mail size={15} className="shrink-0 text-brand-deeper" /> <a href={`mailto:${b.email}`} className="text-sky-700 hover:underline truncate">{b.email}</a></p>}

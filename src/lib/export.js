@@ -14,12 +14,12 @@ export function leadsToCsv(leads) {
   // "WhatsApp" is a yes/no flag a human can filter on; "WhatsApp Link" is only ever
   // filled with a working direct-chat URL (mobile numbers), so imported lists stay
   // clean instead of carrying dead links for landlines.
-  const head = ['Name', 'Category', 'City', 'Province', 'Address', 'Phone', 'WhatsApp', 'WhatsApp Number', 'WhatsApp Link', 'Email', 'Website', 'Google Maps', 'Rating', 'Reviews', 'Status', 'Note', 'Added', 'Source', 'Trust'];
+  const head = ['Name', 'Category', 'City', 'Province', 'Address', 'Phone', 'Phone 2 (head office)', 'WhatsApp', 'WhatsApp Number', 'WhatsApp Link', 'Email', 'Website', 'Google Maps', 'Rating', 'Reviews', 'Status', 'Note', 'Added', 'Source', 'Trust'];
   const rows = leads.map((l) => {
     const number = waNumber(l.phone);
     const link = number ? waHref(l.phone) : '';
     return [
-      l.name, l.cat, l.city, l.province, l.address, l.phone,
+      l.name, l.cat, l.city, l.province, l.address, l.phone, l.phone2,
       number ? (l.whatsapp ? 'Yes' : 'Unverified') : 'No',
       number ? `+${number}` : '',
       link,

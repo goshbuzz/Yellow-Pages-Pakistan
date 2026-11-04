@@ -14,7 +14,7 @@ import { runQuery, buildIndex } from './searchCore.js';
 // (local dev/preview). A VITE_DATA_URL override wins over both.
 
 let names, lnames, cats, cityIdxs, areas, ratings, reviews, seeds, total = 0;
-let ids, phones, whatsapps, sources, emails, websites, lats, lngs, hoursArr, addresses, provinces;
+let phones2, ids, phones, whatsapps, sources, emails, websites, lats, lngs, hoursArr, addresses, provinces;
 let header = null;
 let cityLower, catLower;
 let index = null;
@@ -59,7 +59,7 @@ async function load() {
   cats = new Uint16Array(n); cityIdxs = new Uint16Array(n);
   areas = new Array(n);
   seeds = new Uint32Array(n); ratings = new Float32Array(n); reviews = new Uint16Array(n);
-  ids = new Array(n); phones = new Array(n); whatsapps = new Uint8Array(n);
+  ids = new Array(n); phones2 = new Array(n); phones = new Array(n); whatsapps = new Uint8Array(n);
   sources = new Array(n); emails = new Array(n); websites = new Array(n);
   lats = new Float64Array(n); lngs = new Float64Array(n);
   hoursArr = new Array(n); addresses = new Array(n); provinces = new Array(n);
@@ -88,6 +88,7 @@ async function load() {
     hoursArr[i] = f[17] || '';
     addresses[i] = f[19] || '';
     provinces[i] = f[20] || '';
+    phones2[i] = f[21] || '';
   }
   cityLower = CITIES.map((c) => c.name.toLowerCase());
   catLower = {};
@@ -135,6 +136,7 @@ function recordAt(i) {
     area: areas[i],
     address: addresses[i],
     phone: phones[i],
+    phone2: phones2[i] || null,
     whatsapp: whatsapps[i] === 1,
     source: sources[i],
     email: emails[i] || null,
