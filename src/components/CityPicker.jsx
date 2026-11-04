@@ -3,18 +3,19 @@
 import { useMemo, useState } from 'react';
 import { X, Search, MapPin } from 'lucide-react';
 import { CITIES, PROVINCES } from '../data/geo';
-import { STATS } from '../data/stats.generated';
+import { useLiveCounts } from '../lib/dataset';
 
 export function CityPicker({ open, value, onSelect, onClose }) {
   const [q, setQ] = useState('');
+  const counts = useLiveCounts();
   const groups = useMemo(() => {
     const ql = q.trim().toLowerCase();
     return PROVINCES.map((p) => ({
       province: p,
       cities: CITIES.filter((c) => c.province === p && (!ql || c.name.toLowerCase().includes(ql)))
-        .sort((a, b) => (STATS.byCity[b.name] || 0) - (STATS.byCity[a.name] || 0)),
+        .sort((a, b) => (counts.byCity[b.name] || 0) - (counts.byCity[a.name] || 0)),
     })).filter((g) => g.cities.length);
-  }, [q]);
+  }, [q, counts]);
 
   if (!open) return null;
   return (
@@ -48,7 +49,9 @@ export function CityPicker({ open, value, onSelect, onClose }) {
                     <span className="text-[12.5px] font-extrabold truncate flex items-center gap-1">
                       <MapPin size={11} className="shrink-0 opacity-60" />{c.name}
                     </span>
-                    <span className="text-[10px] font-bold text-stone-400 shrink-0 ml-1">{((STATS.byCity[c.name] || 0) / 1000).toFixed(1)}k</span>
+                    <span className="text-[10px] font-bold text-stone-400 shrink-0 ml-1">
+                      {(counts.byCity[c.name] || 0) > 0 ? counts.byCity[c.name].toLocaleString() : ''}
+                    </span>
                   </button>
                 ))}
               </div>

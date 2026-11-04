@@ -7,10 +7,9 @@ import { Search, TrendingUp, ChevronRight, Download, Wand2, MapPin, Globe, Arrow
 import { CATEGORIES, CATEGORY_BY_ID, slug as catSlug } from '../data/categories';
 import { CITIES, slugify as citySlug } from '../data/geo';
 import { CURATED } from '../data/curated';
-import { STATS } from '../data/stats.generated';
 import { CountUp, useToast, StatTile, Section } from '../components/ui';
 import { CompanyCard } from '../components/CompanyCard';
-import { suggest } from '../lib/dataset';
+import { suggest, useLiveCounts } from '../lib/dataset';
 import { customCount } from '../lib/customListings';
 import { PlusCircle } from 'lucide-react';
 import { useInstallPrompt } from '../components/InstallSheet';
@@ -50,6 +49,7 @@ export default function Home() {
   const navigate = useNavigate();
   const toast = useToast();
   const { openSheet, isInstalled } = useInstallPrompt();
+  const counts = useLiveCounts();
   const [q, setQ] = useState('');
   const [sugs, setSugs] = useState([]);
   const [focused, setFocused] = useState(false);
@@ -64,11 +64,11 @@ export default function Home() {
     return () => { alive = false; clearTimeout(t); };
   }, [q]);
 
-  const popularCats = useMemo(() => [...CATEGORIES].sort((a, b) => (STATS.byCat[b.id] || 0) - (STATS.byCat[a.id] || 0)).slice(0, 12), []);
+  const popularCats = useMemo(() => [...CATEGORIES].sort((a, b) => (counts.byCat[b.id] || 0) - (counts.byCat[a.id] || 0)).slice(0, 12), [counts]);
   const featured = useMemo(() => CURATED.slice(0, 5).map((c) => ({
     ...c, cat: CATEGORY_BY_ID[c.cat], id: 'c' + CURATED.indexOf(c), bizId: 'c' + CURATED.indexOf(c),
   })), []);
-  const topCities = useMemo(() => [...CITIES].sort((a, b) => (STATS.byCity[b.name] || 0) - (STATS.byCity[a.name] || 0)).slice(0, 8), []);
+  const topCities = useMemo(() => [...CITIES].sort((a, b) => (counts.byCity[b.name] || 0) - (counts.byCity[a.name] || 0)).slice(0, 8), [counts]);
 
   const go = (term) => navigate(`/browse?q=${encodeURIComponent(term)}`);
 
@@ -119,13 +119,13 @@ export default function Home() {
         <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-brand/20 blur-2xl" />
         <div className="absolute -bottom-14 -left-14 w-52 h-52 rounded-full bg-brand/10 blur-2xl" />
         <div className="absolute top-5 right-6 text-3xl animate-float">📖</div>
-        <h1 className="text-[26px] leading-[1.15] font-black tracking-tight">
+        <h1 className="text-[26px] lg:text-[38px] leading-[1.15] font-black tracking-tight">
           Pakistan&apos;s business book,<br />
           <span className="text-brand">now in your pocket.</span> 🐝
         </h1>
-        <p className="text-[13.5px] font-semibold text-stone-300 mt-2">
-          {STATS.total > 0
-            ? <>Search <b className="text-cream"><CountUp to={STATS.total} /></b> real businesses in <b className="text-cream">{CITIES.length}</b> cities — call, WhatsApp or pitch in one tap.</>
+        <p className="text-[13.5px] lg:text-[15px] font-semibold text-stone-300 mt-2">
+          {counts.total > 0
+            ? <>Search <b className="text-cream"><CountUp to={counts.total} /></b> real businesses in <b className="text-cream">{CITIES.length}</b> cities — call, WhatsApp or pitch in one tap.</>
             : <>A directory that starts empty and stays honest — <b className="text-cream">{CITIES.length}</b> cities ready, every listing sourced.</>}
         </p>
 
@@ -171,7 +171,7 @@ export default function Home() {
       {/* Stats strip */}
       <section className="grid grid-cols-3 gap-2.5">
         {[
-          { v: STATS.total, l: 'Listings', suffix: '' },
+          { v: counts.total, l: 'Listings', suffix: '' },
           { v: CATEGORIES.length, l: 'Categories', suffix: '' },
           { v: CITIES.length, l: 'Cities', suffix: '' },
         ].map((s) => (
@@ -188,20 +188,22 @@ export default function Home() {
           <h2 className="font-black text-ink text-lg">Popular categories 🔥</h2>
           <Link to="/categories" className="text-[12.5px] font-extrabold text-brand-deeper flex items-center">See all {CATEGORIES.length} <ChevronRight size={14} /></Link>
         </div>
-        <div className="grid grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5">
           {popularCats.map((c) => (
             <Link key={c.id} to={`/category/${catSlug(c.name)}`}
               className="tap flex items-center gap-2.5 bg-white/90 rounded-2xl border border-stone-200/80 p-2.5 shadow-card">
               <span className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style={{ background: c.color + '1A' }}>{c.emoji}</span>
               <span className="min-w-0">
                 <span className="block text-[12.5px] font-extrabold text-ink truncate">{c.name}</span>
-                <span className="block text-[10.5px] font-bold text-stone-400">{(STATS.byCat[c.id] || 0).toLocaleString()} listings</span>
+                <span className="block text-[10.5px] font-bold text-stone-400">{(counts.byCat[c.id] || 0).toLocaleString()} listings</span>
               </span>
             </Link>
           ))}
         </div>
       </section>
 
+      {/* Owner + freelancer USPs — side by side on wide screens */}
+      <div className="grid gap-6 lg:grid-cols-2">
       {/* Outreach USP — freelancers & agencies */}
       <section className="rounded-[28px] bg-gradient-to-br from-brand to-amber-400 p-5 shadow-pop text-ink relative overflow-hidden">
         <div className="absolute -right-6 -top-8 text-[100px] opacity-15 rotate-12">🎯</div>
@@ -236,6 +238,7 @@ export default function Home() {
           <Download size={15} /> List my business — free
         </Link>
       </section>
+      </div>
 
       {/* Featured verified */}
       <section>
@@ -243,7 +246,7 @@ export default function Home() {
           <h2 className="font-black text-ink text-lg">Flagship verified ⭐</h2>
           <Link to="/browse" className="text-[12.5px] font-extrabold text-brand-deeper flex items-center">More <ChevronRight size={14} /></Link>
         </div>
-        <div className="space-y-3">
+        <div className="grid gap-3 lg:grid-cols-2">
           {featured.map((b) => <CompanyCard key={b.name} b={b} dense />)}
         </div>
       </section>
@@ -256,7 +259,7 @@ export default function Home() {
             <Link key={c.name} to={`/city/${citySlug(c.name)}`}
               className="tap bg-white/90 border border-stone-200/80 rounded-full px-3.5 py-2 text-[12.5px] font-extrabold text-ink-soft shadow-card flex items-center gap-1.5">
               <MapPin size={12} className="text-brand-deeper" /> {c.name}
-              <span className="text-stone-400 font-bold">· {(STATS.byCity[c.name] || 0).toLocaleString()}</span>
+              <span className="text-stone-400 font-bold">· {(counts.byCity[c.name] || 0).toLocaleString()}</span>
             </Link>
           ))}
         </div>

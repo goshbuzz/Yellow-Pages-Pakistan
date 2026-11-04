@@ -161,7 +161,7 @@ export default function Nearby() {
       )}
 
       {mode === 'idle' && (
-        <div className="grid grid-cols-2 gap-2.5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
           {CITIES.slice(0, 10).map((c) => (
             <button key={c.name} onClick={() => { setCity(c.name); setMode('city'); }}
               className="tap bg-white/90 rounded-2xl border border-stone-200/80 p-3 text-left shadow-card">

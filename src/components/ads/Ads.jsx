@@ -54,7 +54,10 @@ export function BannerAd({ format = 'rectangle' }) {
       <div className="ad-frame-space" style={{ width: ad.width, height: ad.height }}>
         {active && <iframe title={`Advertisement (${ad.width} × ${ad.height})`}
           width={ad.width} height={ad.height} scrolling="no" frameBorder="0"
-          sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+          // allow-same-origin is required: Adsterra's invoke.js writes first-party
+          // cookies for frequency capping and dies mid-render without it (the frame
+          // would otherwise have an opaque origin where every cookie write throws).
+          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms"
           referrerPolicy="strict-origin-when-cross-origin" srcDoc={bannerDocument(ad)} />}
       </div>
     </aside>
@@ -124,12 +127,4 @@ export function OptionalAdScripts() {
     return () => clearTimeout(timer);
   }, [online, pathname]);
   return null;
-}
-
-export function AdSideRails() {
-  if (!enabled) return null;
-  return <>
-    <div className="ad-rail ad-rail--left"><BannerAd format="skyscraper" /></div>
-    <div className="ad-rail ad-rail--right"><BannerAd format="smallSkyscraper" /></div>
-  </>;
 }

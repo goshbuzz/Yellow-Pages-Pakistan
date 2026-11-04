@@ -2,7 +2,7 @@ import { BannerAd, NativeAd, ResponsiveBanner, SponsoredLink } from '../componen
 // Pure Website Home Page — Modern, high-converting portal with direct CTAs to the attached Web App.
 // Fully crawlable for Google Search Console, fast first paint, zero worker blocking.
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Search,
@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 import { CATEGORIES, slug as catSlug } from '../data/categories';
 import { CITIES, slugify as citySlug } from '../data/geo';
-import { STATS } from '../data/stats.generated';
+import { useLiveCounts } from '../lib/dataset';
 import { CURATED } from '../data/curated';
 import { CountUp } from '../components/ui';
 import { WhatsAppButton } from '../components/WhatsAppButton';
@@ -79,10 +79,15 @@ const TOP_CITIES_PREVIEW = [
   { name: 'Sialkot', province: 'Punjab' },
   { name: 'Hyderabad', province: 'Sindh' },
   { name: 'Sargodha', province: 'Punjab' },
-].map((c) => ({ ...c, count: STATS.byCity[c.name] || 0 }));
+].map((c) => ({ ...c }));
 
 export default function WebsiteHome() {
   const navigate = useNavigate();
+  const counts = useLiveCounts();
+  const topCities = useMemo(
+    () => TOP_CITIES_PREVIEW.map((c) => ({ ...c, count: counts.byCity[c.name] || 0 })),
+    [counts]
+  );
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -223,7 +228,7 @@ export default function WebsiteHome() {
                     className="bg-transparent outline-none text-[14px] font-bold text-stone-700 cursor-pointer pr-4"
                   >
                     <option value="">All 420 Cities</option>
-                    {TOP_CITIES_PREVIEW.map((c) => (
+                    {topCities.map((c) => (
                       <option key={c.name} value={c.name}>
                         {c.name} ({c.count.toLocaleString()})
                       </option>
@@ -289,10 +294,10 @@ export default function WebsiteHome() {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             <div className="bg-white/95 rounded-2xl p-5 border border-stone-200/80 shadow-card text-center">
               <p className="text-3xl md:text-4xl font-black text-ink">
-                {STATS.total > 0 ? <CountUp to={STATS.total} /> : 'New'}
+                {counts.total > 0 ? <CountUp to={counts.total} /> : 'New'}
               </p>
               <p className="text-xs font-black tracking-wider text-stone-400 mt-1 uppercase">
-                {STATS.total > 0 ? 'Real listings' : 'Directory — just launched'}
+                {counts.total > 0 ? 'Real listings' : 'Directory — just launched'}
               </p>
             </div>
             <div className="bg-white/95 rounded-2xl p-5 border border-stone-200/80 shadow-card text-center">
@@ -471,7 +476,7 @@ export default function WebsiteHome() {
             {POPULAR_CATEGORY_IDS.map((catId) => {
               const cat = CATEGORIES.find((c) => c.id === catId);
               if (!cat) return null;
-              const count = STATS.byCat[cat.id] || 0;
+              const count = counts.byCat[cat.id] || 0;
               return (
                 <Link
                   key={cat.id}
@@ -526,7 +531,7 @@ export default function WebsiteHome() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {TOP_CITIES_PREVIEW.map((city) => (
+            {topCities.map((city) => (
               <Link
                 key={city.name}
                 to={`/city/${citySlug(city.name)}`}

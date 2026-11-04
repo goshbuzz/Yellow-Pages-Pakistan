@@ -10,7 +10,8 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPinned, Search, Check, MessageCircle, Clock } from 'lucide-react';
 import { CITIES } from '../data/geo';
-import { STATS, COVERAGE, CITY_COVERAGE } from '../data/stats.generated';
+import { CITY_COVERAGE } from '../data/stats.generated';
+import { useLiveCounts } from '../lib/dataset';
 import { EmptyState } from '../components/ui';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
@@ -37,6 +38,7 @@ const COVERAGE_FAQS = [
 export default function Coverage() {
   const [q, setQ] = useState('');
   const [only, setOnly] = useState('all'); // all | covered | empty
+  const counts = useLiveCounts();
 
   const coverageMap = useMemo(
     () => Object.fromEntries(CITY_COVERAGE.map((c) => [c.name, c])),
@@ -49,8 +51,8 @@ export default function Coverage() {
       return {
         name: c.name,
         province: c.province,
-        total: cov?.total || 0,
-        whatsappCapable: cov?.whatsappCapable || 0,
+        total: counts.byCity[c.name] || 0,
+        whatsappCapable: counts.byCityWa[c.name] || 0,
         ownerVerified: cov?.ownerVerified || 0,
         lastImportAt: cov?.lastImportAt || null,
       };
@@ -62,10 +64,13 @@ export default function Coverage() {
       if (q && !r.name.toLowerCase().includes(q.toLowerCase())) return false;
       return true;
     });
-  }, [q, only, coverageMap]);
+  }, [q, only, coverageMap, counts]);
 
   const schema = makeFaqSchema(COVERAGE_FAQS);
-  const pct = COVERAGE.citiesTotal ? Math.round((COVERAGE.citiesCovered / COVERAGE.citiesTotal) * 100) : 0;
+  const citiesCovered = Object.keys(counts.byCity).length;
+  const citiesTotal = CITIES.length;
+  const pct = citiesTotal ? Math.round((citiesCovered / citiesTotal) * 100) : 0;
+  const waPct = counts.total ? Math.round((counts.whatsappCapable / counts.total) * 100) : 0;
 
   return (
     <div className="animate-slide-up pb-8 space-y-4">
@@ -87,9 +92,9 @@ export default function Coverage() {
 
       <div className="grid grid-cols-3 gap-2.5">
         {[
-          { v: COVERAGE.citiesCovered, l: `of ${COVERAGE.citiesTotal} cities`, hint: `${pct}%` },
-          { v: STATS.total, l: 'listings', hint: null },
-          { v: COVERAGE.whatsappCapable, l: 'WhatsApp-capable', hint: STATS.total ? `${COVERAGE.whatsappPct}%` : null },
+          { v: citiesCovered, l: `of ${citiesTotal} cities`, hint: `${pct}%` },
+          { v: counts.total, l: 'listings', hint: null },
+          { v: counts.whatsappCapable, l: 'WhatsApp-capable', hint: counts.total ? `${waPct}%` : null },
         ].map((s) => (
           <div key={s.l} className="bg-white/90 rounded-2xl border border-stone-200/80 py-3 text-center shadow-card">
             <p className="text-xl font-black text-ink">{s.v.toLocaleString()}</p>
@@ -112,8 +117,8 @@ export default function Coverage() {
       <div className="flex gap-2">
         {[
           { id: 'all', label: `All ${CITIES.length}` },
-          { id: 'covered', label: `With listings (${COVERAGE.citiesCovered})` },
-          { id: 'empty', label: `Awaiting (${COVERAGE.citiesTotal - COVERAGE.citiesCovered})` },
+          { id: 'covered', label: `With listings (${citiesCovered})` },
+          { id: 'empty', label: `Awaiting (${citiesTotal - citiesCovered})` },
         ].map((f) => (
           <button
             key={f.id}
@@ -128,7 +133,7 @@ export default function Coverage() {
       {rows.length === 0 ? (
         <EmptyState emoji="🔍" title="No cities match" hint="Try a shorter name or clear the filters." />
       ) : (
-        <div className="space-y-2">
+        <div className="grid gap-2 lg:grid-cols-2">
           {rows.slice(0, 120).map((r) => (
             <Link
               key={r.name}

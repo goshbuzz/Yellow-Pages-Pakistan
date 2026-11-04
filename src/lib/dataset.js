@@ -1,18 +1,19 @@
 // Dataset client — talks to the data worker; merges curated flagship profiles.
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { CURATED } from '../data/curated.js';
 import { CITIES } from '../data/geo.js';
 import { CATEGORY_BY_ID } from '../data/categories.js';
 import { getCustomListings, getCustomListing, asResultRow, isCustomId } from './customListings.js';
 import { validPkPoint } from './geovalidate.js';
+import { waNumber } from './whatsapp.js';
 
 let worker = null;
 let readyResolvers = [];
 let seq = 0;
 const pending = new Map();
 
-export const datasetState = { ready: false, total: 0, whatsappCapable: 0, ownerVerified: 0 };
+export const datasetState = { ready: false, total: 0, whatsappCapable: 0, ownerVerified: 0, byCat: {}, byCity: {}, byCityWa: {} };
 
 function ensureWorker() {
   if (worker) return worker;
@@ -24,6 +25,9 @@ function ensureWorker() {
       datasetState.total = e.data.total;
       datasetState.whatsappCapable = e.data.whatsappCapable || 0;
       datasetState.ownerVerified = e.data.ownerVerified || 0;
+      datasetState.byCat = e.data.byCat || {};
+      datasetState.byCity = e.data.byCity || {};
+      datasetState.byCityWa = e.data.byCityWa || {};
       readyResolvers.forEach((r) => r());
       readyResolvers = [];
       return;
@@ -51,6 +55,71 @@ export function useDataset() {
     return () => { readyResolvers = readyResolvers.filter((r) => r !== resolver); };
   }, []);
   return state;
+}
+
+/**
+ * Live listing counts across ALL three sources a visitor can actually open:
+ * the imported corpus (worker), the flagship curated profiles, and the device's
+ * own "my listings". Build-time STATS only covers the imported corpus, which is
+ * why category cards used to say "0 listings" while the category page showed
+ * several — the cards were counting one of the three sources.
+ */
+function computeLiveCounts() {
+  const byCat = {};
+  const byCity = {};
+  const byCityWa = {};
+  let total = 0;
+  let whatsappCapable = 0;
+
+  // 1. Imported corpus — the worker already counted it, fold its totals in bulk.
+  for (const [catId, n] of Object.entries(datasetState.byCat || {})) {
+    byCat[catId] = (byCat[catId] || 0) + n;
+  }
+  for (const [city, n] of Object.entries(datasetState.byCity || {})) {
+    byCity[city] = (byCity[city] || 0) + n;
+  }
+  for (const [city, n] of Object.entries(datasetState.byCityWa || {})) {
+    if (n) byCityWa[city] = (byCityWa[city] || 0) + n;
+  }
+  total += datasetState.total || 0;
+  whatsappCapable += datasetState.whatsappCapable || 0;
+
+  // 2 + 3. Curated flagship profiles and the device's own listings (small lists).
+  const add = (catId, city, wa) => {
+    total++;
+    if (catId != null) byCat[catId] = (byCat[catId] || 0) + 1;
+    if (city) {
+      byCity[city] = (byCity[city] || 0) + 1;
+      if (wa) byCityWa[city] = (byCityWa[city] || 0) + 1;
+    }
+    if (wa) whatsappCapable++;
+  };
+  for (const c of CURATED) add(c.cat, c.city, !!waNumber(c.phone));
+  for (const r of getCustomListings()) add(r.catId, r.city, !!r.whatsapp);
+
+  return { total, byCat, byCity, byCityWa, whatsappCapable };
+}
+
+/** Recomputes when the imported corpus becomes ready and when local listings change. */
+export function useLiveCounts() {
+  const ds = useDataset();
+  const [customVersion, setCustomVersion] = useState(0);
+  useEffect(() => {
+    const bump = () => setCustomVersion((v) => v + 1);
+    window.addEventListener('storage', bump);
+    window.addEventListener('focus', bump);
+    window.addEventListener('ypk:custom-listings', bump);
+    return () => {
+      window.removeEventListener('storage', bump);
+      window.removeEventListener('focus', bump);
+      window.removeEventListener('ypk:custom-listings', bump);
+    };
+  }, []);
+  return useMemo(
+    () => computeLiveCounts(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [ds.ready, ds.error, customVersion]
+  );
 }
 
 function ask(payload) {

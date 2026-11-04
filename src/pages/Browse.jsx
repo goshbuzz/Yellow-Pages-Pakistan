@@ -13,13 +13,12 @@ import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import {
   Search, SlidersHorizontal, MapPin, LayoutGrid, ChevronDown, X, Plus, RotateCcw,
 } from 'lucide-react';
-import { searchBusinesses } from '../lib/dataset';
+import { searchBusinesses, useLiveCounts } from '../lib/dataset';
 import { CATEGORIES, CATEGORY_BY_ID, slug as catSlug } from '../data/categories';
 import { CITIES, slugify as citySlug } from '../data/geo';
 import LandingInfo from '../components/LandingInfo';
 import { CompanyCard } from '../components/CompanyCard';
 import { SkeletonList, EmptyState, Chip, PageHeader } from '../components/ui';
-import { STATS, CITY_COVERAGE } from '../data/stats.generated';
 import { CityPicker } from '../components/CityPicker';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
@@ -50,13 +49,9 @@ const BROWSE_FAQS = [
   },
 ];
 
-/** Cities that actually have listings float to the top of the city suggestions. */
-const CITY_HITS = [...CITIES].sort(
-  (a, b) => (STATS.byCity[b.name] || 0) - (STATS.byCity[a.name] || 0) || a.name.localeCompare(b.name)
-);
-
 export default function Browse({ preset = null }) {
   const navigate = useNavigate();
+  const counts = useLiveCounts();
   const [params, setParams] = useSearchParams();
   const q = params.get('q') || '';
   // `preset` is set on the clean landing routes (/category/:slug, /city/:slug)
@@ -86,10 +81,13 @@ export default function Browse({ preset = null }) {
   }, []);
 
   const cityMatches = useMemo(() => {
+    const hits = [...CITIES].sort(
+      (a, b) => (counts.byCity[b.name] || 0) - (counts.byCity[a.name] || 0) || a.name.localeCompare(b.name)
+    );
     const t = cityQuery.trim().toLowerCase();
-    if (!t) return CITY_HITS.slice(0, 8);
-    return CITY_HITS.filter((c) => c.name.toLowerCase().includes(t)).slice(0, 8);
-  }, [cityQuery]);
+    if (!t) return hits.slice(0, 8);
+    return hits.filter((c) => c.name.toLowerCase().includes(t)).slice(0, 8);
+  }, [cityQuery, counts]);
 
   const applyCity = (name) => {
     setCityQuery(name || '');
@@ -156,7 +154,7 @@ export default function Browse({ preset = null }) {
     : '/browse';
 
   const schema = preset ? preset.page.schema : makeFaqSchema(BROWSE_FAQS);
-  const coveredCount = CITY_COVERAGE.length;
+  const coveredCount = Object.keys(counts.byCity).length;
 
   return (
     <div className="page-stack pb-10">
@@ -165,8 +163,8 @@ export default function Browse({ preset = null }) {
       <PageHeader
         title={preset ? preset.page.h1 : activeCat ? `${activeCat.emoji} ${activeCat.name}` : city ? `Businesses in ${city}` : 'Search directory'}
         subtitle={
-          STATS.total > 0
-            ? `${STATS.total.toLocaleString()} listings across ${coveredCount} cit${coveredCount === 1 ? 'y' : 'ies'}. Tap a card for directions and one-tap WhatsApp.`
+          counts.total > 0
+            ? `${counts.total.toLocaleString()} listings across ${coveredCount} cit${coveredCount === 1 ? 'y' : 'ies'}. Tap a card for directions and one-tap WhatsApp.`
             : 'Every listing here is sourced or owner-submitted — nothing is invented to fill space.'
         }
       />
@@ -305,7 +303,7 @@ export default function Browse({ preset = null }) {
                     All Pakistan
                   </button>
                   {cityMatches.map((c) => {
-                    const n = STATS.byCity[c.name] || 0;
+                    const n = counts.byCity[c.name] || 0;
                     return (
                       <button
                         key={c.name}
@@ -388,7 +386,7 @@ export default function Browse({ preset = null }) {
         {!results ? (
           <SkeletonList n={5} />
         ) : results.rows.length === 0 ? (
-          STATS.total === 0 ? (
+          counts.total === 0 ? (
             <EmptyState
               emoji="📭"
               title="No listings imported yet"
@@ -429,7 +427,7 @@ export default function Browse({ preset = null }) {
             />
           )
         ) : (
-          <div className="stack-sm">
+          <div className="grid gap-2.5 lg:grid-cols-2">
             {results.rows.map((b, i) => (
               <CompanyCard key={`${b.bizId || b.id || b.name}-${i}`} b={b} />
             ))}
