@@ -411,24 +411,33 @@ installed app on the next load instead of surviving indefinitely.
 
 ---
 
-## 11. Public-source harvest: PSX + SECP (2026-11-04)
+## 11. Public-source harvest: PSX + SECP + PMEX + PPIB/AEDB + ICAP + FPCCI (2026-11-05)
 
 The ask: *"add more from google all the public sources SECP and Stock Exchange Pakistan."*
-Google itself is not a data source (§8.1 — Google Maps ToS forbids harvesting), so it was
-used only to **discover** public registers; everything below is free, public, and attributed.
+Google itself is not a data source (§8.1 — Google Maps ToS forbids harvesting), so search was
+used only to **discover** official federal/statutory registers; everything below is free,
+public, active-only, PII-clean (zero CNICs), and attributed.
 
-**Imported (+853 real records, catalogue 1,167 → 2,020):**
+**Imported (+1,862 net real records + 194 existing registry rows enriched in place; catalogue 1,167 → 3,029; WhatsApp-capable `03xx` mobiles 431 → 1,219 [40.2%]):**
 
-| Source | Rows | Phones | Provenance | Notes |
+| Source | Rows added / merged | Phones | Provenance | Notes |
 |---|---|---|---|---|
-| PSX listed companies (`github.com/ajwadjaved/PSX-Listed-Companies`, scraped from psx.com.pk company profiles) | 449 of 535 | 449 landlines/lines | `official` + `sourceRef psx:<symbol>` | Address → city for all 535; 86 rows out (unclassifiable name, or a number that is not dialable as published — UANs without an area code etc.). Companies kept only where name/sector maps honestly onto one of the 130 categories. |
-| SECP securities brokers register ("Securities Brokers as on August 31, 2025", secp.gov.pk, wpdmdl=50330) | 201 of 207 | 6 enriched via SFA list | `official` + `sourceRef secp:<TREC>` | The brokers register publishes name + TREC no + CRO city only. Imported with `--allow-missing-phone`; 6 rows dedupe against PSX listings, and 6 more gain official phones (5 WhatsApp-capable mobiles) + street addresses from the SECP SFA register below. |
-| SECP NBFCs & Securities/Futures Advisors register ("List for NBFCs and SFAs as on August 31, 2026", secp.gov.pk, wpdmdl=67018) | 203 of 223 entities (281 license rows) | 139 new (85 `03xx` mobiles + 54 landlines) | `official` | Multi-license rows for the same firm (Asset Mgmt, Investment Advisory, Investment Finance, Housing Finance, Leasing, REIT Mgmt, PE/VC, Pension Fund, Securities/Futures Advisory) are consolidated per entity. 3 rows without a resolvable city are dropped; 17 dedupe against existing PSX/broker records (enriching 8 broker rows in place with phones/street addresses). |
+| PSX listed companies (`github.com/ajwadjaved/PSX-Listed-Companies`, scraped from psx.com.pk company profiles) | 449 of 535 | 449 landlines/lines | `official` + `sourceRef psx:<symbol>` | Address → city for all 535; 86 rows out (unclassifiable name, or a number that is not dialable as published). Companies kept only where name/sector maps honestly onto one of the 130 categories. |
+| SECP securities brokers register ("Securities Brokers as on August 31, 2025", secp.gov.pk, wpdmdl=50330) | 201 of 207 | 198 enriched via SFA + PSX TREC | `official` + `sourceRef official:TREC###` | Imported with `--allow-missing-phone`; 192 phone-less SECP broker rows are enriched in place (preserving `id` slugs) with official phones, emails, websites, and head-office street addresses from the PSX Active TREC Holders register below. |
+| SECP NBFCs & Securities/Futures Advisors register ("List for NBFCs and SFAs as on August 31, 2026", secp.gov.pk, wpdmdl=67018) | 203 of 223 entities (281 license rows) | 139 new (85 `03xx` mobiles + 54 landlines) | `official` | Multi-license rows consolidated per entity; 3 rows without a resolvable city dropped; 17 dedupe against PSX/broker records. |
+| PSX Active TREC Holders register (`psx.com.pk`, Aug 6, 2026) | 5 net new + 192 enriched in place (of 206 active) | 203 (25 `03xx` mobiles + 178 landlines/UANs) | `official` + `sourceRef official:TREC###` | Strictly excludes Suspended, Surrendered, Expired, and Non-Active rows. Two-pass `--merge` matches `dedupeKey(name, city)` first and `TREC###` second so swapped SECP PDF numbers never collide while CRO-city rows gain real head-office street addresses and phones. |
+| PMEX Licensed Futures Brokers & SECP-approved regional branches (`pmex.com.pk`, Aug 2025 / May 2026) | 62 net new + 1 enriched (of 108 active/branch rows) | 62 (30 `03xx` mobiles + 32 landlines) | `official` + `sourceRef official:PMEX-...` | Strictly Active=YES head offices + SECP-licensed regional branches across Multan, Faisalabad, Peshawar, Hyderabad, Sialkot, Sargodha, Rahim Yar Khan, Abbottabad, Jhelum, Chakwal, Toba Tek Singh, etc.; all individual CNICs omitted. |
+| SECP Active Insurers, Takaful Operators, Reinsurer & Health Insurance TPAs (`secp.gov.pk`, Jun 30, 2026, wpdmdl=49068 & 49347) | 25 net new + 1 enriched (of 48 active) | 25 (1 `03xx` mobile + 24 landlines/UANs) | `official` + `sourceRef official:SECP-INS-...` | Strictly excludes insurers under Section 63 cease directions or Section 143 winding-up; 18 PSX-listed insurers dedupe cleanly. |
+| PPIB / AEDB Certified Solar & Wind Installers — Categories C-1 & C-3 (`ppib.gov.pk`, AEDB Certification Regulations 2021) | 419 net new (of 423) | 419 (398 `03xx` mobiles + 21 landlines) | `official` + `sourceRef official:PPIB-CR/...` | Nationwide net-metering solar/wind engineering companies across 30+ cities; consultant-shared mobiles across 3+ unrelated firms are automatically stripped. |
+| ICAP Geographical Directory of Practising Chartered Accountant Firms (`icap.org.pk`) | 265 net new | 265 (138 `03xx` mobiles + 127 landlines) | `official` + `sourceRef official:ICAP-...` | Practising CA firm offices across Attock, Bahawalpur, Faisalabad, Jaranwala, Gujranwala, Gujrat, Hyderabad, Islamabad, and Karachi (`Tax Consultants & Auditors`). |
+| FPCCI Registered Member Trade Organizations 2024–2026 (`fpcci.org.pk`, updated Aug 13, 2026) | 233 net new (of 236) | 233 (197 `03xx` mobiles + 36 landlines) | `official` + `sourceRef official:FPCCI-...` | District Chambers of Commerce, Women Chambers, Small Traders Chambers, Joint Chambers, and National Trade/Industry Associations licensed under the Trade Organizations Act, 2013 (`NGOs & Community Organizations`). |
 
 **Registry rows without a phone** are first-class now: `import-listings --allow-missing-phone`
 (opt-in, default still drops), `stats.mjs` treats an *absent* phone as missing data (not a
 fake number), and the UI shows **"No phone on record"** instead of dead Call/WhatsApp buttons
-(`CompanyCard`, `BusinessDetail`, `WhatsAppButton` guard). A number is never invented.
+(`CompanyCard`, `BusinessDetail`, `WhatsAppButton` guard). Thanks to the PSX Active TREC
+Holders merge, phone-less registry rows fell from **259** down to **73** (9 inactive/PSX-blank
+SECP brokers + 64 SECP NBFCs/SFAs). A number is never invented.
 
 **Probed and NOT imported (verdicts for the next session):**
 
@@ -440,10 +449,9 @@ fake number), and the UI shows **"No phone on record"** instead of dead Call/Wha
   "Companies incorporation data" PDF is a *statistics bulletin* (counts only). GLEIF LEI
   mirrors SECP legal names + registered addresses (CC0, `api.gleif.org`, no phones) but
   only 179 PK entities have LEIs and the JSON:API is ~30 fetch chunks per page — rerun
-  offline if wanted. Among SECP's specialised PDF *registers*, securities brokers and
-  NBFCs & SFAs are now imported (and 29 listed Modarabas are already covered via PSX);
-  smaller remaining registers include credit-rating companies, debt securities trustees,
-  insurance/takaful registers, and share registrars.
+  offline if wanted. Among SECP's specialised PDF *registers*, securities brokers,
+  NBFCs & SFAs, and active insurers/takaful/health TPAs are now imported (and 29 listed
+  Modarabas are covered via PSX).
 - **Kaggle PSX dataset** — download requires sign-in; unusable in the sandbox.
 
 **Reproduce:**
@@ -460,12 +468,30 @@ npm run import -- --source=csv --in=/tmp/pubdata/secp-brokers.csv --as=official 
 npm run import -- --source=csv --in=/tmp/pubdata/secp-nbfcs.csv --as=official --merge \
   --allow-missing-phone --out=public/data/listings.json \
   --attribution="SECP NBFCs & Securities/Futures Advisors register (secp.gov.pk, Aug 2026)"
+npm run import -- --source=csv --in=/tmp/pubdata/psx-trec-holders.csv --as=official --merge \
+  --out=public/data/listings.json \
+  --attribution="PSX Active TREC Holders register"
+npm run import -- --source=csv --in=/tmp/pubdata/pmex-brokers.csv --as=official --merge \
+  --out=public/data/listings.json \
+  --attribution="PMEX Licensed Futures Brokers & SECP-approved branches"
+npm run import -- --source=csv --in=/tmp/pubdata/secp-insurers.csv --as=official --merge \
+  --out=public/data/listings.json \
+  --attribution="SECP Active Insurers, Takaful & Health TPAs register"
+npm run import -- --source=csv --in=/tmp/pubdata/ppib-solar-installers.csv --as=official --merge \
+  --out=public/data/listings.json \
+  --attribution="PPIB/AEDB Certified Solar & Wind Installers (Categories C-1 & C-3)"
+npm run import -- --source=csv --in=/tmp/pubdata/icap-ca-firms.csv --as=official --merge \
+  --out=public/data/listings.json \
+  --attribution="ICAP Directory of Practising Chartered Accountant Firms"
+npm run import -- --source=csv --in=/tmp/pubdata/fpcci-trade-bodies.csv --as=official --merge \
+  --out=public/data/listings.json \
+  --attribution="FPCCI Registered Member Trade Organizations (2024–2026)"
 node scripts/apply-apollo.mjs
 npm run stats
 ```
 
 `--merge` appends to an existing `listings.json` (each record keeps its own attribution, and
 phone-less registry rows are enriched in place when a subsequent official register supplies a
-phone or street address); without it the output file is replaced.
-`scripts/sources/secp-brokers.txt` and `scripts/sources/secp-nbfcs.txt` are the SECP
-registers as published (transcribed from the PDF tables).
+phone, email, website, or street address); without it the output file is replaced.
+`scripts/sources/*.txt` hold the official public registers as published (transcribed from the
+regulatory PDF tables with zero CNICs).

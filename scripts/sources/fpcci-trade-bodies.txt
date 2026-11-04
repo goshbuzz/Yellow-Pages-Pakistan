@@ -1,0 +1,240 @@
+# Official FPCCI Registered Member Trade Organizations (Chambers & Associations) 2024–2026 (Updated August 13, 2026)
+# Source: https://fpcci.org.pk/wp-content/uploads/2026/08/MEMBER-TBs-FPCCI-2024-2026-Registered-with-FPCCI-UPD-PW-13-08-2026_compressed.pdf
+# Licensed under the Trade Organizations Act, 2013 (DGTO / Ministry of Commerce).
+# Format: SNo|Type|Organization Name|City|Phone|Email|Website|Address
+1|Chamber|Chaman Chamber of Commerce & Industry|Chaman|0345-8874261; 0826-613308|cccichaman@yahoo.com||Commerce House, Trunch Road, Chaman
+2|Chamber|Chamber of Commerce & Industry Quetta|Quetta|0334-3453366; 081-2821943|qcci920@gmail.com|http://www.qccib.com.pk|Chamber Building, Zarghoon Road, Quetta
+3|Chamber|Makkran Chamber of Commerce & Industry|Turbat|0300-9220244; 0321-9220249; 0861-413679|mcci.mek@hotmail.com||Overseas Colony, Block II, Turbat
+4|Chamber|Pishin Chamber of Commerce & Industry|Pishin|0826-440099|pashin.chamberpcci@gmail.com|http://www.pishincci.com|1st Floor, Bacha Khan Road, Behind Shah Book Point, Bari Agha Street, Main Bazar, Pishin
+5|Chamber|Gwadar Chamber of Commerce & Industry|Gwadar|0342-2904902|info@gccigwadar.com|http://www.gwadarcci.com|GCCI House, Marine Drive, Near GDA Head Office, Gwadar
+6|Chamber|Loralai Chamber of Commerce & Industry|Loralai|0824-660977|loralaichamber@gmail.com|http://www.loralaicci.com|Tehsil Road, Loralai
+7|Chamber|Musa Khail Chamber of Commerce & Industry|Musa Khel Bazar|081-2842258|ftburex@yahoo.com|http://www.mcocai.com|Kingri Road, Haji Nazar Khan Plaza, Musa Khail Bazar
+8|Chamber|Chaghi Chamber of Commerce & Industry|Taftan|0825-507865|chaghichamber08@gmail.com|http://www.chaghicci.com|New Township FM Block, Taftan
+9|Chamber|Qilla Saifullah Chamber of Commerce & Industry|Qila Saifullah|081-2842258|killasaifull_cci@yahoo.com|http://www.ksccai.com|Muslim Bagh, Aryana Khan Market, Qilla Saifullah
+10|Chamber|Zhob Chamber of Commerce & Industry|Zhob|0346-5298725|info@zhobcci.com|http://www.zhobcci.com|No. 1, Musavir Plaza, Khudadad Road, Zhob
+11|Chamber|Gilgit Chamber of Commerce & Industry|Gilgit|05811-920673|gbcci11@gmail.com|http://www.gbcci.com.pk|Shahrah-e-Quaid-e-Azam, Khomer, Gilgit
+12|Chamber|Islamabad Chamber of Commerce & Industry|Islamabad|0321-5999944; 051-2250526|info@icci.com.pk|http://www.icci.com.pk|Aiwan-e-Sanat-o-Tijarat Road, Mauve Area, Sector G-8/1, Islamabad
+13|Chamber|Hunza Chamber of Commerce & Industry|Hunza|05813-455443|info@hcci.com.pk|http://www.hcci.com.pk|Chamber House, Beside Hunza Press Club, Aliabad, Hunza
+14|Chamber|Nagar Chamber of Commerce & Industry|Nagir|0345-5433323|nagarcci@gmail.com|http://www.nccigb.com|District Headquarter Nagar, Chalt Akbar Market, Chalt, Nagar
+15|Chamber|Skardu Chamber of Commerce & Industry|Skardu|0355-5352786; 05815-940105|info@scci.pk|http://www.skdscci.com|Office No. 01, K2 Paradise Building, Main Jail Road, Skardu
+16|Chamber|Ghizer Chamber of Commerce & Industry|Gahkuch|0310-4882277; 05814-921808|president@gccci.com.pk|http://www.gccci.com.pk|Opposite GC Hotel, Gahkuch, District Ghizer
+17|Chamber|Dera Ismail Khan Chamber of Commerce & Industry|Dera Ismail Khan|0300-9095266; 0966-732096|dikhan.cci@gmail.com||House No. 81, Near Gandapur House, Indus Society, Bannu Road, Dera Ismail Khan
+18|Chamber|Haripur Chamber of Commerce & Industry|Haripur|0334-9500670; 0995-628739|haripurchamber1994@gmail.com|http://www.haripurchamber.org.pk|Chamber House, Opposite Session Judge Bungalow, G.P.O. Road, Haripur
+19|Chamber|Kohat Chamber of Commerce & Industry|Kohat|0321-8150011; 0922-519013|kohatchamber@gmail.com|http://www.kohatcci.com|Kotal Shopping Arcade, Parking Area, Old Jail Road, Kohat
+20|Chamber|Mardan Chamber of Commerce & Industry|Mardan|0300-5700622; 0937-9230215|mardancci@gmail.com|http://www.mardancci.com|Chamber House, Aiwan-e-Sanat-o-Tijarat Road, College Chowk, Mardan
+21|Chamber|Sarhad Chamber of Commerce & Industry|Peshawar|0300-8585188; 091-9213313|sccip.psh@gmail.com|http://www.scci.org.pk|Sarhad Chamber House, G.T. Road, Peshawar
+22|Chamber|Swat Chamber of Commerce & Industry|Mingora|0300-8599713; 0946-711553|swatchamber@gmail.com|http://www.swatcci.com.pk|Office No. 6, 7, 8, Block-B, Al-Rahman Tower, G.T. Road, Amankot, Mingora, Swat
+23|Chamber|Mohmand Agency Chamber of Commerce & Industry|Peshawar|0300-9599700; 091-9225440|info@tacci.com.pk|http://www.tacci.com.pk|Office No. 1, 2nd Floor, Al-Fatah Medicine Center, Near Bank of Punjab, New Krishan Pura, Main G.T. Road, Peshawar
+24|Chamber|Chitral Chamber of Commerce & Industry|Chitral|0333-9122249; 0943-412517|cccichitral1@gmail.com|http://cccic.com.pk|Mountain Inn Hotel, DC Office Road, Chitral
+27|Chamber|Swabi Chamber of Commerce & Industry|Swabi|0300-5680946; 0938-270396|scci.swabi@swabichamber.org.pk|http://www.swabichamber.org.pk|1-B, Near EZDMC Office, Gadoon Amazai Industrial Estate, Swabi
+28|Chamber|Abbottabad Chamber of Commerce & Industry|Abbottabad|0300-8110665; 0992-388300|abbottabadcci5@gmail.com|http://www.abbottabadcci.com|Small Industrial Estate, Mansehra Road, Mandian, Abbottabad
+29|Chamber|Khyber Chamber of Commerce & Industry|Peshawar|0325-9724447; 091-9225451|info@khybercci.com.pk|http://www.khybercci.com.pk|Chamber Secretariat A-14, 2nd Floor, Pak Business Centre, Hashtnagri, Main G.T. Road, Peshawar
+30|Chamber|Charsadda Chamber of Commerce & Industry|Charsadda|0300-5700000; 091-9216444|ccci.i@yahoo.com||District Secretariat, 3rd Floor, Mardan Road, Charsadda
+31|Chamber|Nowshera Chamber of Commerce & Industry|Nowshera|0300-5077095; 0923-614614|nccinowshera@gmail.com||Alam Plaza, First Floor, Cavalry Road, Nowshera Cantt, Nowshera
+33|Chamber|Malakand Chamber of Commerce & Industry|Malakand|0345-9339339; 0932-333001|malakandchamber@gmail.com|http://www.malakandchamber.com.pk|Plot No. 84, Industrial Estate, Dargai, Malakand
+35|Chamber|Bannu Chamber of Commerce & Industry|Bannu|0333-9722578; 0928-623306|info@bucci.pk|http://www.bucci.pk|Farzand Plaza, 3rd Floor, Tehsil Bazar, Bannu
+37|Chamber|Mansehra Chamber of Commerce & Industry|Mansehra|0313-5805524; 0997-306788|mcci2314@gmail.com|http://www.mcci.com.pk|Opposite Abid Khan Plaza, Near Kahu, Ziarat Shinkiari Road, Mansehra
+38|Chamber|Upper Dir Chamber of Commerce & Industry|Upper Dir|0322-5779696; 0944-880007|dirupperchamberofcai@gmail.com||Office # 1, Main Bypass Road, Dir Bazar, Upper Dir
+39|Chamber|Attock Chamber of Commerce & Industry|Attock City|0300-8522300; 057-2613888|info@acci.org.pk|http://www.acci.org.pk|Rehman Avenue, Opp. Peoples Colony, Attock
+40|Chamber|Bahawalpur Chamber of Commerce & Industry|Bahawalpur|0321-8780476; 062-2055455|info@bcci.org.pk|http://www.bcci.org.pk|Karachi Bypass, National Highway, Bahawalpur
+41|Chamber|Chakwal Chamber of Commerce & Industry|Chakwal|0333-5901691; 0543-551913|theccci@hotmail.com||2nd Floor, Umer Plaza, Rawalpindi Road, Chakwal
+42|Chamber|Dera Ghazi Khan Chamber of Commerce & Industry|Dera Ghazi Khan|0345-8137777; 064-9260503|chamberofcommercedgk@gmail.com|http://www.dgkhanchamber.pk|House No. 3, Block-P, Qadria Darbar Road, Near Ghanta Ghar Gol Bagh, Dera Ghazi Khan
+43|Chamber|Gujrat Chamber of Commerce & Industry|Gujrat|0321-8622229; 053-9330021|info@gtcci.org.pk|http://www.gtcci.org.pk|G.T. Road, Gujrat
+44|Chamber|Jhang Chamber of Commerce & Industry|Jhang|0300-7861786; 047-9200434|info@jhangchamber.com||House # 947/B, Behind DPO House Road, Civil Lines, Jhang
+45|Chamber|Jhelum Chamber of Commerce & Industry|Jhelum|0334-6771111; 0544-587914|info@jcci.pk|http://www.jcci.pk|Jhelum Chamber House, Plot No. 1, KDC Garden, Chak Jamal Road, Jhelum
+46|Chamber|Okara Chamber of Commerce & Industry|Okara|0321-6952302; 044-3043310|info@occi.org.pk|http://www.occi.org.pk|Imran Akram Villas, Main Benazir Road, Okara
+47|Chamber|Rahim Yar Khan Chamber of Commerce & Industry|Rahim Yar Khan|068-9230008; 068-5889424|info@rykchamber.com|http://www.rykchamber.com|Shahbazpur Road, Rahim Yar Khan
+48|Chamber|Sahiwal Chamber of Commerce & Industry|Sahiwal|0300-8690746; 040-9330515|info@slcci.com.pk|http://www.slcci.com.pk|68/2, Main Fateh Sher Road, Sahiwal
+49|Chamber|Sargodha Chamber of Commerce & Industry|Sargodha|0300-8603837; 048-9230834|sec.scci@gmail.com|http://www.scci.org.pk|2-Main PAF Road, Sargodha
+50|Chamber|Sialkot Chamber of Commerce & Industry|Sialkot|0300-8619605; 052-4261881|sialkot@scci.com.pk|http://www.scci.com.pk|Shahrah-e-Aiwan-e-Sanat-o-Tijarat, Sialkot
+51|Chamber|The Faisalabad Chamber of Commerce & Industry|Faisalabad|0321-8666130; 041-9230265|info@fcci.com.pk|http://www.fcci.com.pk|FCCI Complex, East Canal Road, Faisalabad
+52|Chamber|The Gujranwala Chamber of Commerce and Industry|Gujranwala|055-9200391|gccci@gccci.org.pk|http://www.gccci.org.pk|Chamber Plaza, Aiwan-e-Tijarat Road, Gujranwala
+53|Chamber|The Lahore Chamber of Commerce & Industry|Lahore|0321-8463640; 042-36305538|sect@lcci.org.pk|http://www.lcci.org.pk|11-Shahrah-e-Aiwan-e-Tijarat, Lahore
+54|Chamber|The Multan Chamber of Commerce & Industry|Multan|0307-6660233; 061-4517087|info@mcci.org.pk|http://www.mcci.org.pk|Shahrah-e-Aiwan-e-Tijarat-o-Sanat, Multan
+55|Chamber|The Rawalpindi Chamber of Commerce & Industry|Rawalpindi|0300-8505129; 051-5111051|rcci@rcci.org.pk|http://www.rcci.org.pk|Chamber House, 39-Mayo Road, Civil Lines, Rawalpindi
+56|Chamber|The Sheikhupura Chamber of Commerce & Industry|Shekhupura|042-37168999|info@scci.net.pk|http://www.scci.net.pk|Chamber House, 23-KM Lahore-Sheikhupura Road, Qila Sattar Shah, Sheikhupura
+57|Chamber|The Vehari Chamber of Commerce & Industry|Vihari|0300-7729829; 067-3366464|info@vcci.org.pk|http://www.vcci.org.pk|148, Block L, Faisal Town, Vehari
+58|Chamber|Khanewal Chamber of Commerce & Industry|Khanewal|0300-4921600; 065-2557776|khanewalcci@yahoo.com|http://www.kcci.org.pk|26-A, Civil Line Road, Khanewal
+59|Chamber|Mandi Bahauddin Chamber of Commerce & Industry|Mandi Bahauddin|0300-7740499; 0546-586457|mbcci.info@gmail.com|http://www.mbcci.org|Secretariat Villa No. 1, City Center, Near Passport Office, Sufi City, Mandi Bahauddin
+60|Chamber|Chiniot Chamber of Commerce & Industry|Chiniot|0300-7700600; 047-9210045|info@cccipk.org|http://www.cccipk.org|7-City Trade Center, Sargodha Road, Chiniot
+61|Chamber|Toba Tek Singh Chamber of Commerce & Industry|Toba Tek Singh|0300-5551525; 046-3709360|tts.cci47@gmail.com||Qaims Garden, Jhang Road, Toba Tek Singh
+62|Chamber|Kasur Chamber of Commerce & Industry|Kasur|0322-5111109; 049-2770211|info@kcoci.com|http://www.kcoci.com|Com 2, Main Office, Main Boulevard, Saif City, Main Raiwind Road, Kasur
+63|Chamber|Talagang Chamber of Commerce & Industry|Talagang|0300-5013786; 0543-413086|||TCCI, Near Madni Chowk, Main Rawalpindi Road, Talagang
+64|Chamber|Pakpattan Chamber of Commerce & Industry|Pakpattan|0313-9499111; 0457-371515|pccipcci22@gmail.com||Dera Sabri, Mohalla Baba Farid, Pakpattan
+65|Chamber|Hafizabad Chamber of Commerce & Industry|Hafizabad|0300-7749832; 0547-583532|hccindustry@gmail.com|http://www.hcci.com.pk|Street # 02, Canal Garden Society, Hafizabad
+66|Chamber|Nankana Sahib Chamber of Commerce & Industry|Nankana Sahib|0300-1090318; 056-2874400|info@nscci.org.pk|http://www.nscci.org|Main Shahkot-Nankana Road, Near New Central Jail, Nankana Sahib
+67|Chamber|Layyah Chamber of Commerce & Industry|Layyah|0300-8765703; 0606-430840|layyahcci@gmail.com||Office No. 703, Near AK Foam, Chobara Road, Layyah
+68|Chamber|Wazirabad Chamber of Commerce & Industry|Wazirabad|0328-6528119|wazirabadchamberofcommerce@gmail.com||Maulana Zafar Ali Khan Building, Sialkot Road, Wazirabad
+69|Chamber|Mianwali Chamber of Commerce & Industry|Mianwali|0333-7989999|niazizohaib@gmail.com||Royal Plaza, Main Sargodha Road, Opposite Value CNG, Mianwali
+70|Chamber|Khushab Chamber of Commerce & Industry|Khushab|0300-6070935; 0318-6164622|khushabchaberofcommerce@gmail.com||House # 19, Block 18, Sarwar Shaheed Road, Jauharabad, Khushab
+71|Chamber|Dadu Chamber of Commerce & Industry|Dadu|0300-3407465; 025-4610093|info@dccidadu.org.pk|http://www.dccidadu.org.pk|1st Floor, Al-Qadir Trade Centre, New Chowk, Dadu
+72|Chamber|Karachi Chamber of Commerce & Industry|Karachi|0341-2001257; 021-99218001|info@kcci.com.pk|http://www.kcci.com.pk|Aiwan-e-Tijarat Road, Off Shahrah-e-Liaquat, Karachi
+73|Chamber|Khairpur Chamber of Commerce & Industry|Khairpur|0243-552486|khairpur_chamberofcommerce@yahoo.com||Babu Shah Colony, Jail Road, Khairpur
+74|Chamber|Larkana Chamber of Commerce & Industry|Larkana|0300-3407775; 074-4040709|president@larkanachamber.com.pk|http://www.larkanachamber.com.pk|21-23 J. F. Kennedy Market, Larkana
+75|Chamber|Mirpurkhas Chamber of Commerce & Industry|Mirpur Khas|0300-2847969; 0233-872175|info@mirpurkhascci.com.pk|http://www.mirpurkhascci.com.pk|New Town, Mirpur Khas
+76|Chamber|Shikarpur Chamber of Commerce & Industry|Shikarpur|0333-8315167; 0726-512204|shikarpur.cci786@gmail.com||Near Masjid Aqsa, Municipal Premises, Jumani Hall, Shikarpur
+77|Chamber|The Sukkur Chamber of Commerce & Industry|Sukkur|0331-9703090; 071-5623938|info@sukkurcci.org.pk|http://www.sukkurcci.org.pk|1st Floor, Sukkur Chamber House, Bunder Road, Sukkur
+78|Chamber|Jamshoro Chamber of Commerce & Industry|Jamshoro|0321-3029090; 022-3871114|info@jcci.org.pk|http://www.jcci.org.pk|Plot No. F/24-A, S.I.T.E. Kotri, Jamshoro
+79|Chamber|Shaheed Benazirabad Chamber of Commerce & Industry|Nawabshah|0333-7022088; 0244-385330|sbccinawabshah@gmail.com|http://www.sbcci.org.pk|DCO Secretariat Road, Near Nawabshah Press Club, Nawabshah
+80|Chamber|Hyderabad Chamber of Commerce & Industry|Hyderabad|022-2731621|info@hydcc.com|http://www.hydcc.com|C.S. # 41-488, Behind GPO, Aiwan-e-Tijarat Road, Hyderabad
+81|Chamber|Sanghar Chamber of Commerce & Industry|Sanghar|0300-8282188; 0235-574300|info@sangharcci.com|http://www.sangharcci.com|Plot # D/1, Berani Road, Near Sohail Marriage Garden, Tando Adam, Sanghar
+82|Women Chamber|Women Chamber of Commerce & Industry Quetta Division|Quetta|0335-9408085; 081-9202830|info@wcciqd.com|http://www.wcciqd.com|J.K. Apartment, Office No. 10, Near Tameer-e-Nau College Masjid, Zonki Ram Road, Quetta
+83|Women Chamber|Islamabad Women Chamber of Commerce & Industry|Islamabad|0323-5343199; 051-2252256|iwcci.pk@gmail.com|http://www.iwcci.org.pk|Office # G-5, Al-Mustafa Apartments, G-8 Markaz, Islamabad
+84|Women Chamber|Women Chamber of Commerce & Industry Gilgit Division|Gilgit|0347-5228011; 05813-457108|wcci.gb@gmail.com||Office No. 11, 1st Floor, Shehzad Market, Near Micro Finance Bank, Jutiyal, Gilgit
+85|Women Chamber|Women Chamber of Commerce & Industry Gilgit District|Gilgit|0346-5058576; 05811-450183|wcci.gilgit@gmail.com|http://www.wccig.pk|Karim House, Near MP Chowk, Main Naveed Shaheed Road, Sonikot, Gilgit
+86|Women Chamber|Women Chamber of Commerce and Industry Mardan Division|Mardan|0334-6577809; 0937-9230667|wcci_mardan@yahoo.com||Aiwan-e-Sanat-o-Tijarat Road, Chamber House, College Chowk, Mardan
+87|Women Chamber|Women Chamber of Commerce & Industry Peshawar Division|Peshawar|0322-4444529; 091-9225418|wcci_psh@yahoo.com|http://www.wccip.org.pk|Chamber House, G.T. Road, Peshawar
+88|Women Chamber|Women Chamber of Commerce & Industry Hazara Division|Abbottabad|0313-5866369; 0301-5510114|info@wccihd.com.pk|http://www.wccihd.com.pk|CB 531/77, Madina Colony, Street 1, Jhangi Syedan, Abbottabad
+89|Women Chamber|Women Chamber of Commerce & Industry Nowshera District|Nowshera|0301-8955643; 0923-614246|wccinowshera@gmail.com|http://www.wccin.net|1st Floor, Al-Jamil City Center, Nowshera Cantt, Nowshera
+90|Women Chamber|Women Chamber of Commerce & Industry Dir|Timargara|0945-825511|wccidir@gmail.com||Medrect International Hospital, 4th Floor, Bypass Road, Timargara
+91|Women Chamber|Women Chamber of Commerce & Industry Charsadda|Charsadda|0323-6666669; 091-9220555|wccc.i@yahoo.com||District Secretariat, 3rd Floor, Mardan Road, Charsadda
+92|Women Chamber|Kurram Women Chamber of Commerce & Industry|Parachinar|0334-5454683|kwcci.pk@gmail.com||Grad Colony, Parachinar, Upper Kurram
+93|Women Chamber|Women Chamber of Commerce & Industry Abbottabad|Abbottabad|0333-5860955; 0992-403096|wcciabbotabad@gmail.com||House # 103/4, Workshop Road, Rahe Niaz, Habibullah Colony, Abbottabad
+94|Women Chamber|Women Chamber of Commerce & Industry Bahawalpur Division|Bahawalpur|0321-4788891; 062-2886620|wccibwp@gmail.com|http://www.wccibwp.org.pk|42 A-3, Street No. 10, Model Town-A, Bahawalpur
+95|Women Chamber|Women Chamber of Commerce & Industry Lahore Division|Lahore|0301-8479393; 042-35771504|info@cnpwcci.org|http://www.cnpwcci.org|2nd Floor, Area # 5, Vogue Tower, 15 C/2, Gulberg 3, M.M. Alam Road, Lahore
+96|Women Chamber|Women Chamber of Commerce & Industry Multan Division|Multan|0321-6326352; 061-6012044|info@wccimultan.org|http://www.wccimultan.org|26-1st Floor, Trust Plaza, L.M.Q. Road, Multan
+97|Women Chamber|Faisalabad Women Chamber of Commerce & Industry|Faisalabad|0301-8663846; 041-9230161|info@fwcci.com.pk|http://www.fwcci.com.pk|2nd Floor, FCCI Complex, East Canal Road, Faisalabad
+98|Women Chamber|Attock Women Chamber of Commerce & Industry|Attock City|0303-5941077; 057-2613786|awcci.awcci@gmail.com|http://www.attock.wcci.pk|Office No. 786, Fateh Jang Road, Attock City
+99|Women Chamber|Rawalpindi Women Chamber of Commerce & Industry|Rawalpindi|051-4920137|info@rawalpindi.wcci.pk|http://www.rawalpindi.wcci.pk|Office 5, Ali Plaza, Beside Old WAPDA Office, Farooq-e-Azam Road, Shamsabad, Rawalpindi
+100|Women Chamber|Layyah Women Chamber of Commerce & Industry|Layyah|0302-9314200|layyahwcci@gmail.com|http://www.layyahwcci.com|Office No. 339, C Block Housing II, Near Angra Pull, Layyah
+101|Women Chamber|Dera Ghazi Khan Women Chamber of Commerce & Industry|Dera Ghazi Khan|0330-8091111; 064-2408185|dgkwcci@gmail.com|http://www.dgkwcci.pk|Qadeer Abad, Dera Gharbi, College Chowk, Dera Ghazi Khan
+102|Women Chamber|Women Chamber of Commerce & Industry Sialkot|Sialkot|0300-8615576; 052-4264257|womenchamber.skt@gmail.com||SCCI Building, Paris Road, Sialkot
+103|Women Chamber|Sahiwal Women Chamber of Commerce & Industry|Sahiwal|0314-3600789; 040-4400244|info@swcci.org|http://www.swcci.org|Jahaz Ground, Opposite GCT Sahiwal, Harappa Road, Sahiwal
+104|Women Chamber|Sargodha Women Chamber of Commerce & Industry|Sargodha|0324-4538893; 048-3213385|swcci.pk.1@gmail.com||FTO Office, Pir Muhammad Colony, University Road, Sargodha
+105|Women Chamber|Women Chamber of Commerce & Industry Khanewal|Khanewal|0301-8223044; 065-2552790|wccikwl@gmail.com||Office # 2, Daood Building, Civil Club Chowk, Khanewal
+106|Women Chamber|Gujrat Women Chamber of Commerce & Industry|Gujrat|0336-4194723; 053-3706300|gujratwomenchamber@gmail.com||2nd Floor, Gujrat Chamber of Commerce & Industry, G.T. Road, Gujrat
+107|Women Chamber|Women Chamber of Commerce & Industry Karachi South|Karachi|0321-2001008; 021-37223874|wccisouth@gmail.com|http://www.wccikarachisouth.wcci.pk|Office # 4, Plot # 1-C, Lane # 2, Sehar Commercial Area, Phase VII, D.H.A., Karachi
+108|Women Chamber|Women Chamber of Commerce & Industry Korangi|Karachi|0322-3849082; 021-35054440|info@wccik.org.pk|http://www.wccik.org.pk|A/10, First Floor, Causeway Apartment, Plot L-194, Sector 6-A, Mehran Town, KIA, Karachi
+109|Women Chamber|Karachi Women Chamber of Commerce & Industry District East|Karachi|021-34925010|info.kwcci@gmail.com||Suite # 410, 4th Floor, Adam Arcade, Main Shaheed-e-Millat Road, Karachi
+110|Women Chamber|Karachi Women Chamber of Commerce & Industry Malir District|Karachi|0303-2022270; 021-33512539|kwccimalir@gmail.com|http://www.kwccimalir.org.pk|Office No. B-107, Tower 3, Gohar Complex, Model Colony, Malir, Karachi
+111|Women Chamber|Women Chamber of Commerce & Industry Hyderabad Division|Hyderabad|0370-0036717|wccih.secretarygeneral@gmail.com||A-14, Opposite Dawood Pota Library, Qasimabad, Hyderabad
+112|Women Chamber|Women Chamber of Commerce & Industry Hyderabad District|Hyderabad|0308-3037489|wccihyderabad@gmail.com||Plot # A-7, Al-Abbas Housing Society, Main London Town Road, Qasimabad, Hyderabad
+113|Women Chamber|Women Chamber of Commerce & Industry Mirpur Khas Division|Mirpur Khas|0316-3666110|wccimirpurkhasdivision@gmail.com||Al Madina Traders, Main Hyderabad Road, Mirpur Khas
+114|Small Chamber|Chamber of Small Traders and Small Industry Quetta|Quetta|0333-7800803; 081-9202269|info@quettachamberstsi.com|http://www.quettachamberstsi.com|Bungalow # 382-BA, Near UBL Complex, Hali Road, Quetta
+115|Small Chamber|Chamber of Small Traders & Small Industry Gilgit|Gilgit|0346-9543207; 05811-454501|info@gbcsti.com|http://www.gbcsti.com|B-205, Dar Plaza, Nabi Bazar, Gilgit
+116|Small Chamber|Islamabad Chamber of Small Traders and Small Industries|Islamabad|0314-5799169; 051-9106160|icstsofficial@gmail.com|http://www.icstsi.com|2nd Floor, RDF Center, 31 Mauve Area, G-9/1, Islamabad
+117|Small Chamber|Hunza Chamber of Small Traders & Small Industry|Hunza|0300-8542401; 05811-400155|hunzachamber1@gmail.com|http://www.hunzachamberofsmalltraders.com|Office No. 103, Raja Market, Aliabad, Hunza
+118|Small Chamber|Peshawar Chamber of Small Traders and Small Industry|Peshawar|0332-8585888; 091-9225477|info@peshawarchamber.org.pk|http://www.peshawarchamber.org.pk|Ground Floor, Sheikh Yaseen Gold Tower, Masjid Mohabat Khan Road, Peshawar
+119|Small Chamber|Mardan Chamber of Small Traders & Small Industry|Mardan|0300-9175635; 0937-9230709|mrdsmallchamber@gmail.com|http://www.mrdsmallchamber.ucoz.com|Chamber House, Aiwan-e-Sanat-o-Tijarat Road, College Road, Mardan
+121|Small Chamber|Faisalabad Chamber of Small Traders & Small Industry|Faisalabad|0300-8662923; 041-9200834|info@fcsti.com|http://www.fcsti.com|1st Floor, 68-Gulistan Market, Railway Road, Faisalabad
+122|Small Chamber|Rawalpindi Chamber of Small Traders & Small Industry|Rawalpindi|0300-5147727; 051-5532176|info@rcstsi.pk|http://www.rcstsi.pk|2nd Floor, G-221, Faraz Plaza, Opp. Gordon College, Liaquat Road, Rawalpindi
+123|Small Chamber|Jhang Chamber of Small Traders and Small Industry|Jhang|0300-7503400; 047-9330060|jcstsi17@gmail.com|http://www.jhangchambers.com|Basement Floor, Blue Mall Plaza, Near Gojra Road Railway Crossing, Civil Lines, Jhang
+124|Small Chamber|Sargodha Chamber of Small Traders & Small Industries|Sargodha|0321-9605050; 048-3718899|info.scstsi@gmail.com|http://www.scstsi.pk|Office No. 01, 1st Floor, Qureshi Arcade, Main Khushab Road, Sargodha
+125|Small Chamber|Multan Chamber of Small Traders & Small Industry|Multan|0321-7322224; 061-4580000|multanchamber.stsi@gmail.com|http://www.mcstsi.org.pk|29 Decent Market, Hassan Parwana Colony, Multan
+126|Small Chamber|Lahore Chamber of Small Traders & Small Industry|Lahore|0333-4227711; 042-35960901|lcsti2023@gmail.com||Allah Malik Building, 97-A, Jail Road, Lahore
+128|Small Chamber|Sialkot Chamber of Small Traders & Small Industry|Sialkot|0321-6111213; 052-4263558|admin@scstsi.com.pk|http://www.scstsi.com.pk|SCCI Building, 1st Floor, Paris Road, Sialkot
+129|Small Chamber|Mandi Bahauddin Chamber of Small Traders & Small Industry|Mandi Bahauddin|0321-5548000|cstin.info@gmail.com||Chamber Secretariat, 1st Floor, Villa No. 1, Near Passport Office, Sufi City, Mandi Bahauddin
+130|Small Chamber|Rahim Yar Khan Chamber of Small Traders & Small Industry|Rahim Yar Khan|0300-8678480|usmanchahour@gmail.com||Bypass Road, Near Pull Baba Gharib Shah, Rahim Yar Khan
+131|Small Chamber|Hyderabad Chamber of Small Traders and Small Industry|Hyderabad|0300-0552828; 022-2720221|hydcsti@yahoo.com|http://www.hcstsi.com|Naz & Bilal Shopping Mall, 41/499/1, Mezzanine Floor, Saddar, Hyderabad
+132|Small Chamber|Dadu Chamber of Small Traders & Small Industry|Mehar|0345-6100311|dcstsidadu@gmail.com||Office # 1, Alwahab Rice Mills, Betto Road, Mehar, District Dadu
+133|Association|All Pakistan Car Dealers Association of Small Traders|Peshawar|0300-5951101; 091-3065063|apcda786@gmail.com||Jan Motors, Dalazak Chowk, Ring Road, Peshawar
+134|Association|All Pakistan Small Gems Jewellers & Tools Association|Lahore|0323-4303645; 042-37237427|apsgjta11@gmail.com|http://www.apsgjta.org.pk|Suite No. 3, 2nd Floor, Rana Center, 18 Jamal ud Din Afghani Road, Sunehri Mandi, Lahore
+135|Association|All Pakistan Small Customs Agents Association|Karachi|0300-2251535; 021-32432397|small.apcaa@gmail.com||Office # 6, 3rd Floor, Textile Plaza, M.A. Jinnah Road, Karachi
+136|Joint Chamber|Pak-Iran Joint Chamber of Commerce & Industry|Quetta|0300-8380881; 081-9202241|info@pakiranjointcci.com|http://www.pakiranjointcci.com|Bungalow No. 382-BA, Near UBL Complex, Hali Road, Quetta
+137|Joint Chamber|Azerbaijan Pakistan Joint Chamber of Commerce & Industry|Islamabad|0333-5557771; 051-8900003|info@apjcci.com|http://www.apjcci.com|Office # 2, 3rd Floor, Khyber Plaza, Fazal-e-Haq Road, Blue Area, Islamabad
+138|Joint Chamber|Pakistan China Joint Chamber of Commerce & Industry|Lahore|0321-7373996; 042-35777460|info@pcjcci.org|http://www.pcjcci.org|LDA Plaza, Lower Ground, Egerton Road, Lahore
+139|Joint Chamber|The American Business Council of Pakistan|Karachi|021-35248915|abcpak@abcpk.org.pk|http://www.abcpk.org.pk|155-C, 3rd Floor, Al-Murtaza Commercial Lane 2, Phase 8-A, D.H.A., Karachi
+140|Joint Chamber|Overseas Investors Chamber of Commerce & Industry|Karachi|021-32410814|info@oicci.org|http://www.oicci.org|Chamber of Commerce Building, Talpur Road, Karachi
+141|Joint Chamber|Pakistan Afghanistan Joint Chamber of Commerce & Industry|Karachi|0300-8275587; 021-99332675|info@pajcci.com|http://www.pajcci.com|Room No. 802, 8th Floor, International Trade Center, Hasrat Mohani Road, Karachi
+142|Association|All Pakistan Dry Fruit Importers & Exporters Association|Quetta|0313-0814865; 081-2838476|info@apdiea.org.pk|http://www.apdiea.org.pk|2nd Floor, National Plaza, Chuharmal Road Corner M.A. Jinnah Road, Quetta
+143|Association|All Pakistan Carbon Solvent Importers Association|Quetta|081-2842258||http://www.apcsia.com|C/o Farooq Traders, Shahrah-e-Iqbal, Quetta
+144|Association|All Pakistan Alloy Rim Manufacturers Association|Quetta|081-9203731|alloyrim010@gmail.com|http://www.allpakistanarma.com|Jinnah Road Corner Hali Road, Near Jan Mall, Quetta
+145|Association|Submersible Pump Importer Association of Pakistan|Quetta|081-2832630|submersiblepump001@gmail.com|http://www.spiapakistan.com|Zonki Ram Road, Near Tameer-e-Nau Masjid, J.K. Apartments, Quetta
+146|Association|All Pakistan Dry Fruits Dealers & Merchants Association|Quetta|0300-8385666; 081-2848548|info@apdf.pk|http://www.apdf.pk|Office # 1, Firdous Plaza, Fatima Jinnah Road, Quetta
+147|Association|All Pakistan CNG Association|Islamabad|0300-8562774; 051-2617511|apcnga@gmail.com|http://www.apcngassociation.com|Plot No. 401, 4th Floor, Yayan Plaza, Service Road East, Main Expressway, Islamabad
+148|Association|All Pakistan Marble Industries Association|Islamabad|0333-3003366; 051-4433508|apmia.ho@gmail.com|http://www.apmia.org.pk|Suite # 1, 1st Floor, Plot # 45, Street # 10, Sector I-9/2 Industrial Area, Islamabad
+149|Association|All Pakistan Textile Mills Association (APTMA)|Islamabad|0320-8459990; 051-8460026|aptmaisb@aptma.org.pk|http://www.aptma.org.pk|5th Floor, Evacuee Trust Complex, F-5/1, Islamabad
+150|Association|Pakistan Edible Oil Refiners Association|Islamabad|051-2212914|peora_isb@yahoo.com|http://www.peora.com.pk|House No. 392, Street No. 71, Sector G-11/2, Islamabad
+151|Association|Pakistan Gemstone & Minerals Association of Mining, Processing & Trade|Gilgit|0300-7601666; 05811-458541|info@pgma.com.pk|http://www.pgma.com.pk|A-119, 1st Floor, Dar Plaza, Gilgit
+152|Association|Pakistan Overseas Employment Promoters Association|Islamabad|0345-9510123; 051-8357274|info@poepa.com.pk|http://www.poepa.com.pk|Office # 7, 2nd Floor, Plaza 2000, I-8 Markaz, Islamabad
+153|Association|Pakistan Petroleum Exploration and Production Companies Association|Islamabad|051-2102135|mail@ppepca.com|http://www.ppepca.com|No. LG-004, Lower Ground Floor, Block No. 2, Savoy Apartments, Sector F-11/1, Islamabad
+154|Association|Pakistan Poultry Association|Islamabad|051-2801470|ppacentral@gmail.com|http://www.ppacentral.pk|Khalid Plaza, First Floor, Jinnah Avenue, Blue Area, Islamabad
+155|Association|Pakistan Sugar Mills Association|Islamabad|051-2150073|psma.centre@gmail.com|http://www.psmacentre.com|Office No. 102, Gulistan Khan House, Fazal-e-Haq Road, Blue Area, Islamabad
+156|Association|Pakistan Vanaspati Manufacturers Association|Islamabad|0321-8293910; 051-5913018|info@pvma.com.pk|http://www.pvma.com.pk|Villa # 80, I-Block, Gulberg Residencia, D-Markaz, Gulberg Greens, Islamabad
+157|Association|Hajj Organizers Association of Pakistan|Islamabad|051-2872700|hoap.pakistan.org@gmail.com|http://www.hoap.org.pk|Office No. A2, Block 21, Near Railway Reservation Office, Sector G-6, Islamabad
+158|Association|All Pakistan Oil Tankers Owners Association|Islamabad|051-4100364|apotoa@hotmail.com||House # 401, Street # 64, Sector I-8/3, Islamabad
+159|Association|Pakistan Association of Large Steel Producers|Islamabad|051-4446504|info@palsp.com.pk|http://www.palsp.com.pk|Plot No. 191, Sector I-10/3 Industrial Area, Islamabad
+160|Association|Pakistan Association of Exhibition Industry|Islamabad|0311-8888878; 051-2892002|info@paei.org.pk|http://www.paei.org.pk|Office No. 1, Block 26, PHA Apartments, Sector G-7/1, Islamabad
+162|Association|Pakistan Alternative Energy Association|Islamabad|051-2350364|info@aeapakistan.org|http://www.aeapakistan.org|Office # 21, 3rd Floor, Al-Inayat Mall, G-11 Markaz, Islamabad
+163|Association|Potato Association of Pakistan|Islamabad|0300-0088484; 051-2605659|potatopakistan23@gmail.com||Office # 18, 2nd Floor, Hill View Plaza, Jinnah Avenue, Blue Area, Islamabad
+164|Association|All Pakistan HVACR Association|Islamabad|0300-2733333; 051-2287560|secretarygeneral@alpha.org.pk|http://www.alpha.org.pk|Office No. 7 & 8, First Floor, Shawez Center, F-8 Markaz, Islamabad
+165|Association|Opticians Association of Pakistan|Islamabad|0321-5007567; 051-6107576|opticianspk@gmail.com||Office No. 6, 2nd Floor, Capital Trade Center, F-10 Markaz, Islamabad
+166|Association|Computer Hardware Association of Pakistan|Islamabad|0300-8554055; 051-2000055|official@chap.org.pk|http://www.chap.org.pk|1-4-B, Malik Complex, 80-East Jinnah Avenue, Blue Area, Islamabad
+167|Association|All Pakistan Petrol Pumps Owners Association|Islamabad|0300-6899263; 051-8492533|info.appoa@gmail.com||Property # 1234, Model Town, Humak, Islamabad
+168|Association|All Pakistan Commercial Exporters Association of Rough & Un-Polished Precious & Semi Precious Stones|Peshawar|0336-9189960; 091-9331910|apceap@yahoo.com|http://www.apcea.com.pk|Suite # 1, 2nd Floor, Al-Jalil Market, Namak Mandi, Peshawar
+169|Association|Livestock Exporters Association of Pakistan|Peshawar|091-2550899; 091-9225451|info@leap-pk.com|http://www.leap-pk.com|A-12, 2nd Floor, Pak Business Center, Near Amin Hotel, Hashtnagri, G.T. Road, Peshawar
+170|Association|All Pakistan Mine Owners Association|Abbottabad|0300-3860399; 0992-400408|info@apmoa.org.pk|http://www.apmoa.org.pk|Office # 5 & 6, 1st Floor, Yousuf Jamal Plaza, Mansehra Road, Supply, Abbottabad
+171|Association|Hunting & Sporting Knives, Swords & Accessories Association of Pakistan|Wazirabad|0300-8641646; 055-6601646|hskaap@gmail.com||Plot # 1, School Street, G.T. Road, Allahbad, Wazirabad
+172|Association|All Pakistan Bedsheets & Upholstery Manufacturers Association (APBUMA)|Multan|0300-8562836; 061-4552909|apbuma@gmail.com|http://www.apbuma.org|APBUMA House, E-260, PSIC-ECHS, Nagana Chowk, Northern Bypass Road, Multan
+173|Association|All Pakistan Cement Manufacturers Association (APCMA)|Lahore|042-35871632|apcm@hotmail.com||27-28/3A, FCC, Gulberg IV, Lahore
+174|Association|All Pakistan Cotton Power Looms Association|Faisalabad|0321-8663370; 041-2612929|||P-107/5, 1st Floor, Montgomery Bazar, Faisalabad
+175|Association|All Pakistan Particleboards Manufacturers Association|Lahore|0300-9403955; 042-37500477|info@appbma.org|http://www.appbma.org|Suite No. 28, Ground Floor, Eden Centre, 43-Jail Road, Lahore
+176|Association|All Pakistan P.V.C. & Plastic Pipe Manufacturers Association|Lahore|0300-6999259; 042-36307628|appma.pvcpipe@gmail.com|http://www.apppma.org|Suite # T-23, 3rd Floor, Bilal Centre, 9-Nicholson Road, Lahore
+177|Association|All Pakistan Solvent Extractors Association|Multan|0300-8684444; 061-4589434|secretary_apsea@hotmail.com|http://www.apsea.com.pk|Office No. 503, 5th Floor, The United Mall, Abdali Road, Multan
+178|Association|All Pakistan Textile Processing Mills Association|Faisalabad|0300-8221661; 041-9230289|aptpma@aptpma.com.pk|http://www.aptpma.com.pk|863-C, Amin Town, Kashmir Road, West Canal Road, Faisalabad
+179|Association|Constructors Association of Pakistan|Lahore|0300-2911519; 042-35178421|info@cappak.org|http://www.cappak.org|2nd Floor, Classic Complex, 35-M, Model Town Extension, Lahore
+180|Association|Handicrafts Association of Pakistan|Bahawalpur|0300-8436052; 062-2884510|info@hap.org.pk|http://www.hap.org.pk|3-B, Model Town-A, Ghaznavi Road, Bahawalpur
+181|Association|Pakistan Agriculture & Dairy Farmers Association|Faisalabad|041-8721953|chairman@padfapak.org|http://www.padfapak.org|JK House, 32-W, Susan Main Boulevard, Madina Town, Faisalabad
+182|Association|Pakistan Association of Automotive Parts & Accessories Manufacturers (PAAPAM)|Lahore|0300-8442688; 042-37498474|headoffice@paapam.com|http://www.paapam.com|16-B, Westwood Colony, Canal Bank Road, Thokar Niaz Baig, Lahore
+183|Association|Pakistan Association of Printing and Graphic Arts Industry|Lahore|0300-8248503; 042-35889229|papgai@yahoo.com|http://www.papgai.org|CC-25, Corporate Floor, Central Plaza, 3 Civic Centre, Barkat Market, New Garden Town, Lahore
+184|Association|Pakistan Canvas and Tents Manufacturers and Exporters Association|Lahore|0300-8258854; 042-35470385|info@pctmea.org|http://www.pctmea.org|2nd Floor, Plaza No. 122, Block A, Central Park Housing Scheme, Ferozepur Road, Lahore
+185|Association|Pakistan Cotton Ginners Association (PCGA)|Multan|0300-8211143; 061-4549815|pcga@pcga.org|http://www.pcga.org|PCGA House, M.D.A. Road, Multan
+186|Association|Pakistan Crop Protection Association|Multan|0300-7729334; 061-6514174|info@pcpa.pk|http://www.pcpa.pk|Plot # 7 & 8 Commercial Area, Phase-I Industrial Estate, Multan
+187|Association|Pakistan Cutlery & Stainless Utensils Manufacturers & Exporters Association|Wazirabad|0300-8621846; 055-6602825|info@pcsumea.org|https://pcsumea.org|50/1, G.T. Road, Opp. Govt. Degree College for Women, Wazirabad
+188|Association|Pakistan Electric Fan Manufacturers Association (PEFMA)|Gujrat|0345-6911105; 053-35707606|pefmapk@gmail.com|http://www.pefma.com|PEFMA House (Gorali), G.T. Road, Gujrat
+189|Association|Pakistan Ethanol Manufacturers Association|Lahore|042-35446518|info@pema.pk|http://www.pema.pk|318-A, Block B, Faisal Town, Lahore
+190|Association|Pakistan Flour Mills Association|Lahore|0300-3875387; 042-37422128|info@thepfma.com|http://www.thepfma.com|676 Shadman Colony-1, Lahore
+191|Association|Pakistan Footwear Manufacturers Association|Lahore|0321-4101410; 042-35750051|pfma@pakfootwear.org|http://www.pakfootwear.org|6-F, Rehman Business Centre, 32 B-III, Gulberg III, Lahore
+192|Association|Pakistan Gloves Manufacturers & Exporters Association|Sialkot|0333-3385858; 052-4272959|pgmea@pgmea.org.pk|http://www.pgmea.org.pk|PGMEA Building, Kashmir Road, Sialkot
+193|Association|Pakistan Software Houses Association for IT and ITES (P@SHA)|Rawalpindi|0345-8499393; 051-8736624|secretariat@pasha.org.pk|http://www.pasha.org.pk|Daftarkhwan Alpha, Old Airport Road, Chaklala Cantt, Rawalpindi
+194|Association|Pakistan Sports Goods Manufacturers & Exporters Association|Sialkot|0345-6680900; 052-3256930|psgmea@psgmea.org.pk|http://www.psgmea.org.pk|Business & Trade Center, 60/A Hali Road, S.I.E., Sialkot
+195|Association|Pakistan Steel Melters Association|Lahore|0300-8468691; 042-35759284|info@steelmelters.com|http://www.steelmelters.com|45-S, Gulberg Centre, 84-D/1 Main Boulevard, Gulberg III, Lahore
+196|Association|Pakistan Textile Exporters Association (PTEA)|Faisalabad|041-9201731|ptea@ptea.org.pk|http://www.ptea.org.pk|30/7, Civil Lines, PTEA Road, Near State Bank, Faisalabad
+197|Association|Rice Exporters Association of Pakistan (REAP)|Lahore|0345-6789196; 042-36280195|info@reap.com.pk|http://www.reap.com.pk|Office # 405, 421, 4th Executive Floor, Sadiq Plaza, The Mall, Lahore
+198|Association|Seed Association of Pakistan|Lahore|0300-8672001; 042-35310203|info@sap.com.pk|http://www.sap.com.pk|36-A, Jubilee Town, Lahore
+199|Association|The Pakistan Jute Mills Association|Lahore|0300-8441888; 042-35778300|info@pjma.com.pk|http://www.pjma.com.pk|47-A-1, Gulberg III, Guru Mangat Road, Lahore
+200|Association|The Pakistan Steel Re-Rolling Mills Association|Lahore|0300-8442770; 042-37227136|info@psrma.com|http://www.psrma.com|Rashid Chambers, 6-Link McLeod Road, Lahore
+201|Association|The Surgical Instrument Manufacturers Association of Pakistan (SIMAP)|Sialkot|0344-4444676; 052-3554890|info@simap.org.pk|http://www.simap.org.pk|Near Sublime Chowk, Marala Road, Sialkot
+202|Association|United Producers Association|Lahore|042-35716016|info@upa.org.pk|http://www.upa.org.pk|66-P, Gulberg II, Lahore
+203|Association|Pakistan Dairy Association|Lahore|042-37135026|pakdairy@gmail.com|http://www.pda.com.pk|First Floor, Plaza # 169, Sector C, Commercial Broadway, Phase 8, DHA, Lahore
+204|Association|Pakistan Chemical Manufacturers Association|Lahore|0300-8422998; 042-35312131|info@pcma.org.pk|http://www.pcma.org.pk|Office # 5, First Floor, Commercial Center, PCSIR-2, Johar Town, Lahore
+205|Association|All Pakistan Fertilizer Dealers Association|Multan|0300-6949021; 061-4501666|info@apfda.org|http://www.apfda.org|1st Floor, Abdullah Centre, LMQ Road, Multan
+206|Association|All Pakistan Furniture Makers Association|Gujrat|0321-4557125; 053-9330033|info.apfma@gmail.com|http://www.apfma.org.pk|Gujrat Chamber of Commerce Building, 2nd Floor, G.T. Road, Gujrat
+207|Association|Polymer Waste Importers and Recyclers Association|Lahore|0321-8235272; 042-35926439|pwiara@yahoo.com|http://www.pwiara.org|Office No. 2, First Floor, Abdullah Plaza, 5-K Commercial Area, Model Town, Lahore
+208|Association|All Pakistan Stainless Steel Importers and Traders Association|Gujranwala|055-3856873|info@apssita.org.pk|http://www.apssita.org.pk|1st Floor, 33-Aftab Steel Market, G.T. Road, Gujranwala
+209|Association|All Pakistan Cement Distributors Association|Lahore|0300-8454594; 042-37594022|smtheadoffice@yahoo.com|http://www.apcda.com.pk|92-Ferozepur Road (Ichhra), Lahore
+210|Association|Pakistan Cosmetics Manufacturers Association|Lahore|0300-8690222; 042-36300791|info@pcma.com.pk|http://www.pcma.com.pk|Room No. 511/512, 5th Floor, National Tower, Egerton Road, Lahore
+211|Association|CropLife Pakistan Association|Lahore|0321-4775456; 042-35694418|croplife@croplifepakistan.org|http://www.croplifepakistan.org|174-MB, Shabbir Sharif Road, Sector-J, D.H.A. Phase 6, Lahore
+212|Association|Pakistan Film Producers Association|Lahore|0301-2189370; 042-37322904|pfilmation@gmail.com|http://www.pfpapakistan.com|Regal Cinema Building, Shahrah-e-Quaid-e-Azam, Lahore
+213|Association|All Pakistan Aluminum Utensils Manufacturers Association|Gujranwala|0300-8641163; 055-9200400|info@apauma.com|http://www.apauma.com|Room No. 16, 1st Floor, T-Block, Trust Plaza, G.T. Road, Gujranwala
+214|Association|All Pakistan Oil Mills Association|Multan|0300-8376585; 061-4377111|sec.gen.apoma@gmail.com||Noor Pur, 20 KM Main Bahawalpur Road, Multan
+215|Association|Pakistan Steel Linepipe Industry Association|Lahore|0300-8462444; 042-36310960|secretary.pspa@hotmail.com||4th Floor, Davis Hytes, 38-Davis Road, Lahore
+216|Association|Pakistan LPG Marketers Association|Lahore|0300-8472199; 042-35847791|chairmanplpgma@gmail.com||99-A, Babar Block, New Garden Town, Lahore
+217|Association|All Pakistan Toys Traders Association|Lahore|0300-8401004; 042-37663101|info@apta.com.pk|http://www.apta.com.pk|2nd Floor, Japan Center, Plastic Market, Shahalam Market, Lahore
+219|Association|All Pakistan Corrugated Cartons Manufacturers Association|Lahore|0301-8242418|apccmanorthern@gmail.com||1st Floor, Management House, 95 J-1 Johar Town, Near Al-Fateh Store, Lahore
+220|Association|Chainstore Association of Pakistan|Lahore|0300-2068292; 042-35801286|info@chainstore.pk|http://www.chainstore.pk|Plaza No. 9-10, Block B, Phase I, Bankers Cooperative Housing Society, Lahore
+221|Association|Pakistan Artificial Leather Manufacturing Association|Lahore|0321-9444999; 042-35782293|info@palma.com.pk|http://www.palma.com.pk|5-A, Main Boulevard, Gulberg II, Lahore
+222|Association|Brick Kiln Owners Association of Pakistan|Lahore|0300-8411999; 042-38975148|info@bkoap.org|http://www.bkoap.org|Suite # 21, Ross Residentia, 3rd Floor, Canal Road, Wafaqi Colony Stop, Johar Town, Lahore
+223|Association|Pakistan Pottery Manufacturing Association|Gujrat|0300-8620764; 053-3726384|ppmagujrat950@gmail.com|http://www.pakistanpotterymanufacturingassociation.com|Plot No. 83/A, Small Industrial Estate, G.T. Road, Gujrat
+225|Association|Oil Marketing Association of Pakistan|Lahore|042-35836611|info@omap.org.pk|http://www.omap.org.pk|22-A, National Homes, New Muslim Town, Lahore
+226|Association|Pakistan Hi-Tech Hybrid Seed Association|Lahore|0300-8670009; 042-35165003|sg@phhs.com.pk|http://www.phhs.com.pk|House No. 12-B, 1st Floor, Main Boulevard, Faisal Town, Lahore
+227|Association|All Pakistan Car Dealers & Importers Association|Lahore|042-35135421|imransaad.2816@gmail.com||Office No. 1307/1308, 13th Floor, High Q Towers, Gulberg 5, Jail Road, Lahore
+228|Association|Pakistan Electromedical Equipment Manufacturers & Distributors Association|Lahore|0321-8479940; 042-37894888|info@pemda.org.pk|http://www.pemda.org.pk|1311, High Q Tower, 1-A Jail Road, Lahore
+229|Association|Art & Decor Association of Pakistan|Lahore|0300-8661960; 042-36282500|artdecorassociation12@gmail.com||49 Mozang Road, Lahore
+230|Association|Pakistan Solar Association|Lahore|0345-8492425; 042-35311819|info@pakistansolarassociation.org|http://www.pakistansolarassociation.org|437 Commercial, G-1 Block, Abdul Haq Road, Johar Town, Lahore
+231|Association|Pakistan Wheat Flour Dealers & Traders Association|Rahim Yar Khan|0300-8677480; 068-5904656|pwfda@gmail.com||Bypass Road, Near Al-Mukhtar Flour Mills, Rahim Yar Khan
+232|Association|Pakistan Ferrous Non-Ferrous Metals Association|Gujranwala|0300-8743843|pfnfma@gmail.com||Office # 60/2, Ground Floor, E/L Block, Citi Housing Society, Gujranwala
+233|Association|Seed Importers & Producers Association of Pakistan|Gujranwala|0300-8662681; 055-4253602|sipap2021@gmail.com||1st Floor, Siddiq Center, Sheikhupura Road, Opposite Mini Stadium, Gujranwala
+234|Association|All Pakistan Meat Exporters & Processors Association|Lahore|0321-9545570; 042-35169450|info@apmepa.com|http://www.apmepa.com|177-B, Johar Town, Lahore
+235|Association|Pakistan Veterinary Pharmaceutical Association|Lahore|0304-4444590; 042-38975094|info@pvpa.com.pk|http://www.pvpa.com.pk|674, P-Block, Johar Town, Lahore
+236|Association|All Pakistan Cables & Conductors Manufacturers Association|Lahore|0345-0111666; 042-111-000-343|info@apccma.com||192-Y, Commercial Phase 3, D.H.A. Cantt, Lahore
+237|Association|Tyre Manufacturers Association Pakistan|Lahore|0300-8414108; 042-35751990|tmap248@gmail.com||2-B, Ayesha Siddiqua Road, Main Gulberg, Lahore
+238|Association|Pakistan Fasteners Manufacturers & Traders Association|Lahore|0321-4411962; 042-36365951|info@pfmta.com|http://www.pfmta.com|9-B, Cooper Road, Lahore
+239|Association|All Pakistan Outdoor Advertisers Association|Lahore|0310-8461222; 042-111-111-148|secretary.general@apoaa.org|http://www.apoaa.org|198-C, Commercial Broadway, D.H.A. Phase 8, Lahore
+240|Association|Pakistan Paper Importers & Converters Association|Lahore|0300-9209800; 042-37210576|info@ppica.com.pk|http://www.ppica.com.pk|Office # 1, Khairdin Street, 31 Paisa Akhbar, Urdu Bazar, Lahore
+241|Association|Pakistan Industrial Sewing Machine Importers & Dealers Association|Lahore|0312-4231932|pismapak@gmail.com|http://www.pismida.org.pk|7/B, Rex Plaza, 42 Nicholson Road, Boharwala Chowk, Lahore
+242|Association|Air Cargo Agents Association of Pakistan|Karachi|0300-8442937; 021-34383501|sec.gen@acaap.org|http://www.acaap.org|Room # 601, 6th Floor, Plot # 107-K, Shayan Business Corners, Block 2, P.E.C.H.S., Karachi
+243|Association|All Pakistan Customs Agents Association|Karachi|0300-9229440; 021-32311155|apcaa.pk@gmail.com|http://www.apcaa.com.pk|Burhani Terrace, Ground Floor, Bohri Road, Opp. Custom House, Karachi
+244|Association|All Pakistan Fruit & Vegetable Exporters, Importers & Merchants Association|Karachi|0300-8259125; 021-34922290|info@pfva.net|http://www.pfva.net|B-18/1, Block 13, Gulshan-e-Iqbal, Karachi
+245|Association|All Pakistan LPG Distributors Association|Karachi|0300-8204994; 021-34546619|info@lpgassociation.com.pk|http://www.lpgassociation.com.pk|House No. 2-B, Ground Floor, Block 6, Shahrah-e-Faisal, P.E.C.H.S., Karachi
+246|Association|All Pakistan Paper Merchants Association|Karachi|021-32621041; 021-32627866|info@appma.com.pk|http://www.appma.com.pk|Office # 302, 3rd Floor, Al-Rasheed Center, Faiz Muhammad Fateh Ali Road, Karachi

@@ -1,0 +1,113 @@
+# Official PMEX Licensed Futures Brokers with SECP (as of August 13, 2025) & SECP-Licensed Branches (as of May 25, 2026)
+# Source 1: https://pmex.com.pk/wp-content/uploads/2025/08/PMEX-Licensed-Futures-Brokers-with-SECP-13-08-2025.pdf
+# Source 2: https://pmex.com.pk/wp-content/uploads/2026/05/List-of-Branches-of-PMEX-Licensed-Futures-Brokers-25-05-2026.pdf
+# Filtered strictly to Active = YES head offices + SECP-approved regional branches (all individual CNICs omitted).
+# Format: Type|PMEX_TREC|RegNo|Company Name|City|Phone|Website|Address
+HO|002|BRC-017|Adam Securities Limited|Karachi|021-32420909||Room # 806-814, 8th Floor Stock Exchange Building, I.I. Chundrigar Road, Karachi
+HO|005|BRC-371|Advance Capital (Private) Limited|Lahore|042-32303770||3rd Floor, 51-L Block, Khokhar Chowk, Johar Town, Lahore
+HO|008|BRC-346|Standard Capital Securities (Private) Limited|Karachi|021-111-111-721|http://www.scstrade.com|Room # M 34 Mezzanine Floor, Park Towers, Plot No. 1, C.F. 1-5, Shahrah-e-Firdousi, Clifton, Karachi
+HO|019|BRC-359|La Mercancia (Private) Limited|Islamabad|0322-8500085; 051-2270540||Office No. 2-A, Mezzanine Floor, 79-E, Al Rehman Chamber, Fazal-e-Haq Road, Blue Area, Islamabad
+HO|023|BRC-020|IGI Finex Securities Limited|Karachi|021-111-444-001||Suite No. 701-703, 7th Floor, The Forum, G-20, Khayaban-e-Jami, Block 9, Clifton, Karachi
+HO|030|BRC-082|JS Global Capital Limited|Karachi|021-111-574-111; 021-32799005|https://www.jsgcl.com|17th & 18th Floor, The Centre, Plot No. 28, S.B.5, Abdullah Haroon Road, Saddar, Karachi
+HO|031|BRC-256|Paramount Commodities (Private) Limited|Karachi|021-32468741||Office # 901, 9th Floor, Jilani Tower, M. A. Jinnah Road, Karachi
+HO|041|BRC-040|Summit Capital (Private) Limited|Karachi|021-111-226-100; 021-32467951||504-506, 5th Floor, Balad Trade Center-III, Plot # D-75, Block 7, Clifton, Saddar Town, Karachi
+HO|043|BRC-351|Rafi Securities (Private) Limited|Karachi|021-111-159-111; 021-32423741|https://www.rafionline.com|1004, 10th Floor, Al-Rahim Towers, I.I. Chundrigar Road, Karachi
+HO|045|BRC-292|Value Stock and Commodities (Private) Limited|Lahore|042-36314415|https://valuestock.pk|Office No. 200, 2nd Floor, Value Tower, 13/B1-B2, Commercial Zone, Ghalib Market, Gulberg III, Lahore
+HO|046|BRC-037|Fortune Securities Limited|Karachi|021-35309101; 021-35309110||3rd Floor, Razi Tower, BC-13, Block No. 9, KDA Scheme No. 5, Clifton, Karachi
+HO|050|BRC-381|Sakarwala Capital Securities (Private) Limited|Karachi|021-32411998; 021-32419732||114 Stock Exchange Building, Stock Exchange Road, Karachi
+HO|051|BRC-011|Darson Securities (Pvt) Limited|Karachi|021-111-900-400; 021-32471083|https://www.darson.com.pk|808, 8th Floor, Business & Finance Center, I.I. Chundrigar Road, Karachi
+HO|058|BRC-248|Rayaan Commodities (Private) Limited|Karachi|021-32461104; 021-32462512||60-64 Pakistan Stock Exchange Building, Stock Exchange Road, Karachi
+HO|063|BRC-372|Interactive Commodities (Private) Limited|Karachi|021-32271805; 021-35183607||Office No. 709, 7th Floor, Block A, Saima Trade Tower, I.I. Chundrigar Road, Karachi
+HO|068|BRC-093|ACM Gold (Private) Limited|Karachi|021-35296377; 021-35370157||3rd Floor, ACM Towers, Ch. Khaliq-uz-Zaman Road, Block-8, Scheme-5, Clifton, Karachi
+HO|075|BRC-024|AKD Securities Limited|Karachi|021-111-253-253||Office No. 602, Continental Trade Centre, Block-08, Clifton, Karachi
+HO|077|BRC-022|BMA Capital Management Limited|Karachi|021-111-262-111||Unitower, Level 8, I.I. Chundrigar Road, Karachi
+HO|082|BRC-377|Orenda Investments (Private) Limited|Lahore|0321-6101200; 042-36361200||Office No. 505, 5th Floor, LSE Plaza, 19-Khayaban-e-Aiwan-e-Iqbal, Lahore
+HO|083|BRC-361|Razal Commodities (Private) Limited|Karachi|0345-3108648||Office No. 301, 3rd Floor, Plot No. 25-C, Main Khayaban-e-Nishat, Ittehad Commercial, DHA Phase VI, Karachi
+HO|088|BRC-353|Aba Ali Habib Securities (Private) Limited|Karachi|021-32429664||Office Room # 418, 419-A & 421, Pakistan Stock Exchange Building, I.I. Chundrigar Road, Karachi
+HO|089|BRC-272|C & M Management (Private) Limited|Karachi|021-32272072|https://cnm.com.pk|Office No. 708-709, 7th Floor, Tower B, Saima Trade Tower, I.I. Chundrigar Road, Karachi
+HO|090|BRC-383|Al-Nafay Commodities (Private) Limited|Lahore|0305-7869155; 042-35198074||294-C, Main Boulevard, PIA Employees Cooperative Housing Society, Lahore
+HO|091|BRC-397|Pine Capital Management (Private) Limited|Islamabad|051-2894309||Room No. 511, 5th Floor, ISE Towers, 55-B Blue Area, Jinnah Avenue, Islamabad
+HO|097|BRC-213|Arif Latif Securities (Private) Limited|Lahore|042-36311611||Room No. 414, 415, 4th Floor, Stock Exchange Building, Khayaban-e-Aiwan-e-Iqbal, Lahore
+HO|102|BRC-308|Amaan Capital (Private) Limited|Karachi|0301-8247576; 021-35680072||1, Qasr-e-Zainab, Club Road, Near Hotel Metropole, Karachi
+HO|107|BRC-365|First Commodities (Private) Limited|Karachi|0336-5362645; 0308-8225205||DT 98, Block 11, F.B. Area, Near CNG 2000 Station, Karachi
+HO|110|BRC-090|Zara Commodities (Private) Limited|Lahore|042-35714486||Suite No. 13, 1st Floor, Al-Hafeez View, Gulberg-III, Lahore
+HO|127|BRC-315|Mohammad Munir Mohammad Ahmed Khanani Securities Limited|Karachi|021-32441179|https://munirkhanani.com|624-627, 6th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+HO|135|BRC-056|Trade Smart Securities (Private) Limited|Karachi|021-32471941; 021-32471949||Room No. 901-903, 9th Floor, New Pakistan Stock Exchange Building, Stock Exchange Road, Karachi
+HO|150|BRC-322|Venus Securities (Private) Limited|Karachi|021-32400158||804-805, 8th Floor, New Stock Exchange Building, PSX, I.I. Chundrigar Road, Karachi
+HO|157|BRC-096|Zafar Securities (Private) Limited|Lahore|042-36372470; 042-36368544||519, LSE Building, 19-Khayaban-e-Aiwan-e-Iqbal, Lahore
+HO|158|BRC-380|Backers & Partners (Private) Limited|Lahore|042-35784242; 042-35967790||601-A-XX Commercial, Khayaban-e-Iqbal, DHA Phase 3, Lahore
+HO|161|BRC-115|Rahat Securities Limited|Lahore|042-36303876||Room # 617 & 618, 6th Floor, Stock Exchange Building, Lahore
+HO|162|BRC-001|Abbasi & Company (Private) Limited|Lahore|042-38302028; 042-32300180|https://abbasiandcompany.com|6-Shadman, Lahore
+HO|163|BRC-313|Markets & Futures (Private) Limited|Karachi|0300-8221742; 021-35841415||58-I, 13th Street off Khayaban-e-Badban, Phase V, DHA, Karachi
+HO|167|BRC-114|Dr. Arslan Razaque Securities (Private) Limited|Lahore|042-35866137||1-C, Model Town, Lahore
+HO|181|BRC-030|Zahid Latif Khan Securities (Private) Limited|Islamabad|051-2894401||Office No. 412, 4th Floor, 55-B, ISE Towers, Jinnah Avenue, Islamabad
+HO|182|BRC-370|Asian Gold Commodities (Private) Limited|Peshawar|091-7251881; 091-5840466|https://asiangoldcommodities.com|3rd Floor, Block-A, Office A-103, Town Tower, University Road, Peshawar
+HO|183|BRC-360|Floret Capitals (Private) Limited|Islamabad|051-2707410|https://floretcommodities.com|1st Floor, Marina Heights, 109-East, Jinnah Avenue, Blue Area, Islamabad
+HO|188|BRC-294|General Investment & Securities (Private) Limited|Islamabad|051-2894946||Office No. 205, 2nd Floor, ISE Towers, 55-B, Jinnah Avenue, Blue Area, Islamabad
+HO|195|BRC-347|Dawood Equities Limited|Karachi|021-32271881||17th Floor, Saima Trade Towers A, I.I. Chundrigar Road, Karachi
+HO|225|BRC-339|Money Line Securities (Private) Limited|Lahore|042-36279141; 042-36280710||Room # 303, Stock Exchange Building, Lahore
+HO|229|BRC-345|Next Capital Limited|Karachi|021-111-639-825||2nd Floor, Imperial Court Building, Dr. Ziauddin Ahmed Road, Karachi
+HO|260|BRC-389|Wealth Street (Private) Limited|Karachi|0331-2494695||Office No. 13, 3rd Floor, Hilltop Arcade, DHA Phase IV, Karachi
+HO|262|BRC-055|Garibsons Commodities (Private) Limited|Karachi|021-111-427-421||C-69/71, 12th Commercial Street, Phase II Ext., DHA, Karachi
+HO|266|BRC-362|Foundation Securities (Private) Limited|Karachi|021-35612290||Ground Floor, Bahria Complex II, M.T. Khan Road, Karachi
+HO|267|BRC-355|Amanah Stocks & Commodities (Pvt.) Limited|Lahore|042-35131615; 042-35131629||Ground Mezzanine Floor, Amanah Mall, Model Town Link Road, Lahore
+HO|268|BRC-142|Interactive Securities (Private) Limited|Karachi|021-32463001||Room # 81, Second Floor, Stock Exchange Building, I.I. Chundrigar Road, Karachi
+HO|270|BRC-283|Khawaja Securities (Private) Limited|Lahore|042-36280811; 042-36300214||Room # G3, Ground Floor, LSE Building, 19-Khayaban-e-Aiwan-e-Iqbal, Lahore
+HO|274|BRC-179|Enrichers Securities (Pvt.) Limited|Lahore|042-111-367-424||Hall No. 1, 3rd Floor, High Q Tower, Plot No. 1, Gulberg V, Jail Road, Lahore
+HO|284|BRC-099|Shajar Capital Pakistan (Private) Limited|Karachi|021-36490023||8th Floor, Bahria Complex-III, M.T. Khan Road, Karachi
+HO|293|BRC-286|H. G. Markets (Pvt.) Ltd.|Lahore|042-111-800-000; 042-36307344|https://www.hgmarkets.pk|2-Race Course Road, Lahore
+HO|294|BRC-307|Topline Securities Limited|Karachi|021-35303330||8th Floor, Horizon Tower, Plot # 2/6, Block-3, Clifton, Karachi
+HO|303|BRC-395|Salman Majeed Securities (Private) Limited|Lahore|042-36280911||Room No. 108, 1st Floor, Lahore Stock Exchange Building, Lahore
+HO|306|BRC-388|BABA Equities (Pvt.) Ltd.|Lahore|042-36311236||Room No. 104, 1st Floor, LSE Plaza, 19-Khayaban-e-Aiwan-e-Iqbal, Lahore
+HO|308|BRC-245|Adam Usman Securities (Private) Limited|Karachi|021-32464367||Room No. 814-A, 8th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+HO|309|BRC-352|KTrade Securities Limited|Karachi|021-32171461||Room # 101 & 105, 1st Floor, New PSX Building, I.I. Chundrigar Road, Karachi
+HO|313|BRC-174|Brown Bull Commodities (Private) Limited|Sargodha|0331-3224444; 048-3258159||185-A Satellite Town, Sargodha
+HO|324|BRC-305|Azam Gold Trading (Private) Limited|Gujranwala|0321-7200234|https://www.azangold.com|Office No. 10, 3rd Floor, Trade Centre, G.T. Road, Gujranwala
+HO|326|BRC-317|Obox Gold (Private) Limited|Islamabad|0311-1222105; 0304-1110222||Suite 1, Ground Floor, TMK Tower, Malik Haroon Street, H-13, Islamabad
+HO|327|BRC-316|Nachfolger (Private) Limited|Rawalpindi|0332-9609919; 051-5424036||Office 9, Ground Floor, Daiwal Arcade, Plot No 82, Lane 1, Bahria Square Commercial Phase-7, Rawalpindi
+HO|330|BRC-329|Empower Commodities (Private) Limited|Lahore|042-35452296|http://empowercommodities.com|274-MB, First Floor, DHA Phase 6, Lahore
+HO|334|BRC-357|H and N Commodities (Private) Limited|Lahore|0322-4807725|https://hncommodities.com|408-J Commercial DHA, EME Sector, Multan Road, Lahore
+HO|336|BRC-400|DMC Markets (Private) Limited|Lahore|0312-7444919||Office No. 103, 1st Floor, South Tower, LSE Plaza, 19-Khayaban-e-Aiwan-e-Iqbal, Lahore
+HO|338|BRC-340|Trust Securities & Brokerage Limited|Karachi|021-111-000-875; 021-32469044|http://www.tsbl.com.pk|Suite No. 401, 4th Floor, Business & Finance Center, I.I. Chundrigar Road, Karachi
+HO|340|BRC-364|Zakriya Gold Commodities (Private) Limited|Multan|0333-6471581; 061-4572942||Office No. 03, 4th Floor, Bomanji Square, Multan Cantt, Multan
+HO|341|BRC-373|Alfalah Securities (Private) Limited|Karachi|021-35645090||4th Floor, Block-1, Shafi Court, Plot No. CL 5/6-1, Civil Lines, Karachi
+HO|346|BRC-384|FTP Commodities (Private) Limited|Islamabad|051-8890890; 051-4939889|http://www.ftpcommodities.com|Office No. 1 & 2, 1st Floor, The Ark Plaza, I-8 Markaz, Islamabad
+HO|347|BRC-385|MetaMax Commodities (Pvt.) Limited|Lahore|0341-2340333; 042-36620744||151-A, Street 4, Cavalry Ground, Lahore
+HO|348|BRC-387|Spinzer Equities (Private) Limited|Islamabad|051-2895171||Office No. 1113, 11th Floor, ISE Tower, Jinnah Avenue, Blue Area, Islamabad
+HO|349|BRC-390|Taurus Securities Limited|Karachi|021-111-828-787||Room # 604, 6th Floor, Progressive Plaza, Beaumont Road, Civil Lines, Karachi
+HO|350|BRC-391|EI Commodities (Pvt.) Limited|Karachi|0317-8826511||LG#6, RJ Mall, Lower Ground Floor, Main Rashid Minhas Road, Karachi
+HO|351|BRC-394|OS Capital Investments (Pvt.) Limited|Lahore|0308-0000006|https://oncapitalinvestments.com|32-H-C, Canal Gardens, Canal Road, Lahore
+BR|023|BR-023-03|IGI Finex Securities Limited|Lahore|042-35777866||Office No. G009, Ground Floor, Packages Mall, Lahore
+BR|023|BR-023-04|IGI Finex Securities Limited|Faisalabad|0300-9652121||Office No. 2, 5 & 8, Ground Floor, The Regency International 949, The Mall, Faisalabad
+BR|030|BR-030-06|JS Global Capital Limited|Faisalabad|041-2541900|https://www.jsgcl.com|Plot No. 4, Liaquat Road, Faisalabad
+BR|030|BR-030-07|JS Global Capital Limited|Lahore|042-111-574-111|https://www.jsgcl.com|Plot # 434-G1, Johar Town, Lahore
+BR|030|BR-030-11|JS Global Capital Limited|Hyderabad|022-3823085; 022-3823069|https://www.jsgcl.com|Shop No. 20, 21, 22 & 29, Mezzanine Floor, Shifa Heaven, Main Auto Bhan Road, Hyderabad
+BR|030|BR-030-12|JS Global Capital Limited|Peshawar|091-5285221|https://www.jsgcl.com|1st Floor, SLIC Building # 34, The Mall Road, Peshawar Cantt, Peshawar
+BR|043|BR-043-01|Rafi Securities (Private) Limited|Lahore|042-36310850|https://www.rafionline.com|Room No. 304, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+BR|045|BR-045-06|Value Stock and Commodities (Private) Limited|Karachi|021-34303784|https://valuestock.pk|Office # 113, 1st Floor, Business Avenue, PECHS Block 6, Shahrah-e-Faisal, Karachi
+BR|045|BR-045-07|Value Stock and Commodities (Private) Limited|Islamabad|051-6125389|https://valuestock.pk|Office No. 3-A, Mezzanine Floor, Kashmir Plaza, Jinnah Avenue, Blue Area, Islamabad
+BR|051|BR-051-10|Darson Securities (Pvt) Limited|Faisalabad|041-8711313|https://www.darson.com.pk|Office # 122-123, Property # 267-B, City Mall, Chen One Road, Peoples Colony # 01, Faisalabad
+BR|051|BR-051-11|Darson Securities (Pvt) Limited|Lahore|042-35753917|https://www.darson.com.pk|Office No. 401, 3rd Floor, Tower, Liberty Gulberg, Lahore
+BR|075|BR-075-02|AKD Securities Limited|Islamabad|051-2275842; 051-111-222-000||90-91, Razia Sharif Plaza, Jinnah Avenue, Blue Area, Islamabad
+BR|075|BR-075-05|AKD Securities Limited|Peshawar|091-5276025; 091-111-222-000||1st Floor, State Life Building, 34-The Mall, Peshawar Cantt, Peshawar
+BR|075|BR-075-09|AKD Securities Limited|Lahore|042-111-222-000||64-A, 2nd Floor, Fountain Avenue Building, Main Boulevard Road, Gulberg, Lahore
+BR|110|BR-110-01|Zara Commodities (Private) Limited|Karachi|021-35654411||401-402, 4th Floor, Gold Exchange Center, Zaibunnisa Street, Saddar, Karachi
+BR|181|BR-181-01|Zahid Latif Khan Securities (Private) Limited|Rawalpindi|051-5518717||23 Al-Amin Plaza, The Mall, Rawalpindi Cantt, Rawalpindi
+BR|183|BR-183-02|Floret Capitals (Private) Limited|Rawalpindi|0322-6017890|https://floretcommodities.com|Unit No. B, First Floor, Box Park Commercial, Plot No. 68-D, Bahria Springs Phase VII, Bahria Town, Rawalpindi
+BR|183|BR-183-05|Floret Capitals (Private) Limited|Lahore|0300-9640634|https://floretcommodities.com|Plaza 100, Plot No. 100, B-II, M.M. Alam Road, Gulberg III, Lahore
+BR|183|BR-183-06|Floret Capitals (Private) Limited|Taxila|0313-1572142|https://floretcommodities.com|FF-01 to FF-04, Eagle Tower-1, New City Phase II, Wah Cantt, Taxila
+BR|183|BR-183-07|Floret Capitals (Private) Limited|Karachi|0336-2334909|https://floretcommodities.com|Office No. NB 904-905, 9th Floor, Pakistan Stock Exchange New Building, Stock Exchange Road, Karachi
+BR|195|BR-195-01|Dawood Equities Limited|Faisalabad|0300-7949343||5th Floor, State Life Building, Liaquat Road, Faisalabad
+BR|195|BR-195-04|Dawood Equities Limited|Sargodha|048-3720888; 048-3720889||Office No. 134, First Floor, Al-Rehman Plaza, University Road, Sargodha
+BR|195|BR-195-07|Dawood Equities Limited|Multan|0300-6323351||Office No. 1, 2nd Floor, Rashed Mobile Plaza, Opposite Women University, Kutchery Chowk, Multan
+BR|270|BR-270-01|Khawaja Securities (Private) Limited|Islamabad|0347-5710051; 051-2726898||1213, 12th Floor, ISE Towers, Blue Area, Islamabad
+BR|274|BR-274-01|Enrichers Securities (Pvt.) Limited|Islamabad|0331-5392817||Office No. G5, Ground Floor, ISE Towers, 55-B, Jinnah Avenue, Islamabad
+BR|293|BR-293-16|H. G. Markets (Pvt.) Ltd.|Faisalabad|041-8502125|https://www.hgmarkets.pk|Office No. 81-82, Koh-e-Noor One Plaza, Jaranwala Road, Faisalabad
+BR|293|BR-293-18|H. G. Markets (Pvt.) Ltd.|Sargodha|048-3768929|https://www.hgmarkets.pk|Office No. 17, First Floor, Al-Ahmed Shopping Mall, University Road, Sargodha
+BR|293|BR-293-19|H. G. Markets (Pvt.) Ltd.|Karachi|021-35836112|https://www.hgmarkets.pk|El-Beena Commercial Centre, BC-11, Block 5, Kehkashan, Clifton, Karachi
+BR|293|BR-293-20|H. G. Markets (Pvt.) Ltd.|Islamabad|0300-8881428|https://www.hgmarkets.pk|Pakland Tower 2, 8th Floor, Office No. 812-817, F-9/G-9, New Blue Area, Islamabad
+BR|313|BR-313-01|Brown Bull Commodities (Private) Limited|Islamabad|051-8739880||Office No. 504 & 505, 5th Floor, Plot No. 27 Vista, I-8 Markaz, Islamabad
+BR|313|BR-313-02|Brown Bull Commodities (Private) Limited|Rawalpindi|0300-5436178; 0333-3338678||3rd Floor, Theme Park Avenue, Plaza No. 68-D, Spring Commercial, Phase 7, Bahria Town, Rawalpindi
+BR|330|BR-330-06|Empower Commodities (Private) Limited|Islamabad|0316-6389090|http://empowercommodities.com|Office No. 3006, 3rd Floor, World Trade Center, Phase II DHA, Islamabad
+BR|336|BR-336-01|DMC Markets (Private) Limited|Multan|0307-0654049||Office 04, 06, 2nd Floor, City Tower, Chungi No. 09, LMQ Road, Multan
+BR|336|BR-336-02|DMC Markets (Private) Limited|Rawalpindi|0300-1494611||Office No. 1, Basement, Plaza No. 20-C, Mini Commercial View, Phase 7, Bahria Town, Rawalpindi

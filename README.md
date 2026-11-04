@@ -50,15 +50,18 @@ real records are imported, and the UI says so instead of showing invented volume
 - `src/lib/provenance.js` — trust levels: `owner` > `official` > `seed` > `dataset` (nothing else).
 - `src/lib/verify.js` — owner verification: signed, expiring, non-replayable, no SMS/OTP cost.
 
-**What ships today:** 2,020 real records in `public/data/listings.json` — 1,167 from the
-public ypages.pk dataset, 449 PSX listed companies (phones/emails/websites from psx.com.pk
-company profiles, via `github.com/ajwadjaved/PSX-Listed-Companies`), 201 SECP-registered
-securities brokers (`secp.gov.pk`, Aug 2025 — 6 enriched with official phones/addresses
-from the SFA list; rows without a published number show "No phone on record" instead of a
-call button), and 203 SECP-licensed NBFCs & Securities/Futures Advisors (`secp.gov.pk`,
-Aug 2026 — 281 license rows consolidated per entity, adding 139 official phone lines
-including 85 `03xx` WhatsApp-capable mobiles), plus 91 hand-curated flagships
-(`src/data/curated.js`). Rebuild any time with
+**What ships today:** 3,029 real records in `public/data/listings.json` (1,219 WhatsApp-capable
+`03xx` mobiles — 40.2% — plus 1,737 landlines and 73 phone-less SECP registry rows):
+- 1,167 from the public ypages.pk dataset,
+- 449 PSX listed companies (phones/emails/websites from psx.com.pk company profiles, via `github.com/ajwadjaved/PSX-Listed-Companies`),
+- 206 SECP/PSX securities brokers (`secp.gov.pk` Aug 2025 + PSX Active TREC Holders register `psx.com.pk` Aug 2026 — 192 phone-less SECP broker rows enriched in place with official PSX head-office phones, emails, websites, and street addresses, plus 5 active PSX-only TREC holders; remaining rows without a published number show "No phone on record"),
+- 203 SECP-licensed NBFCs & Securities/Futures Advisors (`secp.gov.pk`, Aug 2026 — 281 license rows consolidated per entity),
+- 62 PMEX Licensed Futures Brokers & SECP-approved regional branches (`pmex.com.pk`, Aug 2025 / May 2026, after deduplicating dual PSX/PMEX head offices),
+- 25 SECP Active Insurers, Takaful Operators, Reinsurer & Health Insurance TPAs (`secp.gov.pk`, Jun 2026, after deduplicating PSX-listed insurers),
+- 419 PPIB / AEDB Certified Solar & Wind Installers across Categories C-1 & C-3 (`ppib.gov.pk`, 398 `03xx` WhatsApp-capable mobiles),
+- 265 ICAP Practising Chartered Accountant Firm offices (`icap.org.pk` geographical directory), and
+- 233 FPCCI Registered Member Trade Organizations — Chambers of Commerce & National Trade/Industry Associations (`fpcci.org.pk`, 2024–2026 directory, Aug 2026),
+plus 91 hand-curated flagships (`src/data/curated.js`). Rebuild any time with
 `python3 scripts/convert-psx-secp.py` + `npm run import -- --source=csv --merge` runs
 (see `docs/real-data-strategy.md` §11).
 

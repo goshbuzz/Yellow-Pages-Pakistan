@@ -1,0 +1,210 @@
+# Official PSX List of Active TREC Holders (as of August 6, 2026 — 206 Active TREC Holders)
+# Source: https://www.psx.com.pk/psx/themes/psx/uploads/List-of-TREC-Holders-New-06-08-26.pdf
+# Strictly excludes Suspended, Applied for Surrender, Broker Licence Expired, Under Litigation, and Non-Active rows.
+# Format: TREC|Company Name|City|Phone|Email|Website|Address
+TREC328|128 Securities (Private) Limited|Lahore|042-36372747|info@128securities.com|http://www.128securities.com|Room # M-12, Mezzanine Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC337|A B M Securities (Private) Limited|Lahore|042-36310555|abm_securities@hotmail.com|http://www.abmsecurities-pk.com|Room # 506, 5th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC147|A. I. Securities (Private) Limited|Karachi|021-32429282|2429282@gmail.com|http://www.aisecuritiespl.com|Room # 517, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC038|A.H.M. Securities (Private) Limited|Karachi|021-34522575; 021-34301010|hammad@ahmsecurities.com|http://www.ahmsecurities.com|Room No. 154, Bangalore Town, Tipu Sultan Road, Karachi
+TREC349|A.S. Securities (Private) Limited|Lahore|042-36314551|as_securities@hotmail.com|http://www.as.com.pk|Room # 106, 1st Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC457|AAA Securities (Private) Limited|Islamabad|051-5419123|asifsaeedmail@yahoo.com|http://www.aaasecurities.net|1st Floor, ISC Plaza, Jinnah Boulevard, Sector A, DHA Phase II, Islamabad
+TREC162|Aba Ali Habib Securities (Private) Limited|Karachi|021-32429664|info@abaalihabib.com|http://www.abaalihabib.com|Room # 505, 5th Floor, Business Plaza, Mumtaz Hassan Road, Off I.I. Chundrigar Road, Karachi
+TREC311|Abbasi & Company (Private) Limited|Lahore|042-38302028; 042-32300180|info@abbasiandcompany.com|http://www.abbasiandcompany.com|6-Shadman, Race Course Road, Lahore
+TREC145|Adam Securities Limited|Karachi|021-32444315|rizwan@adamsecurities.com.pk|http://www.adamsecurities.com.pk|Room No. 806-814, 8th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC525|Adam Usman Securities (Private) Limited|Karachi|021-32470550|info@ausecurities.com.pk|http://www.ausecurities.com.pk|814(A), 8th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC323|Adeel & Nadeem Securities (Private) Limited|Lahore|042-36308971|nadeem.ejaz@hotmail.com|http://www.adeelnadeem.pk|Room No. 219, 2nd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC501|Ahsam Securities (Private) Limited|Rawalpindi|0321-5178338|ahsamsec@hotmail.com|http://www.ahsam.org|27-A, Lane # 2, Gulistan Colony, Rawalpindi
+TREC019|AKD Securities Limited|Karachi|021-111-253-111; 021-35374297|info@akdsl.com|http://www.akdsl.com|602, Continental Trade Centre, Block 8, Clifton, Karachi
+TREC193|Akhai Securities (Private) Limited|Karachi|021-32418672; 021-32418673|akhaisec@gmail.com|http://www.akhaisecurities.com|Office # 10, Ground Floor, Business Centre, Off I.I. Chundrigar Road, Karachi
+TREC524|Akik Capital (Private) Limited|Karachi|021-35306281|akik.capital@gmail.com|http://www.akikcapital.com|Office No. 11, Mezzanine Floor, Quality Arcade, Block 7, Clifton, Karachi
+TREC029|AKY Securities (Private) Limited|Karachi|021-32464553|aminyousuf2012@hotmail.com|http://www.aky.com.pk|Room No. 48, 1st Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC063|Al Habib Capital Markets (Private) Limited|Karachi|021-32270808; 021-32270519|aftab.munshi@ahcml.com|http://www.ahcml.com|GF-01, Techno City, Hasrat Mohani Road, Karachi
+TREC228|Al-Haq Securities (Private) Limited|Lahore|042-36361264; 042-36362010|alhaqsecurities579@gmail.com|http://www.alhaqsecurities.com|Room # 405-407, 4th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC021|Alpha Capital (Private) Limited|Karachi|0322-2794005; 021-38694242|mohsin.adhi@alphacapital.pk|http://www.alphacapital.com.pk|3rd Floor, Shaheen Chamber, A-4, Central Commercial Area, KCH Society, Block 7 & 8, Shahrah-e-Faisal, Karachi
+TREC001|Altaf Adam Securities (Private) Limited|Karachi|021-37121564|a.adam001@yahoo.com|http://www.aasecurities.com.pk|Suite No. 803, 8th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC300|AM Chaudhary Securities (Private) Limited|Lahore|042-36311388; 042-36310402|amchaudhrysecurities@hotmail.com|http://www.amcsecurities.com|Room # 310, 3rd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC214|Amaan Capital (Private) Limited|Karachi|0333-3242275; 0301-8247576|amanasiddiqui@yahoo.com|http://www.amaancapital.com|First Floor, Plot No. 188/1-B, Anwer Adil Road, Block 2, P.E.C.H.S, Karachi
+TREC007|Amanah Investments Limited|Karachi|021-32468767; 021-32468769|awoailpak@gmail.com|http://www.amanahinvestments.com|Room No. 123, 3rd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC549|Amanah Stocks & Commodities (Private) Limited|Lahore|0317-3272275; 042-35131614|info@amanahtrades.com|http://www.amanahtrades.com|Ground Mezzanine Floor, Amanah Mall, Model Town Link Road, Lahore
+TREC347|Amer Securities (Private) Limited|Lahore|042-36309687|shoaib42051@hotmail.com|http://www.amersecurities.com|Room # 620, 6th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC171|Ample Securities (Private) Limited|Karachi|021-32412412; 021-32467155|info@ample.com.pk|http://www.ample.com.pk|Room No. 512-514, 5th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC188|Apex Capital Securities (Private) Limited|Karachi|021-32466912|apexcapkse@yahoo.com|http://www.apexcapitalsec.com|Room No. 439-440, 4th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC462|Arch Capital Securities (Private) Limited|Lahore|0321-8468281; 042-36300045|razi.rehman@hotmail.com|http://www.archcapitalsecurities.com|Room No. 416, 4th Floor, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC050|Arif Habib Limited|Karachi|021-32460717; 021-32415213|secretariat@arifhabibltd.com|http://www.arifhabibltd.com|Plot # 23, 2nd Floor, Arif Habib Centre, M. T. Khan Road, Karachi
+TREC232|Arif Latif Securities (Private) Limited|Lahore|042-36311611|ariflatifsecurities@gmail.com|http://www.ariflatifsecurities.com|Room # 414-415, 4th Floor, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC284|ASA Stocks (Private) Limited|Lahore|042-35785351|info@asastocks.com|http://www.asastocks.com|79/A-C-1, Gulberg-III, Lahore
+TREC318|Asad Mustafa Securities (Private) Limited|Lahore|042-36300447; 042-36304447|am.securities601@gmail.com|http://www.asadmustafa.com|Room No. 305, South Tower LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC024|ASDA Securities (Private) Limited|Karachi|021-32467805|shumail.asda@gmail.com|http://www.asdalive.com|Room No. 406-408, 4th Floor, Stock Exchange New Building, Stock Exchange Road, Karachi
+TREC119|Axis Global Limited|Karachi||hamad@axisgloballimited.com|http://www.axisgloballimited.com|Suite # 806, 8th Floor, Business & Finance Centre, I.I. Chundrigar Road, Karachi
+TREC239|Ayub Chaudhry Investments (Private) Limited|Lahore|042-36368422; 042-36369002|mayubch@hotmail.com|http://www.ayubinvestments.com|Room No. 109, 1st Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC108|Azee Securities (Private) Limited|Karachi|021-111-293-293; 021-32467131|info@azeetrade.com|http://www.azeetrade.com|Office # 705, 7th Floor, Business & Finance Centre, I.I. Chundrigar Road, Karachi
+TREC490|BABA Equities (Private) Limited|Lahore|042-36311237|m.asgharmalik@hotmail.com|http://www.bel.com.pk|Room # 104 & 116, 1st Floor, North Tower, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC204|Backers & Partners (Private) Limited|Lahore|0300-4902848; 042-35967790|nadeembeetle@yahoo.com|http://www.backersandpartners.com|60/1A-XX Commercial, 1st Floor, Khayaban-e-Iqbal, DHA Phase 3, Lahore
+TREC054|Bawa Securities (Private) Limited|Karachi|021-32460762; 021-32434008|info@bawasecurities.com|http://www.bawasecurities.com|Room Nos. 432-433, 4th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC077|Bawany Securities (Private) Limited|Karachi|021-32471740|bawanysecurities@gmail.com|http://www.bawanysecurities.com.pk|Room No. 524, 5th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC045|Bhayani Securities (Private) Limited|Karachi|021-32429774|reports@bsl.com.pk|http://www.bsl.com.pk|Room Nos. 88-91, 2nd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC022|BMA Capital Management Limited|Karachi|021-111-262-262|info@bmacapital.com|http://www.bmacapital.com|Level-8, Unitower, I.I. Chundrigar Road, Karachi
+TREC260|BOP Capital Securities (Private) Limited|Lahore|042-36311050|info@bopcapital.com.pk|http://www.bopcapital.com.pk|Room No. 319-320, 3rd Floor, North Tower, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC203|Brains Securities (Private) Limited|Lahore|042-36300161|info@brainssecurities.com|http://www.brainssecurities.com|Room # 613-614, 6th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC308|Bridge Securities (Private) Limited|Lahore|042-36280884|bridgesecurities110@hotmail.com|http://www.bspl.com.pk|Room # 214, 2nd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC558|Bullseye Investments (Private) Limited|Karachi|021-35164519; 021-35169200|bullseyeinvestments2025@gmail.com|http://www.bullseyesinvestment.com|Room # NB-601, 6th Floor, Stock Exchange New Building, Stock Exchange Road, Karachi
+TREC551|Centinel Securities (Private) Limited|Islamabad|0333-5459996; 0333-5459995|farzin.khan@gmail.com|http://www.centinelsec.com|399, St 58, D-12/2, Islamabad
+TREC526|Chase Securities Pakistan (Private) Limited|Karachi|021-35293051|ali.nawaz@chasesecurities.com|http://www.chasesecurities.com|Room No. 501-502, 5th Floor, Clifton Diamond Building, Block 4, Clifton, Karachi
+TREC513|CMA Securities (Private) Limited|Lahore|042-35861222; 042-35876037|cmasecurities@yahoo.com|http://www.cmasec.com.pk|6-A, Block-H, Ground Floor, Gulberg Heights, Gulberg-II, Lahore
+TREC179|Continental Capital Management (Private) Limited|Karachi|021-32446721|info@concap.co|http://www.concap.co|Room No. 708, 7th Floor, Business & Finance Centre, I.I. Chundrigar Road, Karachi
+TREC153|Creative Capital Securities (Private) Limited|Karachi|021-32460926; 021-32462576|mnadeemaghaffar@yahoo.com|http://www.creativecapital.com.pk|412-413, 4th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC109|Dalal Securities (Private) Limited|Karachi|021-32467051|info@dalalsecurities.com|http://www.dalalsecurities.com|Room No. 103, 1st Floor, Business & Finance Centre, I.I. Chundrigar Road, Karachi
+TREC090|Darson Securities (Private) Limited|Karachi|021-111-900-400; 021-32470755|info@darson.com.pk|http://www.darson.com.pk|Office No. 808, 8th Floor, Business & Finance Centre, I.I. Chundrigar Road, Karachi
+TREC058|Dawood Equities Limited|Karachi|021-32271985; 021-32275086|aziz@dawoodequities.com|http://www.dawoodequities.com|1709, 17th Floor, Saima Trade Tower A, I.I. Chundrigar Road, Karachi
+TREC180|Dawood Mohammed Securities (Private) Limited|Karachi|021-32413931; 021-32423111|d.m.securities532@gmail.com|http://www.dmsecurities.com|Room No. 532, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC536|Delight Equity (Private) Limited|Karachi|0300-2598790; 021-33220080|attaullah.rasheed@delightequity.com|http://www.delightequity.com|Office # 723, 7th Floor, Mashriq Centre, Block-14, Gulshan-e-Iqbal, Karachi
+TREC016|DJM Securities Limited|Karachi|021-32472030|samad.dawood@djmtrade.com|http://www.djmtrade.com|Mezzanine Floor, Sumya Sky View, Dr. Ziauddin Ahmed Road, Civil Lines, Karachi
+TREC286|Dosslanis Securities (Private) Limited|Lahore|042-36306547; 042-36280748|info@ds.com.pk|http://www.ds.com.pk|Room # 119, First Floor, LSE North Tower, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC325|Dr. Arslan Razaque Securities (Private) Limited|Lahore|042-36300062|arslanr@yahoo.com|http://www.drarslansecurities.com|Room # 316, 3rd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC132|Eleven Stars Securities (Private) Limited|Karachi|021-32410240; 021-32429149|elevenstars132@yahoo.com|http://www.elevenstars.com.pk|Room No. 121, 3rd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC433|Enrichers Securities (Private) Limited|Lahore|042-111-367-424; 042-111-111-333|info@enrichers.com.pk|http://www.enrichers.com.pk|Hall No. 1, 3rd Floor, High-Q Tower, Plot No. 1, Gulberg-V, Jail Road, Lahore
+TREC438|Fair Edge Securities (Private) Limited|Islamabad|051-2894534|fairsecurities@gmail.com|http://www.fairedgesecurities.com|501, 5th Floor, ISE Towers, 55-B, Jinnah Avenue, Islamabad
+TREC229|Fairway Securities (Private) Limited|Lahore|042-32020354|info@fairway.com.pk|http://www.fairway.com.pk|26-K, Commercial, Phase-1, DHA, Lahore
+TREC088|Fawad Yusuf Securities (Private) Limited|Karachi|0311-6679227; 021-32425731|info@fyslonline.com|http://www.fyslonline.com|Room Nos. NB-301-304, 3rd Floor, Stock Exchange New Building, Stock Exchange Road, Karachi
+TREC094|FDM Capital Securities (Private) Limited|Karachi|021-32214734; 021-32275157|info@fdm.com.pk|http://www.fdm.com.pk|Room No. 620-621, 6th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC117|Fikree's (Private) Limited|Karachi|021-32416654; 021-32423113|tewfiqfikree@gmail.com|http://www.fikrees.com.pk|Room No. 639, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC181|First Equity Modaraba|Karachi|021-32446023; 021-32446020|info@firstequitymodaraba.com.pk|http://www.firstequitymodaraba.com.pk|Room No. 503-504, 5th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC175|First National Equities Limited|Lahore|042-35843721|compliance@fnetrade.com|http://www.fnetrade.com|FNE House, 179-B, Abu Bakar Block, New Garden Town, Lahore
+TREC491|First Street Capital (Private) Limited|Lahore|042-37135849|firststreetcap@gmail.com|http://www.firststreetcapital.com.pk|Basement Floor, 63-A, Agora Eden City, DHA Phase-VIII, Lahore
+TREC141|Float Securities (Private) Limited|Karachi|021-35360325; 021-35372049|floatsec@hotmail.com|http://www.floatsecurities.com.pk|D-19, 1/B, Block # 4, Clifton, Karachi
+TREC535|Floret Capitals (Private) Limited|Islamabad|0311-1000183; 051-2707410|info@floretcapitals.com|http://www.floretcapitals.com|First Floor, Marina Heights, 109-East, F-7/G-7, Jinnah Avenue, Blue Area, Islamabad
+TREC046|Fortune Securities Limited|Karachi|021-35309111; 021-35309090|info@fortunesecurities.com|http://www.fortunesecurities.com|3rd Floor, Razi Tower, BC-13, Block No. 9, KDA Scheme No. 5, Clifton, Karachi
+TREC142|Foundation Securities (Private) Limited|Karachi|021-35612290|azaidi@fs.com.pk|http://www.fs.com.pk|Ground Floor, Bahria Complex II, M.T. Khan Road, Karachi
+TREC163|Friendly Securities (Private) Limited|Karachi|021-32442174; 021-32442156|info@friendlysecurities.com|http://www.friendlysecurities.com|Room No. 128-129, 3rd Floor, PSX Building, Stock Exchange Road, Karachi
+TREC519|Galaxy Capital Securities (Private) Limited|Islamabad|051-8355470|galaxypaknet@gmail.com|http://www.gcsl.com.pk|74 Attaturk Avenue, Sector G-6/3, Islamabad
+TREC125|Gazipura Securities & Services (Private) Limited|Karachi|021-32418903; 021-32433092|gazipura125@yahoo.com|http://www.gazipurasecurities.com.pk|Room No. 736-737, 7th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC442|General Investment & Securities (Private) Limited|Islamabad|051-2894947|gispvt@gmail.com|http://www.gis.com.pk|Office # 406, 4th Floor, ISE Towers, 55-B, Jinnah Avenue, Blue Area, Islamabad
+TREC483|Geryon Securities (Private) Limited|Lahore|0333-5752222|hassan_farooq@live.com|http://www.geryonsecurities.com|190, Street 7, Sarwar Colony, Lahore Cantt., Lahore
+TREC028|Ghani Osman Securities (Private) Limited|Karachi|021-32462688; 021-32435034|mail@gosecurities.com.pk|http://www.gosecurities.com.pk|Plot # 2/1-16, Pardesi House, Old Queens Road, Karachi
+TREC131|GMI Capital Securities (Private) Limited|Karachi|021-32417628; 021-32423100|gmi_131@hotmail.com|http://www.gmicapital.com.pk|Room No. 705, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC262|GPH Securities (Private) Limited|Lahore|042-36310715|shahzada202@hotmail.com|http://www.gph-securities.com|Room No. 202, 2nd Floor, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC102|Growth Securities (Private) Limited|Karachi|021-32463002|info@growthsecurities.com.pk|http://www.growthsecurities.com.pk|Room No. 77, 81-83, 2nd Floor, Stock Exchange Main Building, Stock Exchange Road, Karachi
+TREC327|Gul Dhami Securities (Private) Limited|Lahore|042-36368401|guldhami@hotmail.com|http://www.guldhami.com|Room # 105, 1st Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC350|Gulrez Securities (Private) Limited|Lahore|042-36309851|gulrezsecurities@gmail.com|http://www.gulrezsecurities.com|Room # 507, 5th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC528|H. G. Markets (Private) Limited|Lahore|042-111-800-000|admin@hgmarkets.pk|http://www.hgmarkets.pk|2-Race Course Road, Lahore
+TREC027|Habib Metropolitan Financial Services Limited|Karachi|021-35822244; 021-35364665|info@hmfs.com.pk|http://www.hmfs.com.pk|1st Floor, GPC 2, Block 5, Kehkashan Clifton, Karachi
+TREC264|Habib Ullah Sheikh (Private) Limited|Lahore|042-36311383|info@pakstocks.com|http://www.pakstocks.com|Room No. 213, 2nd Floor, North Tower, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC485|Hamza Farhad Securities (Private) Limited|Islamabad|051-2279754; 051-2279755|hamzafarhadsecurities@hotmail.com|http://www.salmansgroup.com/hamzafarhad|No. 11, Chaudhry Plaza, Block 51, Jinnah Avenue, Blue Area, Islamabad
+TREC037|HH Misbah Securities (Private) Limited|Karachi|021-32429102|hh_misbahsecurities@hotmail.com|http://www.hhm.com.pk|Room No. 96-97, 2nd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC287|High Land Securities (Private) Limited|Lahore|042-36313981|engr.sajidmasood@yahoo.com|http://www.highlandsecurities.com|Room # 413, 4th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC309|HMC Stocks (Private) Limited|Lahore|042-36360589; 042-36368958|hmcstockssmcpvtltd@gmail.com|http://www.hmcstocks.com|Room # 305, 3rd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC212|Horizon Securities Limited|Lahore|042-35190646|info@horizonsecuritieslimited.com|http://www.horizonsecuritieslimited.com|2nd Floor, Plaza 79-A, Banker Co-operative Housing Society, Lahore
+TREC503|HP Securities (Private) Limited|Islamabad|051-2114102; 051-2114106|haroon_piracha@hotmail.com||House No. 234-A, Street 4, F-10/3, Islamabad
+TREC044|IGI Finex Securities Limited|Karachi|021-111-444-001|info@igi.com.pk|http://www.igisecurities.com.pk|Suite No. 701-713, 7th Floor, The Forum, G-20, Khayaban-e-Jami, Block 9, Clifton, Karachi
+TREC292|INA Securities (Private) Limited|Lahore|042-35756953|info@inasecurities.com|http://www.inasecurities.com|17-G, Gulberg-2, Lahore
+TREC199|Insight Securities (Private) Limited|Karachi|021-32462541|info@insightsec.com.pk|http://www.insightsec.com.pk|Room No. 509, 5th Floor, Business and Finance Centre, I.I. Chundrigar Road, Karachi
+TREC293|Integrated Equities Limited|Lahore|042-35741714|info@iel.net.pk|http://www.iel.net.pk|30 Cricketers Colony, 3rd Floor, NETSOL Avenue, Ghazi Interchange Ring Road, Lahore
+TREC164|Interactive Securities (Private) Limited|Karachi|021-32463001|interactivesecurities@hotmail.com|http://www.interactivesec.com|Room No. 80, 2nd Floor, Stock Exchange Main Building, Stock Exchange Road, Karachi
+TREC124|Intermarket Securities Limited|Karachi|021-111-467-000; 021-37131600|info@imsecurities.com.pk|http://www.imsecurities.com.pk|Bahria Complex-IV (Extension Block), 5th Floor, Ch. Khaliq-uz-Zaman Road, Clifton, Karachi
+TREC185|Inveslink Capital (Private) Limited|Karachi|021-32443706; 021-32472235|inveslink185@gmail.com|http://www.inveslinkcapital.com|Room No. 708, 7th Floor, PSX New Building, Stock Exchange Road, Karachi
+TREC089|Investment Managers Securities (Private) Limited|Karachi|021-35303145; 021-35303153|ims2007@hotmail.com|http://www.investmanagers.pk|Room No. 308, Continental Trade Centre, Block 8, Clifton, Karachi
+TREC066|Iqbal Usman Kodvavi Securities (Private) Limited|Karachi|021-32432911; 021-32424144|iqbalusmankodvavisecurities@yahoo.com|http://www.iuks.com.pk|Room No. 521-522, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC079|Irfan Mazhar Securities (Private) Limited|Karachi|021-32446156; 021-32415733|imsecurities@gmail.com|http://www.imsecurities.pk|Room No. 523, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC018|Ismail Iqbal Securities (Private) Limited|Karachi|021-34302181|info@ismailiqbal.com|http://www.ismailiqbal.com|C-94, KDA Scheme # 1, Main Karsaz Road, Karachi
+TREC288|Javed Iqbal Securities (Private) Limited|Lahore|042-36369112; 042-36368444|jispl@outlook.com|http://www.jis-psx.com|Room # M-7 & M-8, Mezzanine Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC149|JS Global Capital Limited|Karachi|021-111-574-111; 021-32799005|khalil.usmani@js.com|http://www.jsgcl.com|17th & 18th Floor, The Centre, Plot No. 28, S.B.5, Abdullah Haroon Road, Karachi
+TREC497|JSK Securities Limited|Islamabad|051-8489106; 051-8489100|ibrar.bashir@jsksecurities.com.pk|http://www.jsksecurities.com.pk|Ajmair Manzil 1, 2nd Floor, IJP Road, Near IJP Stadium Road Junction, Islamabad
+TREC224|K & I Global Capital (Private) Limited|Lahore|042-36311781|jazi_babo@hotmail.com|http://www.kandiglobal.com.pk|Room # 609, 6th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC290|K.H.S. Securities (Private) Limited|Lahore|042-36368536; 042-36278919|khssecurities@outlook.com|http://www.khssecurities.com|Room # 511, 5th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC023|Khanani Securities (Private) Limited|Karachi|021-32421752; 021-32410494|khanani.securities@yahoo.com|http://www.khanani.com.pk|Room No. 638, 6th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC339|Khawaja Securities (Private) Limited|Lahore|042-36280811|settlement@khawajasec.com|http://www.khawajasec.com|G-03, Ground Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC192|Kosmopolitan Securities (Private) Limited|Karachi|021-35659500|kosmopolsec@gtgroup.com.pk|http://www.kosmopolitansec.com|Ground Floor, G & T Tower # 18, Beaumont Road, Civil Lines-10, Karachi
+TREC508|KP Securities (Private) Limited|Islamabad|051-8359040|fayyazalirana@gmail.com|http://www.kpsecurities.pk|1113-A, 11th Floor, ISE Towers, 55-B, Jinnah Avenue, Islamabad
+TREC248|Ktrade Securities Limited|Karachi|021-111-115-272; 021-35172081|contact@kasb.com|http://www.kasb.com|Office No. 201-202, Plot No. 33-C, Bukhari Commercial Lane-13, Phase-VI, DHA, Karachi
+TREC140|M.M. Securities (Private) Limited|Karachi|021-35310151|coo@mmsecurities.com.pk|http://www.mmsecurities.com.pk|2nd Floor, Plot No. 9-C, Khayaban-e-Ittehad, Phase-II Extension, D.H.A., Karachi
+TREC223|Maan Securities (Private) Limited|Lahore|042-36308000|maansecurities@yahoo.com|http://www.maansecurities.com|Room No. 311-A, 3rd Floor, LSE South Tower, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC130|Mannoo Capital (Private) Limited|Karachi|021-32419393; 021-32411346|info@mannoocapital.com|http://www.mannoocapital.com|Room No. 87, 2nd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC413|Margalla Financial (Private) Limited|Islamabad|051-2152148|margalla.financial@gmail.com|http://www.margallafinancial.com|House No. 172, Street 20, Sector G-10/2, Islamabad
+TREC082|Mayari Securities (Private) Limited|Karachi|021-32416665; 021-32415845|zms.mayari@gmail.com|http://www.mayari.com.pk|Room No. 73-74, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC092|Memon Securities (Private) Limited|Karachi|021-32473277; 021-32438066|amin_memon@hotmail.com|http://www.memonsecurities.com|Room No. 154, 3rd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC296|MGM Securities (Private) Limited|Lahore|042-36279181|mgmsecurities@yahoo.com|http://www.mgm-lse.com|Room # G-10, Ground Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC221|Millennium Brokerage (Private) Limited|Lahore|042-36280771|millenniumbrokerage@gmail.com|http://www.millennium.pk|Room No. M-2, Mezzanine Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC251|MND Investment (Private) Limited|Lahore|042-36279204; 042-36317421|rabbana43@hotmail.com|http://www.mndinvestment.pk|Room # 509, 5th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC084|Mohammad Munir Mohammad Ahmed Khanani Securities Limited|Karachi|021-36490034; 021-32441179|mmunirkhanani@hotmail.com|http://www.munirkhanani.com|Room Nos. 505, 622-627, Stock Exchange Main/New Building, Stock Exchange Road, Karachi
+TREC331|Money Line Securities (Private) Limited|Lahore|042-36279141; 042-36280710|moneyline_of_lse@hotmail.com|http://www.moneylinesecurities.com|Room # 303-304, 3rd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC160|Moonaco Securities (Private) Limited|Karachi|0333-3360907; 021-32461553|saleem@moonaco.com|http://www.moonaco.com|Room No. 410-411, 4th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC194|MRA Securities Limited|Karachi|021-32410136; 021-32414115|farhan.mra@gmail.com|http://www.mra.com.pk|Room # 65, 66, 75, PSX Main/New Building, Stock Exchange Road, Karachi
+TREC297|MSD Capital Equities (Private) Limited|Lahore|0300-8459097; 042-35778050|msd.engineer2005@gmail.com|http://www.msdcapital.com.pk|470-Z, Block Z, Phase III, DHA, Lahore
+TREC096|MSMANIAR Financials (Private) Limited|Karachi|021-32464958; 021-32461510|saadmaniar@gmail.com|http://www.msmfinancials.com|Room No. 603, 6th Floor, Business Plaza, Mumtaz Hassan Road, Karachi
+TREC330|Muhammad Amer Riaz Securities (Private) Limited|Lahore|042-36310441; 042-36317375|naeem_lse@yahoo.com|http://www.mamerriaz.com|Room # 306, 3rd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC122|Muhammad Ashfaq Hussain Securities (Private) Limited|Karachi|021-32427814; 021-32416197|mah_kse@yahoo.com|http://www.mahsl.com|Room No. 149, 3rd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC003|Muhammad Hussain Ismail Securities (Private) Limited|Karachi|021-32417326; 021-32421005|mhis003@yahoo.com|http://www.mhisecurities.com|Room No. 113, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC176|Muhammad Salim Kasmani Securities (Private) Limited|Karachi|021-32411460; 021-32417024|usmansalims@gmail.com|http://www.kasmani.com.pk|Room No. 35, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC186|Muhammad Tariq Moti Securities (Private) Limited|Karachi|021-32421624; 021-32419415|mustafa.tariq@tariqmoti.com.pk|http://www.tariqmoti.com.pk|Room No. 36, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC049|Multiline Securities Limited|Karachi|021-33220100|info@msltrade.com|http://www.msltrade.com|Office Nos. 504-505, 5th Floor, Emerald Tower, Plot # G-19, Block-5, KDA Scheme # 5, Clifton, Karachi
+TREC052|N.U.A. Securities (Private) Limited|Karachi|021-32415739; 021-32420321|nuasec@gmail.com|http://www.nua.com.pk|Room No. 135-136, 3rd Floor, Stock Exchange Main Building, Stock Exchange Road, Karachi
+TREC056|Nael Capital (Private) Limited|Karachi|021-32461812; 021-32461813|nmuqeet@naelcapital.com|http://www.naelcapital.com|Room No. 310, 3rd Floor, Business & Finance Centre, I.I. Chundrigar Road, Karachi
+TREC335|Networth Securities Limited|Lahore|042-36307701|okmalik@hotmail.com|http://www.networth.pk|Room # 211, 2nd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC482|New Peak Securities (Private) Limited|Lahore|042-36307986|info@newpeak.com.pk|http://www.newpeak.com.pk|Room Nos. 115-116, 1st Floor, LSE Plaza South Tower, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC048|Next Capital Limited|Karachi|021-35632356|humaira.asad@nextcapital.com.pk|http://www.nextcapital.com.pk|2nd Floor, Imperial Court Building, Dr. Ziauddin Ahmed Road, Karachi
+TREC126|NINI Securities (Private) Limited|Karachi|021-32415705; 021-32414619|contact@ninisecurities.com.pk|http://www.ninisecurities.com.pk|Room No. 707, 7th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC527|Ocean Securities Limited|Lahore||info@oceansecurities.pk|http://www.oceansecurities.pk|Room No. 117-118, First Floor, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC008|Optimus Capital Management (Private) Limited|Karachi|021-35296888; 021-35296924|info@ocm.com.pk|http://www.optimus.pk|1st Floor, State Life Building # 1-B, I.I. Chundrigar Road, Karachi
+TREC529|Orbit Securities (Private) Limited|Karachi|021-32622078|info@orbitsecurities.com.pk|http://www.orbitsecurities.com.pk|Suite # 1101, 11th Floor, Trade Center, Near Jang Press, I.I. Chundrigar Road, Karachi
+TREC148|Oriental Securities (Private) Limited|Karachi|021-32446748|oslmail@yahoo.com|http://www.osl.com.pk|Room No. 731-732, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC539|OS Capital Investments (Private) Limited|Lahore|0308-0000006; 042-36307770|info@oscapitalinvestments.com|http://www.oscapitalinvestments.com|32-H, Commercial, Canal Gardens, Canal Road, Lahore
+TREC478|Pasha Securities (Private) Limited|Islamabad|051-2895551|info@pashasec.com|http://www.pashasec.com|Room # 711, 7th Floor, ISE Towers, 55-B, Jinnah Avenue, Islamabad
+TREC169|Pearl Securities Limited|Karachi|021-32461468|ceo@pearlsecurities.com|http://www.pearlsecurities.com|Suite No. 204, 2nd Floor, Business & Finance Centre, I.I. Chundrigar Road, Karachi
+TREC540|Pine Capital Management (Private) Limited|Islamabad|051-2894306|info@pinecapital.com.pk|http://www.pinecapital.com.pk|Room No. 220, 2nd Floor & Room No. 511, 5th Floor, ISE Towers, 55-B, Jinnah Avenue, Blue Area, Islamabad
+TREC455|Prime Capital Management (Private) Limited|Islamabad|0300-8509220; 051-2726918|primecapitalm455@gmail.com|http://www.primecapitalmanagement.com.pk|Office No. 405-A, 4th Floor, ISE Towers, 55-B Jinnah Avenue, Islamabad
+TREC184|Prime Securities (Private) Limited|Karachi|021-32461184|ghulam.muhammad@primesecurityltd.com|http://www.primesecurityltd.com|Room No. 34, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC420|Progressive Investment Management (Private) Limited|Islamabad|051-2894341|piml.compliance@gmail.com|http://www.piml.com.pk|G-9-C, Mezzanine Floor, ISE Towers, 55-B, Jinnah Avenue, Islamabad
+TREC256|Progressive Securities (Private) Limited|Lahore|042-36317049; 042-36308778|pspl056@hotmail.com|http://www.progressive-lse.com|Room # 520, 5th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC183|R.T. Securities (Private) Limited|Karachi|021-35842504; 021-35341036|rtsecurities@gmail.com|http://www.rtsecurities.com.pk|Building # 24-C, Khayaban-e-Nishat, D.H.A Phase 6, Karachi
+TREC159|Rafi Securities (Private) Limited|Karachi|021-111-159-111|info@rafionline.com|http://www.rafionline.com|Room No. 1004, 10th Floor, Al-Rahim Towers, I.I. Chundrigar Road, Karachi
+TREC275|Rahat Securities Limited|Lahore|042-36303876|info@rahatonline.com|http://www.rahatonline.com|Room # 617 & 618, 6th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC553|Rallys Equities (Private) Limited|Lahore|0321-9415566; 042-36366667|hashamfayyaz3@gmail.com|http://www.rallysequities.com|Office No. 408, 4th Floor, North Tower, LSE Plaza, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC481|Riaz Ahmed Securities (Private) Limited|Islamabad|051-2894345|junaidriaz@riazahmedsecurities.com.pk|http://www.riazahmedsecurities.com|G-9 (A), Mezzanine Floor, 55-B, ISE Towers, Jinnah Avenue, Islamabad
+TREC329|S. D. Mirza Securities (Private) Limited|Lahore|042-36278975; 042-36368975|sdmirza@hotmail.com|http://www.sdmirza.com|Room # 401, 4th Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC231|Saima Qaiser Securities (Private) Limited|Lahore|042-35408633|saimaqaiserr@gmail.com|http://www.saimaqaiser.com.pk|23, First Floor, Taj Arcade, 73-Jail Road, Lahore
+TREC010|Sakarwala Capital Securities (Private) Limited|Karachi|021-32411998; 021-32419732|sakarwala_stockex@hotmail.com|http://www.sakarwalasecurities.com|Room No. 114 and 605-606, 3rd & 6th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC282|Salman Majeed Securities (Private) Limited|Lahore|042-36280911|salmanmajeedsec@hotmail.com|http://www.salmanmajeedsec.com|Room No. 108, 1st Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC015|Saya Securities (Private) Limited|Karachi|021-32427664; 021-32417393|arifsaya@hotmail.com|http://www.sayasecurities.com|Room No. 125, 3rd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC187|SAZ Capital Securities (Private) Limited|Karachi|021-32437195|einfo@saztrade.com|http://www.saztrade.com|Room Nos. 607-609, 6th Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC268|Sethi Securities (Private) Limited|Lahore|042-36365756; 042-36371919|sethisecurities268@gmail.com|http://www.sethisecurities.com|Room No. 112 (North Tower), 1st Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC107|Seven Star Securities (Private) Limited|Karachi|021-32410210; 021-32466933|info@sevenstarsec.com|http://www.sevenstarsec.com|Room No. 71, 2nd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC266|Shaffi Securities (Private) Limited|Lahore|042-36314730; 042-36308220|shaffisec201@hotmail.com|http://www.shaffisecuritiespsx.com|Room # 201, 2nd Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC055|Shajar Capital Pakistan (Private) Limited|Karachi|021-111-742-527; 021-36490541|samad.tariq@shajarcapital.com|http://www.shajarcapital.com|8th Floor, Bahria Complex-III, M.T. Khan Road, Karachi
+TREC254|Shajarpak Securities (Private) Limited|Lahore|042-36369991; 042-36285140|shajarpaksec@gmail.com|http://www.shajarpaksecurities.com|Room # 101 & 120, 1st Floor, LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC006|Sherman Securities (Private) Limited|Karachi|021-38284193; 021-38284500|sumair@shermansecurities.com|http://www.shermansecurities.com|Room No. 501-502, 5th Floor, Continental Trade Centre, Block-VIII, Clifton, Karachi
+TREC538|SIA Equities (Private) Limited|Karachi|0321-3764155; 021-32465624|ahsan@siaequities.pk|http://www.siaequities.pk|Office No. NB-604-605, 6th Floor, Stock Exchange New Building, Stock Exchange Road, Karachi
+TREC533|SOS Capital Limited|Karachi|021-32471006|info@soscapital.com.pk|http://www.soscapital.com.pk|Office No. NB-704 & 705, 7th Floor, Stock Exchange New Building, Stock Exchange Road, Karachi
+TREC173|Spectrum Securities Limited|Karachi|021-32431082; 021-32467610|ceo@spectrumonline.com.pk|http://www.spectrumonline.com.pk|Room No. 526, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC432|Spinzer Equities (Private) Limited|Islamabad|051-2895171|info@spinzer.pk|http://www.spinzer.pk|Room No. 1113, 11th Floor, ISE Towers, 55-B, Jinnah Avenue, Islamabad
+TREC112|Standard Capital Securities (Private) Limited|Karachi|021-111-111-721|info@scstrade.com|http://www.scstrade.com|Room # M-34, Mezzanine Floor, Park Towers, Plot # 1, C.F.1-5, Shahrah-e-Firdousi, Clifton, Karachi
+TREC552|Stockhub Securities (Private) Limited|Lahore|0322-5877290; 042-35466402|info@stockhubsecurities.com|http://www.stockhubsecurities.com|Office No. M-3, Mezzanine Floor, LSE Plaza, North Tower, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC530|Stocxinvest Securities (Private) Limited|Karachi|0300-8251727|info@stocxinvest.com|http://www.stocxinvest.com|Office # 116, First Floor, Sumya Business Avenue, Muhammad Ali Society (MACHS), Karachi
+TREC554|Stoxgear Securities (Private) Limited|Peshawar|0315-8706976; 091-3168395|info@stoxgear.com.pk|http://www.stoxgear.com.pk|Office No. 6, Fourth Floor, Mall of KPK, University Road, Jahangir Abad, Peshawar
+TREC017|Summit Capital (Private) Limited|Karachi|021-35169931|muzammil.merchant@summitcapital.com.pk|http://www.summitcapital.com.pk|504-506, 5th Floor, Balad Trade Center-III, D-75, Block-7, Clifton, Karachi
+TREC532|Syed Faraz Equities (Private) Limited|Islamabad|051-2895666|faisalbutt@live.com|http://www.sfel.pk|Room No. 1012, 10th Floor, ISE Towers, Blue Area, Islamabad
+TREC531|T&G Securities (Private) Limited|Karachi|021-32418169|taufiqbond700@hotmail.com|http://www.tgsecurities.com.pk|Room Nos. 401-402, 4th Floor, Stock Exchange Main Building, Stock Exchange Road, Karachi
+TREC537|Tamkeen Securities (Private) Limited|Lahore|0326-9852653; 042-37254473|info@tamkeensecurities.com|http://www.tamkeensecurities.com|839-B, DHA Phase 5, Lahore
+TREC113|Tannu Securities (Private) Limited|Karachi|021-35303271|info@tannusecuritie.com|http://www.tannusecurities.com|Plot # C-34, 1st Floor, Touheed Commercial, Street # 25, Phase-V, DHA, Karachi
+TREC065|Tariq Vohra Securities (Private) Limited|Karachi|021-35311132|asif@tvspl.com|http://www.tvspl.com|91-C, Office # 3, Mezzanine Floor, Jami Commercial Street 11, Phase-VII, D.H.A., Karachi
+TREC129|Taurus Securities Limited|Karachi|021-111-828-787; 021-35689493|taurus@taurus.com.pk|http://www.taurus-sec.com|Office # 604, 6th Floor, Progressive Plaza, Beaumont Road, Civil Lines, Karachi
+TREC036|Time Securities (Private) Limited|Karachi|021-32428915; 021-32473120|timekse@hotmail.com|http://www.timesec.pk|Room No. 52, 52-A & 52-B, 1st Floor & Room No. 98-99, 2nd Floor, Stock Exchange Main Building, Stock Exchange Road, Karachi
+TREC166|Topline Securities Limited|Karachi|021-35303330; 021-35303331|sohail@topline.com.pk|http://www.topline.com.pk|8th Floor, Horizon Tower, Plot No. 2/6, Block-III, Clifton, Karachi
+TREC127|Trade Smart Securities (Private) Limited|Karachi|021-32471949; 021-32471941|tradesmartsecurities@gmail.com|http://www.tradesmart.pk|Room No. 901-903, 9th Floor, Stock Exchange New Building, Stock Exchange Road, Karachi
+TREC332|Trust Securities & Brokerage Limited|Karachi|021-111-000-875; 021-32469044|info@tsbl.com.pk|http://www.tsbl.com.pk|Suite No. 401, 4th Floor, Business & Finance Centre, I.I. Chundrigar Road, Karachi
+TREC072|TS Securities (Private) Limited|Karachi|021-32429124; 021-32441105|tssecurities@outlook.com|http://www.tssecurities.pk|Room No. 146, 3rd Floor, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC556|UBL Financial Services (Private) Limited|Karachi||info@ufsl.com.pk|http://www.ufsl.com.pk|Office No. 202, 2nd Floor, STSM Building, Beaumont Road, Civil Lines, Karachi
+TREC466|Unex Securities (Private) Limited|Islamabad|051-2120581; 051-8778541|unexsecurities@gmail.com|http://www.unexsec.net|Office No. 6, Mezzanine Floor, AA Plaza, Plot No. 70-East, Main Jinnah Avenue, Blue Area, Islamabad
+TREC324|Union Securities (Private) Limited|Lahore|042-35863126; 042-36280814|info@unionsecurities.com.pk|http://www.unionsecurities.com.pk|Room # 204, South Tower, The Exchange Plaza (LSE Plaza), 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC234|Value Stock and Commodities (Private) Limited|Lahore|042-35711050|khuram@valuestock.pk|http://www.valuestock.pk|Office No. 1, First Floor, Value Tower, 13/B1-B2, Commercial Zone, Ghalib Market, Gulberg-III, Lahore
+TREC025|Vector Securities (Private) Limited|Karachi|021-38341003; 021-34171615|ali.shirazee@vector.com.pk|http://www.vector.com.pk|Plot No. 351, 1st Floor, Street 20, Block 3, Sharfabad, Karachi
+TREC093|Venus Securities (Private) Limited|Karachi|021-32400158|asad@venussecurities.com.pk|http://www.venussecurities.com.pk|Room No. 804, 8th Floor, Stock Exchange New Building, Stock Exchange Road, Karachi
+TREC062|WE Financial Services Limited|Karachi|021-32429288|info@we.com.pk|http://www.we.com.pk|Room No. 506-508, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC534|Wealth Street (Private) Limited|Karachi|0314-2932584; 0321-2491696|info@wealthstreet.com.pk|http://www.wealthstreet.com.pk|Plot # 41-C, Office # 201, 2nd Floor, Lane 8, Bukhari Commercial Phase-6, Karachi
+TREC135|Y. H. Securities (Private) Limited|Karachi|021-32446101; 021-32412990|contact@yhsecurities.com|http://www.yhsecurities.com|Room No. 51, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC294|Yasir Mahmood Securities (Private) Limited|Lahore|0301-8478286; 042-36314141|info@invest.pk|http://www.invest.pk|Room Nos. 205, 2nd Floor & 602, 6th Floor, LSE North Tower, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC611|Youngs Capital (Private) Limited|Lahore|0339-4403181; 042-36620475|youngscapitalconsultant@gmail.com|http://www.youngscapital.pk|Office No. 11, Floor-1, Mall of Lahore, Tufail Road, Lahore Cantt, Lahore
+TREC156|Z. A. Ghaffar Securities (Private) Limited|Karachi|021-32423277; 021-32425182|zag_sec@hotmail.com|http://www.zags.com.pk|Room No. 49, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC068|Zafar Securities (Private) Limited|Lahore|042-36368522; 042-36372470|info@zafarstocks.com|http://www.zafarstocks.com|Room # 504 & 519 (North Tower), 209 (South Tower), LSE Building, 19 Khayaban-e-Aiwan-e-Iqbal, Lahore
+TREC410|Zahid Latif Khan Securities (Private) Limited|Islamabad|051-2894401; 051-2894403|zlksec@hotmail.com|http://www.zlksec.com|Room No. 412, 4th Floor, ISE Towers, 55-B, Jinnah Avenue, Islamabad
+TREC047|Zillion Capital Securities (Private) Limited|Karachi|021-32472330; 021-32472103|compliance@zcs.com.pk|http://www.zcs.com.pk|Room No. 727-729, Stock Exchange Building, Stock Exchange Road, Karachi
+TREC454|ZLK Islamic Financial Services (Private) Limited|Islamabad|0300-8553636; 051-2894333|info@zlkislamic.com.pk|http://www.zlkislamic.com.pk|408-A, 4th Floor, ISE Towers, 55-B, Jinnah Avenue, Blue Area, Islamabad
