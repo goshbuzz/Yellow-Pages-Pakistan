@@ -18,6 +18,8 @@ import { waNumber } from './whatsapp.js';
 import { CITIES } from '../data/geo.js';
 import { CATEGORIES, CATEGORY_BY_ID } from '../data/categories.js';
 import { hashStr } from './rng.js';
+import { validPkPoint, haversineKm } from './geovalidate.js';
+import { isUsableName, isPlaceholderPhone, isPlausiblePkPhone, matchCategoryByWords } from './quality.js';
 
 const LS_CUSTOM = 'ypk.custom.v1';
 
@@ -79,8 +81,11 @@ export function validateCustomListing(draft, { existing = read(), editingId = nu
   const catId = CATEGORY_BY_ID[+draft.cat] ? +draft.cat : null;
 
   if (name.length < 2) errors.name = 'Enter the business name (at least 2 letters).';
+  else if (!isUsableName(name)) errors.name = 'That name looks like a placeholder — use the real business name.';
   if (!phone) errors.phone = 'A phone number is required — every listing must be callable.';
   else if (phone.replace(/\D/g, '').length < 9) errors.phone = 'That number looks too short.';
+  else if (isPlaceholderPhone(phone)) errors.phone = 'That is a placeholder number — enter the real one.';
+  else if (!isPlausiblePkPhone(phone)) errors.phone = 'That is not a dialable Pakistani number.';
   if (!city) errors.city = 'Pick the city this business is in.';
   if (!catId) errors.cat = 'Pick a category.';
 
@@ -97,15 +102,24 @@ export function validateCustomListing(draft, { existing = read(), editingId = nu
   );
   if (dup && name && city) errors.name = `“${name}” already exists in ${city} in your listings.`;
 
-  // Optional coordinates: both or neither, and must be inside Pakistan's envelope.
+  // Optional coordinates: both or neither, inside Pakistan, and actually near the city the
+  // listing claims — a Sahiwal shop cannot have a pin in Nairobi.
   const hasLat = draft.lat != null && draft.lat !== '';
   const hasLng = draft.lng != null && draft.lng !== '';
   let lat = null, lng = null;
   if (hasLat || hasLng) {
     const la = Number(draft.lat), ln = Number(draft.lng);
-    const inPK = Number.isFinite(la) && Number.isFinite(ln) && la > 23 && la < 38 && ln > 60 && ln < 78;
-    if (!inPK) errors.location = 'Coordinates must both be filled and inside Pakistan (lat 24–37, lng 61–77).';
-    else { lat = +la.toFixed(6); lng = +ln.toFixed(6); }
+    if (!validPkPoint(la, ln)) {
+      errors.location = 'Those coordinates are not inside Pakistan. Leave the pin empty if you are unsure.';
+    } else {
+      const cityRec = CITIES.find((c) => c.name === city);
+      const km = cityRec ? haversineKm(cityRec.lat, cityRec.lng, la, ln) : 0;
+      if (cityRec && km > 120) {
+        errors.location = `That pin is ${Math.round(km)} km from ${city} — it does not look like this city. Check the coordinates.`;
+      } else {
+        lat = +la.toFixed(6); lng = +ln.toFixed(6);
+      }
+    }
   }
 
   const ok = Object.keys(errors).length === 0;
@@ -168,48 +182,17 @@ export function deleteCustomListing(id) {
 
 /**
  * Map an imported category string onto one of the 130 categories.
- * Exact match first, then prefix, then a unique substring — so "Pharmacy" finds
- * "Pharmacies & Medical Stores" without guessing between near-duplicates.
+ * Uses the shared matcher (synonyms + word stems), then an exact-name/ID fallback.
+ * Returns null rather than guessing — an unclassified import row is reported to the user.
  */
 export function matchCategory(input) {
+  const matched = matchCategoryByWords(CATEGORIES, input);
+  if (matched) return matched;
   const norm = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9]/g, '');
   const wanted = norm(input);
   if (!wanted) return null;
   if (/^\d+$/.test(wanted) && CATEGORY_BY_ID[+wanted]) return CATEGORY_BY_ID[+wanted];
-  const exact = CATEGORIES.find((c) => norm(c.name) === wanted);
-  if (exact) return exact;
-  const prefixed = CATEGORIES.filter((c) => norm(c.name).startsWith(wanted));
-  if (prefixed.length === 1) return prefixed[0];
-  const contained = CATEGORIES.filter((c) => norm(c.name).includes(wanted));
-  if (contained.length === 1) return contained[0];
-
-  // Fuzzy fallback: "Pharmacy" should reach "Pharmacies & Medical Stores" even though two
-  // categories share the prefix. Score the term against the whole name and each word.
-  let best = null, bestScore = 0.62;
-  for (const c of CATEGORIES) {
-    const words = c.name.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
-    for (const w of [norm(c.name), ...words]) {
-      const score = similarity(wanted, w);
-      if (score > bestScore) { bestScore = score; best = c; }
-    }
-  }
-  return best;
-}
-
-/** Normalised Levenshtein similarity, 1 = identical. */
-function similarity(a, b) {
-  if (!a || !b) return 0;
-  if (a === b) return 1;
-  const m = a.length, n = b.length;
-  let prev = Array.from({ length: n + 1 }, (_, j) => j);
-  for (let i = 1; i <= m; i++) {
-    const cur = [i];
-    for (let j = 1; j <= n; j++) {
-      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-    }
-    prev = cur;
-  }
-  return 1 - prev[n] / Math.max(m, n);
+  return CATEGORIES.find((c) => norm(c.name) === wanted) || null;
 }
 
 /** Suggest categories as the user types in the import/new-listing form. */

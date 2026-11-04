@@ -5,7 +5,7 @@ import { useReducer } from 'react';
 import { Phone, MapPin, Bookmark, BookmarkCheck } from 'lucide-react';
 import { Monogram, Stars, VerifiedBadge, CustomBadge, useToast } from './ui';
 import { businessId } from '../lib/dataset';
-import { telHref } from '../lib/derive';
+import { telHref, googleMapsUrl } from '../lib/derive';
 import { WhatsAppButton } from './WhatsAppButton';
 import { findLead, addLead, removeLead } from '../lib/leads';
 import { isReal } from '../lib/provenance';
@@ -14,6 +14,7 @@ export function CompanyCard({ b, dense = false }) {
   const toast = useToast();
   const [, force] = useReducer((x) => x + 1, 0);
   const id = b.bizId || businessId(b);
+  const mapHref = googleMapsUrl(b);
   const saved = !!findLead(id);
 
   const toggleSave = (e) => {
@@ -74,10 +75,13 @@ export function CompanyCard({ b, dense = false }) {
         </a>
         {/* Every listing gets a WhatsApp action: chat for mobiles, copy for landlines. */}
         <WhatsAppButton b={b} variant="card" />
-        <a href={`https://www.google.com/maps/search/?api=1&query=${b.lat},${b.lng}`} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}
-          className="tap h-9 px-3.5 rounded-xl bg-brand-soft text-brand-deeper border border-brand/40 text-[13px] font-extrabold flex items-center justify-center gap-1.5">
-          <MapPin size={14} /> Map
-        </a>
+        {/* No pin means no Map button: a wrong-country pin is worse than none. */}
+        {mapHref && (
+          <a href={mapHref} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}
+            className="tap h-9 px-3.5 rounded-xl bg-brand-soft text-brand-deeper border border-brand/40 text-[13px] font-extrabold flex items-center justify-center gap-1.5">
+            <MapPin size={14} /> Map
+          </a>
+        )}
       </div>
     </Link>
   );

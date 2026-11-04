@@ -217,7 +217,7 @@ export default function Browse({ preset = null }) {
             </button>
           )}
           <span className="ml-auto text-[12px] font-extrabold text-stone-500 shrink-0">
-            {results ? `${results.total.toLocaleString()} found` : 'Searching…'}
+            {results ? `${results.total.toLocaleString()} found${city ? ` in ${city}` : ''}` : 'Searching…'}
           </span>
         </div>
 
@@ -400,11 +400,26 @@ export default function Browse({ preset = null }) {
                 </div>
               }
             />
+          ) : results.cityUnknown ? (
+            <EmptyState
+              emoji="🗺️"
+              title={`We have no city called “${city}”`}
+              hint="Check the spelling, or pick from the 420 Pakistani cities in the city filter. Listings outside Pakistan are never shown."
+              action={
+                <button onClick={() => applyCity(null)} className="btn-secondary mt-4 w-full max-w-xs justify-center">
+                  Browse all of Pakistan
+                </button>
+              }
+            />
           ) : (
             <EmptyState
               emoji="🕵️"
-              title="No businesses found"
-              hint={`Nothing matches ${q ? `“${q}”` : 'these filters'}${city ? ` in ${city}` : ''}. Try a shorter word, or widen the city filter.`}
+              title={q ? 'No businesses found' : `No listings in ${city || 'this area'} yet`}
+              hint={
+                city && !q
+                  ? `Nothing is listed in ${city} yet — this directory ships only real, sourced businesses, so cities fill up one import at a time. Try All cities, or add one you know.`
+                  : `Nothing matches ${q ? `“${q}”` : 'these filters'}${city ? ` in ${city}` : ''}. Try a shorter word, or widen the city filter.`
+              }
               action={
                 <div className="mt-4 flex flex-col sm:flex-row gap-2 w-full max-w-xs">
                   <button onClick={() => navigate(preset ? preset.page.path : '/browse')} className="btn-secondary flex-1 justify-center">Clear filters</button>

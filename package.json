@@ -17,7 +17,8 @@
     "postbuild": "node scripts/prerender.mjs",
     "test:ads": "node --test scripts/ads-test.mjs",
     "city": "node scripts/import-city.mjs",
-    "coverage": "node scripts/import-city.mjs --report"
+    "coverage": "node scripts/import-city.mjs --report",
+    "audit": "node scripts/audit-listings.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",

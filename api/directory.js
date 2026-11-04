@@ -34,7 +34,9 @@ function rateLimited(ip) {
 
 export default function handler(req, res) {
   res.setHeader('X-Robots-Tag', 'noindex, nofollow, noarchive');
-  res.setHeader('Cache-Control', 'private, max-age=3600');
+  // A cleaned corpus must reach users immediately: an hour-old copy of a bad dataset is a
+  // business risk, not a performance win. Browsers may keep it, but must revalidate.
+  res.setHeader('Cache-Control', 'private, no-cache, must-revalidate');
 
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });

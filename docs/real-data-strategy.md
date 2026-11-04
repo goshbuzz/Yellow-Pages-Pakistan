@@ -308,3 +308,103 @@ Rules the implementation enforces (`src/lib/customListings.js`):
 Bulk import accepts CSV or JSON with loosely matched column names (`phone` / `tel` /
 `mobile`, `city` / `town`, …) and fuzzy category resolution, so a spreadsheet kept in
 English or Urdu-Roman spelling usually imports without editing headers first.
+
+---
+
+## 10. Listing integrity: what produced the fake hospital results, and what stops them
+
+The reported bug was specific and reproducible: searching **"Hospital" with the Sahiwal filter**
+returned rows that were not in Sahiwal, did not exist, and — in some cases — were pinned
+**south of the Sahara**. It was not one bug. Six separate defects could each put a fake or
+misplaced row in front of a user, and all six are now closed.
+
+### 10.1 The city filter silently stopped filtering
+
+`CITIES.findIndex((c) => c.name === city)` compared the URL value to the canonical name with
+`===`. One lowercase letter, one pasted trailing space, and the lookup returned `-1`. The city
+clause was then dropped from the query and the user got **every** city back under a heading
+that said "Sahiwal". Filtering now goes through `normaliseCity()` / `runQuery()`
+(`src/lib/searchCore.js`): trim, collapse spaces, compare case-insensitively, and if the city
+is still unknown return **zero** rows with `cityUnknown: true`, never the unfiltered set. The
+UI says "We have no city called …" instead of pretending to have searched it.
+
+### 10.2 There was no coordinate validation anywhere
+
+No importer, no form and no export path ever asked whether a latitude/longitude pair was in
+Pakistan. The test corpus stored Nairobi (`-1.29, 36.82`), Lagos (`6.52, 3.38`), Cairo
+(`30.04, 31.24`) and London (`51.51, -0.13`) as "Sahiwal hospitals" and every layer accepted
+them. Everything now passes `validPkPoint()` from `src/lib/geovalidate.js`, which applies a
+Pakistan bounding box (23.4–37.2 N, 60.5–78.1 E) and rejects `0,0`. A point that fails is
+**dropped**, not corrected: a listing with no pin is honest, a listing with a pin in Africa
+is a lie.
+
+### 10.3 "Nearest city" turned foreign pins into Pakistani towns
+
+The importer snapped a missing city to the closest entry in the 420-city list by great-circle
+distance with no distance ceiling. Nairobi resolved to **Jiwani, Balochistan**; Cairo and
+London resolved to **Taftan, Balochistan**. `cityForPoint()` now requires the point to be valid
+*and* within **120 km** of the city (`cityForPoint(lat, lng, CITIES, 120)`), otherwise it
+returns `null` and the row is dropped. The nearest city is a hint, not a guess.
+
+### 10.4 The CSV importer invented data
+
+Three separate fabrications lived in `scripts/import-listings.mjs`:
+
+| Fabrication | Consequence | Now |
+| --- | --- | --- |
+| `city.lat ± random()` for rows without coordinates | jittered fake pins that looked real | pin left empty; no pin is shown |
+| unknown city → `CITIES[0]` (Karachi) | "Atlantis" became a Karachi business | `resolveCity()` → `null` → row dropped with a reason |
+| no category match → `CATEGORIES[0]` (Textile Mills & Fabrics) | every unclassifiable row filed as a textile mill | `matchCategoryByWords()` → `null` → row dropped |
+| `"Test"`, `"xxxx"`, `0300-0000000` accepted | placeholder rows published | `isUsableName()` / `isPlaceholderPhone()` reject them |
+
+Every drop prints its reason (`! dropped "Atlantis Hospital": unknown city "Atlantis"`), so an
+import is auditable instead of silent.
+
+### 10.5 A wrong category is a wrong listing
+
+The category guesser ended in `|| CATEGORIES[0]`, and `CATEGORIES[0]` is **Textile Mills &
+Fabrics** — so an unreadable row was not merely unfiled, it was *actively misfiled* and would
+surface under a filter it had nothing to do with. Two rules now apply:
+
+1. **No silent fallback.** If no category has real evidence, the function returns `null` and
+   the caller drops the row. A business under the wrong heading is as wrong as a business
+   that does not exist.
+2. **A shared suffix is not evidence.** Words like *store*, *agency*, *centre*, *services*,
+   *traders* appear in dozens of category names and therefore prove nothing on their own;
+   they are stripped before scoring (`GENERIC_WORDS`). "Travel Agency" and "HR & Recruitment
+   Agencies" share only *agency*, so the row is dropped rather than filed under recruitment.
+   Pakistani shop wording is mapped explicitly instead: *kiryana* → Grocery, *medical store* /
+   *chemist* / *dispensary* → Pharmacies, *medicare* → Hospitals, *darzi* → Tailoring.
+
+Matching is covered by tests for the cases that had gone wrong: *Hospital* → Hospitals &
+Medical Centers, *Medicare Centre* → Hospitals (not Pharmaceuticals), *Pharmacy* → Pharmacies
+& Medical Stores, *Al-Madina Kiryana Store* → Grocery & Supermarkets, *Mystery Services Ltd* →
+`null`.
+
+### 10.6 Relevance is computed on the whole query, in one place
+
+Ranking scored only the first term, so "Sahiwal hospital" was ranked as if it were "Sahiwal".
+The query path now lives in `src/lib/searchCore.js` (`buildIndex` + `runQuery`) and scores all
+terms: a name containing every term outranks a prefix match, which outranks a late position in
+the name; rating and review count break ties. `dataWorker.js` is a thin wrapper around it, so
+the same rules are exercised by the 289-assertion suite without a browser.
+
+### 10.7 The three gates that keep it that way
+
+| Gate | Where | Behaviour |
+| --- | --- | --- |
+| **Import** | `import-listings.mjs`, `import-city.mjs`, `customListings.js` | placeholder name/phone, unknown city, unknown category, foreign pin, or a pin >120 km from the stated city → row refused, reason printed |
+| **Publish** | `scripts/stats.mjs` | refuses to write `public/data` if any row has a foreign pin or a placeholder number; blanks a bad pin instead of exporting it |
+| **Audit** | `npm run audit` | re-checks an existing corpus (`--fix` to clean, `--max-km` default 150), prints a coverage table by city |
+
+Coordinates are also validated at render time (`derive.js` → `googleMapsUrl` /
+`googleMapsEmbedUrl` return `null`), so a bad pin already sitting in a client cache cannot
+produce a "Directions" link to another continent — the Map button is hidden and the detail page
+says *No map pin for this listing.*
+
+### 10.8 Cache staleness made fixed data look unfixed
+
+Cleaning the corpus is pointless if devices keep the previous payload. The dataset is now
+**network-first** (`public/sw.js`, cache name `ypk-v2`, old caches deleted on activate) and
+`api/directory.js` sends `no-cache, must-revalidate`, so a corrected listing reaches an
+installed app on the next load instead of surviving indefinitely.

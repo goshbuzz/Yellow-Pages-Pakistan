@@ -26,6 +26,8 @@ import { CITIES } from '../src/data/geo.js';
 import { CATEGORIES } from '../src/data/categories.js';
 import { waNumber } from '../src/lib/whatsapp.js';
 import { hashStr } from '../src/lib/rng.js';
+import { validPkPoint, cityForPoint, haversineKm } from '../src/lib/geovalidate.js';
+import { isUsableName, isPlaceholderPhone, isPlausiblePkPhone, resolveCity, matchCategoryByWords } from '../src/lib/quality.js';
 
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {
@@ -45,28 +47,19 @@ const log = (m) => console.log('  ' + m);
 
 // ── Shared helpers ──────────────────────────────────────────────────────────
 
-/** Nearest known city (the app already ships 420 real coordinates). */
-function nearestCity(lat, lng) {
-  let best = CITIES[0], bestD = Infinity;
-  for (const c of CITIES) {
-    const d = (c.lat - lat) ** 2 + (c.lng - lng) ** 2;
-    if (d < bestD) { bestD = d; best = c; }
-  }
-  return best;
+/**
+ * Nearest known city (the app already ships 420 real coordinates) — but only if the point
+ * is actually in Pakistan and genuinely near that city. Returns null otherwise: assigning a
+ * foreign point to "the closest Pakistani town" is how a Nairobi hospital once ended up
+ * listed as a Sahiwal one.
+ */
+function nearestCity(lat, lng, maxKm = 120) {
+  return cityForPoint(+lat, +lng, CITIES, maxKm);
 }
 
-/** Map a free-text industry onto one of the 130 categories. */
+/** Map a free-text industry onto one of the 130 categories (null = unclassifiable). */
 function guessCategory(...hints) {
-  const hay = hints.filter(Boolean).join(' ').toLowerCase();
-  if (!hay) return CATEGORIES[0];
-  let best = null, bestScore = 0;
-  for (const c of CATEGORIES) {
-    const words = c.name.toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 3);
-    let score = 0;
-    for (const w of words) if (hay.includes(w)) score += w.length;
-    if (score > bestScore) { bestScore = score; best = c; }
-  }
-  return best || CATEGORIES[0];
+  return matchCategoryByWords(CATEGORIES, ...hints);
 }
 
 /**
@@ -120,8 +113,13 @@ function readOverture() {
   return rows.map((r) => {
     const { phone, whatsappCapable } = pickPhone(r.phones);
     if (!phone) return null;
+    // The bbox normally guarantees this, but a bad row must never become a "Sahiwal"
+    // listing whose pin opens in Nairobi.
+    if (!validPkPoint(r.lat, r.lng)) return null;
     const city = nearestCity(+r.lat, +r.lng);
+    if (!city) return null; // >120 km from any known city: not attributable to one
     const cat = guessCategory(r.basic_category, r.name, city.name);
+    if (!cat) return null; // no category evidence → drop, rather than mislabel it
     return {
       name: (r.name || '').trim(),
       cat: cat.id,
@@ -215,13 +213,58 @@ function readCsv() {
     const name = get('name');
     const phone = get('phone');
     if (!name || !phone) return null;
+
+    // Junk in → junk out is not acceptable: a placeholder name or an impossible number is
+    // dropped here, with the reason, instead of being published and audited later.
+    if (!isUsableName(name)) {
+      warn(`dropped "${name}": not a usable business name`);
+      return null;
+    }
+    if (isPlaceholderPhone(phone)) {
+      warn(`dropped "${name}": placeholder phone "${phone}"`);
+      return null;
+    }
+    if (!isPlausiblePkPhone(phone)) {
+      warn(`dropped "${name}": "${phone}" is not a dialable Pakistani number`);
+      return null;
+    }
+
+    // Unknown city → skip the row. (It used to fall back to CITIES[0], which silently
+    // turned every unattributable record into a Karachi business.)
     const cityName = get('city');
-    const city = CITIES.find((c) => c.name.toLowerCase() === cityName.toLowerCase())
-      || CITIES.find((c) => cityName && c.name.toLowerCase().includes(cityName.toLowerCase()))
-      || CITIES[0];
+    const city = resolveCity(cityName, CITIES);
+    if (!city) {
+      warn(`dropped "${name}": unknown city "${cityName}"`);
+      return null;
+    }
+
     const cat = guessCategory(get('category'), name, city.name);
+    if (!cat) {
+      warn(`dropped "${name}": could not classify "${get('category') || 'no category'}" into one of the 130 categories`);
+      return null;
+    }
     const waFlag = /^(y|yes|true|1|whatsapp)$/i.test(get('whatsapp'));
     const capable = !!waNumber(phone);
+
+    // Coordinates, in order of trust:
+    //   1. explicit lat/lng in the file → must be inside Pakistan and near the stated city
+    //   2. none                         → no pin at all (the Map button hides itself)
+    // We never invent a pin. A wrong pin sends people to the wrong street — or country.
+    let lat = null, lng = null;
+    const rawLat = get('lat'), rawLng = get('lng');
+    if (rawLat || rawLng) {
+      const la = Number(rawLat), ln = Number(rawLng);
+      if (!validPkPoint(la, ln)) {
+        warn(`dropped "${name}": coordinates ${rawLat},${rawLng} are not in Pakistan`);
+        return null;
+      }
+      if (haversineKm(city.lat, city.lng, la, ln) > 120) {
+        warn(`dropped "${name}": pin is ${Math.round(haversineKm(city.lat, city.lng, la, ln))} km from ${city.name}`);
+        return null;
+      }
+      lat = +la.toFixed(6);
+      lng = +ln.toFixed(6);
+    }
     return {
       name,
       cat: cat.id,
@@ -236,8 +279,8 @@ function readCsv() {
       email: get('email') || null,
       website: get('website') || null,
       ntn: get('ntn') || null,
-      lat: get('lat') ? +get('lat') : +(city.lat + (Math.random() - 0.5) * 0.02).toFixed(6),
-      lng: get('lng') ? +get('lng') : +(city.lng + (Math.random() - 0.5) * 0.02).toFixed(6),
+      lat,
+      lng,
       source: args.as || 'dataset',
       sourceRef: get('ntn') ? `${args.as || 'registry'}:${get('ntn')}` : null,
       attribution: args.attribution || null,

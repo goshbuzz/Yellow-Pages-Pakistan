@@ -1,5 +1,11 @@
-/* Yellow Pages Pakistan — Service Worker v1 */
-const VERSION = 'ypk-v1';
+/* Yellow Pages Pakistan — Service Worker v2
+ *
+ * v1 served every same-origin response stale-while-revalidate, which meant a browser that
+ * had cached a bad dataset kept showing it long after the corpus was cleaned. The dataset
+ * payload is now network-first with a short-lived fallback, and v1 caches are purged on
+ * activate.
+ */
+const VERSION = 'ypk-v2';
 const SHELL = `${VERSION}-shell`;
 const PAGES = `${VERSION}-pages`;
 const ASSETS = `${VERSION}-assets`;
@@ -65,6 +71,22 @@ self.addEventListener('fetch', (event) => {
             return res;
           })
       )
+    );
+    return;
+  }
+
+  // The directory payload and the corpus endpoint: network-first, always. A stale copy here
+  // is not a slow page — it is wrong listings, with phone numbers and map pins, presented
+  // as current. Offline use still works, but a fresh answer always wins.
+  if (url.pathname.startsWith('/data/') || url.pathname.startsWith('/api/')) {
+    event.respondWith(
+      fetch(req)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(ASSETS).then((c) => c.put(req, copy));
+          return res;
+        })
+        .catch(() => caches.match(req))
     );
     return;
   }
