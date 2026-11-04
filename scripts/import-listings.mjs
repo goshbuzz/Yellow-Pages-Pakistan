@@ -1,7 +1,7 @@
 // Import real businesses into the directory.
 //
-// The 200,000 rows the app ships with are GENERATED SAMPLE DATA (see src/lib/derive.js).
-// This script is how real entities get in:
+// The app ships with NO listings and no generator: this script is the only way records
+// enter the directory.
 //
 //   node scripts/import-listings.mjs --source=overture --bbox=24.7,66.7,25.1,67.2 --out=public/data/real-karachi.json
 //   node scripts/import-listings.mjs --source=csv --in=companies.csv --out=public/data/real-companies.json
@@ -25,6 +25,7 @@ import { dirname } from 'node:path';
 import { CITIES } from '../src/data/geo.js';
 import { CATEGORIES } from '../src/data/categories.js';
 import { waNumber } from '../src/lib/whatsapp.js';
+import { hashStr } from '../src/lib/rng.js';
 
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {
@@ -33,7 +34,7 @@ const args = Object.fromEntries(
   })
 );
 
-const OUT = args.out || 'public/data/imported.json';
+const OUT = args.out || 'public/data/listings.json';
 const DRY = !!args['dry-run'];
 const SOURCE = args.source || 'csv';
 
@@ -247,6 +248,14 @@ function readCsv() {
 // ── Main ────────────────────────────────────────────────────────────────────
 
 const collected = SOURCE === 'overture' ? readOverture() : readCsv();
+
+// Stable, human-traceable id so a listing URL keeps working across re-imports.
+// Prefer the registry reference; otherwise a hash of name+city (same entity, same id).
+for (const r of collected) {
+  if (r.id) continue;
+  if (r.sourceRef) r.id = `i${hashStr(r.sourceRef).toString(36)}`;
+  else r.id = `i${hashStr(`${r.name.toLowerCase()}|${r.city.toLowerCase()}`).toString(36)}`;
+}
 
 // Deduplicate on name+city, and drop rows whose number is already used by another entity
 // (shared switchboards are fine to keep — flag them instead of silently deleting leads).

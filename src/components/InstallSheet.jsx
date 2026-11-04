@@ -66,7 +66,7 @@ export function InstallSheet({ open, onClose, onDismiss, onInstall, canInstall, 
 
         <ul className="my-4 space-y-2">
           {[
-            ['⚡', 'Instant search across 200,000 listings — even with no internet'],
+            ['⚡', 'Instant search across the whole directory — even with no internet'],
             ['🎯', 'One-tap call, WhatsApp & Google Maps directions'],
             ['🔖', 'Lead lists + CSV export — your outreach kit in your pocket'],
             ['🚫', 'No ads, no clutter, no tracking'],

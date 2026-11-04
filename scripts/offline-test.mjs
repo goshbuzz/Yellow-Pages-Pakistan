@@ -24,7 +24,7 @@ const swState = await page.evaluate(async () => {
 ok('service worker registered & active', swState === 'active');
 
 // Make sure the dataset is fetched & cached through the SW
-const dataBytes = await page.evaluate(() => fetch('/data/directory.txt').then((r) => r.arrayBuffer()).then((b) => b.byteLength).catch(() => 0));
+const dataBytes = await page.evaluate(() => fetch('/data/listings.txt').then((r) => r.arrayBuffer()).then((b) => b.byteLength).catch(() => 0));
 ok('dataset fetched online', dataBytes > 1_000_000);
 await page.waitForTimeout(2000); // let SW caches settle
 

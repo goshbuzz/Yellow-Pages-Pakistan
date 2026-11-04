@@ -6,18 +6,18 @@ import SeoHead from '../components/SeoHead';
 import { makeFaqSchema } from '../components/PageFaq';
 
 const FAQS = [
-  ['What is Yellow Pages Pakistan?', 'A free business directory of Pakistan with 200,000+ listings across 420 cities and 130 categories. Search any business to get its phone number, WhatsApp, website and Google Maps location — instantly.'],
-  ['How many businesses are listed?', 'Over 200,000, covering every Pakistani city and district headquarters — Karachi, Lahore, Islamabad, Faisalabad, Peshawar, Quetta and 415 more towns across all provinces, Azad Kashmir and Gilgit-Baltistan.'],
+  ['What is Yellow Pages Pakistan?', 'A free business directory of Pakistan covering 420 cities and 130 categories. Search any listed business to get its phone number, WhatsApp availability, website and Google Maps location — instantly. It ships without placeholder data: listings come from licensed imports or from business owners themselves.'],
+  ['How many businesses are listed?', 'Coverage is growing city by city and is shown live in the app; the directory shipped with zero invented listings, so the count always reflects real businesses. Every Pakistani city and district headquarters is supported — Karachi, Lahore, Islamabad, Faisalabad, Peshawar, Quetta and 415 more towns across all provinces, Azad Kashmir and Gilgit-Baltistan.'],
   ['Is it free to search?', 'Completely free — no signup, no ads on profiles, no limits. Install the app and it even works offline.'],
   ['How do I find a business phone number?', 'Type the business name, category or city into search, then tap Call on any listing. Mobile (03xx) and landline numbers are listed. Every listing also has a WhatsApp button: mobile numbers open a direct chat with a ready message, landlines show a "Copy number" button instead of a dead chat link.'],
   ['How do I list my business for free?', `Open "List your business", submit your name, category, city and phone number — it takes about 2 minutes. Our team verifies within 48 hours, then your profile goes live with a verified badge, call/WhatsApp buttons and a map pin. Free forever.`],
   ['What is the Lead Workspace?', 'A built-in outreach tool for freelancers and marketing agencies: save businesses into lead lists, track New → Contacted → Replied → Won, export contacts to CSV for your CRM, and auto-draft personalized pitch emails or WhatsApp messages for each business.'],
-  ['Does the app work offline?', 'Yes. After your first visit, all 200,000 listings are cached on your device — search, calls and lead lists keep working with no internet.'],
+  ['Does the app work offline?', 'Yes. Once the directory data is cached on your device after a first visit, search, calls and your lead lists keep working with no internet.'],
   ['Is there an Android or iPhone app?', 'Yes — tap "Install app" and add it to your home screen in about 5 seconds. No app store needed, and updates are automatic.'],
   ['Which cities are covered?', 'All 420 cities and towns: Karachi, Lahore, Faisalabad, Rawalpindi, Gujranwala, Multan, Hyderabad, Peshawar, Quetta, Sargodha, Sialkot, Bahawalpur, Sukkur — plus every district HQ from Gwadar and Ziarat to Skardu and Mirpur.'],
   ['How accurate are the listings?', 'Flagship companies (banks, hospitals, universities, major brands) are manually verified with real contact details. For other listings we show the freshest data available, and business owners can correct their own profiles any time via a free listing.'],
   ['Can I export business contacts?', 'Leads you save to your lists can be exported to CSV — that\'s the point of the Lead Workspace. Bulk scraping of the directory is not permitted.'],
-  ['How is this different from other Pakistani directories?', 'More listings than anyone (200,000+ vs 155k at the largest competitor), a real installable offline app, free listings forever — and the only directory with built-in outreach tools for freelancers and agencies.'],
+  ['How is this different from other Pakistani directories?', 'Sourcing you can check: every listing names where it came from and whether the business verified its own number. On top of that: a real installable offline app, free listings forever, and built-in outreach tools for freelancers and agencies.'],
 ];
 
 export default function Faq() {

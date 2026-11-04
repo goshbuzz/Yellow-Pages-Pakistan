@@ -1,6 +1,6 @@
-// Guarded dataset endpoint — serves the 200k listing corpus ONLY to the app itself.
+// Guarded dataset endpoint — serves the imported listing corpus ONLY to the app itself.
 //
-// The corpus is imported directly (server-data/corpus.js, generated at build time),
+// The corpus is imported directly (server-data/corpus.js, produced by `npm run stats`),
 // so no includeFiles config or non-default memory settings are required —
 // the function deploys fine on the free Hobby plan.
 //
@@ -62,5 +62,9 @@ export default function handler(req, res) {
   }
 
   res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  // No dataset configured: tell the app plainly instead of shipping placeholder rows.
+  if (!corpus || corpus.startsWith('{"v":1,"total":0}')) {
+    return res.status(404).json({ error: 'No dataset configured', hint: 'npm run import && npm run stats' });
+  }
   return res.status(200).send(corpus);
 }

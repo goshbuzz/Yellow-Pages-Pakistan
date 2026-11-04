@@ -4,14 +4,13 @@ import { useEffect, useState } from 'react';
 import { CURATED } from '../data/curated.js';
 import { CITIES } from '../data/geo.js';
 import { CATEGORY_BY_ID } from '../data/categories.js';
-import { derive } from './derive.js';
 
 let worker = null;
 let readyResolvers = [];
 let seq = 0;
 const pending = new Map();
 
-export const datasetState = { ready: false, total: 0 };
+export const datasetState = { ready: false, total: 0, whatsappCapable: 0, ownerVerified: 0 };
 
 function ensureWorker() {
   if (worker) return worker;
@@ -21,6 +20,8 @@ function ensureWorker() {
     if (type === 'ready') {
       datasetState.ready = true;
       datasetState.total = e.data.total;
+      datasetState.whatsappCapable = e.data.whatsappCapable || 0;
+      datasetState.ownerVerified = e.data.ownerVerified || 0;
       readyResolvers.forEach((r) => r());
       readyResolvers = [];
       return;
@@ -59,17 +60,19 @@ function ask(payload) {
   });
 }
 
-// Search/filter generated listings + merge curated matches on top.
+// Search the imported listings, then merge curated flagship profiles on top.
 export async function searchBusinesses({ q = '', cat = null, city = null, sort = 'relevance', page = 1, perPage = 12 }) {
   const res = await ask({ type: 'query', q, cat, city, sort, page, perPage: perPage + 4 });
-  const generated = res.rows.map((r) => ({ __i: r[7], ...derive(r) }));
+  // Worker records are complete (real imported data) — attach the category object only.
+  const generated = res.rows.map((r) => ({ ...r, cat: CATEGORY_BY_ID[r.catId] }));
 
   // Curated matches (flagship, verified) — shown first
   const ql = q.toLowerCase().trim();
   const curatedMatches = CURATED
-    .filter((c) => (!cat || CATEGORY_BY_ID[cat]?.name === catNameOf(c)) && (!city || c.city === city) &&
+    .map((c, idx) => ({ c, idx }))
+    .filter(({ c }) => (!cat || CATEGORY_BY_ID[cat]?.name === catNameOf(c)) && (!city || c.city === city) &&
       (!ql || c.name.toLowerCase().includes(ql) || catNameOf(c).toLowerCase().includes(ql) || c.city.toLowerCase().includes(ql)))
-    .map((c) => ({ ...c, cat: CATEGORY_BY_ID[c.cat], verified: true, source: 'seed', __i: -1 }));
+    .map(({ c, idx }) => normalizeCurated(c, `c${idx}`));
 
   let merged;
   if (page === 1) merged = [...curatedMatches, ...generated];
@@ -78,6 +81,22 @@ export async function searchBusinesses({ q = '', cat = null, city = null, sort =
 }
 
 function catNameOf(c) { return CATEGORY_BY_ID[c.cat]?.name || ''; }
+
+/** Curated rows carry no address/province/hours, so fill only what the city data proves. */
+function normalizeCurated(c, id) {
+  const city = CITIES.find((x) => x.name === c.city);
+  return {
+    ...c,
+    id,
+    cat: CATEGORY_BY_ID[c.cat],
+    province: c.province || city?.province || '',
+    address: c.address || [c.bldg, c.street, c.area, c.city].filter(Boolean).join(', '),
+    hours: c.hours || null,
+    verified: true,
+    source: 'seed',
+    __i: -1,
+  };
+}
 
 export async function getGeneratedRow(idx) {
   const res = await ask({ type: 'row', idx });
@@ -95,11 +114,11 @@ export async function getBusiness(id) {
   if (id[0] === 'c') {
     const c = CURATED[+id.slice(1)];
     if (!c) return null;
-    return { ...c, cat: CATEGORY_BY_ID[c.cat], verified: true, source: 'seed', __i: -1, id };
+    return normalizeCurated(c, id);
   }
   const row = await getGeneratedRow(+id.slice(1));
   if (!row) return null;
-  return { ...derive(row), __i: row[7], id };
+  return { ...row, cat: CATEGORY_BY_ID[row.catId], id };
 }
 
 export function businessId(b) {

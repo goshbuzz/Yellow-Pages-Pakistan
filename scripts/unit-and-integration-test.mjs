@@ -3,13 +3,13 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { CATEGORIES, CATEGORY_GROUPS, CATEGORY_BY_ID } from '../src/data/categories.js';
 import { CITIES } from '../src/data/geo.js';
-import { STATS } from '../src/data/stats.generated.js';
+import { STATS, DATASET_MODE } from '../src/data/stats.generated.js';
 import { CURATED } from '../src/data/curated.js';
 import { makeFaqSchema } from '../src/lib/seo.js';
 import { waNumber, isWaCapable, waHref, waInfo, waDisplayNumber } from '../src/lib/whatsapp.js';
 import { leadsToCsv } from '../src/lib/export.js';
 import { SOURCE, isReal, provenanceFields, trustBadge } from '../src/lib/provenance.js';
-import { derive } from '../src/lib/derive.js';
+import { claimToken, verifyClaim, isVerificationFresh, claimHref } from '../src/lib/verify.js';
 import { execFileSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 
@@ -31,7 +31,11 @@ assert('Categories defined', CATEGORIES.length === 130, `Found: ${CATEGORIES.len
 assert('Category groups defined', CATEGORY_GROUPS.length > 0);
 assert('All categories mapped by ID', Object.keys(CATEGORY_BY_ID).length === 130);
 assert('Cities defined (420 cities)', CITIES.length === 420, `Found: ${CITIES.length}`);
-assert('Listing statistics generated', STATS.total >= 200000, `Found: ${STATS.total}`);
+assert('Stats reflect the configured dataset (never a fixed 200k)', STATS.total >= 0 && Number.isFinite(STATS.total), `Found: ${STATS.total}`);
+assert('Dataset mode is coherent with the counts', (STATS.total === 0) === (DATASET_MODE === 'empty'), `mode=${DATASET_MODE} total=${STATS.total}`);
+assert('No fake volume padding in the totals', !JSON.stringify(STATS).includes('200000'));
+assert('Sample generator is gone', !existsSync('scripts/generate-data.mjs'));
+assert('No generated dataset file in public/data', !existsSync('public/data/directory.txt'));
 assert('Curated flagship listings exist', CURATED.length > 0);
 
 console.log('\n=== 1b. WHATSAPP DIRECT-CHAT TESTS ===');
@@ -77,11 +81,17 @@ assert('Outreach queue skips landlines explicitly', waQueueJsx.includes("state !
 assert('Outreach queue opens the business number', waQueueJsx.includes("info.href.split('?')[0]"));
 
 console.log('\n=== 1c. PROVENANCE & REAL-DATA INTEGRITY TESTS ===');
-assert('A generated row is marked as sample data', derive(['X','1',0,0,0,'B',12345]).source === SOURCE.SAMPLE);
+assert('No sample-marked records in the shipped stats', !JSON.stringify(STATS.byCat).includes('sample'));
+assert('Dataset defaults to empty until real data is imported', DATASET_MODE === 'empty' || STATS.source !== 'none');
 assert('Sample rows are not real businesses', !isReal({ source: SOURCE.SAMPLE }));
 assert('Curated flagship records are real', isReal({ source: SOURCE.SEED }) && isReal({ verified: true }));
 assert('Owner submissions are real', isReal({ source: SOURCE.OWNER }));
 assert('Sample rows earn no trust badge', trustBadge({ source: SOURCE.SAMPLE }) === null);
+assert('dataset.js does not fabricate records', !readFileSync('src/lib/dataset.js', 'utf8').includes('derive('));
+const deriveSrc = readFileSync('src/lib/derive.js', 'utf8');
+assert('Listing fabricator removed from derive.js', !deriveSrc.includes('mulberry32') && !deriveSrc.includes('export function derive('));
+assert('derive.js keeps the link helpers', deriveSrc.includes('telHref') && deriveSrc.includes('googleMapsUrl'));
+assert('Dataset client never falls back to generated data', !readFileSync('src/lib/dataset.js', 'utf8').includes('CURATED[+id.slice(1)]\n    ? '));
 assert('Unknown provenance fails closed to sample', !isReal({ name: 'Mystery', phone: '0300-1234567' }));
 assert('Legacy curated lead is inferred as seed', isReal({ bizId: 'c12', verified: true }));
 assert('Legacy generated lead is inferred as sample', !isReal({ bizId: 'g1234' }));
@@ -120,6 +130,70 @@ assert('Import removes duplicates', imported.records.filter((r) => r.name === 'B
 assert('Import keeps real provenance', imported.records.every((r) => r.source === 'official'));
 assert('Import downgrades WhatsApp claim on a landline', imported.records.find((r) => r.name === 'Beta Traders').whatsapp === false);
 assert('Import keeps WhatsApp claim on a mobile', imported.records.find((r) => r.name === 'Alpha Software').whatsapp === true);
+
+console.log('\n=== 1d. OWNER VERIFICATION (CLAIM LOOP) TESTS ===');
+const vNow = Date.now();
+const tok = claimToken('g1', '923001234567', vNow);
+assert('Claim token verifies for the same listing + number', verifyClaim('g1', '923001234567', tok, vNow).ok);
+assert('Token bound to listing id', !verifyClaim('g2', '923001234567', tok, vNow).ok);
+assert('Token bound to number', !verifyClaim('g1', '923009999999', tok, vNow).ok);
+assert('Garbage token rejected', verifyClaim('g1', '923001234567', 'not a token!!').ok === false);
+assert('Yesterday\'s token still accepted (slow operator)', verifyClaim('g1', '923001234567', claimToken('g1', '923001234567', vNow - 86400000), vNow).ok);
+assert('Old token rejected (replay window closed)', !verifyClaim('g1', '923001234567', claimToken('g1', '923001234567', vNow - 7 * 86400000), vNow).ok);
+assert('Verification expires after 30 days', !isVerificationFresh({ verifiedAt: vNow - 31 * 86400000 }));
+assert('Verification fresh inside 30 days', isVerificationFresh({ verifiedAt: vNow - 29 * 86400000 }));
+assert('Claim link targets the owner\'s own number', claimHref({ listingId: 'g1', number: '923001234567', businessName: 'X' }).startsWith('https://wa.me/923001234567?text='));
+assert('Stats never describe sample records', !readFileSync('src/data/stats.generated.js', 'utf8').includes("'sample'"));
+
+// Claim merge: forged, stale, landline and mismatched claims must not upgrade a listing.
+const claimsFile = '/tmp/ypk-claims-test.json';
+const dataFile = '/tmp/ypk-claims-data.json';
+writeFileSync(claimsFile, JSON.stringify({ claims: [
+  { listingId: 'g1', number: '0300-1234567', token: claimToken('g1', '923001234567', vNow), verifiedAt: vNow },
+  { listingId: 'g2', number: '0300-9999999', token: 'forgedtoken1', verifiedAt: vNow },
+  { listingId: 'g3', number: '0300-1111111', token: claimToken('g3', '923001111111', vNow - 45 * 86400000), verifiedAt: vNow - 45 * 86400000 },
+  { listingId: 'g4', number: '021-99220100', token: claimToken('g4', '02199220100', vNow), verifiedAt: vNow },
+  { listingId: 'g5', number: '0300-2222222', token: claimToken('g5', '923002222222', vNow), verifiedAt: vNow },
+] }));
+writeFileSync(dataFile, JSON.stringify({ records: [
+  { id: 'g1', name: 'A', phone: '0300-1234567' },
+  { id: 'g2', name: 'B', phone: '0300-9999999' },
+  { id: 'g3', name: 'C', phone: '0300-1111111' },
+  { id: 'g4', name: 'D', phone: '021-99220100' },
+  { id: 'g5', name: 'E', phone: '0300-3333333' }, // claim was for a different number
+] }));
+const mergedOut = '/tmp/ypk-claims-merged.json';
+const claimLog = execFileSync('node', ['scripts/claims.mjs', `--claims=${claimsFile}`, `--data=${dataFile}`, `--out=${mergedOut}`], { encoding: 'utf8' });
+const merged = JSON.parse(readFileSync(mergedOut, 'utf8'));
+assert('Only the legitimately signed claim is applied', merged.records.filter((r) => r.ownerVerified).length === 1);
+assert('Verified record becomes source=owner', merged.records[0].source === SOURCE.OWNER && merged.records[0].ownerVerified === true);
+assert('Forged claim rejected', !merged.records[1].ownerVerified);
+assert('Stale claim rejected', !merged.records[2].ownerVerified);
+assert('Landline claim rejected', !merged.records[3].ownerVerified);
+assert('Claim for a different number rejected', !merged.records[4].ownerVerified);
+assert('Claim runner rejects forged/stale/landline claims', /3 rejected/.test(claimLog));
+assert('Claim runner reports a number conflict separately', /claim number differs/.test(claimLog));
+
+console.log('\n=== 1e. NUMBER HYGIENE TESTS ===');
+const hygieneIn = '/tmp/ypk-hygiene.json';
+writeFileSync(hygieneIn, JSON.stringify({ records: [
+  { id: 'a', name: 'Alpha', phone: '0300-1234567', whatsapp: true },
+  { id: 'b', name: 'Bank', phone: '021-99220100', whatsapp: true },        // landline claiming WA
+  { id: 'c', name: 'Fake', phone: '0300-1111111', whatsapp: true },        // repeated digits
+  { id: 'd', name: 'Odd', phone: '0300-1234567' },                          // sequential-ish, kept
+  { id: 'e', name: 'Junk', phone: 'not-a-number', whatsapp: true },         // unparseable
+  { id: 'f', name: 'Owner', phone: '0321-9988776', source: 'owner' },       // claim without date
+] }));
+const hygieneOut = '/tmp/ypk-hygiene-clean.json';
+const hygieneLog = execFileSync('node', ['scripts/verify-numbers.mjs', `--data=${hygieneIn}`, '--patch', `--out=${hygieneOut}`], { encoding: 'utf8' });
+const clean = JSON.parse(readFileSync(hygieneOut, 'utf8')).records;
+assert('Hygiene clears an impossible WhatsApp claim on a landline', clean.find((r) => r.id === 'b').whatsapp === false);
+assert('Hygiene clears a repeated-digit number', clean.find((r) => r.id === 'c').phone === null);
+assert('Hygiene clears an unparseable number', clean.find((r) => r.id === 'e').phone === null);
+assert('Hygiene keeps a real mobile number', clean.find((r) => r.id === 'a').phone === '0300-1234567');
+assert('Hygiene never deletes a merely odd number', clean.find((r) => r.id === 'd').phone === '0300-1234567');
+assert('Hygiene reports an owner claim with no date', /owner claim without verification date/.test(hygieneLog));
+assert('Hygiene flags shared numbers', /numbers shared by/.test(hygieneLog));
 
 console.log('\n=== 2. SEO & AEO SCHEMA GENERATION TESTS ===');
 const sampleFaqs = [

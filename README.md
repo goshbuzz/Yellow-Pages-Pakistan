@@ -4,39 +4,39 @@ Pakistan's business directory, rebuilt for scale and for **freelancers & marketi
 
 | | |
 |---|---|
-| **Listings** | **200,000 generated sample records** (deterministic, ~11 MB → ~3.7 MB gzipped) — real businesses come in via `scripts/import-listings.mjs`, see `docs/real-data-strategy.md` |
+| **Listings** | **Zero placeholder data.** Ships empty on purpose; real businesses come in via `npm run import` (Overture / registry CSV / owner submissions). See `docs/real-data-strategy.md` |
 | **Cities & towns** | **420** — every Pakistani city (all district HQs + all towns ≥12k population), all provinces + AJK + Gilgit-Baltistan (real GeoNames coordinates) |
 | **Categories** | **130** across 11 groups (breadth of businesslist.pk's 1,131 subcategories, merged) |
 | **Flagship profiles** | 90+ hand-curated real companies (HBL, Meezan, PSO, AKUH, LUMS, Zameen, …) with verified badges |
 | **Maps** | Real pin per listing (city-centre jitter), embedded map + "Open in Google Maps" + "Directions" |
 | **App install** | Android install prompt (`beforeinstallprompt`), iOS Add-to-Home-Screen sheet, auto-prompt weekly |
 | **Offline** | Service worker caches shell + data — full search with no internet |
+| **Owner verification** | Any business owner can prove their number on WhatsApp in two taps (signed code, no SMS/OTP cost). Verification expires in 30 days and cannot be replayed — the only claim of "verified" the product makes |
+| **Number hygiene** | `npm run hygiene` rejects landlines claiming WhatsApp, fake/placeholder numbers, and numbers shared by many unrelated businesses; reports staleness |
 | **WhatsApp, everywhere** | **A WhatsApp button on every listing** (cards, profile, leads, homepage): mobiles open a direct pre-filled `wa.me` chat with that business, landlines degrade to *Copy number* instead of a dead chat link. One validation source (`src/lib/whatsapp.js`) — so exported CSVs never contain broken WhatsApp links |
 | **USP #1 (no competitor has this)** | **Lead Workspace**: save businesses → lead lists → status pipeline (New/Contacted/Replied/Won/Lost) → notes → **CSV export** → **auto-drafted personalized pitch emails/WhatsApp messages** (6 service types × 3 tones, editable) → **one-tap WhatsApp outreach queue** (walks a list, opens each business's own chat, marks Contacted) |
 | **Get Listed (USP #2 — free forever)** | Full free-listing flow for business owners: 2-min submission, benefits pitch, "My listings" manager, verified badge in 48h, boosted-listings waitlist teaser. Wire `VITE_FORMSPREE_ID` in `.env` to receive submissions by email. |
 
 ### Data honesty (read this before demoing)
 
-The 200,000 shipped rows are **generated filler**: names from word banks, phone numbers derived
-from a seed. They exist so the product can be evaluated offline. They are labelled `SAMPLE — NOT
-A REAL BUSINESS` in the UI, they never get a live WhatsApp chat button, and CSV exports carry
-`Source` + `Trust` columns so no agency pitches from filler by accident.
+**No sample data ships.** There is no listing generator any more; the directory is empty until
+real records are imported, and the UI says so instead of showing invented volume.
 
-- `src/lib/provenance.js` — trust levels: `owner` > `official` > `seed` > `dataset` > `sample`.
-- `scripts/import-listings.mjs` — bring real entities in:
+- `src/lib/provenance.js` — trust levels: `owner` > `official` > `seed` > `dataset` (nothing else).
+- `src/lib/verify.js` — owner verification: signed, expiring, non-replayable, no SMS/OTP cost.
 
 ```bash
-# Overture Maps places (CDLA Permissive 2.0, attribution required) inside a bbox
-node scripts/import-listings.mjs --source=overture --bbox=24.7,66.7,25.1,67.2 --out=public/data/real-karachi.json
-
-# A registry / vendor CSV or xlsx export (SECP, PSX, licensed dataset, owner leads)
-node scripts/import-listings.mjs --source=csv --in=companies.csv --as=official --out=public/data/real-companies.json
+npm run import  -- --source=overture --bbox=24.7,66.7,25.1,67.2   # real POIs + phones (CDLA 2.0)
+npm run import  -- --source=csv --in=members.csv --as=official     # registries / associations
+npm run hygiene -- --data=public/data/listings.json --patch       # drop fake / impossible numbers
+npm run claims  -- --claims=claims.json --data=public/data/listings.json
+npm run stats                                                     # runtime payload + counts
 ```
 
 Import rules: rows without a phone are dropped, duplicates are removed, a WhatsApp claim is
 downgraded to "no" unless the number is actually a mobile, and every record keeps `sourceRef`
-plus attribution. `docs/real-data-strategy.md` has the full source-by-source analysis and the
-path to 300k real listings.
+plus attribution. `docs/real-data-strategy.md` has the source-by-source analysis, licence notes
+and the phased plan.
 
 ### Competitor snapshot (why this wins)
 
@@ -59,10 +59,10 @@ npm run preview      # serve dist/ locally
 node scripts/smoke-test.mjs   # headless end-to-end test (needs the preview server running)
 ```
 
-Regenerate data (after editing categories/geo/names):
+Data + sitemap:
 
 ```bash
-node scripts/generate-data.mjs     # 200k listings → public/data/directory.txt + stats
+node scripts/stats.mjs             # build the runtime payload from public/data/listings.json
 node scripts/generate-sitemap.mjs  # sitemap.xml (set SITE_URL env for custom domain)
 ```
 

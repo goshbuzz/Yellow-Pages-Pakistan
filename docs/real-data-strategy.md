@@ -139,22 +139,21 @@ Sample              <- generated demo filler. Never presented as real, never dia
 
 ## 5. The path to 300k real listings
 
-**Phase 0 — stop the trust leak (shipped with this PR)**
+**Phase 0 — stop the trust leak (shipped)**
 Provenance model, honest labels, sample rows that cannot be dialled, provenance columns in
 CSV, and a real import pipeline (`scripts/import-listings.mjs`).
 
-**Phase 1 — free real spine (~1 week)**
+**Phase 1 — free real spine (~1 week, zero budget)**
 1. Overture places for Pakistan (nationwide bbox), keep records with a phone.
 2. Hand-curate corporates: ~550 PSX listed + top 200 groups + banks/telecoms/universities
    (the existing `src/data/curated.js` pattern already does 91).
 3. FBR ATL as a *verification* join: mark entities that appear in ATL as `Official registry`.
 
-**Phase 2 — volume (~2–4 weeks, commercial decision)**
-4. Buy a licensed Pakistani business dataset with phone numbers (or negotiate a
-   redistribution licence). This is the only realistic route through 300k.
-5. If no budget: Overture + owner submissions + public sector/association member lists
-   (chambers of commerce, PIAF, APTMA, FPCCI member directories) — expect 60–150k depending
-   on how many associations publish machine-readable lists.
+**Phase 2 — volume (no purchase)**
+4. ~~Buy a licensed dataset~~ — no budget, so this is out. Volume comes from: Overture
+   nationwide, association member directories (FPCCI, chambers, APTMA, PIAF, TDAP),
+   university/hospital/chain branch lists, and owner submissions. Expect **60–150k**.
+5. Anything beyond that requires either organic owner growth or a future budget decision.
 
 **Phase 3 — verified WhatsApp (ongoing, ~2 months to first 10k)**
 6. Claim-your-listing flow → owner confirms number → `source: owner`.
@@ -179,10 +178,32 @@ CSV, and a real import pipeline (`scripts/import-listings.mjs`).
 - Removed unsupported "verified" claims from Home, Browse, Nearby, Business Detail, FAQ copy.
 - 18 new tests: `99 passed, 0 failed`.
 
-## 7. Open questions for you
+## 7. Decisions taken (2026-11-04)
 
-1. **Budget for a licensed dataset?** That single decision is worth ~200k rows and 2–3 weeks.
-2. **Is `source: sample` filler worth keeping in production** at all, or should the app ship
-   with whatever real data exists plus an empty-state that invites listings?
-3. **Owner opt-in loop:** do you want me to build the claim-listing + WhatsApp confirmation
-   flow next (the only path to genuinely verified numbers)?
+| Question | Decision | What changed |
+|---|---|---|
+| Budget for a licensed dataset? | **No budget** | Path is now Overture + free public lists + owner submissions. See §5 phases, revised below. |
+| Keep sample filler in production? | **No sample data anywhere** | The generator is deleted, the dataset ships empty, and the UI shows an honest empty state. |
+| Build the owner-claim loop? | **Yes** | `src/lib/verify.js`, `ClaimListing` modal, `scripts/claims.mjs`, `scripts/verify-numbers.mjs`. |
+
+### Consequences of "no budget"
+
+Free sources only, so realistic volume is **60–150k real entities**, not 300k — reached from:
+Overture places (licensed, has phones), PSX/curated corporates (~550 + top groups), association
+member lists (FPCCI, chambers, APTMA, PIAF, TDAP member directories) and owner submissions.
+300k remains reachable only through paid data or organic owner growth; the product no longer
+claims otherwise.
+
+### Zero-budget operating loop (everything below is free)
+
+```bash
+npm run import   -- --source=overture --bbox=24.7,66.7,25.1,67.2    # real POIs + phones
+npm run import   -- --source=csv --in=members.csv --as=official     # registries/associations
+npm run hygiene  -- --data=public/data/listings.json --patch        # drop fake/impossible numbers
+npm run claims   -- --claims=claims.json --data=public/data/listings.json
+npm run stats                                                       # runtime payload + counts
+```
+
+Owner verification costs nothing to run: the owner taps a `wa.me` link from their own listing,
+sends the pre-filled code, and pastes it back. No SMS gateway, no OTP provider, no Meta fees.
+Verification is signed, expires after 30 days, and cannot be replayed onto another listing.

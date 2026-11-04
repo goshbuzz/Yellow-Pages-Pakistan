@@ -3,7 +3,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Phone, MapPin, Mail, Globe, ExternalLink, Navigation, Bookmark, BookmarkCheck, Wand2, Clock, Users, Share2, Check } from 'lucide-react';
+import { ArrowLeft, Phone, MapPin, Mail, Globe, ExternalLink, Navigation, Bookmark, BookmarkCheck, Wand2, Clock, Users, Share2, Check, ShieldCheck } from 'lucide-react';
 import { getBusiness, searchBusinesses, businessId } from '../lib/dataset';
 import { telHref, googleMapsUrl, googleMapsEmbedUrl } from '../lib/derive';
 import { waInfo, waShareHref } from '../lib/whatsapp';
@@ -15,6 +15,8 @@ import { CompanyCard } from '../components/CompanyCard';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
 import { WhatsAppButton, WhatsAppStatus } from '../components/WhatsAppButton';
+import { ClaimListing } from '../components/ClaimListing';
+import { verificationState } from '../lib/verify';
 
 export default function BusinessDetail() {
   const { id } = useParams();
@@ -24,6 +26,7 @@ export default function BusinessDetail() {
   const [similar, setSimilar] = useState([]);
   const [pitchOpen, setPitchOpen] = useState(false);
   const [savedTick, setSavedTick] = useState(0);
+  const [claimOpen, setClaimOpen] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -42,6 +45,7 @@ export default function BusinessDetail() {
 
   const saved = useMemo(() => (b ? !!findLead(bizKey(b, id)) : false), [b, id, savedTick]);
   const wa = useMemo(() => waInfo(b || {}), [b]);
+  const claimState = useMemo(() => (b ? verificationState({ ...b, bizId: bizKey(b, id) }) : 'none'), [b, id, savedTick, claimOpen]);
 
   if (b === undefined) return <SkeletonList n={4} />;
   if (b === null) return <EmptyState emoji="🤷" title="Business not found" hint="It may have been removed." action={<Link to="/browse" className="mt-3 inline-block bg-ink text-brand font-black text-[13px] rounded-xl px-4 py-2.5">Browse businesses</Link>} />;
@@ -159,7 +163,18 @@ export default function BusinessDetail() {
           <WhatsAppButton b={b} variant="pill" />
         </div>
         <div className="flex items-center justify-between gap-2 mt-2">
-          <WhatsAppStatus b={b} />
+          <div className="flex items-center gap-2 flex-wrap">
+            <WhatsAppStatus b={b} />
+            {claimState === 'owner' ? (
+              <span className="inline-flex items-center gap-1 bg-emerald-600 text-white rounded-full px-2 py-[1px] text-[10px] font-extrabold">
+                <ShieldCheck size={10} /> OWNER VERIFIED
+              </span>
+            ) : (
+              <button onClick={() => setClaimOpen(true)} className="tap inline-flex items-center gap-1 bg-white border border-stone-300 text-ink-soft rounded-full px-2 py-[1px] text-[10px] font-extrabold hover:border-emerald-500">
+                <ShieldCheck size={10} /> Claim this listing
+              </button>
+            )}
+          </div>
           <button onClick={() => setPitchOpen(true)} className="tap h-8 px-3 rounded-xl bg-brand-soft border border-brand/40 text-brand-deeper font-extrabold text-[12px] flex items-center gap-1.5">
             <Wand2 size={13} /> Draft pitch
           </button>
@@ -216,6 +231,14 @@ export default function BusinessDetail() {
       </div>
 
       {pitchOpen && <PitchModal business={b} onClose={() => setPitchOpen(false)} />}
+      {claimOpen && (
+        <ClaimListing
+          business={b}
+          listingId={bizKey(b, id)}
+          onClose={() => setClaimOpen(false)}
+          onClaimed={() => setSavedTick((t) => t + 1)}
+        />
+      )}
     </div>
   );
 }

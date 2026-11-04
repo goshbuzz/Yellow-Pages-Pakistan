@@ -32,7 +32,7 @@ const APP_FAQS = [
   },
   {
     q: 'Can I search businesses in the web app while offline?',
-    a: 'Yes. Once cached, all 200,000+ business listings remain accessible on your smartphone or desktop even without an active internet connection.',
+    a: 'Yes. Once the directory data is cached on your device, browsing, calls and your saved leads keep working without an active internet connection.',
   },
   {
     q: 'How do I add a business from the web app to my lead list?',
@@ -73,8 +73,8 @@ export default function Home() {
   return (
     <div className="space-y-7 animate-slide-up pb-6">
       <SeoHead
-        title="Directory Web App — Search 200,000+ Pakistani Businesses | Yellow Pages PK"
-        description="Search 200,000+ sample Pakistani business records in the interactive web app. Fast directory search, B2B lead lists, offline mode, and 1-tap WhatsApp."
+        title="Directory Web App — Search Pakistani Businesses | Yellow Pages PK"
+        description="Search real Pakistani businesses in the interactive web app. Fast directory search, B2B lead lists, offline mode, and 1-tap WhatsApp."
         canonicalPath="/app"
         schema={makeFaqSchema(APP_FAQS)}
       />
@@ -103,7 +103,9 @@ export default function Home() {
           <span className="text-brand">now in your pocket.</span> 🐝
         </h1>
         <p className="text-[13.5px] font-semibold text-stone-300 mt-2">
-          Search <b className="text-cream"><CountUp to={STATS.total} />+</b> businesses in <b className="text-cream">{CITIES.length}</b> cities — call, WhatsApp or pitch in one tap.
+          {STATS.total > 0
+            ? <>Search <b className="text-cream"><CountUp to={STATS.total} /></b> real businesses in <b className="text-cream">{CITIES.length}</b> cities — call, WhatsApp or pitch in one tap.</>
+            : <>A directory that starts empty and stays honest — <b className="text-cream">{CITIES.length}</b> cities ready, every listing sourced.</>}
         </p>
 
         {/* Search */}
@@ -148,7 +150,7 @@ export default function Home() {
       {/* Stats strip */}
       <section className="grid grid-cols-3 gap-2.5">
         {[
-          { v: STATS.total + 100, l: 'Listings', suffix: '+' },
+          { v: STATS.total, l: 'Listings', suffix: '' },
           { v: CATEGORIES.length, l: 'Categories', suffix: '' },
           { v: CITIES.length, l: 'Cities', suffix: '' },
         ].map((s) => (
@@ -218,7 +220,7 @@ export default function Home() {
       <section>
         <div className="flex items-center justify-between mb-2.5">
           <h2 className="font-black text-ink text-lg">Flagship verified ⭐</h2>
-          <Link to="/browse?verified=1" className="text-[12.5px] font-extrabold text-brand-deeper flex items-center">More <ChevronRight size={14} /></Link>
+          <Link to="/browse" className="text-[12.5px] font-extrabold text-brand-deeper flex items-center">More <ChevronRight size={14} /></Link>
         </div>
         <div className="space-y-3">
           {featured.map((b) => <CompanyCard key={b.name} b={b} dense />)}
