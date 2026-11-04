@@ -3,12 +3,13 @@
 
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Trash2, Rocket, Eye, PhoneCall, BadgeCheck } from 'lucide-react';
+import { Sparkles, Trash2, Rocket, Eye, PhoneCall, BadgeCheck, AlertTriangle } from 'lucide-react';
 import { CATEGORIES } from '../data/categories';
 import { CITIES } from '../data/geo';
 import { useToast } from '../components/ui';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
+import { isWaCapable, waDisplayNumber } from '../lib/whatsapp';
 
 const LS_KEY = 'ypk.submissions.v1';
 const FORMSPREE = import.meta.env.VITE_FORMSPREE_ID || '';
@@ -20,7 +21,7 @@ const ADD_FAQS = [
   },
   {
     q: 'How long does the 48-hour verification take?',
-    a: 'Our directory editorial team reviews submissions within 48 business hours to verify the contact number and category authenticity before attaching a verified badge.',
+    a: 'Our directory editorial team reviews submissions within 48 business hours to verify the contact number on WhatsApp and the category authenticity before attaching a verified badge. WhatsApp-capable mobile numbers (03xx) are checked directly; landlines are listed for calls only.',
   },
   {
     q: 'What information do I need to prepare before listing?',
@@ -45,13 +46,17 @@ export default function AddListing() {
   }, [tick]);
 
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
-  const valid = form.name.trim().length >= 3 && form.cat && form.city && form.phone.trim().length >= 7;
+  // WhatsApp can only be claimed by a mobile number — a landline checkbox would put a
+  // dead chat link in the directory (and later in exported lead CSVs).
+  const phoneIsMobile = isWaCapable(form.phone);
+  const waClaimInvalid = form.whatsapp && !phoneIsMobile;
+  const valid = form.name.trim().length >= 3 && form.cat && form.city && form.phone.trim().length >= 7 && !waClaimInvalid;
 
   const submit = async (e) => {
     e.preventDefault();
     if (!valid || sending) return;
     setSending(true);
-    const entry = { ...form, catName: CATEGORIES.find((c) => String(c.id) === String(form.cat))?.name || '', id: 's' + Date.now().toString(36), at: Date.now(), status: 'pending' };
+    const entry = { ...form, whatsapp: phoneIsMobile && form.whatsapp, catName: CATEGORIES.find((c) => String(c.id) === String(form.cat))?.name || '', id: 's' + Date.now().toString(36), at: Date.now(), status: 'pending' };
 
     // Forward to the site owner if a Formspree endpoint is configured
     if (FORMSPREE) {
@@ -101,7 +106,7 @@ export default function AddListing() {
       {done && (
         <div className="rounded-2xl bg-emerald-50 border border-emerald-300 p-4 text-emerald-950 text-[13px] font-bold animate-pop-in">
           <p className="font-black text-[15px] text-emerald-900 flex items-center gap-1.5">🎉 Listing submitted!</p>
-          <p className="mt-1">Our review team will verify your phone number within 48 hours. Your free listing will appear with a verified badge, call/WhatsApp buttons and map pin.</p>
+          <p className="mt-1">Our review team will verify your phone number within 48 hours{phoneIsMobile && form.whatsapp ? ' — including a WhatsApp check on your mobile' : ''}. Your free listing will appear with a verified badge, call{phoneIsMobile && form.whatsapp ? '/WhatsApp' : ''} buttons and map pin.</p>
           <button onClick={() => { setForm(empty); setDone(false); }} className="mt-2 text-emerald-800 underline font-black">Submit another business</button>
         </div>
       )}
@@ -122,9 +127,22 @@ export default function AddListing() {
         </div>
         <input className={inputCls} placeholder="Area / Colony / Market (e.g. Saddar, Gulberg, F-7)" value={form.area} onChange={(e) => set('area', e.target.value)} />
         <input className={inputCls} placeholder="Phone number * (03xx-xxxxxxx)" value={form.phone} onChange={(e) => set('phone', e.target.value)} inputMode="tel" required />
-        <label className="flex items-center gap-2.5 bg-white/90 border border-stone-300 rounded-xl px-3 py-2.5 cursor-pointer">
-          <input type="checkbox" checked={form.whatsapp} onChange={(e) => set('whatsapp', e.target.checked)} className="accent-[#F5B301] w-4 h-4" />
-          <span className="text-[13.5px] font-bold text-ink-soft">This number is on WhatsApp</span>
+        <label className={`flex items-start gap-2.5 bg-white/90 border rounded-xl px-3 py-2.5 cursor-pointer ${waClaimInvalid ? 'border-red-400 bg-red-50/60' : 'border-stone-300'}`}>
+          <input type="checkbox" checked={form.whatsapp} onChange={(e) => set('whatsapp', e.target.checked)} disabled={!phoneIsMobile}
+            className="accent-[#F5B301] w-4 h-4 mt-0.5 disabled:opacity-40" />
+          <span className="min-w-0">
+            <span className="block text-[13.5px] font-bold text-ink-soft">This number is on WhatsApp</span>
+            <span className="block text-[11.5px] font-semibold text-stone-500 mt-0.5">
+              {phoneIsMobile
+                ? `Mobile ${waDisplayNumber(form.phone)} — buyers will get a direct chat button.`
+                : 'Enter a mobile number (03xx-xxxxxxx) to offer WhatsApp. Landlines get a call button only.'}
+            </span>
+            {waClaimInvalid && (
+              <span className="mt-1 inline-flex items-center gap-1 text-[11.5px] font-extrabold text-red-600">
+                <AlertTriangle size={11} /> WhatsApp needs a mobile number, not a landline.
+              </span>
+            )}
+          </span>
         </label>
         <div className="grid grid-cols-2 gap-3">
           <input className={inputCls} placeholder="Email (optional)" value={form.email} onChange={(e) => set('email', e.target.value)} inputMode="email" />

@@ -6,6 +6,8 @@ import { X, Copy, Send, Download, Wand2 } from 'lucide-react';
 import { draftPitch, pitchMailto, SERVICE_TYPES, TONES } from '../lib/pitch';
 import { copyToClipboard, downloadFile } from '../lib/export';
 import { useToast } from './ui';
+import { WhatsAppGlyph } from './WhatsAppButton';
+import { waHref } from '../lib/whatsapp';
 import { getPrefs, setPref } from '../lib/leads';
 
 export function PitchModal({ business, onClose }) {
@@ -98,12 +100,19 @@ export function PitchModal({ business, onClose }) {
             <Download size={15} /> .txt
           </button>
         </div>
-        {business.whatsapp && (
-          <a href={`https://wa.me/?text=${encodeURIComponent(`${subjectText}\n\n${bodyText}`)}`} target="_blank" rel="noreferrer"
-            className="tap mt-2 w-full bg-emerald-500 text-white rounded-2xl py-3 text-[13px] font-extrabold flex items-center justify-center gap-1.5">
-            Send via WhatsApp
-          </a>
-        )}
+        {(() => {
+          // Direct chat with THIS business when the number is a mobile, with the pitch
+          // pre-filled. Landlines fall back to the share sheet (pick a contact) — never a
+          // dead wa.me page.
+          const direct = waHref(business.phone, { text: bodyText });
+          const href = direct || `https://wa.me/?text=${encodeURIComponent(`${subjectText}\n\n${bodyText}`)}`;
+          return (
+            <a href={href} target="_blank" rel="noreferrer"
+              className="tap mt-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl py-3 text-[13px] font-extrabold flex items-center justify-center gap-1.5">
+              <WhatsAppGlyph size={15} /> {direct ? `Send to ${business.name} on WhatsApp` : 'Send pitch via WhatsApp'}
+            </a>
+          );
+        })()}
       </div>
     </div>
   );

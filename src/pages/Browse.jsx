@@ -27,7 +27,7 @@ const BROWSE_FAQS = [
   },
   {
     q: 'How can I contact a listed company directly?',
-    a: 'Tap the Call button to dial their landline or mobile (03xx) number immediately, or tap WhatsApp to initiate a direct chat with their sales or customer support line.',
+    a: 'Tap the Call button to dial their landline or mobile (03xx) number immediately. Mobile listings also have a WhatsApp button that opens a direct chat with that number, pre-filled with a short opener; landline listings show Copy number instead, because a landline cannot receive WhatsApp.',
   },
   {
     q: 'How do I save businesses from search results into my Lead Workspace?',
