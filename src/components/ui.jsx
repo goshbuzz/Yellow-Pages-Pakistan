@@ -1,7 +1,7 @@
 // Shared UI primitives: toast system, chips, stars, monograms, empty states, skeletons, count-up.
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { Check, Star } from 'lucide-react';
+import { Check, Star, User } from 'lucide-react';
 
 // ── Toast ───────────────────────────────────────────────────────────────────
 const ToastCtx = createContext(() => {});
@@ -29,12 +29,68 @@ export function ToastProvider({ children }) {
   );
 }
 
+// ── Page header ─────────────────────────────────────────────────────────────
+// One heading style for every screen: title, one-line explanation, optional actions.
+// Centralised so pages cannot drift into five different heading sizes again.
+export function PageHeader({ icon: Icon, title, subtitle, actions, emoji, children }) {
+  return (
+    <header className="flex flex-col gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h1 className="font-black text-[22px] leading-tight text-ink flex items-center gap-2">
+            {Icon && <Icon size={21} className="text-brand-deeper shrink-0" />}
+            {emoji && <span aria-hidden="true">{emoji}</span>}
+            <span className="truncate">{title}</span>
+          </h1>
+          {subtitle && <p className="text-[13px] font-semibold text-stone-500 mt-1.5 leading-snug">{subtitle}</p>}
+        </div>
+        {actions && <div className="flex gap-2 shrink-0 flex-wrap">{actions}</div>}
+      </div>
+      {children}
+    </header>
+  );
+}
+
+// ── Section wrapper ─────────────────────────────────────────────────────────
+export function Section({ title, subtitle, action, children, className = '' }) {
+  return (
+    <section className={`flex flex-col gap-3 ${className}`}>
+      {(title || action) && (
+        <div className="flex items-end justify-between gap-3">
+          <div className="min-w-0">
+            {title && <h2 className="font-black text-[16px] text-ink leading-tight">{title}</h2>}
+            {subtitle && <p className="text-[12px] font-semibold text-stone-500 mt-0.5">{subtitle}</p>}
+          </div>
+          {action}
+        </div>
+      )}
+      {children}
+    </section>
+  );
+}
+
+// ── Stat tile ───────────────────────────────────────────────────────────────
+export function StatTile({ value, label, hint, tone = 'neutral' }) {
+  const tones = {
+    neutral: 'bg-white border-stone-200/90 text-ink',
+    brand: 'bg-brand-soft border-brand/40 text-ink',
+    good: 'bg-emerald-50 border-emerald-200 text-emerald-900',
+  };
+  return (
+    <div className={`rounded-2xl border py-3 px-2 text-center shadow-card ${tones[tone] || tones.neutral}`}>
+      <p className="text-[19px] font-black leading-none">{typeof value === 'number' ? value.toLocaleString() : value}</p>
+      <p className="text-[10px] font-extrabold tracking-wider text-stone-500 uppercase mt-1.5 leading-tight">{label}</p>
+      {hint && <p className="text-[10px] font-bold text-stone-400 mt-0.5">{hint}</p>}
+    </div>
+  );
+}
+
 // ── Chips / pills ───────────────────────────────────────────────────────────
 export function Chip({ active, children, onClick, color, className = '' }) {
   return (
     <button
       onClick={onClick}
-      className={`tap shrink-0 inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[13px] font-bold transition-colors ${className}
+      className={`tap shrink-0 inline-flex items-center gap-1.5 rounded-full border px-3.5 min-h-[2.25rem] text-[12.5px] font-extrabold transition-colors ${className}
         ${active ? 'bg-ink text-brand border-ink shadow-sm' : 'bg-white/70 text-ink-soft border-stone-300/70 hover:border-ink/40'}`}
     >
       {children}
@@ -77,13 +133,22 @@ export function VerifiedBadge() {
   );
 }
 
+// A user's own listing is real to them but never "verified" by the directory.
+export function CustomBadge() {
+  return (
+    <span className="inline-flex items-center gap-0.5 bg-sky-50 text-sky-700 border border-sky-200 rounded-full px-1.5 py-[1px] text-[10px] font-extrabold" title="You added this listing on this device">
+      <User size={10} strokeWidth={3.5} /> MINE
+    </span>
+  );
+}
+
 // ── Empty state ─────────────────────────────────────────────────────────────
 export function EmptyState({ emoji = '🔎', title, hint, action }) {
   return (
-    <div className="flex flex-col items-center justify-center text-center py-14 px-6 animate-pop-in">
-      <div className="text-5xl mb-3 animate-float">{emoji}</div>
-      <p className="font-extrabold text-ink text-lg">{title}</p>
-      {hint && <p className="text-stone-500 text-sm mt-1 max-w-xs">{hint}</p>}
+    <div className="flex flex-col items-center justify-center text-center py-12 px-5 bg-white/70 border border-dashed border-stone-300 rounded-3xl animate-pop-in">
+      <div className="text-[40px] mb-3 animate-float leading-none">{emoji}</div>
+      <p className="font-black text-ink text-[16px]">{title}</p>
+      {hint && <p className="text-stone-500 text-[13px] font-semibold mt-1.5 max-w-[19rem] leading-relaxed">{hint}</p>}
       {action}
     </div>
   );

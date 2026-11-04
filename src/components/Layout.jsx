@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useLocation, Link } from 'react-router-dom';
-import { Home, LayoutGrid, Search, Bookmark, MapPinned, Download, WifiOff, Globe } from 'lucide-react';
+import { Home, LayoutGrid, Search, Bookmark, MapPinned, Download, WifiOff, Globe, PlusCircle } from 'lucide-react';
 import { Logo } from './icons';
 import { ToastProvider } from './ui';
 import { InstallSheet, useInstallPrompt, useAutoInstallSheet } from './InstallSheet';
@@ -51,11 +51,19 @@ function TopBar() {
 }
 
 function BottomNav() {
-  const leadCount = getLeads().length;
+  const location = useLocation();
+  const [leadCount, setLeadCount] = useState(() => getLeads().length);
+  useEffect(() => {
+    const sync = () => setLeadCount(getLeads().length);
+    sync();
+    window.addEventListener('focus', sync);
+    window.addEventListener('storage', sync);
+    return () => { window.removeEventListener('focus', sync); window.removeEventListener('storage', sync); };
+  }, [location.pathname]);
   const items = [
-    { to: '/app', icon: Home, label: 'App', end: true },
-    { to: '/categories', icon: LayoutGrid, label: 'Categories' },
-    { to: '/browse', icon: Search, label: 'Search', center: true },
+    { to: '/app', icon: Home, label: 'Home', end: true },
+    { to: '/browse', icon: Search, label: 'Search' },
+    { to: '/my-listings', icon: PlusCircle, label: 'Add', center: true },
     { to: '/leads', icon: Bookmark, label: 'Leads', badge: leadCount },
     { to: '/nearby', icon: MapPinned, label: 'Nearby' },
   ];
@@ -70,7 +78,7 @@ function BottomNav() {
               return (
                 <NavLink key={it.to} to={it.to} aria-label={it.label} className="tap flex justify-center">
                   <span className="-mt-6 w-14 h-14 rounded-full bg-brand border-4 border-ink flex items-center justify-center shadow-pop">
-                    <Icon size={24} className="text-ink" strokeWidth={2.6} />
+                    <PlusCircle size={26} className="text-ink" strokeWidth={2.6} />
                   </span>
                 </NavLink>
               );
@@ -150,7 +158,7 @@ export default function Layout() {
         <OptionalAdScripts />
         {showAds && <AdSideRails />}
         <TopBar />
-        <main className="flex-1 max-w-2xl w-full mx-auto px-4 pt-4 pb-safe-nav">
+        <main className="flex-1 max-w-2xl w-full mx-auto px-4 pt-5 pb-safe-nav">
           <DatasetGate>
             <Outlet />
             {showAds && <>
@@ -165,7 +173,12 @@ export default function Layout() {
             + List your business — free
           </NavLink>
           <p className="text-[11px] font-semibold text-stone-400 mb-1">
-            <Link to="/" className="hover:text-brand-deeper font-bold">Website</Link> · <NavLink to="/categories" className="hover:text-brand-deeper">Categories</NavLink> · <NavLink to="/cities" className="hover:text-brand-deeper">Cities</NavLink> · <NavLink to="/coverage" className="hover:text-brand-deeper">Coverage</NavLink> · <NavLink to="/faq" className="hover:text-brand-deeper">FAQ</NavLink> · Yellow Pages Pakistan · sourced listings
+            <Link to="/" className="hover:text-brand-deeper font-bold">Website</Link> ·
+            {' '}<NavLink to="/categories" className="hover:text-brand-deeper">Categories</NavLink> ·
+            {' '}<NavLink to="/cities" className="hover:text-brand-deeper">Cities</NavLink> ·
+            {' '}<NavLink to="/my-listings" className="hover:text-brand-deeper">My listings</NavLink> ·
+            {' '}<NavLink to="/coverage" className="hover:text-brand-deeper">Coverage</NavLink> ·
+            {' '}<NavLink to="/faq" className="hover:text-brand-deeper">FAQ</NavLink>
           </p>
         </footer>
         <BottomNav />

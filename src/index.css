@@ -95,6 +95,54 @@ body {
   clip-path: polygon(12% 0, 88% 0, 100% 18%, 100% 100%, 0 100%, 0 18%);
 }
 
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Layout & form primitives.
+
+   Every screen used to pick its own margins, padding and radii, which is why the
+   app read as cluttered on a phone. These classes are the single source of truth:
+   a page is a vertical stack with generous, *rhythmic* gaps; a card is a surface
+   with consistent padding; a field is always at least 48px tall (finger target).
+   ───────────────────────────────────────────────────────────────────────────── */
+.page-stack { display: flex; flex-direction: column; gap: 1.75rem; }
+.page-stack > * + * { margin-top: 0; }
+.stack-sm { display: flex; flex-direction: column; gap: 0.625rem; }
+.stack-md { display: flex; flex-direction: column; gap: 1rem; }
+.stack-lg { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.card { background: #fff; border: 1px solid rgb(231 229 228 / 0.9); border-radius: 1.25rem; box-shadow: 0 1px 2px rgb(28 25 23 / 0.04), 0 4px 16px rgb(28 25 23 / 0.05); }
+.card-pad { padding: 1.125rem; }
+@media (min-width: 640px) { .card-pad { padding: 1.375rem; } }
+
+.section-title { font-size: 0.8125rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #a8a29e; margin-bottom: 0.5rem; }
+
+.field-label { display: block; font-size: 0.75rem; font-weight: 800; color: #57534e; margin-bottom: 0.375rem; letter-spacing: 0.01em; }
+.field { width: 100%; min-height: 3rem; background: #fff; border: 1px solid #d6d3d1; border-radius: 0.875rem; padding: 0.75rem 0.875rem; font-size: 0.9375rem; font-weight: 700; color: #1c1917; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+.field::placeholder { font-weight: 600; color: #a8a29e; }
+.field:focus { border-color: #F5B301; box-shadow: 0 0 0 3px rgb(245 179 1 / 0.18); }
+.field-error { border-color: #f87171; background: #fef2f2; }
+.field-hint { display: block; margin-top: 0.3rem; font-size: 0.75rem; font-weight: 700; color: #a8a29e; }
+.field-hint-error { display: block; margin-top: 0.3rem; font-size: 0.75rem; font-weight: 800; color: #dc2626; }
+textarea.field { min-height: 5.5rem; resize: vertical; line-height: 1.45; }
+select.field { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2378716c' stroke-width='2.5' stroke-linecap='round'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right 0.75rem center; padding-right: 2.25rem; }
+
+/* Full-width, thumb-height primary action. */
+.btn-primary { width: 100%; min-height: 3.25rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 1rem; background: #1c1917; color: #F5B301; font-size: 0.9375rem; font-weight: 800; padding: 0.75rem 1rem; transition: transform 0.12s ease, opacity 0.15s; }
+.btn-primary:active { transform: scale(0.975); }
+.btn-primary:disabled { background: #e7e5e4; color: #a8a29e; }
+.btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; min-height: 2.75rem; border-radius: 0.875rem; background: #fff; border: 1px solid #d6d3d1; color: #44403c; font-size: 0.8125rem; font-weight: 800; padding: 0.55rem 0.9rem; }
+
+/* Sticky sub-header used inside long forms and workspaces. */
+.sticky-actions { position: sticky; bottom: calc(4.9rem + env(safe-area-inset-bottom, 0px)); z-index: 20; }
+
+/* Keep long unbroken strings (URLs, numbers) from pushing cards wider than the phone. */
+/* Small visual affordance, full-size touch target: the ::after box overflows the control
+   so a 24px clear button is still comfortably tappable. */
+.tap-sm { position: relative; }
+.tap-sm::after { content: ''; position: absolute; inset: -8px; }
+
+.wrap-any { overflow-wrap: anywhere; word-break: break-word; }
+
 /* Advertising: separate from directory actions; never fixed over app controls. */
 .ad-slot, .ad-native { margin: 24px auto; text-align: center; max-width: 100%; }
 .ad-label { display: block; color: #78716c; font: 500 10px/1.5 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }

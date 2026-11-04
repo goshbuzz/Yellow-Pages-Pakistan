@@ -47,7 +47,7 @@ export function getLeads() {
   // Backfill provenance for leads saved before it existed, so old lists are labelled
   // correctly instead of being silently trusted.
   return read(LS_LEADS, []).map((l) => (
-    l.source ? l : { ...l, source: typeof l.bizId === 'string' && l.bizId.startsWith('c') ? 'seed' : 'sample' }
+    l.source ? l : { ...l, source: typeof l.bizId === 'string' && l.bizId.startsWith('c') ? 'seed' : l.bizId?.startsWith('u') ? 'custom' : 'sample' }
   ));
 }
 export function getLeadsIn(listId) { return getLeads().filter((l) => l.listId === listId); }

@@ -3,7 +3,7 @@
 import { Link } from 'react-router-dom';
 import { useReducer } from 'react';
 import { Phone, MapPin, Bookmark, BookmarkCheck } from 'lucide-react';
-import { Monogram, Stars, VerifiedBadge, useToast } from './ui';
+import { Monogram, Stars, VerifiedBadge, CustomBadge, useToast } from './ui';
 import { businessId } from '../lib/dataset';
 import { telHref } from '../lib/derive';
 import { WhatsAppButton } from './WhatsAppButton';
@@ -41,6 +41,7 @@ export function CompanyCard({ b, dense = false }) {
           <div className="flex items-center gap-1.5 flex-wrap">
             <h3 className="font-extrabold text-ink text-[15px] leading-tight truncate max-w-[85%]">{b.name}</h3>
             {b.verified && <VerifiedBadge />}
+            {(b.isCustom || b.source === 'custom') && <CustomBadge />}
           </div>
           <p className="text-[12px] font-bold text-stone-500 mt-0.5 truncate">
             <span>{b.cat?.emoji}</span> {b.cat?.name} · <MapPin size={10} className="inline -mt-0.5" /> {b.area || b.city}
@@ -66,7 +67,7 @@ export function CompanyCard({ b, dense = false }) {
         </button>
       </div>
 
-      <div className="flex gap-2 mt-3">
+      <div className="flex gap-2 mt-3.5">
         <a href={telHref(b.phone)} onClick={(e) => e.stopPropagation()}
           className="tap flex-1 h-9 rounded-xl bg-ink text-brand text-[13px] font-extrabold flex items-center justify-center gap-1.5">
           <Phone size={14} /> Call

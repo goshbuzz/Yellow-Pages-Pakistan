@@ -5,8 +5,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { MapPinned, Crosshair, MapPin } from 'lucide-react';
 import { CITIES } from '../data/geo';
 import { searchBusinesses } from '../lib/dataset';
+import { getCustomListings } from '../lib/customListings';
+import { CATEGORY_BY_ID as CAT_BY_ID } from '../data/categories';
 import { CompanyCard } from '../components/CompanyCard';
-import { SkeletonList, Chip, useToast } from '../components/ui';
+import { SkeletonList, Chip, useToast, PageHeader, Section } from '../components/ui';
 import { CityPicker } from '../components/CityPicker';
 import { CATEGORY_BY_ID } from '../data/categories';
 import SeoHead from '../components/SeoHead';
@@ -65,7 +67,14 @@ export default function Nearby() {
     setItems(null);
     const cityName = mode === 'city' ? city : null;
     searchBusinesses({ q: '', cat: cat ? String(cat) : null, city: cityName, sort: 'rating', page: 1, perPage: 220 }).then((r) => {
-      if (alive) setItems(r.rows);
+      if (!alive) return;
+      // The user's own listings belong here too — they may be the closest businesses of all.
+      const mine = getCustomListings()
+        .filter((x) => x.lat != null && x.lng != null)
+        .filter((x) => !cat || String(x.catId) === String(cat))
+        .filter((x) => !cityName || x.city === cityName)
+        .map((x) => ({ ...x, bizId: x.id, cat: CAT_BY_ID[x.catId], isCustom: true }));
+      setItems([...mine, ...r.rows]);
     });
     return () => { alive = false; };
   }, [mode, cat, city, pos?.lat]);
@@ -81,7 +90,7 @@ export default function Nearby() {
   const schema = makeFaqSchema(NEARBY_FAQS);
 
   return (
-    <div className="animate-slide-up pb-8 space-y-4">
+    <div className="page-stack pb-10">
       <SeoHead
         title="Find Businesses Near Me (GPS Locator) | Yellow Pages PK"
         description="Locate verified Pakistani businesses closest to you via GPS. Find nearby restaurants, clinics, repair shops, and stores across Pakistan."
@@ -89,10 +98,11 @@ export default function Nearby() {
         schema={schema}
       />
 
-      <div>
-        <h1 className="font-black text-2xl text-ink">Nearby businesses 📍</h1>
-        <p className="text-[13px] font-semibold text-stone-500 mt-0.5 mb-3">Real GPS ranking — or browse any city&apos;s map.</p>
-      </div>
+      <PageHeader
+        icon={MapPinned}
+        title="Nearby businesses"
+        subtitle="Ranked by real distance from your location — or pick a city to browse."
+      />
 
       <div className="flex gap-2 flex-wrap">
         <button onClick={locate} className={`tap h-10 rounded-full px-4 text-[13px] font-extrabold flex items-center gap-1.5 border ${mode === 'gps' ? 'bg-ink text-brand border-ink' : 'bg-white border-stone-300 text-ink'}`}>
@@ -116,7 +126,7 @@ export default function Nearby() {
 
       {(mode === 'gps' || mode === 'city') && (
         <>
-          <div className="flex gap-2 overflow-x-auto no-scrollbar">
+          <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1">
             <Chip active={!cat} onClick={() => setCat(null)}>All</Chip>
             {popularCats.map((c) => (
               <Chip key={c.id} active={cat === c.id} onClick={() => setCat(c.id)}>{c.emoji} {c.name.split(' ')[0]}</Chip>
@@ -124,9 +134,13 @@ export default function Nearby() {
           </div>
 
           {!ranked ? (
-            <div className="mt-4"><SkeletonList n={5} /></div>
+            <SkeletonList n={5} />
+          ) : ranked.length === 0 ? (
+            <p className="text-center text-[13px] font-bold text-stone-500 py-10 bg-white/70 border border-dashed border-stone-300 rounded-3xl">
+              No listings with a map pin here yet. Try another category or city.
+            </p>
           ) : (
-            <div className="mt-4 space-y-3">
+            <div className="stack-sm">
               {ranked.slice(0, 30).map((b) => (
                 <div key={b.name + (b.__i ?? '')} className="relative">
                   <CompanyCard b={b} dense />
@@ -162,13 +176,11 @@ export default function Nearby() {
         onSelect={(c) => { if (c) { setCity(c); setMode('city'); } setCityPickerOpen(false); }}
         onClose={() => setCityPickerOpen(false)} />
 
-      <div className="mt-8 pt-4">
-        <PageFaq
+      <PageFaq
           title="Nearby Search FAQ"
           subtitle="How device geolocation and city sorting work."
           faqs={NEARBY_FAQS}
-        />
-      </div>
+      />
     </div>
   );
 }

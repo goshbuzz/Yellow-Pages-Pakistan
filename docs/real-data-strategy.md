@@ -278,3 +278,33 @@ Three checks, cheapest first — all free:
 
 Colour-coding in the UI already reflects this: a mobile gets the WhatsApp button, a landline
 gets "Copy number", and only an owner claim earns the verified badge.
+
+---
+
+## 9. User-created listings (the "I have my own book" case)
+
+Not every listing should come from a dataset. Shops, freelancers and field sales teams keep
+their own contact books, and a directory that refuses to hold them is only half a tool. The
+app therefore has **two** entry points that must never be confused:
+
+- `/add` — a **public submission**: reviewed, then published for everyone.
+- `/my-listings` — a **private custom listing**: stored in the user's browser, visible in
+  their own search results, nearby ranking and lead exports, labelled `source: 'custom'`.
+
+Rules the implementation enforces (`src/lib/customListings.js`):
+
+1. **Same validation as an import.** Name, callable number, known city, known category, no
+   duplicate name in that city, no number reused by a different one of the user's listings.
+2. **Provenance is not negotiable.** A custom row carries `source: 'custom'`, renders a
+   "MINE" badge, never a verified badge, and every CSV export labels it *My own listing*.
+   This is what keeps a self-typed number from ever masquerading as an owner-verified one.
+3. **WhatsApp still needs a mobile.** A landline custom listing gets Call and Copy-number,
+   exactly like an imported landline, even if the user ticks the WhatsApp box.
+4. **Nothing leaves the device.** No upload, no account. The UI says so twice — on the form
+   and at the bottom of the list — and offers a CSV export as the backup path.
+5. **Private pages are `noindex`.** `/leads` and `/my-listings` are user workspaces, not
+   content; they set `noindex, follow` so a personal pipeline never lands in an index.
+
+Bulk import accepts CSV or JSON with loosely matched column names (`phone` / `tel` /
+`mobile`, `city` / `town`, …) and fuzzy category resolution, so a spreadsheet kept in
+English or Urdu-Roman spelling usually imports without editing headers first.

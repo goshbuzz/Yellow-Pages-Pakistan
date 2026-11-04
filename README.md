@@ -35,6 +35,32 @@ npm run claims  -- --claims=claims.json --data=public/data/listings.json
 npm run stats                                                    # runtime payload + counts
 ```
 
+### Custom listings and the lead workspace
+
+Two different "add" flows, deliberately kept apart:
+
+| | `/add` (public) | `/my-listings` (yours) |
+|---|---|---|
+| Visible to | everyone, after review | only you, on this device |
+| Purpose | publish a business | keep your own book of contacts |
+| Storage | submission queue (localStorage + optional Formspree) | `ypk.custom.v1` in your browser |
+| Labelled | pending review | "MINE" everywhere, `source: 'custom'` in exports |
+
+`/my-listings` lets you create, edit and delete listings, bulk-import a CSV/JSON
+spreadsheet (`name, phone, city, category, area, address, email, website, hours, lat, lng` —
+column names are matched loosely and category names are resolved against the 130-category
+list), and export everything back to CSV. Your listings appear in Browse results, Nearby
+distance ranking, business detail pages and the Lead Workspace, so they are usable
+immediately rather than sitting in a text file.
+
+Validation is the same as the importer's: a real name, a callable number, a known city, a
+known category, no duplicate name in the same city, and no number already used by another of
+your listings. WhatsApp is only ever offered for a mobile (`03xx`) number.
+
+Browse could previously only pick a city from a 420-item modal; the filter panel now has a
+typed city combobox (with listing counts), category select and sort, collapses on a phone,
+and suggests "filter to Karachi" when you type a city into the main search box.
+
 **Google Maps is deliberately not a source.** Its platform ToS §3.2.3 forbids extracting or
 warehousing Maps content, and a 30-day cache limit makes a stored directory profile a breach
 by construction. The importer uses Foursquare OS Places (Apache-2.0) and Overture Maps

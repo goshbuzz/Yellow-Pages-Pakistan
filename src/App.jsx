@@ -12,6 +12,7 @@ import AddListing from './pages/AddListing';
 import Faq from './pages/Faq';
 import Cities from './pages/Cities';
 import Coverage from './pages/Coverage';
+import MyListings from './pages/MyListings';
 import { CategoryLanding, CityLanding } from './pages/Landing';
 
 function LegacyHashRedirect() {
@@ -49,6 +50,8 @@ export default function App() {
           <Route path="/coverage" element={<Coverage />} />
           <Route path="/b/:id" element={<BusinessDetail />} />
           <Route path="/leads" element={<Leads />} />
+          <Route path="/my-listings" element={<MyListings />} />
+          <Route path="/my-listings/:id" element={<MyListings />} />
           <Route path="/nearby" element={<Nearby />} />
           <Route path="/add" element={<AddListing />} />
           <Route path="/faq" element={<Faq />} />

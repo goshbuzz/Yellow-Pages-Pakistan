@@ -8,10 +8,28 @@ import { CURATED } from '../src/data/curated.js';
 import { makeFaqSchema } from '../src/lib/seo.js';
 import { waNumber, isWaCapable, waHref, waInfo, waDisplayNumber } from '../src/lib/whatsapp.js';
 import { leadsToCsv } from '../src/lib/export.js';
-import { SOURCE, isReal, provenanceFields, trustBadge } from '../src/lib/provenance.js';
+import { SOURCE, isReal, provenanceFields, trustBadge, sourceOf } from '../src/lib/provenance.js';
 import { claimToken, verifyClaim, isVerificationFresh, claimHref } from '../src/lib/verify.js';
 import { execFileSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
+import {
+  validateCustomListing, saveCustomListing, getCustomListings, getCustomListing,
+  deleteCustomListing, parseCustomImport, mergeCustomResults, asResultRow, matchCategory,
+} from '../src/lib/customListings.js';
+
+
+// Minimal localStorage so device-local libraries can be tested under Node.
+if (!globalThis.localStorage) {
+  const store = new Map();
+  globalThis.localStorage = {
+    getItem: (k) => (store.has(k) ? store.get(k) : null),
+    setItem: (k, v) => store.set(k, String(v)),
+    removeItem: (k) => store.delete(k),
+    clear: () => store.clear(),
+    key: (i) => [...store.keys()][i] ?? null,
+    get length() { return store.size; },
+  };
+}
 
 let passed = 0;
 let failed = 0;
@@ -239,6 +257,140 @@ assert('Coverage report exists', /CITY COVERAGE/.test(execFileSync('node', ['scr
 const coverageJsx = readFileSync('src/pages/Coverage.jsx', 'utf8');
 assert('Coverage page shows per-city counts', coverageJsx.includes('CITY_COVERAGE'));
 assert('Coverage page distinguishes WhatsApp-capable from verified', coverageJsx.includes('whatsappCapable'));
+
+console.log('\n=== 1g. CUSTOM LISTING TESTS ===');
+localStorage.clear();
+
+const goodDraft = {
+  name: 'Al-Madina Kiryana Store', phone: '0300-4455667', cat: '1', city: 'Sahiwal',
+  area: 'Bolton Market', address: 'Shop 4, Bolton Market', whatsapp: true,
+};
+const vGood = validateCustomListing(goodDraft, { existing: [] });
+assert('Custom listing validates with name + mobile + city + category', vGood.ok, JSON.stringify(vGood.errors));
+assert('Custom mobile is WhatsApp-capable', vGood.record.whatsappCapable === true && vGood.record.whatsapp === true);
+assert('Custom listing stores the category name, not just the id', vGood.record.catName === 'Textile Mills & Fabrics', vGood.record.catName);
+assert('Custom listing is stamped with its own provenance', vGood.record.source === 'custom');
+
+assert('Custom listing without a phone is rejected',
+  !validateCustomListing({ ...goodDraft, phone: '' }, { existing: [] }).ok);
+assert('Custom listing with a too-short number is rejected',
+  validateCustomListing({ ...goodDraft, phone: '0300' }, { existing: [] }).errors.phone != null);
+assert('Custom listing without a city is rejected',
+  !validateCustomListing({ ...goodDraft, city: '' }, { existing: [] }).ok);
+assert('Custom listing with an unknown city is rejected',
+  validateCustomListing({ ...goodDraft, city: 'Atlantis' }, { existing: [] }).errors.city != null);
+assert('Custom listing without a category is rejected',
+  !validateCustomListing({ ...goodDraft, cat: '' }, { existing: [] }).ok);
+assert('Custom listing with coordinates outside Pakistan is rejected',
+  validateCustomListing({ ...goodDraft, lat: '51.5', lng: '-0.1' }, { existing: [] }).errors.location != null);
+
+const savedA = saveCustomListing(goodDraft);
+assert('Custom listing saves to device storage', savedA.ok && getCustomListings().length === 1);
+assert('Saved listing can be read back by id', getCustomListing(savedA.record.id)?.name === goodDraft.name);
+assert('Saved listing id is prefixed so it never collides with imported ids', savedA.record.id.startsWith('u'));
+
+const clash = saveCustomListing({ ...goodDraft, name: 'Another Shop' });
+assert('A number already used by another custom listing is rejected',
+  !clash.ok && /already used/i.test(clash.errors.phone || ''), JSON.stringify(clash.errors));
+
+const dupName = saveCustomListing({ ...goodDraft, phone: '0321-1112223' });
+assert('A duplicate name in the same city is rejected',
+  !dupName.ok && /already exists/i.test(dupName.errors.name || ''));
+
+const sameNameOtherCity = saveCustomListing({ ...goodDraft, city: 'Lahore', phone: '0321-1112223' });
+assert('The same name in a different city is allowed', sameNameOtherCity.ok);
+
+const edited = saveCustomListing({ ...goodDraft, phone: '0300-4455660', area: 'New Area' }, { editingId: savedA.record.id });
+assert('Editing keeps the id but updates the number',
+  edited.ok && edited.record.id === savedA.record.id && edited.record.phone === '0300-4455660');
+assert('Editing does not create a second copy',
+  getCustomListings().filter((r) => r.id === savedA.record.id).length === 1);
+
+// Provenance: a self-typed listing is real for its author, labelled as theirs, never "verified".
+const customRow = asResultRow(savedA.record);
+assert('Custom row carries a source the UI can explain', sourceOf(customRow) === 'custom');
+assert('Custom row is contactable (not treated as sample filler)', isReal(customRow));
+assert('Custom row earns a "mine" label, never a verified badge',
+  trustBadge(customRow)?.level === 'custom' && customRow.verified === false);
+
+// Landline custom listing: kept, callable, never WhatsApp-capable.
+const land = saveCustomListing({ name: 'Landline Traders', phone: '021-32770123', cat: '1', city: 'Karachi' });
+assert('A landline custom listing is accepted', land.ok);
+assert('A landline custom listing is not marked WhatsApp-capable',
+  land.record.whatsappCapable === false && land.record.whatsapp === false);
+const landClaim = saveCustomListing({ name: 'Claiming Traders', phone: '021-32770124', cat: '1', city: 'Karachi', whatsapp: true });
+assert('A landline cannot claim WhatsApp even if the box is ticked',
+  landClaim.ok && landClaim.record.whatsapp === false);
+
+// CSV/JSON import
+const csvIn = 'name,phone,city,category\nImported Store,0333-1234567,Sahiwal,Grocery & Supermarkets\nLandline Shop,042-35761234,Lahore,Textile Mills & Fabrics';
+const parsedCsv = parseCustomImport(csvIn);
+assert('CSV import reads both rows', parsedCsv.error === null && parsedCsv.rows.length === 2);
+assert('CSV import maps the category name to an id',
+  parsedCsv.rows[0].cat === CATEGORIES.find((c) => c.name === 'Grocery & Supermarkets').id, parsedCsv.rows[0].cat);
+assert('CSV import normalises the city name', parsedCsv.rows[1].city === 'Lahore');
+const parsedJson = parseCustomImport(JSON.stringify([{ Name: 'JSON Store', Phone: '0345-9988776', City: 'Multan', Category: 'Pharmacy' }]));
+assert('JSON import is case-insensitive about column names', parsedJson.rows[0].name === 'JSON Store');
+assert('A partial category name is resolved ("Pharmacy" → Pharmacies & Medical Stores)',
+  parsedJson.rows[0].cat === CATEGORIES.find((c) => c.name === 'Pharmacies & Medical Stores').id,
+  String(parsedJson.rows[0].cat));
+assert('A meaningless category is left empty rather than guessed',
+  parseCustomImport('name,phone,city,category\nX,0300-1234567,Sahiwal,qqqq').rows[0].cat === '');
+assert('Empty import is reported, not silently accepted', parseCustomImport('').error != null);
+
+// Search merge
+const mergedCustom = mergeCustomResults({ rows: [{ name: 'Imported Co' }], total: 1, page: 1, pages: 1 }, getCustomListings());
+assert('Custom listings are merged into search results first', mergedCustom.rows[0].isCustom === true);
+assert('Merged result count includes custom listings', mergedCustom.total === 1 + getCustomListings().length);
+
+assert('Deleting a custom listing removes it', deleteCustomListing(savedA.record.id) && !getCustomListing(savedA.record.id));
+
+// Wiring
+const browseSrc = readFileSync('src/pages/Browse.jsx', 'utf8');
+assert('Browse lets the user type a city name', browseSrc.includes('Type a city') && browseSrc.includes('role="combobox"'));
+assert('Browse keeps the full city picker as a fallback', browseSrc.includes('All cities') && browseSrc.includes('CityPicker'));
+assert('Browse has a collapsible filter panel', browseSrc.includes('filtersOpen'));
+assert('Browse offers adding a business when a search finds nothing', browseSrc.includes('/my-listings'));
+
+const myListingsSrc = readFileSync('src/pages/MyListings.jsx', 'utf8');
+assert('My listings page can create, edit and delete', myListingsSrc.includes('saveCustomListing') && myListingsSrc.includes('deleteCustomListing'));
+assert('My listings page imports CSV/JSON', myListingsSrc.includes('parseCustomImport'));
+assert('My listings page exports CSV', myListingsSrc.includes('downloadFile'));
+assert('My listings page says data is device-local', /on this device/i.test(myListingsSrc));
+
+const leadsSrc = readFileSync('src/pages/Leads.jsx', 'utf8');
+assert('Leads refresh when storage changes (no stale workspace)', leadsSrc.includes("addEventListener('focus'") && leadsSrc.includes("addEventListener('storage'"));
+assert('Leads refuse a dead Call link when a lead has no number', leadsSrc.includes('No number'));
+assert('Leads can rename and delete a list', leadsSrc.includes('renameList') && leadsSrc.includes('deleteList'));
+assert('Leads support searching within a list', leadsSrc.includes('Search in'));
+
+const datasetSrc = readFileSync('src/lib/dataset.js', 'utf8');
+assert('Search merges the user\'s own listings', datasetSrc.includes('matchCustom') && datasetSrc.includes('getCustomListings'));
+assert('A custom listing opens without the data worker', datasetSrc.includes('isCustomId(id)'));
+
+const appSrc = readFileSync('src/App.jsx', 'utf8');
+assert('Route /my-listings exists', appSrc.includes('/my-listings'));
+const layoutSrc = readFileSync('src/components/Layout.jsx', 'utf8');
+assert('Bottom nav links to My listings', layoutSrc.includes("to: '/my-listings'"));
+assert('Lead badge re-reads storage instead of freezing at first render',
+  layoutSrc.includes('setLeadCount(getLeads().length)'));
+
+const css = readFileSync('src/index.css', 'utf8');
+assert('Spacing scale primitives exist', css.includes('.page-stack') && css.includes('.card-pad') && css.includes('.field'));
+assert('Form fields are at least 48px tall for touch', /min-height:\s*3rem/.test(css));
+
+// Mobile layout audit — the specific failure modes that made the UI hard to use.
+const layoutPages = ['src/pages/Leads.jsx', 'src/pages/MyListings.jsx', 'src/pages/Browse.jsx', 'src/pages/Nearby.jsx'];
+for (const f of layoutPages) {
+  const src = readFileSync(f, 'utf8');
+  assert(`${f} uses the shared vertical rhythm`, /className="page-stack/.test(src));
+  const tiny = [...src.matchAll(/className="[^"]*\b(w-[6-7]|h-[6-7])\b[^"]*"/g)]
+    .filter((m) => !m[0].includes('tap-sm'));
+  assert(`${f} has no sub-40px touch target without an expanded hit area`, tiny.length === 0, JSON.stringify(tiny.map((m) => m[0].slice(0, 40))));
+  assert(`${f} has no fixed width that could overflow a 360px screen`, !/min-w-\[(4\d{2,}|[5-9]\d{2,})px\]/.test(src));
+}
+assert('Clear buttons get an expanded hit area', css.includes('.tap-sm'));
+assert('PageHeader stacks actions on phones', readFileSync('src/components/ui.jsx', 'utf8').includes('flex-col sm:flex-row'));
 
 console.log('\n=== 2. SEO & AEO SCHEMA GENERATION TESTS ===');
 const sampleFaqs = [

@@ -1,5 +1,5 @@
-// Preview-only config: binds the dev server to 0.0.0.0 and accepts the sandbox proxy
-// host so the app can be looked at in a browser preview. Not used by the build.
+// Preview-only config: binds to 0.0.0.0 and accepts the sandbox proxy host so the app
+// can be reviewed in a browser preview. Not used by the production build.
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
