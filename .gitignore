@@ -7,8 +7,12 @@ npm-debug.log*
 # Generated dataset copies — rebuilt by `npm run generate` / build:vercel.
 # public/data is dev-only (stripped from prod builds); server-data is bundled
 # only into the guarded serverless endpoint.
-public/data/
+public/data/*
 server-data/
+# …but the imported source-of-truth dataset IS committed: Vercel's build runs
+# `scripts/stats.mjs`, which regenerates listings.txt + corpus.js from this file.
+# Without it the deployed app would serve an empty corpus.
+!public/data/listings.json
 
 # Android signing keystore — NEVER commit (keep only on your own machine)
 android/*.jks
