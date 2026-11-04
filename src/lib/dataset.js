@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { CURATED } from '../data/curated.js';
 import { CITIES } from '../data/geo.js';
 import { CATEGORY_BY_ID } from '../data/categories.js';
+import { getCustomListings, getCustomListing, asResultRow, isCustomId } from './customListings.js';
 
 let worker = null;
 let readyResolvers = [];
@@ -74,13 +75,37 @@ export async function searchBusinesses({ q = '', cat = null, city = null, sort =
       (!ql || c.name.toLowerCase().includes(ql) || catNameOf(c).toLowerCase().includes(ql) || c.city.toLowerCase().includes(ql)))
     .map(({ c, idx }) => normalizeCurated(c, `c${idx}`));
 
+  // The user's own custom listings are theirs to find: they match the same query text
+  // and the same category/city filters, and are listed before anything imported.
+  const customMatches = page === 1 ? matchCustom(q, cat, city) : [];
+
   let merged;
-  if (page === 1) merged = [...curatedMatches, ...generated];
+  if (page === 1) merged = [...customMatches, ...curatedMatches, ...generated];
   else merged = generated;
-  return { total: res.total + (page === 1 ? curatedMatches.length : 0), page: res.page, rows: merged.slice(0, perPage), pages: Math.max(1, Math.ceil((res.total + curatedMatches.length) / perPage)) };
+  const extra = (page === 1 ? curatedMatches.length + customMatches.length : 0);
+  return {
+    total: res.total + extra,
+    page: res.page,
+    rows: merged.slice(0, perPage),
+    pages: Math.max(1, Math.ceil((res.total + extra) / perPage)),
+  };
 }
 
 function catNameOf(c) { return CATEGORY_BY_ID[c.cat]?.name || ''; }
+
+/** Filter the device's own custom listings with the same rules the worker uses. */
+function matchCustom(q, cat, city) {
+  const tokens = String(q || '').toLowerCase().split(/\s+/).filter(Boolean);
+  return getCustomListings()
+    .filter((r) => {
+      if (cat != null && String(r.catId) !== String(cat)) return false;
+      if (city && r.city !== city) return false;
+      if (!tokens.length) return true;
+      const hay = `${r.name} ${r.catName} ${r.city} ${r.area}`.toLowerCase();
+      return tokens.every((t) => hay.includes(t));
+    })
+    .map(asResultRow);
+}
 
 /** Curated rows carry no address/province/hours, so fill only what the city data proves. */
 function normalizeCurated(c, id) {
@@ -111,6 +136,12 @@ export async function suggest(q) {
 
 // Detail by id: "g123" (generated row index) or "c12" (curated index)
 export async function getBusiness(id) {
+  // A custom listing lives on this device, so it resolves without touching the worker.
+  if (isCustomId(id)) {
+    const r = getCustomListing(id);
+    if (!r) return null;
+    return { ...asResultRow(r), id };
+  }
   if (id[0] === 'c') {
     const c = CURATED[+id.slice(1)];
     if (!c) return null;

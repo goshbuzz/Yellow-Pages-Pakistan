@@ -3,14 +3,16 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, TrendingUp, ChevronRight, Download, Wand2, MapPin, Globe, ArrowLeft } from 'lucide-react';
+import { Search, TrendingUp, ChevronRight, Download, Wand2, MapPin, Globe, ArrowLeft, Bookmark } from 'lucide-react';
 import { CATEGORIES, CATEGORY_BY_ID, slug as catSlug } from '../data/categories';
 import { CITIES, slugify as citySlug } from '../data/geo';
 import { CURATED } from '../data/curated';
 import { STATS } from '../data/stats.generated';
-import { CountUp, useToast } from '../components/ui';
+import { CountUp, useToast, StatTile, Section } from '../components/ui';
 import { CompanyCard } from '../components/CompanyCard';
 import { suggest } from '../lib/dataset';
+import { customCount } from '../lib/customListings';
+import { PlusCircle } from 'lucide-react';
 import { useInstallPrompt } from '../components/InstallSheet';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
@@ -71,7 +73,7 @@ export default function Home() {
   const go = (term) => navigate(`/browse?q=${encodeURIComponent(term)}`);
 
   return (
-    <div className="space-y-7 animate-slide-up pb-6">
+    <div className="page-stack pb-8">
       <SeoHead
         title="Directory Web App — Search Pakistani Businesses | Yellow Pages PK"
         description="Search real Pakistani businesses in the interactive web app. Fast directory search, B2B lead lists, offline mode, and 1-tap WhatsApp."
@@ -91,6 +93,25 @@ export default function Home() {
         <span className="text-[11px] font-extrabold text-stone-400 uppercase tracking-wider">
           Interactive Web App Mode
         </span>
+      </div>
+
+      {/* Quick actions — the three things a visitor actually came to do. */}
+      <div className="grid grid-cols-3 gap-2.5">
+        <Link to="/my-listings" className="card flex flex-col items-center gap-1.5 py-3.5 px-2 text-center">
+          <PlusCircle size={19} className="text-brand-deeper" />
+          <span className="text-[11.5px] font-extrabold text-ink leading-tight">My listings</span>
+          <span className="text-[10px] font-bold text-stone-400">{customCount()} added</span>
+        </Link>
+        <Link to="/leads" className="card flex flex-col items-center gap-1.5 py-3.5 px-2 text-center">
+          <Bookmark size={19} className="text-brand-deeper" />
+          <span className="text-[11.5px] font-extrabold text-ink leading-tight">Lead lists</span>
+          <span className="text-[10px] font-bold text-stone-400">track &amp; export</span>
+        </Link>
+        <Link to="/coverage" className="card flex flex-col items-center gap-1.5 py-3.5 px-2 text-center">
+          <MapPin size={19} className="text-brand-deeper" />
+          <span className="text-[11.5px] font-extrabold text-ink leading-tight">Coverage</span>
+          <span className="text-[10px] font-bold text-stone-400">by city</span>
+        </Link>
       </div>
 
       {/* Hero */}

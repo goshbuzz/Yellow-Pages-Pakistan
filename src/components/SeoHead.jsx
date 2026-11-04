@@ -10,6 +10,7 @@ export default function SeoHead({
   schema = null,
   ogType = 'website',
   ogImage = '/og-image.jpg',
+  noindex = false,
 }) {
   useEffect(() => {
     // 1. Document Title
@@ -64,6 +65,19 @@ export default function SeoHead({
       tag.setAttribute('content', content);
     });
 
+    // 4b. Robots — private workspace screens (leads, my listings) must never be indexed.
+    let robotsTag = document.querySelector('meta[name="robots"]');
+    if (noindex) {
+      if (!robotsTag) {
+        robotsTag = document.createElement('meta');
+        robotsTag.setAttribute('name', 'robots');
+        document.head.appendChild(robotsTag);
+      }
+      robotsTag.setAttribute('content', 'noindex, follow');
+    } else if (robotsTag) {
+      robotsTag.remove();
+    }
+
     // 5. Injected JSON-LD Schema
     let scriptTag = document.getElementById('dynamic-page-schema');
     if (schema) {
@@ -78,7 +92,7 @@ export default function SeoHead({
     } else if (scriptTag) {
       scriptTag.remove();
     }
-  }, [title, description, canonicalPath, schema, ogType, ogImage]);
+  }, [title, description, canonicalPath, schema, ogType, ogImage, noindex]);
 
   return null;
 }

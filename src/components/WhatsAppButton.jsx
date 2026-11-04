@@ -89,7 +89,7 @@ export function WhatsAppButton({
         aria-label={`Copy landline number for ${b?.name || 'business'}`}
         className={`tap shrink-0 flex items-center justify-center font-extrabold bg-stone-100 text-stone-500 border border-stone-300 hover:bg-stone-200 ${ver} ${className}`}
       >
-        {iconOnly ? <Phone size={glyphSize} /> : <><Phone size={glyphSize} /> {variant === 'pill' ? 'Copy number' : 'Landline'}</>}
+        {iconOnly ? <Phone size={glyphSize} /> : <><Phone size={glyphSize} /> <span className="truncate">{variant === 'pill' ? 'Copy number' : 'Landline'}</span></>}
       </button>
     );
   }
@@ -107,7 +107,7 @@ export function WhatsAppButton({
       className={`tap shrink-0 flex items-center justify-center font-extrabold bg-emerald-500 hover:bg-emerald-600 text-white ${ver} ${className}`}
     >
       <WhatsAppGlyph size={glyphSize} />
-      {!iconOnly && (variant === 'pill' ? <span className="truncate">WhatsApp</span> : <span>WhatsApp</span>)}
+      {!iconOnly && <span className="truncate">WhatsApp</span>}
     </a>
   );
 }
