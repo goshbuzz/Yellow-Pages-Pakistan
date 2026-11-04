@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { CATEGORIES, CATEGORY_GROUPS, slug as catSlug } from '../data/categories';
-import { STATS } from '../data/stats.generated';
+import { useLiveCounts } from '../lib/dataset';
 import { CatIcon } from '../components/icons';
 import SeoHead from '../components/SeoHead';
 import PageFaq, { makeFaqSchema } from '../components/PageFaq';
@@ -30,6 +30,7 @@ const CATEGORY_FAQS = [
 
 export default function Categories() {
   const [q, setQ] = useState('');
+  const counts = useLiveCounts();
   const groups = useMemo(() => {
     const ql = q.trim().toLowerCase();
     return CATEGORY_GROUPS.map((g) => ({
@@ -62,7 +63,7 @@ export default function Categories() {
         {groups.map((g) => (
           <section key={g.id}>
             <h2 className="font-black text-ink text-[16px] mb-2">{g.emoji} {g.label}</h2>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
               {g.cats.map((c) => (
                 <Link key={c.id} to={`/category/${catSlug(c.name)}`}
                   className="tap flex flex-col gap-1 bg-white/90 rounded-2xl border border-stone-200/80 p-3 shadow-card relative overflow-hidden">
@@ -71,7 +72,7 @@ export default function Categories() {
                     <CatIcon icon={c.icon} size={17} />
                   </span>
                   <span className="text-[12.5px] font-extrabold text-ink leading-tight mt-0.5 pr-6">{c.name}</span>
-                  <span className="text-[10.5px] font-bold text-stone-400">{(STATS.byCat[c.id] || 0).toLocaleString()} listings</span>
+                  <span className="text-[10.5px] font-bold text-stone-400">{(counts.byCat[c.id] || 0).toLocaleString()} listings</span>
                 </Link>
               ))}
             </div>

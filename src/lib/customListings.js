@@ -49,6 +49,8 @@ function read() {
 function write(list) {
   try {
     localStorage.setItem(LS_CUSTOM, JSON.stringify(list));
+    // Same-tab listeners (live counts, badges) don't get `storage` events — tell them.
+    if (typeof window !== 'undefined') window.dispatchEvent(new Event('ypk:custom-listings'));
     return true;
   } catch {
     return false; // quota / private mode — the caller surfaces this, never a silent loss

@@ -18,6 +18,9 @@ let ids, phones, whatsapps, sources, emails, websites, lats, lngs, hoursArr, add
 let header = null;
 let cityLower, catLower;
 let index = null;
+// Live counts over the imported corpus — surfaced to the UI so category cards,
+// stat tiles and city lists never disagree with what a search actually returns.
+let byCat = {}, byCity = {}, byCityWa = {};
 
 async function load() {
   const candidates = import.meta.env.VITE_DATA_URL
@@ -42,8 +45,9 @@ async function load() {
   }
   if (text == null) throw new Error(`dataset load failed: ${lastErr}`);
   const nl = text.indexOf('\n');
-  const header = JSON.parse(text.slice(0, nl));
+  header = JSON.parse(text.slice(0, nl));
   total = header.total || 0;
+  byCat = {}; byCity = {}; byCityWa = {};
   if (!total) {
     cityLower = CITIES.map((c) => c.name.toLowerCase());
     return;
@@ -88,6 +92,18 @@ async function load() {
   cityLower = CITIES.map((c) => c.name.toLowerCase());
   catLower = {};
   for (const c of CATEGORIES) catLower[c.id] = c.name.toLowerCase();
+  // Count the corpus as it was parsed: per category, per city, and how many of the
+  // city's numbers are WhatsApp-capable (mobile 03xx lines).
+  for (let i = 0; i < n; i++) {
+    if (!names[i]) continue;
+    const catId = cats[i];
+    byCat[catId] = (byCat[catId] || 0) + 1;
+    const cityName = CITIES[cityIdxs[i]]?.name;
+    if (cityName) {
+      byCity[cityName] = (byCity[cityName] || 0) + 1;
+      if (whatsapps[i]) byCityWa[cityName] = (byCityWa[cityName] || 0) + 1;
+    }
+  }
   index = null; // rebuilt on the next query from the freshly loaded arrays
   lines.length = 0;
 }
@@ -142,7 +158,12 @@ self.onmessage = async (e) => {
   if (type === 'load') {
     try {
       await load();
-      self.postMessage({ type: 'ready', total, whatsappCapable: header?.whatsappCapable ?? 0, ownerVerified: header?.ownerVerified ?? 0 });
+      self.postMessage({
+        type: 'ready', total,
+        whatsappCapable: header?.whatsappCapable ?? 0,
+        ownerVerified: header?.ownerVerified ?? 0,
+        byCat, byCity, byCityWa,
+      });
     } catch (err) {
       self.postMessage({ type: 'error', message: String(err) });
     }
